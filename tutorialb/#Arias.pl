@@ -15,6 +15,7 @@ sub EVENT_SAY {
     }
     elsif (quest::istaskactivityactive(3785, 15)) { #Task: The Revolt of Gloomingdeep
       quest::say("You have done a great deed today, $name! Now that the Overlord is dead, and the kobolds in disarray, the rebellion is free from tyranny. I have more work to do here, guiding the freed slaves, but you may leave this place through the passageway at the back of this cavern. I wish you fortune in all your future deeds, $name. We will not forget what you have done here!");
+      quest::popup("Escape to Norrath", "<br>The slaves have dug an escape tunnel that will lead you out of the Mines of Gloomingdeep.<br><br><c \"#F07F00\">Are you ready to Escape to Norrath?</c>");
     }
     else {
       quest::say("We found the other slaves!  Not bad, my friend, not bad.  No matter what happens in the mines, you should always be able to find your way back here.  If you seek allies in other instances of these mines, I can send you there if you [" . quest::saylink("wish") . "].");

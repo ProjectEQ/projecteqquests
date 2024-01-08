@@ -17,7 +17,7 @@ end
 function event_trade(e)
     local item_lib = require("items");
     if e.other:IsTaskActivityActive(4,8) then -- Frostfell A Gift for Tinam (#4) Activity ID 8 active
-        if item_lib.check_turn_in(e.self, e.trade, {item1 = 87542}) then -- Lock of Hagbletha's Hair
+        if item_lib.check_turn_in(e.trade, {item1 = 87542}) then -- Lock of Hagbletha's Hair
 			e.self:Say("Well I'll be! 'Horgram grabs the hairs from you and holds them close. 'Here take the gem, these hairs are more precious than anything else in the entire world!")
 			e.other:UpdateTaskActivity(4,8,1); -- Frostfell A Gift for Tinam (#4) Activity ID 8 complete
             e.other:SummonItem(87541); -- Horgram's Gem

@@ -215,7 +215,7 @@ end
 
 function Prisoner_Trade(e)
 	local item_lib = require('items');
-	if item_lib.check_turn_in(e.self, e.trade, {item1 = 59571}) then	--Item: Heavy Orcish Prison Key
+	if item_lib.check_turn_in(e.trade, {item1 = 59571}) then	--Item: Heavy Orcish Prison Key
 		e.self:SetAppearance(0); --stand up
 		eq.set_timer("depop", 15 * 1000);
 		prisoners_freed = prisoners_freed + 1;

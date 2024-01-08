@@ -17,7 +17,7 @@ end
 function event_trade(e)
     local item_lib = require("items");
     if e.other:IsTaskActivityActive(4,7) then -- Frostfell A Gift for Tinam (#4) Activity ID 7 active
-        if item_lib.check_turn_in(e.self, e.trade, {item1 = 87543}) then -- Firin's Bear Skin Cloak
+        if item_lib.check_turn_in(e.trade, {item1 = 87543}) then -- Firin's Bear Skin Cloak
 			e.self:Say("'I wanted barbarian skin, but dis will do. Here, take these.' Hagbletha plucks three hairs from a giant mole on her nose and hands them to " .. e.other:GetName() .. ". 'Give dem to the dorf so he stop coming by here.'")
 			e.other:UpdateTaskActivity(4,7,1); -- Frostfell A Gift for Tinam (#4) Activity ID 7 complete
             e.other:SummonItem(87542); -- Lock of Hagbletha's Hair

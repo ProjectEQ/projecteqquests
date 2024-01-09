@@ -164,6 +164,7 @@ function Subversion_Signal(e)
 
 	if points >= 300 then
 		-- Notify the Guardians to become active
+		eq.spawn_condition(this_zone,instance_id,1,1); -- Depop patrolers
 		eq.signal(306000,1); -- NPC: a_dragorn_guardian
 
 		-- Activate Thyself

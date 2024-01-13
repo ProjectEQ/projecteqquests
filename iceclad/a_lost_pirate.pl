@@ -22,7 +22,7 @@ sub EVENT_SAY {
   if ($text=~/map/i) {
     quest::emote("nods.");
     quest::say("After we got ourselves stuck on this island I got it in me head to draw up a map so none o' the crew would ever get lost. So I set myself to explorin' and drawin'. Now the map is gone. Too bad, too, cause it was a map o' the whole place, not just the first island, but a bunch o' parts.");
-    quest::echo("Mention of the map seems to have sobered him up a bit.");
+    quest::echo(0, "Mention of the map seems to have sobered him up a bit.");
   }
   if ($text=~/gone/i) {
     quest::say("Aye. I lost the first part walkin' through the woods. Some big wolf bowled me over 'n started to tear me book up. 'Fore I could stop, it he ran off. I'm not knowin' why. The second part, heh. That was worse.");

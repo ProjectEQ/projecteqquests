@@ -16,9 +16,8 @@ function event_trade(e)
 
 		if(item_lib.check_turn_in(e.trade, {item1 = 28092})) then --New Sewing Needles
 			e.self:Emote("takes the needles and smiles. 'Thank you so much, kind stranger. I can't tell you how much you have really helped by doing this for me. It's funny, you know. The entire city seems to be in a happier mood today. I can't quite put my finger on it, but everyone seems to have uplifted spirits. Oh well, thank you again. I have something you may find to be of use to you, if you would be interested. Remember, knowledge is the key to life.");
-			e.other:SummonItem(28745); -- Planar Traveler's Manual
-			e.other:Ding();
-			e.other:AddEXP(250);
+			-- Confirmed Live Experience
+			e.other:QuestReward(e.self,{itemid = 28745,exp = 100});
 		end
 
 	item_lib.return_items(e.self, e.other, e.trade)

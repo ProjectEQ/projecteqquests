@@ -31,51 +31,51 @@ local portals = {
 
 function event_trade(e)
 	local item_lib = require("items");
-	if item_lib.check_turn_in(e.self, e.trade, {item1 = 10092}) then -- Items: Portal Items
+	if item_lib.check_turn_in(e.trade, {item1 = 10092}) then -- Items: Portal Items
 		set_portal(e,10092);
-	elseif item_lib.check_turn_in(e.self, e.trade, {item1 = 10094}) then -- Items: Portal Items
+	elseif item_lib.check_turn_in(e.trade, {item1 = 10094}) then -- Items: Portal Items
 		set_portal(e,10094);
-	elseif item_lib.check_turn_in(e.self, e.trade, {item1 = 64191}) then -- Items: Portal Items
+	elseif item_lib.check_turn_in(e.trade, {item1 = 64191}) then -- Items: Portal Items
 		set_portal(e,64191);
-	elseif item_lib.check_turn_in(e.self, e.trade, {item1 = 76000}) then -- Items: Portal Items
+	elseif item_lib.check_turn_in(e.trade, {item1 = 76000}) then -- Items: Portal Items
 		set_portal(e,76000);
-	elseif item_lib.check_turn_in(e.self, e.trade, {item1 = 76001}) then -- Items: Portal Items
+	elseif item_lib.check_turn_in(e.trade, {item1 = 76001}) then -- Items: Portal Items
 		set_portal(e,76001);
-	elseif item_lib.check_turn_in(e.self, e.trade, {item1 = 76002}) then -- Items: Portal Items
+	elseif item_lib.check_turn_in(e.trade, {item1 = 76002}) then -- Items: Portal Items
 		set_portal(e,76002);
-	elseif item_lib.check_turn_in(e.self, e.trade, {item1 = 76003}) then -- Items: Portal Items
+	elseif item_lib.check_turn_in(e.trade, {item1 = 76003}) then -- Items: Portal Items
 		set_portal(e,76003);
-	elseif item_lib.check_turn_in(e.self, e.trade, {item1 = 76004}) then -- Items: Portal Items
+	elseif item_lib.check_turn_in(e.trade, {item1 = 76004}) then -- Items: Portal Items
 		set_portal(e,76004);
-	elseif item_lib.check_turn_in(e.self, e.trade, {item1 = 76005}) then -- Items: Portal Items
+	elseif item_lib.check_turn_in(e.trade, {item1 = 76005}) then -- Items: Portal Items
 		set_portal(e,76005);
-	elseif item_lib.check_turn_in(e.self, e.trade, {item1 = 76006}) then -- Items: Portal Items
+	elseif item_lib.check_turn_in(e.trade, {item1 = 76006}) then -- Items: Portal Items
 		set_portal(e,76006);
-	elseif item_lib.check_turn_in(e.self, e.trade, {item1 = 76007}) then -- Items: Portal Items
+	elseif item_lib.check_turn_in(e.trade, {item1 = 76007}) then -- Items: Portal Items
 		set_portal(e,76007);
-	elseif item_lib.check_turn_in(e.self, e.trade, {item1 = 76008}) then -- Items: Portal Items
+	elseif item_lib.check_turn_in(e.trade, {item1 = 76008}) then -- Items: Portal Items
 		set_portal(e,76008);
-	elseif item_lib.check_turn_in(e.self, e.trade, {item1 = 76009}) then -- Items: Portal Items
+	elseif item_lib.check_turn_in(e.trade, {item1 = 76009}) then -- Items: Portal Items
 		set_portal(e,76009);
-	elseif item_lib.check_turn_in(e.self, e.trade, {item1 = 76010}) then -- Items: Portal Items
+	elseif item_lib.check_turn_in(e.trade, {item1 = 76010}) then -- Items: Portal Items
 		set_portal(e,76010);
-	elseif item_lib.check_turn_in(e.self, e.trade, {item1 = 76011}) then -- Items: Portal Items
+	elseif item_lib.check_turn_in(e.trade, {item1 = 76011}) then -- Items: Portal Items
 		set_portal(e,76011);
-	elseif item_lib.check_turn_in(e.self, e.trade, {item1 = 76012}) then -- Items: Portal Items
+	elseif item_lib.check_turn_in(e.trade, {item1 = 76012}) then -- Items: Portal Items
 		set_portal(e,76012);
-	elseif item_lib.check_turn_in(e.self, e.trade, {item1 = 76070}) then -- Items: Portal Items
+	elseif item_lib.check_turn_in(e.trade, {item1 = 76070}) then -- Items: Portal Items
 		set_portal(e,76070);
-	elseif item_lib.check_turn_in(e.self, e.trade, {item1 = 88735}) then -- Items: Portal Items
+	elseif item_lib.check_turn_in(e.trade, {item1 = 88735}) then -- Items: Portal Items
 		set_portal(e,88735);
-	elseif item_lib.check_turn_in(e.self, e.trade, {item1 = 88736}) then -- Items: Portal Items
+	elseif item_lib.check_turn_in(e.trade, {item1 = 88736}) then -- Items: Portal Items
 		set_portal(e,88736);
-	elseif item_lib.check_turn_in(e.self, e.trade, {item1 = 88737}) then -- Items: Portal Items
+	elseif item_lib.check_turn_in(e.trade, {item1 = 88737}) then -- Items: Portal Items
 		set_portal(e,88737);
-	elseif item_lib.check_turn_in(e.self, e.trade, {item1 = 88738}) then -- Items: Portal Items
+	elseif item_lib.check_turn_in(e.trade, {item1 = 88738}) then -- Items: Portal Items
 		set_portal(e,88738);
-	elseif item_lib.check_turn_in(e.self, e.trade, {item1 = 88739}) then -- Items: Portal Items
+	elseif item_lib.check_turn_in(e.trade, {item1 = 88739}) then -- Items: Portal Items
 		set_portal(e,88739);
-	elseif item_lib.check_turn_in(e.self, e.trade, {item1 = 88740}) then -- Items: Portal Items
+	elseif item_lib.check_turn_in(e.trade, {item1 = 88740}) then -- Items: Portal Items
 		set_portal(e,88740);
 	end
 	item_lib.return_items(e.self, e.other, e.trade);

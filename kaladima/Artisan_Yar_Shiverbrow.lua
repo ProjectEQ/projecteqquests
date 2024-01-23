@@ -108,35 +108,35 @@ function event_trade(e)
 
 	if e.other:GetBaseRace() == e.self:GetBaseRace() then
 		-- Supported
-		if e.other:IsTaskActivityActive(5784,4) and item_lib.check_turn_in(e.self, e.trade, {item1 = 34997}) then -- Blessed Impression Book
+		if e.other:IsTaskActivityActive(5784,4) and item_lib.check_turn_in(e.trade, {item1 = 34997}) then -- Blessed Impression Book
 			e.other:UpdateTaskActivity(5784,4,1);
 			e.other:QuestReward(e.self,{itemid = 38423}); -- Item: Blessed Book of Dwarven Culture
-		elseif e.other:IsTaskActivityActive(5787,4) and item_lib.check_turn_in(e.self, e.trade, {item1 = 34998}) then -- Revered Impression Book
+		elseif e.other:IsTaskActivityActive(5787,4) and item_lib.check_turn_in(e.trade, {item1 = 34998}) then -- Revered Impression Book
 			e.other:UpdateTaskActivity(5787,4,1);
 			e.other:QuestReward(e.self,{itemid = 38424}); -- Item: Revered Book of Dwarven Culture
-		elseif e.other:IsTaskActivityActive(5790,4) and item_lib.check_turn_in(e.self, e.trade, {item1 = 34999}) then -- Sacred Impression Book
+		elseif e.other:IsTaskActivityActive(5790,4) and item_lib.check_turn_in(e.trade, {item1 = 34999}) then -- Sacred Impression Book
 			e.other:UpdateTaskActivity(5790,4,1);
 			e.other:QuestReward(e.self,{itemid = 38425}); -- Item: Sacred Book of Dwarven Culture
-		elseif e.other:IsTaskActivityActive(5791,4) and item_lib.check_turn_in(e.self, e.trade, {item1 = 35000}) then -- Eminent Impression Book
+		elseif e.other:IsTaskActivityActive(5791,4) and item_lib.check_turn_in(e.trade, {item1 = 35000}) then -- Eminent Impression Book
 			e.other:UpdateTaskActivity(5791,4,1);
 			e.other:QuestReward(e.self,{itemid = 38426}); -- Item: Eminent Book of Dwarven Culture
 		-- Not Supported
-		elseif e.other:IsTaskActivityActive(5792,4) and item_lib.check_turn_in(e.self, e.trade, {item1 = 35017}) then -- Exalted Impression Book
+		elseif e.other:IsTaskActivityActive(5792,4) and item_lib.check_turn_in(e.trade, {item1 = 35017}) then -- Exalted Impression Book
 			e.other:UpdateTaskActivity(5792,4,1);
 			e.other:QuestReward(e.self,{itemid = 35745}); -- Item: Exalted Book of Dwarven Culture
-		elseif e.other:IsTaskActivityActive(5793,4) and item_lib.check_turn_in(e.self, e.trade, {item1 = 35018}) then -- Sublime Impression Book
+		elseif e.other:IsTaskActivityActive(5793,4) and item_lib.check_turn_in(e.trade, {item1 = 35018}) then -- Sublime Impression Book
 			e.other:UpdateTaskActivity(5793,4,1);
 			e.other:QuestReward(e.self,{itemid = 35746}); -- Item: Sublime Book of Dwarven Culture
-		elseif e.other:IsTaskActivityActive(6955,4) and item_lib.check_turn_in(e.self, e.trade, {item1 = 88388}) then -- Venerable Impression Book
+		elseif e.other:IsTaskActivityActive(6955,4) and item_lib.check_turn_in(e.trade, {item1 = 88388}) then -- Venerable Impression Book
 			e.other:UpdateTaskActivity(6955,4,1);
 			e.other:QuestReward(e.self,{itemid = 49962}); -- Item: Venerable Book of Dwarven Culture
-		elseif e.other:IsTaskActivityActive(7070,4) and item_lib.check_turn_in(e.self, e.trade, {item1 = 17835}) then -- Illustrious Impression Book
+		elseif e.other:IsTaskActivityActive(7070,4) and item_lib.check_turn_in(e.trade, {item1 = 17835}) then -- Illustrious Impression Book
 			e.other:UpdateTaskActivity(7070,4,1);
 			e.other:QuestReward(e.self,{itemid = 123414}); -- Item: Illustrious Book of Dwarven Culture
-		elseif e.other:IsTaskActivityActive(7071,4) and item_lib.check_turn_in(e.self, e.trade, {item1 = 54449}) then -- Numinous Impression Book
+		elseif e.other:IsTaskActivityActive(7071,4) and item_lib.check_turn_in(e.trade, {item1 = 54449}) then -- Numinous Impression Book
 			e.other:UpdateTaskActivity(7071,4,1);
 			e.other:QuestReward(e.self,{itemid = 112548}); -- Item: Numinous Book of Dwarven Culture
-		elseif e.other:IsTaskActivityActive(7078,4) and item_lib.check_turn_in(e.self, e.trade, {item1 = 55727}) then -- Transcendent Impression Book
+		elseif e.other:IsTaskActivityActive(7078,4) and item_lib.check_turn_in(e.trade, {item1 = 55727}) then -- Transcendent Impression Book
 			e.other:UpdateTaskActivity(7078,4,1);
 			e.other:QuestReward(e.self,{itemid = 134597}); -- Item: Transcendent Book of Dwarven Culture
 		end

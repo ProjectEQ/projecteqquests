@@ -108,35 +108,35 @@ function event_trade(e)
 
 	if e.other:GetBaseRace() == e.self:GetBaseRace() then
 		-- Supported
-		if e.other:IsTaskActivityActive(5786,4) and item_lib.check_turn_in(e.self, e.trade, {item1 = 34997}) then -- Blessed Impression Book
+		if e.other:IsTaskActivityActive(5786,4) and item_lib.check_turn_in(e.trade, {item1 = 34997}) then -- Blessed Impression Book
 			e.other:UpdateTaskActivity(5786,4,1);
 			e.other:QuestReward(e.self,{itemid = 38443}); -- Item: Blessed Book of Troll Culture
-		elseif e.other:IsTaskActivityActive(5789,4) and item_lib.check_turn_in(e.self, e.trade, {item1 = 34998}) then -- Revered Impression Book
+		elseif e.other:IsTaskActivityActive(5789,4) and item_lib.check_turn_in(e.trade, {item1 = 34998}) then -- Revered Impression Book
 			e.other:UpdateTaskActivity(5789,4,1);
 			e.other:QuestReward(e.self,{itemid = 38444}); -- Item: Revered Book of Troll Culture
-		elseif e.other:IsTaskActivityActive(5790,4) and item_lib.check_turn_in(e.self, e.trade, {item1 = 34999}) then -- Sacred Impression Book
+		elseif e.other:IsTaskActivityActive(5790,4) and item_lib.check_turn_in(e.trade, {item1 = 34999}) then -- Sacred Impression Book
 			e.other:UpdateTaskActivity(5790,4,1);
 			e.other:QuestReward(e.self,{itemid = 38445}); -- Item: Sacred Book of Troll Culture
-		elseif e.other:IsTaskActivityActive(5791,4) and item_lib.check_turn_in(e.self, e.trade, {item1 = 35000}) then -- Eminent Impression Book
+		elseif e.other:IsTaskActivityActive(5791,4) and item_lib.check_turn_in(e.trade, {item1 = 35000}) then -- Eminent Impression Book
 			e.other:UpdateTaskActivity(5791,4,1);
 			e.other:QuestReward(e.self,{itemid = 38446}); -- Item: Eminent Book of Troll Culture
 		-- Not Supported
-		elseif e.other:IsTaskActivityActive(5792,4) and item_lib.check_turn_in(e.self, e.trade, {item1 = 35017}) then -- Exalted Impression Book
+		elseif e.other:IsTaskActivityActive(5792,4) and item_lib.check_turn_in(e.trade, {item1 = 35017}) then -- Exalted Impression Book
 			e.other:UpdateTaskActivity(5792,4,1);
 			e.other:QuestReward(e.self,{itemid = 35753}); -- Item: Exalted Book of Troll Culture
-		elseif e.other:IsTaskActivityActive(5793,4) and item_lib.check_turn_in(e.self, e.trade, {item1 = 35018}) then -- Sublime Impression Book
+		elseif e.other:IsTaskActivityActive(5793,4) and item_lib.check_turn_in(e.trade, {item1 = 35018}) then -- Sublime Impression Book
 			e.other:UpdateTaskActivity(5793,4,1);
 			e.other:QuestReward(e.self,{itemid = 35754}); -- Item: Sublime Book of Troll Culture
-		elseif e.other:IsTaskActivityActive(6955,4) and item_lib.check_turn_in(e.self, e.trade, {item1 = 88388}) then -- Venerable Impression Book
+		elseif e.other:IsTaskActivityActive(6955,4) and item_lib.check_turn_in(e.trade, {item1 = 88388}) then -- Venerable Impression Book
 			e.other:UpdateTaskActivity(6955,4,1);
 			e.other:QuestReward(e.self,{itemid = 49966}); -- Item: Venerable Book of Troll Culture
-		elseif e.other:IsTaskActivityActive(7070,4) and item_lib.check_turn_in(e.self, e.trade, {item1 = 17835}) then -- Illustrious Impression Book
+		elseif e.other:IsTaskActivityActive(7070,4) and item_lib.check_turn_in(e.trade, {item1 = 17835}) then -- Illustrious Impression Book
 			e.other:UpdateTaskActivity(7070,4,1);
 			e.other:QuestReward(e.self,{itemid = 123418}); -- Item: Illustrious Book of Troll Culture
-		elseif e.other:IsTaskActivityActive(7071,4) and item_lib.check_turn_in(e.self, e.trade, {item1 = 54449}) then -- Numinous Impression Book
+		elseif e.other:IsTaskActivityActive(7071,4) and item_lib.check_turn_in(e.trade, {item1 = 54449}) then -- Numinous Impression Book
 			e.other:UpdateTaskActivity(7071,4,1);
 			e.other:QuestReward(e.self,{itemid = 112552}); -- Item: Numinous Book of Troll Culture
-		elseif e.other:IsTaskActivityActive(7078,4) and item_lib.check_turn_in(e.self, e.trade, {item1 = 55727}) then -- Transcendent Impression Book
+		elseif e.other:IsTaskActivityActive(7078,4) and item_lib.check_turn_in(e.trade, {item1 = 55727}) then -- Transcendent Impression Book
 			e.other:UpdateTaskActivity(7078,4,1);
 			e.other:QuestReward(e.self,{itemid = 134601}); -- Item: Transcendent Book of Troll Culture
 		end

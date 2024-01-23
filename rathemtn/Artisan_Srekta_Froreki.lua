@@ -106,35 +106,35 @@ function event_trade(e)
 
 	if e.other:GetBaseRace() == e.self:GetBaseRace() then
 		-- Supported
-		if e.other:IsTaskActivityActive(5784,4) and item_lib.check_turn_in(e.self, e.trade, {item1 = 34997}) then -- Blessed Impression Book
+		if e.other:IsTaskActivityActive(5784,4) and item_lib.check_turn_in(e.trade, {item1 = 34997}) then -- Blessed Impression Book
 			e.other:UpdateTaskActivity(5784,4,1);
 			e.other:QuestReward(e.self,{itemid = 38473}); -- Item: Blessed Book of Froglok Culture
-		elseif e.other:IsTaskActivityActive(5787,4) and item_lib.check_turn_in(e.self, e.trade, {item1 = 34998}) then -- Revered Impression Book
+		elseif e.other:IsTaskActivityActive(5787,4) and item_lib.check_turn_in(e.trade, {item1 = 34998}) then -- Revered Impression Book
 			e.other:UpdateTaskActivity(5787,4,1);
 			e.other:QuestReward(e.self,{itemid = 38474}); -- Item: Revered Book of Froglok Culture
-		elseif e.other:IsTaskActivityActive(5790,4) and item_lib.check_turn_in(e.self, e.trade, {item1 = 34999}) then -- Sacred Impression Book
+		elseif e.other:IsTaskActivityActive(5790,4) and item_lib.check_turn_in(e.trade, {item1 = 34999}) then -- Sacred Impression Book
 			e.other:UpdateTaskActivity(5790,4,1);
 			e.other:QuestReward(e.self,{itemid = 38475}); -- Item: Sacred Book of Froglok Culture
-		elseif e.other:IsTaskActivityActive(5791,4) and item_lib.check_turn_in(e.self, e.trade, {item1 = 35000}) then -- Eminent Impression Book
+		elseif e.other:IsTaskActivityActive(5791,4) and item_lib.check_turn_in(e.trade, {item1 = 35000}) then -- Eminent Impression Book
 			e.other:UpdateTaskActivity(5791,4,1);
 			e.other:QuestReward(e.self,{itemid = 38476}); -- Item: Eminent Book of Froglok Culture
 		-- Not Supported
-		elseif e.other:IsTaskActivityActive(5792,4) and item_lib.check_turn_in(e.self, e.trade, {item1 = 35017}) then -- Exalted Impression Book
+		elseif e.other:IsTaskActivityActive(5792,4) and item_lib.check_turn_in(e.trade, {item1 = 35017}) then -- Exalted Impression Book
 			e.other:UpdateTaskActivity(5792,4,1);
 			e.other:QuestReward(e.self,{itemid = 35765}); -- Item: Exalted Book of Froglok Culture
-		elseif e.other:IsTaskActivityActive(5793,4) and item_lib.check_turn_in(e.self, e.trade, {item1 = 35018}) then -- Sublime Impression Book
+		elseif e.other:IsTaskActivityActive(5793,4) and item_lib.check_turn_in(e.trade, {item1 = 35018}) then -- Sublime Impression Book
 			e.other:UpdateTaskActivity(5793,4,1);
 			e.other:QuestReward(e.self,{itemid = 35766}); -- Item: Sublime Book of Froglok Culture
-		elseif e.other:IsTaskActivityActive(6955,4) and item_lib.check_turn_in(e.self, e.trade, {item1 = 88388}) then -- Venerable Impression Book
+		elseif e.other:IsTaskActivityActive(6955,4) and item_lib.check_turn_in(e.trade, {item1 = 88388}) then -- Venerable Impression Book
 			e.other:UpdateTaskActivity(6955,4,1);
 			e.other:QuestReward(e.self,{itemid = 49972}); -- Item: Venerable Book of Froglok Culture
-		elseif e.other:IsTaskActivityActive(7070,4) and item_lib.check_turn_in(e.self, e.trade, {item1 = 17835}) then -- Illustrious Impression Book
+		elseif e.other:IsTaskActivityActive(7070,4) and item_lib.check_turn_in(e.trade, {item1 = 17835}) then -- Illustrious Impression Book
 			e.other:UpdateTaskActivity(7070,4,1);
 			e.other:QuestReward(e.self,{itemid = 123424}); -- Item: Illustrious Book of Froglok Culture
-		elseif e.other:IsTaskActivityActive(7071,4) and item_lib.check_turn_in(e.self, e.trade, {item1 = 54449}) then -- Numinous Impression Book
+		elseif e.other:IsTaskActivityActive(7071,4) and item_lib.check_turn_in(e.trade, {item1 = 54449}) then -- Numinous Impression Book
 			e.other:UpdateTaskActivity(7071,4,1);
 			e.other:QuestReward(e.self,{itemid = 112558}); -- Item: Numinous Book of Froglok Culture
-		elseif e.other:IsTaskActivityActive(7078,4) and item_lib.check_turn_in(e.self, e.trade, {item1 = 55727}) then -- Transcendent Impression Book
+		elseif e.other:IsTaskActivityActive(7078,4) and item_lib.check_turn_in(e.trade, {item1 = 55727}) then -- Transcendent Impression Book
 			e.other:UpdateTaskActivity(7078,4,1);
 			e.other:QuestReward(e.self,{itemid = 134607}); -- Item: Transcendent Book of Froglok Culture
 		end

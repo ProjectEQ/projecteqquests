@@ -9,77 +9,77 @@ function event_trade(e)
 	local failure = "This focus is not powerful enough to summon the remnants of your former self.  The disciple of Luclin can help you select an appropriate focus."
 	local player_level = e.other:GetLevel();
 
-	if item_lib.check_turn_in(e.self, e.trade, {item1 = 76013}) then -- Items: Minor Soulstone
+	if item_lib.check_turn_in(e.trade, {item1 = 76013}) then -- Items: Minor Soulstone
 		if player_level < 21 then
 			summon_corpse(e);
 		else
 			e.self:Say(failure);
 			e.other:SummonItem(76013);
 		end
-	elseif item_lib.check_turn_in(e.self, e.trade, {item1 = 76014}) then -- Items: Lesser Soulstone
+	elseif item_lib.check_turn_in(e.trade, {item1 = 76014}) then -- Items: Lesser Soulstone
 		if player_level < 31 then
 			summon_corpse(e);
 		else
 			e.self:Say(failure);
 			e.other:SummonItem(76014);
 		end
-	elseif item_lib.check_turn_in(e.self, e.trade, {item1 = 76015}) then -- Items: Soulstone
+	elseif item_lib.check_turn_in(e.trade, {item1 = 76015}) then -- Items: Soulstone
 		if player_level < 41 then
 			summon_corpse(e);
 		else
 			e.self:Say(failure);
 			e.other:SummonItem(76015);
 		end
-	elseif item_lib.check_turn_in(e.self, e.trade, {item1 = 76016}) then -- Items: Greater Soulstone
+	elseif item_lib.check_turn_in(e.trade, {item1 = 76016}) then -- Items: Greater Soulstone
 		if player_level < 51 then
 			summon_corpse(e);
 		else
 			e.self:Say(failure);
 			e.other:SummonItem(76016);
 		end
-	elseif item_lib.check_turn_in(e.self, e.trade, {item1 = 76017}) then -- Items: Faceted Soulstone
+	elseif item_lib.check_turn_in(e.trade, {item1 = 76017}) then -- Items: Faceted Soulstone
 		if player_level < 56 then
 			summon_corpse(e);
 		else
 			e.self:Say(failure);
 			e.other:SummonItem(76017);
 		end
-	elseif item_lib.check_turn_in(e.self, e.trade, {item1 = 76018}) then -- Items: Pristine Soulstone
+	elseif item_lib.check_turn_in(e.trade, {item1 = 76018}) then -- Items: Pristine Soulstone
 		if player_level < 71 then
 			summon_corpse(e);
 		else
 			e.self:Say(failure);
 			e.other:SummonItem(76018);
 		end
-	elseif item_lib.check_turn_in(e.self, e.trade, {item1 = 76019}) then -- Items: Glowing Soulstone
+	elseif item_lib.check_turn_in(e.trade, {item1 = 76019}) then -- Items: Glowing Soulstone
 		if player_level < 76 then
 			summon_corpse(e);
 		else
 			e.self:Say(failure);
 			e.other:SummonItem(76019);
 		end
-	elseif item_lib.check_turn_in(e.self, e.trade, {item1 = 76048}) then -- Items: Prismatic Soulstone
+	elseif item_lib.check_turn_in(e.trade, {item1 = 76048}) then -- Items: Prismatic Soulstone
 		if player_level < 81 then
 			summon_corpse(e);
 		else
 			e.self:Say(failure);
 			e.other:SummonItem(76048);
 		end
-	elseif item_lib.check_turn_in(e.self, e.trade, {item1 = 76065}) then -- Items: Iridescent Soulstone
+	elseif item_lib.check_turn_in(e.trade, {item1 = 76065}) then -- Items: Iridescent Soulstone
 		if player_level < 86 then
 			summon_corpse(e);
 		else
 			e.self:Say(failure);
 			e.other:SummonItem(76065);
 		end
-	elseif item_lib.check_turn_in(e.self, e.trade, {item1 = 76274}) then -- Items: Phantasmal Soulstone
+	elseif item_lib.check_turn_in(e.trade, {item1 = 76274}) then -- Items: Phantasmal Soulstone
 		if player_level < 91 then
 			summon_corpse(e);
 		else
 			e.self:Say(failure);
 			e.other:SummonItem(76274);
 		end
-	elseif item_lib.check_turn_in(e.self, e.trade, {item1 = 76274}) then -- Items: Luminous Soulstone
+	elseif item_lib.check_turn_in(e.trade, {item1 = 76274}) then -- Items: Luminous Soulstone
 		if player_level < 96 then
 			summon_corpse(e);
 		else

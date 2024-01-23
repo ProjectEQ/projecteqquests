@@ -19,4 +19,6 @@ elseif version == instance_version.the_nest_stopping_firionas_henchmen then
   eq.load_encounter("rival_party")
 elseif version == instance_version.the_nest_scrap_metal then
   eq.load_encounter("scrap_metal")
+elseif version == instance_version.the_nest_curse_of_jurek then
+  eq.load_encounter("the_curse_of_jurek")
 end

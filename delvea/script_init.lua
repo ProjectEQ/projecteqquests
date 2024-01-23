@@ -15,4 +15,6 @@ elseif version == instance_version.lavaspinners_lair_a_halflings_greed then
   eq.load_encounter("a_halflings_greed")
 elseif version == instance_version.lavaspinners_lair_lavaspinners_locals then
   eq.load_encounter("lavaspinners_locals")
+elseif version == instance_version.lavaspinners_lair_volkaras_bite then
+	eq.load_encounter("volkaras_bite")
 end

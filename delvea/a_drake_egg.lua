@@ -10,10 +10,10 @@
 --]]
 
 
-function event_death_complete(e) 
+function event_death_complete(e)
 	local roll = math.random(100)
-	
-	if (roll >= 15) then
+
+	if roll >= 15 then
 		eq.spawn2(eq.ChooseRandom(341091,341085,341092,341087),0,0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading()); -- NPC(s): a_Delve_spellbinder (341091), a_Delve_diviner (341085), a_Delve_evoker (341092), a_Delve_drake (341087)
 	else
 	-- Do nothing (for now) 

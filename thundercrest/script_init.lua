@@ -25,4 +25,6 @@ elseif version == instance_version.thundercrest_isles_plunder_the_hoard then
   eq.load_encounter("plunder_the_hoard")
 elseif version == instance_version.thundercrest_isles_stormreach_challenge then
   eq.load_encounter("goblin_dojo")
+elseif version == instance_version.thundercrest_isles_an_end_to_the_storms then
+  eq.load_encounter("an_end_to_the_storms")
 end

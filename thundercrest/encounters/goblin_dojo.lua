@@ -57,7 +57,6 @@ local state      = states.none
 local next_wait  = 0  -- next state transition time
 local attempt    = 0  -- elements and emotions waves allow a second attempt
 local respawned  = {} -- waves that have been respawned (live only respawns once)
-local monk_fd    = false; -- Is the monk currently FD'd
 
 local function get_clients(area, gm_bypass)
 	local clients = {}
@@ -368,7 +367,6 @@ local function enemy_timer(e)
 		end
 	elseif mobid == 340619 and e.timer == "monk_fd" then
 		if e.self:GetHPRatio() <= 35 then -- fd
-			monk_fd = false;
 			make_attackable(e.self, false);
 			e.self:WipeHateList();
 			e.self:SetAppearance(3);	--lay down on floor
@@ -380,7 +378,6 @@ local function enemy_timer(e)
 		eq.set_timer("monk_fd", 5 * 1000);
 	elseif mobid == 340619 and e.timer == "reset_fd" then
 		eq.stop_timer(e.timer);
-		monk_fd[e.self:GetNPCTypeID()] = {true};
 	elseif mobid == 340619 and e.timer == "stand_up" then
 		eq.stop_timer(e.timer);
 		make_attackable(e.self, true);

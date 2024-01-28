@@ -40,7 +40,7 @@ sub EVENT_ITEM {
       quest::updatetaskactivity(1396, 0);
       if (quest::istaskactivityactive(1396, 1)) {
         quest::say("Nice work, I'm sure the others will make good use of these arrows. I found this quiver stashed behind some boxes while out on patrol. I can't hit the wide end of an ogre with a bow, but maybe you can make better use of it.");
-        quest::updatetaskactivity(1396,1);
+        quest::updatetaskactivity(1396,0,1);
       }   
     }
   }

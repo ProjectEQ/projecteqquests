@@ -455,87 +455,87 @@ function Charmable_Trash_Spawn(e)
 end
 
 function event_encounter_load(e)
-	eq.register_npc_event('rujdraid', Event.combat,			245206, Trash_Combat);			-- NPC: _Rujarkian_sentry (245206)(war)
-	eq.register_npc_event('rujdraid', Event.timer,			245206, Trash_Timer);			-- NPC: a_Rujarkian_sentry (245206)(war)
-	eq.register_npc_event('rujdraid', Event.hp,				245206, Trash_Hp);				-- NPC: a_Rujarkian_sentry (245206)(war)
+	eq.register_npc_event(Event.combat,			245206, Trash_Combat);			-- NPC: _Rujarkian_sentry (245206)(war)
+	eq.register_npc_event(Event.timer,			245206, Trash_Timer);			-- NPC: a_Rujarkian_sentry (245206)(war)
+	eq.register_npc_event(Event.hp,				245206, Trash_Hp);				-- NPC: a_Rujarkian_sentry (245206)(war)
 
-	eq.register_npc_event('rujdraid', Event.combat,			245193, Trash_Combat);			-- NPC: a_Rujarkian_sentry (245193)(rog)
-	eq.register_npc_event('rujdraid', Event.timer,			245193, Trash_Timer);			-- NPC: a_Rujarkian_sentry (245193)(rog)
-	eq.register_npc_event('rujdraid', Event.hp,				245193, Trash_Hp);				-- NPC: a_Rujarkian_sentry (245193)(rog)
+	eq.register_npc_event(Event.combat,			245193, Trash_Combat);			-- NPC: a_Rujarkian_sentry (245193)(rog)
+	eq.register_npc_event(Event.timer,			245193, Trash_Timer);			-- NPC: a_Rujarkian_sentry (245193)(rog)
+	eq.register_npc_event(Event.hp,				245193, Trash_Hp);				-- NPC: a_Rujarkian_sentry (245193)(rog)
 
-	eq.register_npc_event('rujdraid', Event.combat,			245227, Trash_Combat);			-- NPC: a_Rujarkian_warrior (245227)
-	eq.register_npc_event('rujdraid', Event.timer,			245227, Trash_Timer);			-- NPC: a_Rujarkian_warrior (245227)
-	eq.register_npc_event('rujdraid', Event.hp,				245227, Trash_Hp);				-- NPC: a_Rujarkian_warrior (245227)
+	eq.register_npc_event(Event.combat,			245227, Trash_Combat);			-- NPC: a_Rujarkian_warrior (245227)
+	eq.register_npc_event(Event.timer,			245227, Trash_Timer);			-- NPC: a_Rujarkian_warrior (245227)
+	eq.register_npc_event(Event.hp,				245227, Trash_Hp);				-- NPC: a_Rujarkian_warrior (245227)
 
-	eq.register_npc_event('rujdraid', Event.combat,			245230, Trash_Combat);			-- NPC: a_Rujarkian_shaman (245230)
-	eq.register_npc_event('rujdraid', Event.timer,			245230, Trash_Timer);			-- NPC: a_Rujarkian_shaman (245230)
-	eq.register_npc_event('rujdraid', Event.hp,				245230, Trash_Hp);				-- NPC: a_Rujarkian_shaman (245230)
+	eq.register_npc_event(Event.combat,			245230, Trash_Combat);			-- NPC: a_Rujarkian_shaman (245230)
+	eq.register_npc_event(Event.timer,			245230, Trash_Timer);			-- NPC: a_Rujarkian_shaman (245230)
+	eq.register_npc_event(Event.hp,				245230, Trash_Hp);				-- NPC: a_Rujarkian_shaman (245230)
 
-	eq.register_npc_event('rujdraid', Event.combat,			245236, Trash_Combat);			-- NPC: a_Rujarkian_healer (245236)
-	eq.register_npc_event('rujdraid', Event.timer,			245236, Trash_Timer);			-- NPC: a_Rujarkian_healer (245236)
-	eq.register_npc_event('rujdraid', Event.hp,				245236, Trash_Hp);				-- NPC: a_Rujarkian_healer (245236)
+	eq.register_npc_event(Event.combat,			245236, Trash_Combat);			-- NPC: a_Rujarkian_healer (245236)
+	eq.register_npc_event(Event.timer,			245236, Trash_Timer);			-- NPC: a_Rujarkian_healer (245236)
+	eq.register_npc_event(Event.hp,				245236, Trash_Hp);				-- NPC: a_Rujarkian_healer (245236)
 
-	eq.register_npc_event('rujdraid', Event.combat,			245231, Trash_Combat);			-- NPC: a_Rujarkian_blackhand (245231)
-	eq.register_npc_event('rujdraid', Event.timer,			245231, Trash_Timer);			-- NPC: a_Rujarkian_blackhand (245231)
-	eq.register_npc_event('rujdraid', Event.hp,				245231, Trash_Hp);				-- NPC: a_Rujarkian_blackhand (245231)
+	eq.register_npc_event(Event.combat,			245231, Trash_Combat);			-- NPC: a_Rujarkian_blackhand (245231)
+	eq.register_npc_event(Event.timer,			245231, Trash_Timer);			-- NPC: a_Rujarkian_blackhand (245231)
+	eq.register_npc_event(Event.hp,				245231, Trash_Hp);				-- NPC: a_Rujarkian_blackhand (245231)
 
-	eq.register_npc_event('rujdraid', Event.spawn,			245231, Charmable_Trash_Spawn);	-- NPC: a_Rujarkian_blackhand (245231)
-	eq.register_npc_event('rujdraid', Event.spawn,			245227, Charmable_Trash_Spawn);	-- NPC: a_Rujarkian_warrior (245227)
-	eq.register_npc_event('rujdraid', Event.spawn,			245230, Charmable_Trash_Spawn);	-- NPC: a_Rujarkian_shaman (245230)
+	eq.register_npc_event(Event.spawn,			245231, Charmable_Trash_Spawn);	-- NPC: a_Rujarkian_blackhand (245231)
+	eq.register_npc_event(Event.spawn,			245227, Charmable_Trash_Spawn);	-- NPC: a_Rujarkian_warrior (245227)
+	eq.register_npc_event(Event.spawn,			245230, Charmable_Trash_Spawn);	-- NPC: a_Rujarkian_shaman (245230)
 
-	eq.register_npc_event('rujdraid', Event.death_complete, 245199, TM_Devrak_Death);		-- NPC: #Taskmaster_Devrak 
-	eq.register_npc_event('rujdraid', Event.combat,			245199, TM_Devrak_Combat);		-- NPC: #Taskmaster_Devrak 
-	eq.register_npc_event('rujdraid', Event.timer,			245199, TM_Devrak_Timer);		-- NPC: #Taskmaster_Devrak 
-	eq.register_npc_event('rujdraid', Event.death_complete, 245220, TM_Dokorel_Death);		-- NPC: #Taskmaster_Dokorel 
-	eq.register_npc_event('rujdraid', Event.timer,			245220, TM_Timer);				-- NPC: #Taskmaster_Dokorel 
-	eq.register_npc_event('rujdraid', Event.combat,			245220, TM_Combat);				-- NPC: #Taskmaster_Dokorel 
-	eq.register_npc_event('rujdraid', Event.death_complete, 245200, TM_Velrek_Death);		-- NPC: #Taskmaster_Velrek
-	eq.register_npc_event('rujdraid', Event.timer,			245200, TM_Timer);				-- NPC: #Taskmaster_Velrek
-	eq.register_npc_event('rujdraid', Event.combat,			245200, TM_Combat);				-- NPC: #Taskmaster_Velrek  
+	eq.register_npc_event(Event.death_complete, 245199, TM_Devrak_Death);		-- NPC: #Taskmaster_Devrak 
+	eq.register_npc_event(Event.combat,			245199, TM_Devrak_Combat);		-- NPC: #Taskmaster_Devrak 
+	eq.register_npc_event(Event.timer,			245199, TM_Devrak_Timer);		-- NPC: #Taskmaster_Devrak 
+	eq.register_npc_event(Event.death_complete, 245220, TM_Dokorel_Death);		-- NPC: #Taskmaster_Dokorel 
+	eq.register_npc_event(Event.timer,			245220, TM_Timer);				-- NPC: #Taskmaster_Dokorel 
+	eq.register_npc_event(Event.combat,			245220, TM_Combat);				-- NPC: #Taskmaster_Dokorel 
+	eq.register_npc_event(Event.death_complete, 245200, TM_Velrek_Death);		-- NPC: #Taskmaster_Velrek
+	eq.register_npc_event(Event.timer,			245200, TM_Timer);				-- NPC: #Taskmaster_Velrek
+	eq.register_npc_event(Event.combat,			245200, TM_Combat);				-- NPC: #Taskmaster_Velrek  
 
-	eq.register_npc_event('rujdraid', Event.combat,			245296, Warden_Combat);			-- NPC: #Warden_Neyremal 
-	eq.register_npc_event('rujdraid', Event.combat,			245284, Shaman_Combat);			-- NPC: #High_Shaman_Yenner
-	eq.register_npc_event('rujdraid', Event.timer,			245296, Warden_Timer);			-- NPC: #Warden_Neyremal 
-	eq.register_npc_event('rujdraid', Event.timer,			245284, Shaman_Timer);			-- NPC: #High_Shaman_Yenner
-	eq.register_npc_event('rujdraid', Event.death_complete,	245296, Warden_Death);			-- NPC: #Warden_Neyremal 
-	eq.register_npc_event('rujdraid', Event.death_complete,	245284, Shaman_Death);			-- NPC: #High_Shaman_Yenner
-	eq.register_npc_event('rujdraid', Event.hp,				245296, Named_Hp);				-- NPC: #Warden_Neyremal 
-	eq.register_npc_event('rujdraid', Event.hp,				245284, Named_Hp);				-- NPC: #High_Shaman_Yenner
+	eq.register_npc_event(Event.combat,			245296, Warden_Combat);			-- NPC: #Warden_Neyremal 
+	eq.register_npc_event(Event.combat,			245284, Shaman_Combat);			-- NPC: #High_Shaman_Yenner
+	eq.register_npc_event(Event.timer,			245296, Warden_Timer);			-- NPC: #Warden_Neyremal 
+	eq.register_npc_event(Event.timer,			245284, Shaman_Timer);			-- NPC: #High_Shaman_Yenner
+	eq.register_npc_event(Event.death_complete,	245296, Warden_Death);			-- NPC: #Warden_Neyremal 
+	eq.register_npc_event(Event.death_complete,	245284, Shaman_Death);			-- NPC: #High_Shaman_Yenner
+	eq.register_npc_event(Event.hp,				245296, Named_Hp);				-- NPC: #Warden_Neyremal 
+	eq.register_npc_event(Event.hp,				245284, Named_Hp);				-- NPC: #High_Shaman_Yenner
 
-	eq.register_npc_event('rujdraid', Event.death_complete,	245290, PG_Talkor_Death);
-	eq.register_npc_event('rujdraid', Event.spawn,			245290, PG_Talkor_Spawn);
-	eq.register_npc_event('rujdraid', Event.timer,			245290, PG_Talkor_Timer);
-	eq.register_npc_event('rujdraid', Event.combat,			245290, PG_Talkor_Combat);
+	eq.register_npc_event(Event.death_complete,	245290, PG_Talkor_Death);
+	eq.register_npc_event(Event.spawn,			245290, PG_Talkor_Spawn);
+	eq.register_npc_event(Event.timer,			245290, PG_Talkor_Timer);
+	eq.register_npc_event(Event.combat,			245290, PG_Talkor_Combat);
 
-	eq.register_npc_event('rujdraid', Event.trade,			245217, Prisoner_Trade);		-- NPC: #Maziyae_Xanl`Utin
-	eq.register_npc_event('rujdraid', Event.trade,			245228, Prisoner_Trade);		-- NPC: #Piyea_Frost`Utin
-	eq.register_npc_event('rujdraid', Event.trade,			245225, Prisoner_Trade);		-- NPC: #Eneau_Welani`Utin
-	eq.register_npc_event('rujdraid', Event.say,			245217, Prisoner_Say);			-- NPC: #Maziyae_Xanl`Utin
-	eq.register_npc_event('rujdraid', Event.say,			245228, Prisoner_Say);			-- NPC: #Piyea_Frost`Utin
-	eq.register_npc_event('rujdraid', Event.say,			245225, Prisoner_Say);			-- NPC: #Eneau_Welani`Utin
-	eq.register_npc_event('rujdraid', Event.timer,			245217, Prisoner_Timer);		-- NPC: #Maziyae_Xanl`Utin
-	eq.register_npc_event('rujdraid', Event.timer,			245228, Prisoner_Timer);		-- NPC: #Piyea_Frost`Utin
-	eq.register_npc_event('rujdraid', Event.timer,			245225, Prisoner_Timer);		-- NPC: #Eneau_Welani`Utin
-	eq.register_npc_event('rujdraid', Event.spawn,			245217, Maziyae_Spawn);			-- NPC: #Maziyae_Xanl`Utin
-	eq.register_npc_event('rujdraid', Event.spawn,			245228, Piyea_Spawn);			-- NPC: #Piyea_Frost`Utin
-	eq.register_npc_event('rujdraid', Event.spawn,			245225, Eneau_Spawn);			-- NPC: #Eneau_Welani`Utin 
+	eq.register_npc_event(Event.trade,			245217, Prisoner_Trade);		-- NPC: #Maziyae_Xanl`Utin
+	eq.register_npc_event(Event.trade,			245228, Prisoner_Trade);		-- NPC: #Piyea_Frost`Utin
+	eq.register_npc_event(Event.trade,			245225, Prisoner_Trade);		-- NPC: #Eneau_Welani`Utin
+	eq.register_npc_event(Event.say,			245217, Prisoner_Say);			-- NPC: #Maziyae_Xanl`Utin
+	eq.register_npc_event(Event.say,			245228, Prisoner_Say);			-- NPC: #Piyea_Frost`Utin
+	eq.register_npc_event(Event.say,			245225, Prisoner_Say);			-- NPC: #Eneau_Welani`Utin
+	eq.register_npc_event(Event.timer,			245217, Prisoner_Timer);		-- NPC: #Maziyae_Xanl`Utin
+	eq.register_npc_event(Event.timer,			245228, Prisoner_Timer);		-- NPC: #Piyea_Frost`Utin
+	eq.register_npc_event(Event.timer,			245225, Prisoner_Timer);		-- NPC: #Eneau_Welani`Utin
+	eq.register_npc_event(Event.spawn,			245217, Maziyae_Spawn);			-- NPC: #Maziyae_Xanl`Utin
+	eq.register_npc_event(Event.spawn,			245228, Piyea_Spawn);			-- NPC: #Piyea_Frost`Utin
+	eq.register_npc_event(Event.spawn,			245225, Eneau_Spawn);			-- NPC: #Eneau_Welani`Utin 
 
-	eq.register_npc_event('rujdraid', Event.signal,			245271, RPG_Signal);			-- NPC: a_Rujarkian_prison_guard (npc killed)
-	eq.register_npc_event('rujdraid', Event.signal,			245278, RPG_Signal);			-- NPC: a_Rujarkian_prison_guard (npc killed)
-	eq.register_npc_event('rujdraid', Event.signal,			245280, RPG_Signal);			-- NPC: a_Rujarkian_prison_guard (npc killed)   
+	eq.register_npc_event(Event.signal,			245271, RPG_Signal);			-- NPC: a_Rujarkian_prison_guard (npc killed)
+	eq.register_npc_event(Event.signal,			245278, RPG_Signal);			-- NPC: a_Rujarkian_prison_guard (npc killed)
+	eq.register_npc_event(Event.signal,			245280, RPG_Signal);			-- NPC: a_Rujarkian_prison_guard (npc killed)   
 
-	eq.register_npc_event('rujdraid', Event.signal,			245261, RPG_Pris_Signal);		-- NPC: #Jealac_Yzinaql (245261)
-	eq.register_npc_event('rujdraid', Event.signal,			245272, RPG_Pris_Signal);		-- NPC: #Bacluu_Iggn (245272)
-	eq.register_npc_event('rujdraid', Event.signal,			245276, RPG_Pris_Signal);		-- NPC: #Yipzma_Tixxlea (245276)
-	eq.register_npc_event('rujdraid', Event.signal,			245264, RPG_Pris_Signal);		-- NPC: #Gaddian_Opaleye (245264)
-	eq.register_npc_event('rujdraid', Event.signal,			245275, RPG_Pris_Signal);		-- NPC: #Leannra_Nuadr (245275)
-	eq.register_npc_event('rujdraid', Event.timer,			245261, RPG_Pris_Timer);		-- NPC: #Jealac_Yzinaql (245261)
-	eq.register_npc_event('rujdraid', Event.timer,			245272, RPG_Pris_Timer);		-- NPC: #Bacluu_Iggn (245272)
-	eq.register_npc_event('rujdraid', Event.timer,			245276, RPG_Pris_Timer);		-- NPC: #Yipzma_Tixxlea (245276)
-	eq.register_npc_event('rujdraid', Event.timer,			245264, RPG_Pris_Timer);		-- NPC: #Gaddian_Opaleye (245264)
-	eq.register_npc_event('rujdraid', Event.timer,			245275, RPG_Pris_Timer);		-- NPC: #Leannra_Nuadr (245275)  
+	eq.register_npc_event(Event.signal,			245261, RPG_Pris_Signal);		-- NPC: #Jealac_Yzinaql (245261)
+	eq.register_npc_event(Event.signal,			245272, RPG_Pris_Signal);		-- NPC: #Bacluu_Iggn (245272)
+	eq.register_npc_event(Event.signal,			245276, RPG_Pris_Signal);		-- NPC: #Yipzma_Tixxlea (245276)
+	eq.register_npc_event(Event.signal,			245264, RPG_Pris_Signal);		-- NPC: #Gaddian_Opaleye (245264)
+	eq.register_npc_event(Event.signal,			245275, RPG_Pris_Signal);		-- NPC: #Leannra_Nuadr (245275)
+	eq.register_npc_event(Event.timer,			245261, RPG_Pris_Timer);		-- NPC: #Jealac_Yzinaql (245261)
+	eq.register_npc_event(Event.timer,			245272, RPG_Pris_Timer);		-- NPC: #Bacluu_Iggn (245272)
+	eq.register_npc_event(Event.timer,			245276, RPG_Pris_Timer);		-- NPC: #Yipzma_Tixxlea (245276)
+	eq.register_npc_event(Event.timer,			245264, RPG_Pris_Timer);		-- NPC: #Gaddian_Opaleye (245264)
+	eq.register_npc_event(Event.timer,			245275, RPG_Pris_Timer);		-- NPC: #Leannra_Nuadr (245275)  
 
-	eq.register_npc_event('rujdraid', Event.signal,			259159, Prison_Guard_Room_Clear);	-- NPC: Zone_Status (259159)
-	eq.register_npc_event('rujdraid', Event.spawn,			259159, zs_spawn);					-- NPC: Zone_Status (259159)
-	eq.register_npc_event('rujdraid', Event.timer,			259159, zs_timer);					-- NPC: Zone_Status (259159)
+	eq.register_npc_event(Event.signal,			259159, Prison_Guard_Room_Clear);	-- NPC: Zone_Status (259159)
+	eq.register_npc_event(Event.spawn,			259159, zs_spawn);					-- NPC: Zone_Status (259159)
+	eq.register_npc_event(Event.timer,			259159, zs_timer);					-- NPC: Zone_Status (259159)
 end

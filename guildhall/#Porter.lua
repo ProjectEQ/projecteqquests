@@ -5,7 +5,7 @@ function event_spawn(e)
 end
 
 local portals = {
-	[10092] = {"The Plane of Time"},
+	[10092] = {"The Plane of Hate"},
 	[10094] = {"The Plane of Sky"},
 	[64191] = {"Dragonscale Hills"},
 	[76000] = {"The Northern Plains of Karana"},

@@ -87,10 +87,10 @@ function reset_event(e)
 end
 
 function spawn_protectors(e)
-	eq.spawn2(protector_table[protector_order],unpack(protector_locs[1]));
-	eq.spawn2(protector_table[protector_order],unpack(protector_locs[2]));
-	eq.spawn2(protector_table[protector_order],unpack(protector_locs[3]));
-	eq.spawn2(protector_table[protector_order],unpack(protector_locs[4]));
+	eq.spawn2(protector_table[protector_order][1],unpack(protector_locs[1]));
+	eq.spawn2(protector_table[protector_order][2],unpack(protector_locs[2]));
+	eq.spawn2(protector_table[protector_order][2],unpack(protector_locs[3]));
+	eq.spawn2(protector_table[protector_order][4],unpack(protector_locs[4]));
 	eq.get_entity_list():MessageClose(e.self, true, 100, MT.SayEcho, "Kessdona the Enlightened draws on strength from her protectors and regenerates.  One of the four protectors must be the focus.  Perhaps someone attuned to nature could isolate which?")
 end
 

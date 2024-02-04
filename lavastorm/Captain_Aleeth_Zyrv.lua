@@ -20,7 +20,7 @@ function event_say(e)
   if e.message:findi("hail") then
     local player = don.character_state.new(e.other, don.faction_id.evil)
     if not player:has_min_faction(don.faction.Indifferent) then
-      e.other:Message(MT.Say, "General Lereh Dirr says, 'Sniveler! You dare to address me so informally? I ought to have you slain!  Begone!'")
+      e.other:Message(MT.Say, "Captain Aleeth Zyrv says, 'Sniveler! You dare to address me so informally? I ought to have you slain!  Begone!'")
     elseif e.other:GetLevel() < 65 then
       e.other:Message(MT.Say, "Captain Aleeth Zyrv says, 'Your skill and experience suggests you are barely qualified to polish my boots! Begone from my sight, foolish weakling!  Should you ever grow up, then maybe I'll look in your direction again.'")
     else

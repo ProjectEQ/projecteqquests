@@ -10,7 +10,7 @@ sub EVENT_SAY {
         quest::say("Verifying password and user identity . . .");
         quest::say("Identity verified as $name. Processing scout report. Please return report to Vaifan.");
         quest::summonitem(67536); # Item: Outer Regions Scouting Report
-        quest::settimer(60);
+        quest::settimer(1, 60);
       }
     }
   } else {

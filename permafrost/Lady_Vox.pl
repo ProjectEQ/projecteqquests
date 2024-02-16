@@ -29,7 +29,7 @@ sub EVENT_HP {
 sub EVENT_ENTER {
 	if ($ulevel >= 53 && $status < 80) {
 		quest::echo(0, "I will not fight you, but I will banish you!");
-		$client->MovePCInstance(30, $instancid, -7024, 2020, -60.7, 0); # Zone: everfrost
+		$client->MovePCInstance(30, $instanceid, -7024, 2020, -60.7, 0); # Zone: everfrost
 	}
 }
 

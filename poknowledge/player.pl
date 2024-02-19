@@ -20,7 +20,7 @@ sub EVENT_CLICKDOOR {
 	if ($doorid == 139) #bazaar
 	{
 		if ($client->CalculateDistance(1452, 347, -113) <= 30) {
-			quest::movepc(151, -425, 0, -25, 65); # Zone: bazaar
+			quest::MovePCInstance(151, 3, -425, 0, -25, 65); # Zone: bazaar
 		}
 	}
 	if ($doorid == 19) {

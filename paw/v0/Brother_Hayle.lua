@@ -60,8 +60,8 @@ function event_trade(e)
 			e.other:QuestReward(e.self,{itemid = 5504,exp = 10000});	--  soulfire
 		else
 			e.self:Say("Your mere presence disgusts me.  Please remove yourself from my sight.  Until you change yourself and your ways, you are unwelcome in the Temple of Life.");
-			-- faction not high enough, items get eaten.
-			e.self:DeleteQuestLoot();
+			-- faction not high enough, items get eaten.  comment out until MultiQuest is implemented.
+			-- e.self:DeleteQuestLoot();
 		end
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

@@ -1,9 +1,8 @@
--- items: 17878, 2417
 function event_say(e)
 	local qglobals = eq.get_qglobals(e.self,e.other);
 
 	if(e.message:findi("hail")) then
-		e.self:Say("Hello " .. e.other:GetName() .. "");
+		e.self:Say("Hello " .. e.other:GetCleanName() .. "");
 	end
 	if(qglobals["Ruathey"] ~= nil) then
 		if(e.message:findi("sword")) then
@@ -21,9 +20,8 @@ function event_trade(e)
 
 	if(item_lib.check_turn_in(e.trade, {item1 = 2417})) then
 		e.self:Say("I see that you've spoken to Llara. She too came to me looking for Amstaf. Though she wasn't able to find her friend, she was able to recover his [sword].");
-		e.other:Ding();
 		eq.set_global("Ruathey","ghoul",0,"D30");
-		e.other:AddEXP(500);
+		e.other:QuestReward(e.self,0,0,0,0,0,500);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

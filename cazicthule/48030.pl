@@ -25,8 +25,8 @@ sub EVENT_SIGNAL {
     if ($signal == 1) {
         quest::say("My rescuers, you have recovered the runes I need and my magic has been depleted. I shall take my leave now. May your forces stand against the corruption of the temple.");
         quest::depopall(48030);
-        quest::depopall(48045); --depop warders
-        quest::depopall(48099); --depop warders
+        quest::depopall(48045); #depop warders
+        quest::depopall(48099); #depop warders
     }
 }
 

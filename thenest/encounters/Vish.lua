@@ -450,9 +450,9 @@ function Vish_Death(e)
 end
 
 function Egg_Spawn(e) -- Modify the damage I take.
-	e.self:ModSkillDmgTaken(0, 400) -- 1h blunt
+	e.self:ModSkillDmgTaken(0, 300) -- 1h blunt
     e.self:ModSkillDmgTaken(1, -99) -- 1h slashing
-    e.self:ModSkillDmgTaken(2, 400) -- 2h blunt
+    e.self:ModSkillDmgTaken(2, 300) -- 2h blunt
     e.self:ModSkillDmgTaken(3, -99) -- 2h slashing
     e.self:ModSkillDmgTaken(7, -99) -- archery
     e.self:ModSkillDmgTaken(8, -99) -- backstab

@@ -4,7 +4,7 @@ local had_gm = false
 
 local forms = {
 	{name = "Yar`lir the Living Storm",			addextra = {0, 6603, 1, -1, 15,-425}},
-	{name = "Yar`lir the Mistress of Winds",	addextra = {0, 1049, 1, -1, 20,-425}},
+	{name = "Yar`lir the Mistress of Winds",	addextra = {0, 6605, 1, -1, 20,-425}},
 	{name = "Yar`lir the Matriarch",			addextra = {"Seekers",math.random(5,20) * 1000}},
 	{name = "Yar`lir the Hurricane`s Eye",		addextra = {"Unstable",math.random(5,20) * 1000}}
 };

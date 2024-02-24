@@ -31,19 +31,11 @@ sub check_hasitem {
 			}
 		}
 	}
-  	
-	#if ($body_count > 0) {
-	#	foreach $corpse_index (1..$body_count) {
-	#		$body_id = $client->GetCorpseID($corpse_index);
-	#		if ($body_id > 0) {
-	#			foreach $slot_id (@corpse_slots) {
-	#				if ($client->GetCorpseItemAt($body_id, $slot_id) == $item_id) {
-	#					return 1;
-	#				}
-	#			}
-	#		}
-	#	}
-  	#}
+
+	if ($client->HasItemOnCorpse($item_id)) {
+		return 1;
+	}
+
   	return 0;
 }
 

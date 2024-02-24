@@ -238,25 +238,10 @@ function Client:HasItem(itemid, trade)
 	end
 
 	--corpse
-	local bodycount = self:GetCorpseCount();
-	
-	if(bodycount > 0) then
-		for b = 0, bodycount, 1 do
-			local bodyid = self:GetCorpseID(b); 
-			for i = Slot.PossessionsBegin, Slot.PossessionsEnd, 1 do
-				local thisitem = self:GetCorpseItemAt(bodyid, i);
-				if(thisitem == itemid) then
-					return true;
-				end
-			end
-			for i = Slot.GeneralBagsBegin, Slot.CursorBagEnd, 1 do
-				local thisitem = self:GetCorpseItemAt(bodyid, i);
-				if(thisitem == itemid) then
-					return true;
-				end
-			end
-		end
+	if self:HasItemOnCorpse(itemid) then
+		return true
 	end
+
 	return false;
 end
 

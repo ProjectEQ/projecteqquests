@@ -1,4 +1,4 @@
--- Ring of lavastorm
+-- Circle of Lavastorm
 function event_spell_effect(e)
   local client = eq.get_entity_list():GetClientByID(e.caster_id);
  

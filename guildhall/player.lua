@@ -1,4 +1,13 @@
 function event_enter_zone(e)
+	-- Expired or invalid instance check
+	if eq.get_zone_instance_version() == 0 then
+		if e.self:IsInAGuild() then
+			e.self:SendToGuildHall();
+		else
+			e.self:MovePC(344, 19, -55, 5, 0); -- Guild Lobby
+		end
+	end
+
 	eq.set_timer("zone_in", 3 * 1000);
 end
 

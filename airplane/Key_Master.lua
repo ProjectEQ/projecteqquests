@@ -1,4 +1,4 @@
-local counter;
+local counter = 0;
 
 function event_spawn(e)
 	counter = 0;

@@ -1,7 +1,7 @@
 # items: 4758, 4759, 4765
 sub EVENT_SAY { 
   if ($text=~/hail/i) {
-    quest::say("Oi there, $name. If you are lookin for a potion or an antidote I got just what the doctor ordered, step right up! I also have many other special potions but sadly I do not have the correct [" quest::saylink("components") . "] for them.");
+    quest::say("Oi there, $name. If you are lookin for a potion or an antidote I got just what the doctor ordered, step right up! I also have many other special potions but sadly I do not have the correct [" . quest::saylink("components") . "] for them.");
   }
   if ($text=~/components/i) {
     quest::say("Well you see I can make some very magnificent potions, unfortunately I am in need of a few [" . quest::saylink("ingredients") . "] that I lost in a lab accident a few days back.");

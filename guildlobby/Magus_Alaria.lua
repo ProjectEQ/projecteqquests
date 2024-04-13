@@ -33,10 +33,19 @@ function event_say(e)
 			e.other:MovePC(182,1463,1053,82.86,136); -- Zone: nedaria
 			--e.self:CastSpell(4580,e.other:GetID(),0,0);
 		elseif(e.message:findi("north ro")) then
-			e.other:MovePC(34,914,2673,-26.09,456); -- Zone: nro
+			if eq.is_prophecy_of_ro_enabled() then
+				e.other:MovePC(Zone.northro, 914, 2673, -26.09, 456)
+				return
+			end
+			e.other:MovePC(Zone.nro, 914, 2673, -25.9,456);
 			--e.self:CastSpell(4177,e.other:GetID(),0,0);
+			return
 		elseif(e.message:findi("south ro")) then
-			e.other:MovePC(35,1053,-1461,-25.9,456); -- Zone: sro
+			if eq.is_prophecy_of_ro_enabled() then
+				e.other:MovePC(Zone.southro, 1053, -1461, -25.9, 456)
+				return
+			end
+			e.other:MovePC(Zone.sro, 1053, -1461, -25.9, 456)
 			--e.self:CastSpell(4178,e.other:GetID(),0,0);
 		end
 	else --no Adventurers Stone

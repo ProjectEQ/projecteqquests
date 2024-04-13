@@ -5,7 +5,7 @@ function event_say(e)
 	if(e.other:KeyRingCheck(41000) or e.other:HasItem(41000)) then
 		if(e.message:findi("hail")) then
 			e.self:Say("You endured the burning heat of the desert to come and use our magic!  I'm so excited.  We have been getting a lot of customers.  We've only lost a few.  I sometimes wonder if Vayzl has incorrectly used the spell on purpose to see the odd traveler explode into a spray of magic.  I do respect her, but I just don't understand dark elves, I guess.  I am far too precise and careful to make any mistakes... Well, not a second time.  Tell me where you would like to go and I will send you there.  I can send you to any of the other camps in [" .. eq.say_link("Butcherblock",false,"Butcherblock") .. "], [" .. eq.say_link("Commonlands",false,"Commonlands") .. "], [" .. eq.say_link("Everfrost",false,"Everfrost") .. "], [" .. eq.say_link("Nedaria's Landing",false,"Nedaria's Landing") .. "], or [" .. eq.say_link("South Ro",false,"South Ro") .. "].");
-		
+
 		elseif(e.message:findi("everfrost")) then
 			e.self:CastSpell(4180,e.other:GetID(),0,1); -- Spell: Teleport: Everfrost
 		elseif(e.message:findi("nedaria")) then
@@ -14,13 +14,20 @@ function event_say(e)
 			e.self:CastSpell(4179,e.other:GetID(),0,1); -- Spell: Teleport: Butcherblock
 
 		elseif(e.message:findi("south ro")) then
-			--e.self:CastSpell(4178,e.other:GetID(),0,1);		
-			e.other:MovePC(35, 1033, -1447, -23, 166); -- Zone: sro
+			if eq.is_prophecy_of_ro_enabled() then
+				e.other:MovePC(Zone.southro, -140, -360, 108, 374)
+				return
+			end
 
+			--e.self:CastSpell(4178,e.other:GetID(),0,1);
+			e.other:MovePC(Zone.sro, 1033, -1447, -23, 166)
 		elseif(e.message:findi("commonlands")) then
+			if eq.is_prophecy_of_ro_enabled() then
+				e.other:MovePC(Zone.commonlands, -1836, -2630, 37, 261)
+				return
+			end
 			--e.self:CastSpell(4176,e.other:GetID(),0,1);
-			e.other:MovePC(22,-140,-1520,3,280); -- needs_heading_validation
-		
+			e.other:MovePC(Zone.ecommons,-140,-1520,3,280); -- needs_heading_validation
 		end
 	else --no Adventurers Stone
 		if(e.message:findi("hail")) then

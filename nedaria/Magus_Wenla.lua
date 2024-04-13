@@ -13,12 +13,20 @@ function event_say(e)
 		e.other:MovePC(280, -1557, -853, 241,180); -- Zone: natimbi
 
 	elseif(e.message:findi("north ro")) then
-		--e.self:CastSpell(4177,e.other:GetID(),0,1);		 
-		e.other:MovePC(34, 914, 2679, -25, 20); -- Zone: nro
-
+		if eq.is_prophecy_of_ro_enabled() then
+			e.other:MovePC(Zone.northro, 914, 2679, -25, 20);
+			return
+		end
+		--e.self:CastSpell(4177,e.other:GetID(),0,1);
+		e.other:MovePC(Zone.nro, 914, 2679, -25, 20); -- Zone: nro
+		return
 	elseif(e.message:findi("south ro")) then
-		--e.self:CastSpell(4178,e.other:GetID(),0,1);		
-		e.other:MovePC(35, 1033, -1447, -23, 166); -- Zone: sro
+		if eq.is_prophecy_of_ro_enabled() then
+			e.other:MovePC(Zone.southro, 1053, -1461, -25.9, 456)
+			return
+		end
+		--e.self:CastSpell(4178,e.other:GetID(),0,1);
+		e.other:MovePC(Zone.sro, 1033, -1447, -23, 166)
 
 	elseif(e.message:findi("commonlands")) then
 		--e.self:CastSpell(4176,e.other:GetID(),0,1);

@@ -6,23 +6,23 @@ sub EVENT_ENTERZONE {
     quest::selfcast(2049);
     quest::setglobal("tutbind", 1, 1, "D30");
   }
-    
+
   if (!defined($qglobals{tutpop})) {
     quest::popup("Join the revolution!",
                  "Welcome to the Revolt! You have been given two new quests:
-                   <br><br><c \"#FFFF00\">Rally with Rahtiz:</c><br>If you are ready to begin fighting for the revolt, 
-                   hail Guard Rahtiz and see where you are needed.<br><br><c \"#FFFF00\">Basic Training:</c><br>If you 
-                   would like more training on the finer points of Everquest, speak with Arias and he will direct you to other knowledgeable 
+                   <br><br><c \"#FFFF00\">Rally with Rahtiz:</c><br>If you are ready to begin fighting for the revolt,
+                   hail Guard Rahtiz and see where you are needed.<br><br><c \"#FFFF00\">Basic Training:</c><br>If you
+                   would like more training on the finer points of Everquest, speak with Arias and he will direct you to other knowledgeable
                    members of the slave revolt.<br><br><c \"#F07F00\">Click 'OK' to continue.</c>");
     quest::assigntask(1448);
     quest::assigntask(5166);
     quest::setglobal("tutpop", 1, 1, "D30");
   }
-    
+
   if ($ulevel > 15 && $status < 80) {
     $client->Message(15, "You are too high in level to be in this zone.");
     quest::selfcast(2433);
-  }  
+  }
 }
 
 sub EVENT_POPUPRESPONSE {
@@ -160,10 +160,10 @@ sub EVENT_POPUPRESPONSE {
   if ($popupid == 37) {
     quest::popup("Range Attacks", "<br>Quivers are a special types of bags that only hold arrows. The quiver given to you by Guard Rahtiz has no special properties, but in Norrath you can find some quivers that reduce the weight of the arrows they hold and increase archery speed.");
   }
-  if ($popupid == 111) { 
+  if ($popupid == 111) {
     quest::popup("Maps", "<br><c \"#CCFF99\">Additional Map Features</c><br><br>If you want to show or hide the visibility of floors above or below your current position, you can toggle the <c \"#00F0F0\">Height Filter</c> button. When this button is activated, locations and items below a distance specified in the \"Low\" field won't be drawn. Likewise, anything above the \"High\" distance won't be drawn.<br><br>To show or hide labels on the map, toggle the <c \"#00F0F0\">Labels</c> button.<br><br>If you are in a group and wish to find members of your group on the map, activate the <c \"#00F0F0\">Group</c> button. Group members will appear on the map as green <c \"#00FF00\">X</c>'s.");
   }
-}    
+}
 
 sub EVENT_TASK_STAGE_COMPLETE {
   if ($task_id == 5096) {
@@ -172,7 +172,7 @@ sub EVENT_TASK_STAGE_COMPLETE {
   if (($task_id == 5092) && ($activity_id == 1)) {
     $client->Message(0, "Vahlara bows as you return. 'Just in time. Many are wounded and more arrive by the hour. If you can find any Gloomingdeep silk, bring it to me and I can reward you with more burlap clothing. It's not much, but it's nicer than the rags these kobolds left us with.'");
   }
-} 
+}
 
 sub EVENT_CLICKDOOR {
   my $d_id = ($doorid % 256);
@@ -180,6 +180,10 @@ sub EVENT_CLICKDOOR {
   if ($d_id == 11) {
     my $s_zone = $client->GetStartZone();
     if ($s_zone == 9) {
+      if (quest::is_prophecy_of_ro_enabled()) {
+        quest::movepc(383,-173,-188,-69,192); # Zone: freportw
+        return;
+      }
       quest::movepc(9, -60.9, -61.5, -24.9); # Zone: freportw
     }
     elsif ($s_zone == 19) {

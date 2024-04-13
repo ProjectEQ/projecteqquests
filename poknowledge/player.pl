@@ -107,6 +107,10 @@ sub EVENT_CLICKDOOR {
 		#{
 		#      quest::popup("$zonename","Send you to the Classic $zonename? $popuptext",6,1);
 		#      quest::settimer(6,5);
+		if (quest::is_prophecy_of_ro_enabled()) {
+			quest::movepc(383,-173,-188,-69,192);
+			return;
+		}
 		quest::movepc(9, 77.31, -660.57, -30.24); # Zone: freportw
 		#}
 	}

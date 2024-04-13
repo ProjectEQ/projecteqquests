@@ -4,7 +4,11 @@ function event_spawn(e)
 end
 
 function event_enter(e)
-	e.other:MovePC(10,-1570,-25,20,462);
+	if eq.is_prophecy_of_ro_enabled() then
+		e.other:MovePC(Zone.freeporteast,-1570,-25,20,462)
+		return
+	end
+	e.other:MovePC(Zone.freporte,-1570,-25,20,462)
 end
 
 function event_timer(e)
@@ -13,7 +17,11 @@ function event_timer(e)
 		if player_list ~= nil then
 			for player in player_list.entries do
 				if player:GetZ() < -1200 then
-					player:MovePC(10,-1570,-25,20,462);
+					if eq.is_prophecy_of_ro_enabled() then
+						player:MovePC(Zone.freeporteast,-1570,-25,20,462);
+						return
+					end
+					player:MovePC(Zone.freporte,-1570,-25,20,462);
 				end
 			end
 		end

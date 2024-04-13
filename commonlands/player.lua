@@ -9,5 +9,5 @@ function event_enter_zone(e)
 		return
 	end
 
-  client:MovePC(22, -144, -1543, 2, 244); -- Zone: ecommons
+  client:MovePC(Zone.ecommons, -144, -1543, 2, 244)
 end

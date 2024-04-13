@@ -30,7 +30,12 @@ function event_say(e)
 
 	elseif(e.message:findi("commonlands")) then
 		--e.self:CastSpell(4176,e.other:GetID(),0,1);
-		e.other:MovePC(22,-140,-1520,3,280); -- needs_heading_validation
+		if eq.is_prophecy_of_ro_enabled() then
+			e.other:MovePC(Zone.commonlands, -140, -1520, 3, 280)
+			return
+		end
+		e.other:MovePC(Zone.ecommons,-140,-1520,3,280) -- needs_heading_validation
+		return
 
 	elseif(e.message:findi("abysmal sea")) then
 		--Translocate Abysmal is unknown

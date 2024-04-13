@@ -41,7 +41,7 @@ function event_say(e)
 	end
 end
 
-function event_item(e)
+function event_trade(e)
 	local item_lib = require("items");
 	if (item_lib.check_turn_in(e.trade, {item1 = 19552, item2 = 19659, item3 = 13424, item4 = 63125})) then -- Dagger of the Craft Keeper
 		e.other:QuestReward(e.self, {itemid = 61099});

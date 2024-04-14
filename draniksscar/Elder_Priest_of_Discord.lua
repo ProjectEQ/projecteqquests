@@ -2,12 +2,15 @@
 
 function event_say(e)
     if e.message:findi("hail") then
-        e.self:Say("Should you wish to return from whence you came, tell me you wish to [" .. eq.say_link("go home") .. "] and I will send you.  I am also able to aid wizards and druids with the ability to [find their way] further into Discord.")
+        e.self:Say("Should you wish to return from whence you came, tell me you wish to [" ..
+        eq.say_link("go home") ..
+        "] and I will send you.  I am also able to aid wizards and druids with the ability to [find their way] further into Discord.")
         return
     end
 
     if e.message:findi("find") then
-        e.self:Say("If you bring me the right materials -- three samples of pure discordant blood from a dark creature and a rare enchanted scroll, I can help to create teleportation spells.")
+        e.self:Say(
+        "If you bring me the right materials -- three samples of pure discordant blood from a dark creature and a rare enchanted scroll, I can help to create teleportation spells.")
         return
     end
 
@@ -82,10 +85,10 @@ function event_say(e)
             e.other:MovePC(Zone.rivervale, -110, -16, 4, 192)
             return
         end
-        if e.other:GetGlobal("OOW_PoD_Origin") == 55 then
+        if e.other:GetGlobal("OOW_PoD_Origin") == Zone.akanon then
             e.self:Say("Very well.  You are now to return from whence you came.")
             e.other:DelGlobal("OOW_PoD_Origin")
-            e.other:MovePC(55, -153, 500, -18, 66.1)
+            e.other:MovePC(Zone.akanon, -153, 500, -18, 66.1)
             return
         end
         if e.other:GetGlobal("OOW_PoD_Origin") == Zone.kaladima then
@@ -110,10 +113,10 @@ function event_say(e)
 end
 
 function event_trade(e)
-
     local item_lib = require("items")
-	if (item_lib.check_turn_in(e.trade, {item1 = 77767, item2 = 77767, item3 = 77767, item4 = 77768})) then
-        e.self:Emote("takes the sickly blood and spreads it across the enchanted scroll. It blends and swims horribly over it. When it settles, the priest hands it to you.")
+    if (item_lib.check_turn_in(e.trade, { item1 = 77767, item2 = 77767, item3 = 77767, item4 = 77768 })) then
+        e.self:Emote(
+        "takes the sickly blood and spreads it across the enchanted scroll. It blends and swims horribly over it. When it settles, the priest hands it to you.")
         e.self:Say("You may now travel further into Discord, true power awaits!")
         if (e.other:GetClass() == Class.WIZARD) then
             e.other:SummonItem(77654) -- Item: Spell: Slaughter Gate
@@ -125,5 +128,4 @@ function event_trade(e)
         end
         e.other:Ding()
     end
-
 end

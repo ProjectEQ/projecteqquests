@@ -233,24 +233,6 @@ end
 
 function Kess_Death(e)
 	eq.spawn2(339117,0,0,e.self:GetX(),e.self:GetY(),e.self:GetZ(),e.self:GetHeading()); -- Spawn a chest with loot at my location upon death.
-
-	if eq.get_data("DoN_Kess_First") == "" then
-		local target = e.other;
-		if e.other:IsPet() then
-			target = e.other:GetOwner();
-		end
-
-		eq.world_emote(MT.Magenta,"Congratulations to [".. eq.get_guild_name_by_id(eq.get_guild_id_by_char_id(target:CastToClient():CharacterID())) .."] for being the first guild to kill Kessdona the Enlightened!");
-		eq.set_data("DoN_Kess_First", "1");
-	else
-		local target = e.other;
-		if e.other:IsPet() then
-			target = e.other:GetOwner();
-		end
-
-		eq.world_emote(MT.Magenta,"Congratulations to [".. eq.get_guild_name_by_id(eq.get_guild_id_by_char_id(target:CastToClient():CharacterID())) .."] for killing Kessdona the Enlightened.");
-	end
-
 	eq.update_task_activity(dz_task_id, 2, 1);
 end
 

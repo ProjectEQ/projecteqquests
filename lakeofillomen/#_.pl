@@ -23,7 +23,7 @@ sub EVENT_COMBAT {
 }
 
 sub EVENT_DEATH_COMPLETE {
-  if ($character->GetGlobal("wiz_epic_pre") == 2) { #Wizard being tested
+  if ($character && $character->GetGlobal("wiz_epic_pre") == 2) { #Wizard being tested
 
     #Spawn scorpion hatchlings
     push (@scorpions, quest::spawn2(85240,0,0,4949.8014,-2423.8932,225,321.5));

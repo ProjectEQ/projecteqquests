@@ -226,7 +226,7 @@ end
 
 function Depleted_Manashard_Death(e)
 	if not eq.get_entity_list():IsMobSpawnedByNpcTypeID(339116) and not eq.get_entity_list():IsMobSpawnedByNpcTypeID(339109) then
-		all_manashards_dead = truel
+		all_manashards_dead = true
 		eq.signal(339110,1);	-- let Kessdona know so she can begin phase 2.
 	end
 end

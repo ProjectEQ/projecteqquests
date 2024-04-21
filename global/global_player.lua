@@ -281,15 +281,23 @@ vet_aa = {
     [600]  = {441504000, true, true}, -- Blessing of the Devoted 14 yr
 }
 
+
 function event_connect(e)
+	grant_veteran_aa(e)
+    don.fix_invalid_faction_state(e.self)
+end
+
+function grant_veteran_aa(e)
+	if not eq.is_dragons_of_norrath_enabled() then
+		return
+	end
+
     local age = e.self:GetAccountAge();
     for aa, v in pairs(vet_aa) do
         if v[3] and (v[2] or age >= v[1]) then
             e.self:GrantAlternateAdvancementAbility(aa, 1)
         end
     end
-
-    don.fix_invalid_faction_state(e.self)
 end
 
 --[[

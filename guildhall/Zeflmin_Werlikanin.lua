@@ -31,9 +31,9 @@ local portals = {
 
 function event_trade(e)
 	local item_lib = require("items");
-	if item_lib.check_turn_in(e.trade, {item1 = 10092}) then -- Items: Portal Items
+	if eq.is_current_expansion_secrets_of_faydwer() and item_lib.check_turn_in(e.trade, {item1 = 10092}) then -- Items: Portal Items
 		set_portal(e,10092);
-	elseif item_lib.check_turn_in(e.trade, {item1 = 10094}) then -- Items: Portal Items
+	elseif eq.is_current_expansion_secrets_of_faydwer() and item_lib.check_turn_in(e.trade, {item1 = 10094}) then -- Items: Portal Items
 		set_portal(e,10094);
 	elseif item_lib.check_turn_in(e.trade, {item1 = 64191}) then -- Items: Portal Items
 		set_portal(e,64191);

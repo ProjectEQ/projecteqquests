@@ -6,7 +6,7 @@ function event_enter_zone(e)
 	local zoneid = eq.get_zone_id();
 	local qglobals = eq.get_qglobals(e.self);
 
-  	if(level >= 15 and qglobals.Wayfarer == nil and e.self:GetStartZone() == zoneid) then
+  	if(level >= 15 and qglobals.Wayfarer == nil and e.self:GetStartZone() == zoneid and eq.is_lost_dungeons_of_norrath_enabled()) then
     	e.self:Message(MT.Yellow, "A mysterious voice whispers to you, 'Vlarha Myticla has just joined the Wayfarers Brotherhood and has some information about them, and how you can start doing odd jobs for them. You looked like the heroic sort, so I wanted to contact you . . . discreetly.'");
 	end
 end
@@ -14,8 +14,8 @@ end
 
 function event_click_door(e)
 	local door_id = e.door:GetDoorID();
-	
-	if (e.self:Class() == "Rogue") then 
+
+	if (e.self:Class() == "Rogue") then
 		if (door_id == 106) then
 			if e.self:HasItem(52007) then
 				eq.spawn2(155346,0,0,-541.79,99.84,-235.62,506.8);

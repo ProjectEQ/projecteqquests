@@ -4,7 +4,7 @@ function event_enter_zone(e)
 	local qglobals = eq.get_qglobals(e.self);
 	local client = eq.get_entity_list():GetClientByID(e.self:GetID());
 
-  	if(level >= 15 and qglobals.Wayfarer == nil and e.self:GetStartZone() == zoneid) then
+  	if(level >= 15 and qglobals.Wayfarer == nil and e.self:GetStartZone() == zoneid and eq.is_lost_dungeons_of_norrath_enabled()) then
     		e.self:Message(MT.Yellow, "A mysterious voice whispers to you, 'Drun Vorwig has just joined the Wayfarers Brotherhood and has some information about them, and how you can start doing odd jobs for them. You looked like the heroic sort, so I wanted to contact you . . . discreetly.'");
   	end
 
@@ -13,7 +13,7 @@ function event_enter_zone(e)
 		if (client.valid) then
 			client:MovePC(2,-1096,1262,3,0); --move to corner of zone every time the rogue zones in with the package
 		end
-		
+
 	end
 end
 

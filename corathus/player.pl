@@ -1,6 +1,6 @@
 sub EVENT_ENTERZONE
 {
-	if(!defined($qglobals{Wayfarer}) && $ulevel >= 15)
+	if(!defined($qglobals{Wayfarer}) && $ulevel >= 15 && quest::is_lost_dungeons_of_norrath_enabled())
 	{
 		$client->Message(15,"A mysterious voice whispers to you, 'If you can feel me in your thoughts, know this -- something is changing in the world and I reckon you should be a part of it. I do not know much, but I do know that in every home city and the wilds there are agents of an organization called the Wayfarers Brotherhood. They are looking for recruits . . . If you can hear this message, you are one of the chosen. Rush to your home city, or search the West Karanas and Rathe Mountains for a contact if you have been exiled from your home for your deeds, and find out more. Adventure awaits you, my friend.'");
 	}
@@ -78,7 +78,7 @@ sub EVENT_TASK_STAGE_COMPLETE
 			{
 				$danika->Say("Great work! With this you have helped feed our troops until tomorrow.");
 			}
-			
+
 			if(defined($qglobals{starshatter_points}))
 			{
 				quest::setglobal("starshatter_points", 10 + $qglobals{starshatter_points}, 5, "D30");
@@ -102,7 +102,7 @@ sub EVENT_TASK_STAGE_COMPLETE
 			{
 				$danika->Say("Great!! I've missed Rivervale so, this should last me a while.");
 			}
-			
+
 			if(defined($qglobals{starshatter_points}))
 			{
 				quest::setglobal("starshatter_points", 10 + $qglobals{starshatter_points}, 5, "D30");
@@ -126,7 +126,7 @@ sub EVENT_TASK_STAGE_COMPLETE
 			{
 				$danika->Say("Great work! With this you have helped feed our troops until tomorrow.");
 			}
-			
+
 			if(defined($qglobals{starshatter_points}))
 			{
 				quest::setglobal("starshatter_points", 5 + $qglobals{starshatter_points}, 5, "D30");
@@ -137,8 +137,8 @@ sub EVENT_TASK_STAGE_COMPLETE
 			{
 				quest::setglobal("starshatter_points", 5, 5, "D30");
 				$client->Message(15, "You have gained Starshatter points, you now have 5 points to spend.");
-			}			
-		}	
+			}
+		}
 	}
 	elsif($task_id = 500153)
 	{
@@ -150,7 +150,7 @@ sub EVENT_TASK_STAGE_COMPLETE
 			{
 				$danika->Say("Great work! With this you have helped feed our troops until tomorrow.");
 			}
-			
+
 			if(defined($qglobals{starshatter_points}))
 			{
 				quest::setglobal("starshatter_points", 5 + $qglobals{starshatter_points}, 5, "D30");
@@ -161,7 +161,7 @@ sub EVENT_TASK_STAGE_COMPLETE
 			{
 				quest::setglobal("starshatter_points", 5, 5, "D30");
 				$client->Message(15, "You have gained Starshatter points, you now have 5 points to spend.");
-			}			
+			}
 		}
 	}
 	elsif($task_id >= 500147 && $task_id <= 500149)
@@ -173,7 +173,7 @@ sub EVENT_TASK_STAGE_COMPLETE
 			{
 				$danika->Say("Excellent soldier, your bravery is to be rewarded.");
 			}
-			
+
 			if(defined($qglobals{starshatter_points}))
 			{
 				quest::setglobal("starshatter_points", 100 + $qglobals{starshatter_points}, 5, "D30");
@@ -184,7 +184,7 @@ sub EVENT_TASK_STAGE_COMPLETE
 			{
 				quest::setglobal("starshatter_points", 100, 5, "D30");
 				$client->Message(15, "You have gained Starshatter points, you now have 100 points to spend.");
-			}			
+			}
 		}
 	}
 	elsif($task_id >= 500154 && $task_id <= 500156)
@@ -198,13 +198,13 @@ sub EVENT_TASK_STAGE_COMPLETE
 				$boss_check = $entity_list->GetMobByNpcTypeID(365035);
 			}
 		}
-		
+
 		my $variable_points = 10;
 		if(!$boss_check)
 		{
 			$variable_points = 5;
 		}
-		
+
 		if($activity_id == 1)
 		{
 			my $izzik = $entity_list->GetMobByNpcTypeID(365146);
@@ -212,7 +212,7 @@ sub EVENT_TASK_STAGE_COMPLETE
 			{
 				$danika->Say("Perfect! I might need more materials later so be sure to check in.");
 			}
-			
+
 			if(defined($qglobals{starshatter_points}))
 			{
 				quest::setglobal("starshatter_points", $variable_points + $qglobals{starshatter_points}, 5, "D30");
@@ -223,7 +223,7 @@ sub EVENT_TASK_STAGE_COMPLETE
 			{
 				quest::setglobal("starshatter_points", $variable_points, 5, "D30");
 				$client->Message(15, "You have gained Starshatter points, you now have $variable_points points to spend.");
-			}			
+			}
 		}
 	}
 }

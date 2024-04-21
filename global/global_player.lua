@@ -284,7 +284,7 @@ vet_aa = {
 
 function event_connect(e)
 	grant_veteran_aa(e)
-    don.fix_invalid_faction_state(e.self)
+	don.fix_invalid_faction_state(e.self)
 end
 
 function grant_veteran_aa(e)

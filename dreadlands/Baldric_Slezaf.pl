@@ -1,15 +1,8 @@
-################################### 
-#Zone: The Dreadlands             #                                              
-#Short Name: dreadlands           #                                                                  
-#Zone ID: 86                      #                                        
-###################################                                             
-#NPC Name: Baldric_Slezaf         #                             
-#NPC ID: 86097                    #
-#Quest Status: Complete           #                                      
-###################################
+# NPC ID: 86097                    #
 # items: 20376, 20383, 20377, 20538, 20542
+# quest: Bard Epic 1.0
 
-sub EVENT_SAY { 
+sub EVENT_SAY {
   if($text=~/Hail/i){
     quest::say("Hello, $name. Don't you think this would be a wonderful place to perform a [symphony]?");
   }

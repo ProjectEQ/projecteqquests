@@ -1,13 +1,6 @@
---Zone: South Karana
---Short Name: southkarana
---Zone ID: 14
---
---NPC Name: Baenar Swiftsong
---NPC ID: 14046
---Quest Status: finished
--- Updated by Kilelen
+-- quest: Bard Epic 1.0
 -- items: 20372, 20373, 20371, 20368, 20367, 20366
-
+-- NPC ID: 14046
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Please, I am trying to work here. If you bother me I will write a horrible song about you and sing it from the mountain tops!");

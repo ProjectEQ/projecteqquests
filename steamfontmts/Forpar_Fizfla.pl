@@ -1,5 +1,7 @@
 # items: 20378, 20380, 20524, 20525, 5520, 20535, 11602, 11622, 16905, 20536, 20526, 20538
-sub EVENT_SAY { 
+# quest: Bard Epic 1.0
+
+sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Get out you pesky $race! I don't need any $race germs! Out, ye filthy beast!");
   }

@@ -1,4 +1,6 @@
 # items: 20536
+# quest: Bard Epic 1.0
+
 my $spawn;
 
 sub EVENT_SPAWN {

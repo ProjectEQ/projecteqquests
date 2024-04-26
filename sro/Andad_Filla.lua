@@ -1,12 +1,7 @@
--- Zone: Southern Ro
--- Short Name: sro
--- Zone ID: 35
 -- items: 20533, 20534
-
--- NPC Name: Andad Filla
 -- NPC ID: 35030
--- Quest Status: finished
--- Converted to .lua by Speedz
+-- quest: Bard Epic 1.0
+
 
 function event_say(e)
 	if(e.message:findi("hail")) then

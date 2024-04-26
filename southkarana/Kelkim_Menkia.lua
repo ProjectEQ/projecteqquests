@@ -1,5 +1,5 @@
--- BEGIN FILE: southkarana\Kelkim_Menika.lua
 -- items: 20527, 20528, 20529, 20377
+-- quest: Bard Epic 1.0
 
 function event_say(e)
 	if(e.message:findi("hail")) then
@@ -22,5 +22,3 @@ function event_trade(e)
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end
-
--- END of FILE Zone:southkarana  ID:14082 -- Kelkim_Menika

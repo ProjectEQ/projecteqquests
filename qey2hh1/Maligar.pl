@@ -1,6 +1,7 @@
 # maligar and his enraged doppleganger
 #
 # items: 20368
+# quest: Bard Epic 1.0
 
 my $entid1;
 my $mob1;

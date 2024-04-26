@@ -1,12 +1,6 @@
-#Zone: Solusek's Eye
-#Short Name: soldunga
-#Zone ID: 31
-#
-#NPC Name: Marfen Binkdirple
 #NPC ID: 31080
-#Quest Status: finished
-#
 # items: 20372, 20370
+# quest: Bard Epic 1.0
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 20372 => 1)) {

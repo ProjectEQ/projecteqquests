@@ -1,13 +1,6 @@
--- Zone: West Karana
--- Short Name: qey2hh1
--- Zone ID: 12
---
--- NPC Name: Konia Swiftfoot
 -- NPC ID: 12117
--- Quest Status: Finished
---
 -- items: 20532, 20379, 20376, 20366, 20383
-
+-- quest: Bard Epic 1.0
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say(string.format("Hello there, %s.  I am hosting a relay running contest.  Would you like to participate?",e.other:GetName()));
@@ -35,6 +28,4 @@ function event_trade(e)
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end
-
--- END of FILE Zone:qey2hh1  ID:12117 -- Konia Swiftfoot
 

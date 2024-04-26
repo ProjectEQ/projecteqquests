@@ -1,14 +1,7 @@
-#Zone: Misty Thicket
-#Short Name: misty
-#Zone ID: 33
-#
-#NPC Name: Fajio Knejo
 #NPC ID: 33092
-#Quest Status: Finished
-#
 # items: 20532, 20533
-
-sub EVENT_SAY { 
+# quest: Bard Epic 1.0
+sub EVENT_SAY {
   if($text=~/Hail/i) {
     quest::say("Greetings, $name.  I hope you are having a fine day.");
   }

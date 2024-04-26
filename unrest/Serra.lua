@@ -1,4 +1,6 @@
 -- items: 20374, 20370, 20371
+-- quest: Bard Epic 1.0
+
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("H..h..hello? Can you help me? I lost [something] and I need it so I can go back home.");
@@ -14,7 +16,7 @@ end
 
 function event_trade(e)
 	local item_lib = require("items");
-	
+
 	if(item_lib.check_turn_in(e.trade, {item1 = 20370})) then
 		e.self:Say("Oh! You have the dolly! Thank you! Thank you! Thank you! I can go home now. Please give this to my father, Baenar. He will understand when he gets it.' Serra begins to fade away. 'Bye bye!");
 		e.other:Ding();

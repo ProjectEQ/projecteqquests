@@ -1,14 +1,7 @@
-#Zone: Lake Rathetear
-#Short Name: lakerathe
-#Zone ID: 51
-#
-#NPC Name: Misty Tekcihta
-#NPC ID: 51052
-#Quest Status: finished
-#
 # items: 20534, 20379
+# quest: Bard Epic 1.0
 
-sub EVENT_SAY { 
+sub EVENT_SAY {
   if ($text=~/Hail/i) {
     quest::emote("smiles and taps her foot.");
   }

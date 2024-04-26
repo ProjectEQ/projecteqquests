@@ -1,4 +1,6 @@
 # items: 9031, 9061, 4393, 17361, 9044, 9045, 9048, 9049, 9055, 9056, 9057, 17362, 9060, 8495, 8496
+# quest: Beastlord Epic 1.0
+
 sub EVENT_SAY {
   if ($text=~/spiritual/i ) {
     quest::say("Well, my prying little friend. Someone as inquisitive as you may be of use to us. Perhaps you were sent to us by the very ones we seek to help. The spirits are capable of far more impressive manipulations. If any time warrants such trickery or nudging of fate, I would guess that this day would qualify. Be aware of one thing, youth... the beastlord that follows the path I see before us this day may not return to this house unscathed... if they return to me at all. If you are the Khati Sha I seek, prove your worth in combat and return to me with the Copper Medal of War. You can get this medal from assisting the soldiers in the Grimling Forest.");

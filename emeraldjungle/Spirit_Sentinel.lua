@@ -1,4 +1,5 @@
 --Spirit Sentinel is for Shaman Epic 1.0 and administers the Test of Might and the completion of the epic.
+-- items: 17805, 1668, 1672, 3599, 18456, 18457, 18458
 function event_say(e)
 	if(e.other:GetFaction(e.self) <= 3) then
 		if(e.other:GetCharacterFactionLevel(404) >= 500) then

@@ -1,3 +1,4 @@
+-- items: 67526
 function event_spawn(e)
 	eq.set_timer("depop", 600 * 1000); --need confirmation
 end

@@ -1,4 +1,5 @@
 --Makyah's Statue need live parse of faction turn in reward
+-- items: 36504, 36505, 36506, 36507, 36500, 36501, 36502, 36503
 
 function event_say(e)
   if (e.other:GetFaction(e.self) <= 2) then -- require warmly

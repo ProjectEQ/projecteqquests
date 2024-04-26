@@ -1,5 +1,6 @@
 -- #Daleynn_Spiritshadow (27090)
 -- Missions
+-- items: 86006
 
 local don = require("dragons_of_norrath")
 

@@ -1,4 +1,5 @@
 -- Ranger Epic 1.5
+-- items: 62642
 
 function event_combat(e)
 	if e.joined then

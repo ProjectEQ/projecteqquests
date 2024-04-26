@@ -1,4 +1,5 @@
 -- Reinforced Satchel of Al'Kabor
+-- items: 55270, 55267
 
 function event_trade(e)
 	local item_lib = require("items");

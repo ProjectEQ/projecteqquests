@@ -1,6 +1,6 @@
 ## player.pl
 ##
-# items: 53481, 53482, 53485, 53484, 53486
+# items: 53481, 53482, 53485, 53484, 53486, 57974
 
 #Task 5431 - Ways of Nature - Initiate Dakkan
 #Task 5427 - Snake Sacs - Initiate Dakkan

@@ -1,3 +1,4 @@
+-- items: 60199, 60200, 60201
 
 -- Berserker Epic 1.0
 

@@ -1,5 +1,6 @@
 --Xasri_Virek.pl
 --Intermediate Combat Manual
+-- items: 28788, 29145
 
 function event_say(e)
 	if(e.message:findi("Hail")) then

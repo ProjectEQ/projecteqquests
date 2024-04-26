@@ -1,4 +1,5 @@
 -- Part of SK Epic 1.0
+-- items: 14367, 14368, 14369, 14370
 function event_say(e)
 	if(e.other:GetModCharacterFactionLevel(e.self:GetPrimaryFaction()) > 42) then--True Spirit
 		if(e.message:findi("hail")) then

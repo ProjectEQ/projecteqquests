@@ -1,4 +1,5 @@
 -- Magician Abysmal Sea armor
+-- items: 68222, 68220, 68223, 68225, 68226, 68224, 68221
 
 function event_say(e)
 	if e.other:GetClass() == Class.MAGICIAN then -- Magician

@@ -1,4 +1,5 @@
 --Frostfell A Gift for Tinam (#4) -- TODO Update Task ID's
+-- items: 87574, 87544, 87543
 
 function event_say(e)
 	if e.message:findi("hail") then

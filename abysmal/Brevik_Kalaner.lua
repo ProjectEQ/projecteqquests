@@ -1,4 +1,5 @@
 -- Txevu Flagging
+-- items: 60253, 60252, 60176, 60254
 
 function event_say(e)
 	local has_all_keys = (e.other:HasItem(60176) and e.other:HasItem(60252) and e.other:HasItem(60253));

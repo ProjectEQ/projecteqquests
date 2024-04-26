@@ -1,6 +1,7 @@
 -- a Goblin Traitor, somewhere in the cave, Frontier Mountains
 -- Second part of the chardok quest, initiated by Herald Telcha
 -- Regal Band of Bathezid
+-- items: 5728
 
 function event_say(e)
 	if(e.other:GetFaction(e.self) < 3) then -- need to be warmly or better

@@ -1,6 +1,7 @@
 -- an angry goblin, Frontier Mountains
 -- Second part of the chardok quest, initiated by Herald Telcha
 -- Regal Band of Bathezid
+-- items: 6474
 
 function event_say(e)
 	if(e.other:HasItem(5728)) then -- we handed the Signet of Service yet

@@ -1,4 +1,5 @@
 -- note: rival npcs should start with some type of racial factions (dubious to amiable depending on player race)
+-- items: 81903
 local is_dark_reign   = false
 local dark_reign_ids  = { [4855] = true, [4856] = true } -- Dark Reign mission versions
 local spawn_condition = { good = 1, evil = 2 }

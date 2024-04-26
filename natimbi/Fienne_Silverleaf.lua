@@ -1,4 +1,5 @@
 --Fienne's Wildlife Specimens
+-- items: 54085, 54084, 54087, 54086
 
 function event_say(e)
       if(e.message:findi("hail")) then

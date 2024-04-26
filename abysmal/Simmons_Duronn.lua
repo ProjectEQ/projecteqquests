@@ -1,4 +1,5 @@
 -- Pepe's Got a Brand New Bag
+-- items: 55570, 55574
 
 function event_say(e)
 	if e.message:findi("Hail") then

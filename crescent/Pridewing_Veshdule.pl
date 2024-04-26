@@ -1,3 +1,4 @@
+# items: 58651, 58755
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Vasha, fair $name. Mysaphar, my mother, has granted me the wisdom to know what's right and to act upon it.  In fact, all paladins of the Wings of Virtue are the same. A true heart you must have.");

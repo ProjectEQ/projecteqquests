@@ -1,4 +1,5 @@
 -- Rittuh_Purrik (166081) in Hollowshade Moor
+-- items: 5573, 5582
 
 function event_spawn(e)
     eq.signal(166257, 101) -- checks with event controller upon spawn

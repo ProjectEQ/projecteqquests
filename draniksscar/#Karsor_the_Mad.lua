@@ -1,4 +1,5 @@
 --Omens of War Spells  by Huffdaddy
+-- items: 59983, 77204, 77205, 77206, 77207, 77211, 59984, 59985, 59986, 59987, 59988
 
 --Bard
 --66 - Luvwen's Aria of Serenity, Vulka's Chant of Disease, Bellow of Chaos

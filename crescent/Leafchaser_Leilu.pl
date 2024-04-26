@@ -1,3 +1,4 @@
+# items: 58653, 58757
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("From earth to sky, we learn these lands. The Serpent's Eyes will not rest until we've learned every brook and every tree!");

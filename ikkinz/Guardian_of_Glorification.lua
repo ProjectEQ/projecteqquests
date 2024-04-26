@@ -1,5 +1,6 @@
 --Ikkinz Raid #2: Chambers of Glorification
 -- first guardian who is non-aggro and accepts the item to start event
+-- items: 60227
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Emote("ignores your hail. It is as if it lacks the life-force needed to move. Perhaps you have something with you that might awaken it.");

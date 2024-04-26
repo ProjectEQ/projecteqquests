@@ -1,4 +1,5 @@
 #Yes, we follow Live with the misspelling of this NPC. In the Guild Summons text, her name is "Whisperwalker".
+# items: 58656, 58760
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

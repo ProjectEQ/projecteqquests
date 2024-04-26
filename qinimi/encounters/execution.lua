@@ -9,6 +9,7 @@
 --#Kreshin_Silentcog (281124) 
 --Pixtt_Tixxrt_Kvrok (281123)Wave4
 --Trixxrt`s_Guardsman (281117)Wave4
+-- items: 67415, 67401
 
 local event_flag   = 0;
 local trial_group_id = 0;

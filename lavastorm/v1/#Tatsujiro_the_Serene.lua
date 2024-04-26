@@ -1,5 +1,6 @@
 --#Tatsujiro_the_Serene (27110)
 --Norraths Keepers Merchant
+-- items: 57208
 
 local don = require("dragons_of_norrath")
 

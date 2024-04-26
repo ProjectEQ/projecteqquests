@@ -1,4 +1,5 @@
 -- TODO: Verify
+-- items: 9590
 
 local ThreadManager = require("thread_manager");
 local evt;

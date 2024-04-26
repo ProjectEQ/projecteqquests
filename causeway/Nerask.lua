@@ -1,4 +1,5 @@
 --Nerask's Silk Armor (Tier 2)
+-- items: 51475, 51503, 51479, 51507, 51480, 51508, 51481, 51509, 51476, 51504, 51477, 51505, 51478, 51506
 
 function event_say(e)
 	if (e.other:GetFaction(e.self) <= 1) then -- require ally

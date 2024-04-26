@@ -1,4 +1,5 @@
 -- Quest: Art of Vah Shir Brewing
+-- items: 16598, 31761
 
 function event_say(e)
 	if e.message:findi("hail") then

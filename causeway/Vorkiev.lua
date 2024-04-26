@@ -1,4 +1,5 @@
 --Vorkiev Plate Armor (Tier 1)
+-- items: 51446, 51453, 51445, 51452, 51444, 51451, 51440, 51447, 51441, 51448, 51442, 51449, 51443, 51450
 
 function event_say(e)
 	if (e.other:GetFaction(e.self) <= 2) then -- require warmly

@@ -1,3 +1,4 @@
+-- items: 64007, 64010, 64009
 function event_trade(e)
 	local item_lib = require("items");
 		if (item_lib.check_turn_in(e.trade, {item1 = 64007})) then --poisoned fruit

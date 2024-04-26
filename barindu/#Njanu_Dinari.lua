@@ -1,4 +1,5 @@
 -- Help Kayin Escape
+-- items: 64015
 
 function event_trade(e)
 	local item_lib = require("items");

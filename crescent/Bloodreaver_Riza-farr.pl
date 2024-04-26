@@ -1,3 +1,4 @@
+# items: 58649, 58753
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("There is enlightenment through death. Let no one convince you otherwise.");

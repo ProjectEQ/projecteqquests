@@ -1,4 +1,5 @@
 -- Newer Cultural Tradeskill Armor Quest -- Iksar
+-- items: 34997, 34998, 34999, 35000, 35017, 35018, 88388, 17835, 54449, 55727
 
 local task_array = {};
 

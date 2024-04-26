@@ -1,3 +1,4 @@
+-- items: 36215, 36216
 local usurper_locs = { -- possibly incomplete list
   { x = 250.0, y = 860.0, z = 6.125,  h = 161.0 }, -- northeast room
   { x = 380.0, y = 445.0, z = 6.125,  h = 322.0 }, -- southeast room

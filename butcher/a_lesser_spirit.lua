@@ -1,4 +1,5 @@
 -- Shaman Epic 1.0
+-- items: 1665
 
 function event_spawn(e)
 	eq.set_timer("depop",10 * 60 * 1000);

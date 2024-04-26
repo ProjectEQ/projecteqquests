@@ -1,3 +1,4 @@
+-- items: 36214
 local is_dark_reign = false
 local dark_reign_task_ids = { [4812] = true, [4813] = true, [4814] = true } -- Dark Reign mission versions
 local delivered_plans = false

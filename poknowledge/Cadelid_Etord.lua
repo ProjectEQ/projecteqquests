@@ -1,4 +1,5 @@
 --Intermediate Magic Manual
+-- items: 28795, 28801
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:DoAnim(70);

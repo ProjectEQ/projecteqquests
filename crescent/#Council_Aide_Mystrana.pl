@@ -1,3 +1,4 @@
+# items: 85088
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     if (!quest::istaskcompleted(505746)) {

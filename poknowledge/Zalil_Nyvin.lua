@@ -1,4 +1,5 @@
 --Advanced Magic Manual
+-- items: 22503, 26710, 9424, 28796
 
 function event_say(e)
 	if(e.message:findi("hail")) then

@@ -1,4 +1,5 @@
 --Beginner Combat Manual
+-- items: 28787, 28745
 
 function event_say(e)
 	if(e.message:findi("hail")) then

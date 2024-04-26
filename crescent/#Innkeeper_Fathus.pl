@@ -1,3 +1,4 @@
+# items: 85088
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Vasha, $name, and welcome to my little corner of our fine city of Crescent Reach. I have a fine selection of goods available and even the [" . quest::saylink("council") . "] has been known to frequent my establishment, I'm proud to say!");

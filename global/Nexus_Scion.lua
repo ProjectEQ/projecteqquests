@@ -1,4 +1,5 @@
 -- Nexus_Scion in multiple zones
+-- items: 19720
 
 local ThreadManager = require("thread_manager");
 

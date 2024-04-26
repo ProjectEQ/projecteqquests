@@ -1,4 +1,5 @@
 -- Pepe's Got a Brand New Bag
+-- items: 55571, 55570, 55576, 55573
 
 function event_say(e)
 	local pepe_dialog = e.other:GetBucket("pepe_dialog");

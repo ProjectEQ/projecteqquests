@@ -1,4 +1,5 @@
 -- Quest: Tailfang
+-- items: 30667
 function event_say(e)
 	if e.message:findi("hail") then
 		e.self:Say("And hail to you adventurer. It is good to see one willing to brave the craters. I must warn you that there are deadly [scorpions] all around these parts. Some of them are quite large indeed, and their poison can be very deadly.")

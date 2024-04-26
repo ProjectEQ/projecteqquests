@@ -1,3 +1,4 @@
+-- items: 31828, 22570, 6949, 6950
 function event_say(e)
 	e.self:SetTarget(e.other);
 	e.self:SetAppearance(0); -- Stand

@@ -1,5 +1,6 @@
 -- #Celrak_Blightblood (27089)
 -- Missions
+-- items: 36215
 
 local don = require("dragons_of_norrath")
 

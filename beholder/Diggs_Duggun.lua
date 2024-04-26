@@ -1,3 +1,4 @@
+-- items: 5018, 13036
 function event_say(e)
 	if e.message:findi("hail") then
 		e.self:Say("ail, dere! Ain'tcha a sight fer me sore eyes! I knows dat we're strangers an' all, but might I ask a [boon] of ye?");

@@ -1,3 +1,4 @@
+-- items: 55586, 55585
 function event_say(e)
 	if e.message:findi("Hail") then
 		e.self:Say("Why hello there.  Just arrived?  My name is Naea Fobbins.  My husband and I recently joined the Wayfarers Brotherhood.  When we heard that they were sailing for lands unknown we just had to go.  Truth be told, I do miss home though.  I had quite a lucrative business in Rivervale making [necklaces].");

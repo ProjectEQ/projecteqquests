@@ -1,3 +1,4 @@
+# items: 58654, 58758
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("All of nature is precious and we should respect it as such! Embrace the earth, the grass, the trees, the beasts big and small! Guard those innocents as you would your own life.");

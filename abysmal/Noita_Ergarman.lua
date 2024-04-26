@@ -1,3 +1,4 @@
+-- items: 13812, 55568
 function event_say(e)
 	if e.message:findi("Hail") then
 		e.self:Say("Hello.  My name is Noita.  I just arrived here a day ago.  I have come to hopefully work on creating some [new armor designs].");

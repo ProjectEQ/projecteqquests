@@ -1,4 +1,5 @@
 -- Monk Epic 1.0
+-- items: 1685
 function event_spawn(e)
 	eq.set_timer("appearance", 1000);
 end

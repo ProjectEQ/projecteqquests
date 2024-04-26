@@ -1,4 +1,5 @@
 --Thin Out the Murkgliders 
+-- items: 55835
 
 function event_say(e)
 	--if (e.other:GetFaction(e.self) <= 2) then -- might be faction req? above KOS. need to test

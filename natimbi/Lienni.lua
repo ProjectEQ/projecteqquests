@@ -1,4 +1,5 @@
 -- Cragbeast Queen: Lizardscale Woven Sash
+-- items: 52129, 52131
 
 function event_say(e)
 	if(e.message:findi("hail")) then

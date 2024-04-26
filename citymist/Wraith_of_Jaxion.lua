@@ -1,4 +1,5 @@
 -- Test of Charm - enchanter epic - Enchanted Ruby
+-- items: 10633
 function event_trade(e)
 	local item_lib = require("items");
 	if(item_lib.check_turn_in(e.trade, {item1 = 10633})) then

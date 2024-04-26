@@ -1,4 +1,5 @@
 -- Paranormal Research
+-- items: 54064
   
 function event_say(e)
       if(e.message:findi("hail")) then

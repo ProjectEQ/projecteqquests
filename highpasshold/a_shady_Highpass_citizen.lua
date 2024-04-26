@@ -1,3 +1,4 @@
+-- items: 9816
 function event_say(e)
 	if(e.other:Class() == "Rogue") then --untested if rogue only, need rejection text otherwise
     

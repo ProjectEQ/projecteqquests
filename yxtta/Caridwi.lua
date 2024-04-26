@@ -1,4 +1,5 @@
 --  Best the Taskmistress,  Cragbeast Queen: Visage of the Brute
+-- items: 52113, 52119
 function event_spawn(e)
 eq.zone_emote(MT.Yellow, "A haunting song echoes in the dank caverns.");
 end

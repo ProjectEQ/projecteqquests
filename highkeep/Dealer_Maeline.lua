@@ -1,4 +1,5 @@
 --Huffdaddy script parsed from live
+-- items: 9446
 local prize_money = 0;
 local urn = 0;
 local busy = 0;

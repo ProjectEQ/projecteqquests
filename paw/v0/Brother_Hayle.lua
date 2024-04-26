@@ -1,3 +1,4 @@
+-- items: 18927, 18936, 18937, 13947, 18828, 12197
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("This is no place for you. These Splitpaws are very fierce. Only the power of Rodcet Nife will guide them to the light. By the way, I might warn you that the cells here lock behind you.");

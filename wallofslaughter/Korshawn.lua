@@ -1,4 +1,5 @@
 --Korshawn's Silk Armor (Tier 1) 
+-- items: 51446, 51474, 51445, 51473, 51444, 51472, 51440, 51468, 51441, 51469, 51442, 51470, 51443, 51471
 
 function event_say(e)
 	if (e.other:GetFaction(e.self) <= 2) then -- require warmly

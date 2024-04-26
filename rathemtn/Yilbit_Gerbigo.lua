@@ -1,6 +1,6 @@
 -- Yilbit Gerbigo
 -- Marr's Blessing
--- items: 55035, 55036
+-- items: 55035
 function event_say(e)
 	local fac = e.other:GetFaction(e.self);
 	

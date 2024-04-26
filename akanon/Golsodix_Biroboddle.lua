@@ -1,4 +1,5 @@
 -- Golsodix Biroboddle for Find Xoomix quest in Ak'Anon
+-- items: 21979, 21984, 21985
 
 -- say block
 function event_say(e)

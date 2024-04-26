@@ -1,3 +1,4 @@
+-- items: 6267, 6159, 6222, 6184, 6275
 function event_say(e)
     if e.message:findi("hail") then
         e.self:Say("Please do not think poorly of me, but I must see your Journeyman's Cloak if you wish to converse. Be quick about it. This place is not completely safe.");

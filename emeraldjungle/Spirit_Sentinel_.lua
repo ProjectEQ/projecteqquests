@@ -1,4 +1,5 @@
 --Spirit Sentinel is for Shaman Epic 1.0 and administers the Test of Might and the completion of the epic.
+-- items: 1674, 18456, 18457, 18458, 18459
 
 function event_say(e)
 	if(e.message:findi("hail")) then --Part of Shaman Epic 1.0

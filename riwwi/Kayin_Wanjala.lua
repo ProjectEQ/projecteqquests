@@ -1,5 +1,6 @@
 -- Help Kayin Escape
 -- zam comments "He's actually on Yunjo Slave Resistance faction. (am max Ally with Nihil and he cons kindly)The minimum warmly statement seems to be correct, as he didn't take the Head at kindly."
+-- items: 64014
 
 function event_trade(e)
 	local item_lib = require("items");

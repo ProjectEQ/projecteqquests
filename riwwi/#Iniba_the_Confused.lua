@@ -1,4 +1,5 @@
 -- zam comment needs confirmation: "You need Begging 151 and WARMLY faction with Yunjo Resistance to get key."
+-- items: 52156
 
 function event_say(e)
     if(e.message:findi("please")) then

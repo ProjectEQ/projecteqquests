@@ -1,4 +1,5 @@
 -- Part of SK Epic 1.0
+-- items: 14384
 function event_spawn(e)
 	--e.self:Say("Alas, I cannot be the one to carry the sword back to my people as proof in fear they will kill me to possess it for their own. I think a simple trade is in order, perhaps you have a symbol or token of Lhranc's that I could take back to the others to ease their worries?");
 	eq.set_timer("depop",4800000);

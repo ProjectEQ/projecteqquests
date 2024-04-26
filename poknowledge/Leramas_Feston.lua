@@ -1,4 +1,5 @@
 --Intermediate Stealth Manual
+-- items: 28792, 29133
 function event_say(e)
 	if(e.message:findi("Hail")) then
 		e.self:DoAnim(70);

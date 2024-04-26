@@ -1,4 +1,5 @@
 --Lenarsk's Leather Armor (Tier 2)
+-- items: 51481, 51502, 51480, 51501, 51479, 51500, 51475, 51496, 51476, 51497, 51477, 51498, 51478, 51499
 
 function event_say(e)
 	if (e.other:GetFaction(e.self) <= 1) then -- require ally

@@ -1,3 +1,4 @@
+# items: 85092
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Pffft. What do you want? Unless you have some grand advice that will help me get on the [" . quest::saylink("council") . "], go away. I'm not here for your entertainment.");

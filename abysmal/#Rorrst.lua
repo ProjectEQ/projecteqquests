@@ -1,4 +1,5 @@
 -- Breakdown in Communication #3: Riwwi
+-- items: 25000
 
 function event_say(e)
 	if e.message:findi("Hail") then

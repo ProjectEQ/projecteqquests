@@ -1,3 +1,4 @@
+-- items: 63838, 62481, 17912
 function event_say(e)
     if e.message:findi("Hail") then
         e.self:Say("Greetings. I can sell you supplies, if you have need or, I can even help you fix up that old Jeweler's [Kit] of yours. Additionally if you like I can convert the various grades of raw Nihilite for you. I will keep a small amount for our use. I will convert raw amber nihilite, raw crimson nihilite, raw indigo nihilite and raw shimmering nihilite.");

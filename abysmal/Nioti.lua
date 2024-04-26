@@ -1,4 +1,5 @@
 -- Nioti's Predicament
+-- items: 19140, 55566, 55560, 55557, 55556, 55564, 10503, 55565, 9654, 9747, 55567
 
 function event_say(e)
     if e.message:findi("hail") then

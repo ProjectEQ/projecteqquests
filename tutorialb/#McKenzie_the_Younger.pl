@@ -1,3 +1,4 @@
+# items: 54696
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     if (!quest::istaskcompleted(8505) && !quest::istaskactive(8505)) { #task: Kickin' Things Up A Notch - Augmentations

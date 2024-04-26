@@ -1,4 +1,5 @@
 --  Help Vasha
+-- items: 64011
 function event_trade(e)
 	local item_lib = require("items");
    if (e.other:GetFaction(e.self) <= 2) then

@@ -1,4 +1,5 @@
 -- Primal Door
+-- items: 16949
 
 local question			=	0;	-- Current question number
 local expected_door		=	0;	-- Expected Next Door Number

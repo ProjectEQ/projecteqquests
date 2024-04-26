@@ -1,4 +1,5 @@
 -- Rarundel's Memory OOW quest?
+-- items: 67408, 67409
 
 function event_trade(e)
 	local item_lib = require("items");

@@ -1,4 +1,5 @@
 -- Kiki's Turtle Soup
+-- items: 54066
 
 function event_say(e)
       if(e.message:findi("hail")) then

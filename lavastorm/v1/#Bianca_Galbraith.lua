@@ -1,5 +1,6 @@
 -- #Bianca_Galbraith (27086)
 -- Missions
+-- items: 86006
 
 local don = require("dragons_of_norrath")
 

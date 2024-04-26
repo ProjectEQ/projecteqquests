@@ -1,4 +1,4 @@
--- items: 10035, 10080, 10081, 10082
+-- items: 10035, 10082, 10080, 10081
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Hrrump?! Who you? " .. e.other:GetName() .. "? What you want with Lynuga? Me am out [collecting]. Leave me be!");

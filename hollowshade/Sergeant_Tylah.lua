@@ -1,4 +1,5 @@
 -- Sergeant_Tylah (166080) in Hollowshade Moor
+-- items: 3457
 
 function event_spawn(e)
     eq.signal(166257, 101) -- checks with event controller upon spawn

@@ -1,4 +1,5 @@
 --Trelak's Plate Armor (Tier 2)  
+-- items: 51475, 51482, 51479, 51486, 51480, 51487, 51481, 51488, 51476, 51483, 51477, 51484, 51478, 51485
 
 function event_say(e)
 	if (e.other:GetFaction(e.self) <= 1) then -- require ally

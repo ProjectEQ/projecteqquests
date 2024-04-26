@@ -1,3 +1,4 @@
+-- items: 36211, 36212, 36213
 local item_lib = require("items")
 
 -- mission script is independent of task state

@@ -1,3 +1,4 @@
+-- items: 76013, 76014, 76015, 76016, 76017, 76018, 76019, 76048, 76065, 76274
 function event_say(e)
 	if e.message:findi("hail") then
 		e.self:Emote("continues to chant towards the altar as you approach. 'If you are in need of our aid speak to the disciple and bring me one of the soulstones that he sells. I must continue to delve into the twilight of our world in search of lost souls.'");

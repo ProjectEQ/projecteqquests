@@ -1,3 +1,4 @@
+# items: 85089
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Alas, my mood is melancholy, friend. Speak your business so I may continue to [" . quest::saylink("wallow") . "].");

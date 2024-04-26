@@ -1,4 +1,5 @@
 -- Rarundel's Memory
+-- items: 67410, 67411
 
 function event_trade(e)
 	local item_lib = require("items");

@@ -1,4 +1,5 @@
 -- Guard_Kliknaw (166078) in Hollowshade Moor
+-- items: 6220
 
 function event_spawn(e)
     eq.signal(166257, 101) -- checks with event controller upon spawn

@@ -1,3 +1,4 @@
+# items: 58750
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     if (quest::istaskactivityactive(505746, 0)) { #Getting to Know You: The City Charter

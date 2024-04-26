@@ -1,3 +1,4 @@
+-- items: 10092, 10094, 64191, 76000, 76001, 76002, 76003, 76004, 76005, 76006, 76007, 76008, 76009, 76010, 76011, 76012, 76070, 88735, 88736, 88737, 88738, 88739, 88740
 function event_say(e)
 	if e.message:findi("hail") then
 		e.self:Say("Hello ".. e.other:GetName() ..". Come to take a look at the crystal geode? The geode has some very strong magic inside of it that can help you. I can bring out the magic of the geode for you, but a gnome has to make a living! Even if he's stuck in this little hole in the wall all the time. Not that I'm bitter. Each of the crystals I sell is linked to a location in our world. If you give me one of the crystals I can focus the geode to let you and your companions travel there in the blink of an eye!");

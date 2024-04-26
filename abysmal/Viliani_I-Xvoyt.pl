@@ -1,4 +1,4 @@
-# items: 58151, 58143, 58206, 58111, 58132, 58048, 58047, 58099, 58100, 58101, 58098
+# items: 58151, 58143, 58206, 58205, 58111, 58132, 58048, 58047, 58099, 58100, 58101, 58098
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("Hail to you. I don't have a lot of free time. If you're going to stand around here and pretend you have something interesting to say, how about you let me put you to [work] instead. I know my ears would approve of the silence.");

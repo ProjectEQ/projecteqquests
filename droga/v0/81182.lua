@@ -1,3 +1,4 @@
+-- items: 12839, 4195, 4194
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Emote("seems to have lost all hope. He sadly looks to the ground. His shackles are different than the others you see in this cell. One is definitely steel and not of goblin design. The other is made of an unfamiliar metal.");

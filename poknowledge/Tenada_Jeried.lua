@@ -1,5 +1,6 @@
 --Three Manuals/Sage's Box of Research
 --Giren found text for the Three Manuals quest
+-- items: 16258, 28791, 28797, 28794
 function event_say(e)
 	if(e.message:findi("Hail")) then
 		e.self:Say("I am afraid I have little that I can talk about right now.  If you like you may speak to my [instructor] he can probably tell you about our work.");

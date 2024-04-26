@@ -1,4 +1,5 @@
 --Quest Germand's Problem
+-- items: 55558, 55536
 
 function event_say(e)
 	if e.message:findi("Hail") then

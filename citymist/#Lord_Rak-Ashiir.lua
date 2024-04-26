@@ -1,3 +1,4 @@
+-- items: 1673
 function event_spawn(e)
 	eq.set_timer("faction",5000);
 end

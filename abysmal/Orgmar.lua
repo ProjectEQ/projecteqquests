@@ -1,3 +1,4 @@
+-- items: 55621
 function event_say(e)
     if e.message:findi("Hail") then
         e.self:Say("You have got ta help me, lad! That ghost there in the corner won't [leave] me alone! Where ever I go he follows me!");

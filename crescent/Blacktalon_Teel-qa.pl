@@ -1,3 +1,4 @@
+# items: 58648, 58752
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     quest::say("May the shadows always guard you!  Darkness is where I find the most comfort and strength. I am fed by it.");

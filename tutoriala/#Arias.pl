@@ -1,3 +1,4 @@
+# items: 52303
 my $player = 0;
 
 sub EVENT_SAY {

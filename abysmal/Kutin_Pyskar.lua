@@ -1,3 +1,4 @@
+-- items: 55612
 function event_say(e)
 	if e.message:findi("Hail") then
 		e.self:Emote("looks you over with an appraising glance.  'Hail, yerself.  What news have you of the lands outside this void?  Did you come from [Taelosia] or from someplace [pleasant]?'");

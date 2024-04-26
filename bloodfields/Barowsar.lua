@@ -1,4 +1,5 @@
 --Barowsar's Leather Armor (Tier 1)
+-- items: 51446, 51467, 51445, 51466, 51444, 51465, 51440, 51461, 51441, 51462, 51442, 51463, 51443, 51464
 
 function event_say(e)
 	if (e.other:GetFaction(e.self) <= 2) then -- require warmly

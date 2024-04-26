@@ -1,4 +1,5 @@
 -- Siren Hunting
+-- items: 54090, 54089, 54088
 
 function event_say(e)
       if(e.message:findi("hail")) then

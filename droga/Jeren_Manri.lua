@@ -1,4 +1,5 @@
 -- part of pok quest The Magic Pool.  in both prevamp and revamp.
+-- items: 15959
 
 function event_say(e)
 	if(e.message:findi("Hail")) then

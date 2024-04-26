@@ -1,4 +1,5 @@
 --Beginner Stealth Manual
+-- items: 29168, 28745
 
 function event_say(e)
 	if(e.message:findi("Hail")) then

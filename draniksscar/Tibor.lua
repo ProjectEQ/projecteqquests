@@ -1,5 +1,6 @@
 --Tibor's Chain Armor (Tier 2)   
 -- helm,bp,boots,gloves needed to be parsed on live for proper emotes
+-- items: 51475, 51489, 51479, 51493, 51480, 51494, 51481, 51495, 51476, 51490, 51477, 51491, 51478, 51492
 
 function event_say(e)
   if (e.other:GetFaction(e.self) <= 1) then -- require ally

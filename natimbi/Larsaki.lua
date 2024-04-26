@@ -1,4 +1,5 @@
 -- Cragbeast Queen: Lizardscale Plated Girdle
+-- items: 52130, 52132
 function event_say(e)
     if(e.message:findi("hail") and e.other:HasItem(52125)) then --scale of the cragbeast queen
         e.self:Emote("yelps with surprise as she notices the bundle of scales you carry.");

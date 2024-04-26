@@ -1,3 +1,4 @@
+-- items: 60253
 function event_say(e)
 	local qglobals = eq.get_qglobals(e.other);
 	local can_get_key = (qglobals.ink_final == nil and not e.other:HasItem(60253));

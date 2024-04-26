@@ -1,4 +1,5 @@
 --Beginner Magic Manual
+-- items: 29751, 28745
 
 function event_say(e)
 	if(e.message:findi("Hail")) then

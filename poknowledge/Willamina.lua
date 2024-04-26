@@ -1,5 +1,5 @@
 -- poknowledge\Willamina.lua NPCID 202057 
--- items: 28092, 28745
+-- items: 28092
 
 function event_say(e)
 		if(e.message:findi("hail")) then

@@ -1,5 +1,6 @@
 --Shorvock's Chain Armor (Tier 1)  
 -- all turn-ins needed to be parsed on live for proper emotes
+-- items: 51446, 51460, 51445, 51459, 51444, 51458, 51440, 51454, 51441, 51455, 51442, 51456, 51443, 51457
 
 function event_say(e)
 	if (e.other:GetFaction(e.self) <= 2) then -- require warmly

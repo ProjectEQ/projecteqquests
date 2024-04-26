@@ -1,3 +1,4 @@
+-- items: 22801
 function event_say(e)
 	if e.message:findi("Hail") then
 		e.self:Emote("sighs. 'Oh, I am sorry. I do not mean to be rude. It is just that I miss the mainland. Being so far away from home is making me homesick. I hate to ask this, but think you could [" .. eq.say_link("help") .. "] me with something?'");

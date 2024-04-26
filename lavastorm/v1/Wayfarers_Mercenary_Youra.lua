@@ -1,5 +1,6 @@
 -- Wayfarers_Mercenary_Youra (27080)
 -- Norrath Keepers Token Turnin
+-- items: 57208
 
 local don = require("dragons_of_norrath")
 

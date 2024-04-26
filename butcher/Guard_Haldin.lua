@@ -1,3 +1,4 @@
+-- items: 18905
 function event_waypoint_arrive(e)
 	if e.wp == 2 then
 		if not eq.get_entity_list():IsMobSpawnedByNpcTypeID(68235) then

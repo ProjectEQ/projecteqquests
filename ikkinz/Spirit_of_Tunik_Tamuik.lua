@@ -1,4 +1,5 @@
 --Ikkinz Raid #1: Chambers of Righteousness   
+-- items: 60220
 function event_say(e)
 	local el = eq.get_entity_list();
 	if(e.message:findi("hail")) then

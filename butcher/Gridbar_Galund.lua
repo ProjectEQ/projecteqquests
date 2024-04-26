@@ -1,4 +1,5 @@
 -- Warrior Epic 1.5
+-- items: 60312, 60313, 60314, 60315, 60316, 15433, 60311, 60319
 
 function event_say(e)
 	local qglobals = eq.get_qglobals(e.other);

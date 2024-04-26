@@ -1,4 +1,5 @@
 #zone: tutorialb
+# items: 59943
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {

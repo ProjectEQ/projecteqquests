@@ -1,4 +1,5 @@
 --Advanced Combat Manual
+-- items: 22503, 26697, 9421, 28790
 
 function event_say(e)
 	if(e.message:findi("Hail")) then

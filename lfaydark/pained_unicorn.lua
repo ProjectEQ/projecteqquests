@@ -1,3 +1,4 @@
+-- quest: Druid Epic 1.0
 -- items: 20691, 20692, 20693, 20694
 function event_say(e)
 	if(e.message:findi("hail")) then

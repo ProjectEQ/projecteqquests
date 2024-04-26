@@ -1,4 +1,4 @@
--- Converted to .lua by Speedz
+-- quest: Druid Epic 1.0
 -- items: 20694, 20697
 
 function event_say(e)

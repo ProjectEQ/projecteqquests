@@ -1,5 +1,4 @@
-#
-#
+# quest: Druid Epic 1.0
 # items: 20472, 20446
 
 sub EVENT_SPAWN {
@@ -22,6 +21,3 @@ sub EVENT_ITEM {
   }
   plugin::return_items(\%itemcount);
 }
-
-# EOF zone: gfaydark ID: 54237 NPC: Faelin_Bloodbriar
-

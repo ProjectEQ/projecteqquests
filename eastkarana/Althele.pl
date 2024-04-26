@@ -1,6 +1,6 @@
-# #20448 -> Althele to start corruptor/reaver spawns for fleshbound tome
-#
+# quest: Druid Epic 1.0
 # items: 20448, 20450, 62810, 62811, 20452, 18959
+# #20448 -> Althele to start corruptor/reaver spawns for fleshbound tome
 
 my $depop1;
 my $depop2;
@@ -26,9 +26,9 @@ sub EVENT_SAY {
 	if($class eq "Ranger" && (plugin::check_hasitem($client, 20488) || plugin::check_hasitem($client, 62600))) {
     quest::say("Hello, friend. Beautiful is what I would call such a day normally, but lately? I sense that something is [" . quest::saylink("out of balance") . "].");
 		if($client->GetGlobal("ranger_epic") ==undef) {
-			quest::setglobal("ranger_epic", "1", 5, "F"); 
-		}	
-	}	
+			quest::setglobal("ranger_epic", "1", 5, "F");
+		}
+	}
   }
   if ($text=~/your eyes/i) {
     quest::say("Yes. I cannot see any longer, my sight long since lost in the march of years. By the blessings of Tunare and Karana, though, I still make myself useful.");
@@ -40,7 +40,7 @@ sub EVENT_SAY {
 	elsif($class eq "Druid" && plugin::check_hasitem($client, 20490) or plugin::check_hasitem($client, 62809)) { #has druid 1.0 OR Seed of Wrath
 		quest::say("I am certain that you would sense it too, had you been so blessed as to be without sight. My sense of the life of Norrath is greatly heightened without the hindrance of vision. As I can sense that you have at your call the power of the lands, perhaps in the form of the Nature Walkers Scimitar. I can feel an unnatural illness creeping about the edges of Norrath. Please, if you come across anything suspicious bring it to me. I am worried about this cold sickness that I can almost taste. Go with the blessing of the Mother and the speed of the Storm, my child.");
 		if($client->GetGlobal("druid_epic") ==undef) {
-			quest::setglobal("druid_epic", "1", 5, "F"); 
+			quest::setglobal("druid_epic", "1", 5, "F");
 		}
 	}
 	else {
@@ -68,7 +68,7 @@ sub EVENT_ITEM {
     $depop3 = $entity_list->GetMobByNpcTypeID(15170);
     $depop4 = $entity_list->GetMobByNpcTypeID(15043);
     $depop5 = $entity_list->GetMobByNpcTypeID(15042);
-    
+
     if ($depop1) {
       $depopnpc1 = $depop1->CastToNPC();
       $depopnpc1->Depop();
@@ -118,9 +118,9 @@ sub EVENT_SIGNAL {
   }
 }
 
-sub EVENT_TIMER {  
+sub EVENT_TIMER {
   if ($timer eq "prep") { # gives the last druid, teloa, time to walk to the gathering
-    quest::stoptimer("prep");    
+    quest::stoptimer("prep");
     quest::say("Great mother of life and father of sky, growth and spirit, Tunare and Karana. Innoruuk once again schemes and we have failed in our duties to protect our land. We give our powers in sacrifice for your help. Heed our call and send us your wisdom.");
     quest::signalwith(15178,99,3); # NPC: Sionae
     quest::signalwith(15167,99,6); # NPC: Nuien
@@ -149,7 +149,7 @@ sub EVENT_TIMER {
     $depop1 = $entity_list->GetMobByNpcTypeID(15178);
     $depop2 = $entity_list->GetMobByNpcTypeID(15167);
     $depop3 = $entity_list->GetMobByNpcTypeID(15170);
-    
+
     if ($depop1) {
       $depopnpc1 = $depop1->CastToNPC();
       $depopnpc1->Depop();
@@ -164,6 +164,3 @@ sub EVENT_TIMER {
     }
   }
 }
-
-# EOF zone: eastkarana ID: 15044 NPC: Althele
-

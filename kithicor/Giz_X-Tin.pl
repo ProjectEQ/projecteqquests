@@ -1,5 +1,5 @@
 # Faelin's Ring -> Giz X`Tin -> Dark Metal Coin
-#
+# quest: Druid Epic 1.0
 # items: 20446, 20447
 
 my $x;

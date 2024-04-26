@@ -1,3 +1,4 @@
+# quest: Druid Epic 1.0
 # items: 20696
 sub EVENT_SAY {
   if ($text=~/hail/i) {

@@ -1,6 +1,7 @@
+# quest: Druid Epic 1.0
+# items: 17860, 18959, 20473, 20460, 20462, 20468, 20440
 # #18959 -> ella foodcrafter -> two tasks; shiny tin bowl and a clue
 # hardened mixture and runecrested bowl -> softly glowing stone
-# items: 17860, 18959, 20473, 20460, 20462, 20468, 20440
 
 sub EVENT_WAYPOINT_ARRIVE{
 	if(($wp eq 13) || ($wp eq 19)) {

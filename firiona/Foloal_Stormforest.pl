@@ -1,6 +1,6 @@
-# warmly glowing stone quest -- ranger epic
-#
+# quest: Druid Epic 1.0|Ranger Epic 1.0
 # items: 20462, 20461, 20468
+# warmly glowing stone quest -- ranger epic
 
 sub EVENT_SAY {
   if ($text=~/are you one such as myself/i) {

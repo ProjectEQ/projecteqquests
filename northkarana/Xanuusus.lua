@@ -1,6 +1,7 @@
+-- quest: Druid Epic 1.0|Ranger Epic 1.0
+-- items: 62603, 20483, 20484, 20488, 20699, 20697, 20698, 20440, 20490, 13411, 13977, 84004, 13083, 62632, 62604
 -- earthcaller - ranger epic
 -- naturewalker's scimitar - druid epic
--- items: 62603, 20483, 20484, 20488, 20699, 20697, 20698, 20440, 20490, 13411, 13977, 84004, 13083, 62632, 62604
 
 function event_say(e)
   local qglobals = eq.get_qglobals(e.other);
@@ -9,7 +10,7 @@ function event_say(e)
       e.self:Say("I see you have purified that stone. Can I look at it?");
     elseif ( qglobals["ranger_epic15_pre"] == "7" and not e.other:HasItem(62603)) then
       e.other:SummonItem(62603); -- Item: Polished Blasted Stone
-    elseif ( qglobals["ranger_epic15_pre"] == "6" ) then 
+    elseif ( qglobals["ranger_epic15_pre"] == "6" ) then
       e.self:Say("You make my limbs ache. There is something unnatural about you. What is it?");
     else
       e.self:Say("Greetings, small one! I am Xanuusus of the Stormreapers. You are welcome to rest beneath my mighty branches.");
@@ -25,9 +26,9 @@ function event_say(e)
 
   elseif ( qglobals["ranger_epic15_pre"] == "8" and e.message:findi("ready") ) then
     eq.debug("name: " .. e.other:GetName());
-    -- 62631 Taskmaster's Cutlass in your offhand 
-    -- 62633 Tear-stained Poem of the Storms in your primary 
-    -- 62603 Polished Blasted Stone on your face 
+    -- 62631 Taskmaster's Cutlass in your offhand
+    -- 62633 Tear-stained Poem of the Storms in your primary
+    -- 62603 Polished Blasted Stone on your face
     if ( e.other:HasItem(62631) and e.other:HasItem(62633) and e.other:HasItem(62603) ) then
       eq.debug(e.other:GetName() .. " has the required items.");
       local client = e.other;
@@ -36,7 +37,7 @@ function event_say(e)
         e.self:Say("Stay close or this won't work. It is better that you do this, for trees are not very well structured to withstand lightning.");
         e.self:Emote("The treant releases a sound from his hollows that sounds much like thunder.");
 
-        -- At this point he'll walk a short ways, and he'll cast a spell on you called Bolt of Faith. It's an unresistable stun, 50% snare, and gives -50 to dexterity. It lasts one minute. Once it lands you'll see text. 
+        -- At this point he'll walk a short ways, and he'll cast a spell on you called Bolt of Faith. It's an unresistable stun, 50% snare, and gives -50 to dexterity. It lasts one minute. Once it lands you'll see text.
 
         e.self:CastSpell(5687, e.other:GetID()); -- Spell: Bolt of Faith
         client:Message(MT.Lime, "As the lightning courses through your body, you feel the stone dissolving. That material flows from your mouth in an unnatural fashion and you see it fade as it rushes away from you across the planes toward something moving in the distance.");
@@ -44,10 +45,10 @@ function event_say(e)
         client:DeleteItemInInventory(Slot.Secondary, 1, true);
         client:DeleteItemInInventory(Slot.Face, 1, true);
 
-        -- During all this, A Tainted Beast spawns who /cons blue at level 75. He hits for around 200, and dies quickly. However, you MUST aggro him within a minute or he despawns and you lose the Taskmaster's Cutlass and the Polished Blasted Stone. If you fail, you can hail Xanuusus for another stone, but the Taskmaster's Cutlass must be acquired again. A Tainted Beast is a griffon who beelines for Xanuusus from the southeast. Once it's dead, loot the Stone of Winde. Now go talk to Xanusuus again. 
+        -- During all this, A Tainted Beast spawns who /cons blue at level 75. He hits for around 200, and dies quickly. However, you MUST aggro him within a minute or he despawns and you lose the Taskmaster's Cutlass and the Polished Blasted Stone. If you fail, you can hail Xanuusus for another stone, but the Taskmaster's Cutlass must be acquired again. A Tainted Beast is a griffon who beelines for Xanuusus from the southeast. Once it's dead, loot the Stone of Winde. Now go talk to Xanusuus again.
         eq.set_timer("spawn_beast", 45 * 1000);
 
-      end 
+      end
     end
 	end
 end
@@ -119,5 +120,5 @@ function event_trade(e)
 	item_lib.return_items(e.self, e.other, e.trade)
 end
 
--- EOF zone: northkarana ID: 13061 NPC: Xanuusus 
+-- EOF zone: northkarana ID: 13061 NPC: Xanuusus
 

@@ -1,5 +1,6 @@
--- Start of the ranger and druid epic quests
+-- quest: Druid Epic 1.0|Ranger Epic 1.0
 -- items: 20472, 20447, 20448, 20468, 20477, 20481
+-- Start of the ranger and druid epic quests
 
 function event_say(e)
 	local fac = e.other:GetFaction(e.self);
@@ -33,7 +34,7 @@ end
 function event_trade(e)
 	local item_lib = require("items");
 	local fac = e.other:GetFaction(e.self);
-	
+
 	if(fac < 4) then
 		if(item_lib.check_turn_in(e.trade, {item1 = 20447})) then
 			e.self:Emote("scratches the coin as he looks at it. 'Faelin sent you to Giz? Surprising. This coin speaks to the outcome of your talk. He would hardly give this bit of metal to a stranger, but that's a story for a different time. So, you say Giz did confirm Innoruuk's involvement, and something about undead minions? Here, take this coin back. Find Arch Druid Althele in the Karanas and show her that. Tell her what we have discussed. She will look kindly on an ally in this matter.'");
@@ -53,8 +54,3 @@ function event_trade(e)
 	end
 	item_lib.return_items(e.self, e.other, e.trade);
 end
-
--------------------------------------------------------------------------------------------------
--- Converted to .lua using MATLAB converter written by Stryd
--- Find/replace data for .pl --> .lua conversions provided by Speedz, Stryd, Sorvani and Robregen
--------------------------------------------------------------------------------------------------

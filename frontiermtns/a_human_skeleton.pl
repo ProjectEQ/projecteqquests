@@ -1,6 +1,6 @@
-# platinum speckled powder -- ranger epic
-#
+# quest: Druid Epic 1.0|Ranger Epic 1.0
 # items: 20475, 20476
+# platinum speckled powder -- ranger epic
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 20475 => 1)) {

@@ -1,5 +1,5 @@
+# quest: Druid Epic 1.0
 # dark elf corruptor shouts before attacking
-#
 
 sub EVENT_SPAWN {
   quest::settimer("despawn", 300);

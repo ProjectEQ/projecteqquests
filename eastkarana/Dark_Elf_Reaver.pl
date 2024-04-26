@@ -1,5 +1,5 @@
+# quest: Druid Epic 1.0
 # dark elf reaver - ranger/druid epic
-#
 
 sub EVENT_SPAWN {
   quest::settimer("despawn",600);

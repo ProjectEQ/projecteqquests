@@ -1,4 +1,4 @@
-# EPIC CLERIC
+# quest: Cleric Epic 1.0
 # items: 28044, 28045
 
 sub EVENT_DEATH_COMPLETE {

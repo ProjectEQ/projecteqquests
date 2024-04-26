@@ -1,5 +1,7 @@
--- NPC:96080 -- Natasha Whitewater, Cleric epic 1.0 quest NPC
+-- quest: Cleric Epic 1.0
 -- items: 28018, 28056, 28052, 28054
+-- NPC:96080
+-- Natasha Whitewater, Cleric epic 1.0 quest NPC
 function event_spawn(e)
 	eq.set_timer("NatashaDepop",300000);
 end
@@ -26,7 +28,7 @@ function event_trade(e)
 		-- Give the player shimmering pearl
 		e.other:SummonItem(28054); -- Item: Shimmering Pearl
 		-- depop as my job is done.
-		eq.depop();		
+		eq.depop();
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

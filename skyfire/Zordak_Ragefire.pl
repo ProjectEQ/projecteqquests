@@ -1,4 +1,4 @@
-# EPIC CLERIC -skyfire-
+# quest: Cleric Epic 1.0
 
 sub EVENT_DEATH_COMPLETE {
     my $x = $npc->GetX();
@@ -7,6 +7,3 @@ sub EVENT_DEATH_COMPLETE {
     my $h = $npc->GetHeading();
   quest::spawn2(91090,0,0,$x,$y,$z,$h); # Zordakalicus_Ragefire
 }
-
-
-#End of File, Zone:skyfire  NPC:32038 -- Zordak Ragefire

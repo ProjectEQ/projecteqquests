@@ -1,4 +1,6 @@
+# quest: Cleric Epic 1.0
 # items: 28051
+
 my $engaged =  0;
 
 sub EVENT_SPAWN {
@@ -29,7 +31,7 @@ sub EVENT_TIMER {
 sub EVENT_DEATH_COMPLETE {
   quest::stoptimer("seeker_depop");
 }
- 
+
 sub EVENT_SAY {
   if ($text=~/solusek ro/i) {
     quest::say("Solusek Ro is the Master of Fire and the Keeper of Power.");

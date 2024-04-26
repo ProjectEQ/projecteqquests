@@ -1,4 +1,6 @@
+-- quest: Cleric Epic 1.0
 -- items: 28056, 28052
+
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Beware these woods! The sarnak claim this land as their own and wicked creatures walk beneath the burning foliage.");

@@ -1,11 +1,11 @@
-# EPIC CLERIC (Timorous deep)
+# quest: Cleric Epic 1.0
 # items: 28023, 5532
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 28023 => 1)) { #Orb of the triumvirate
     quest::emote("takes the orb from you. The avatar has determined that you are worthy!");
-    quest::summonitem(5532); # Water Sprinkler of Nem Ankh 
-    quest::exp(200000); 
+    quest::summonitem(5532); # Water Sprinkler of Nem Ankh
+    quest::exp(200000);
     quest::ding();
     quest::depop();
   }

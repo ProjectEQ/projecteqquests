@@ -1,9 +1,11 @@
+# quest: Berserker Epic 1.0
+# items: 60189, 60190, 60195, 60199, 60205, 60192, 60193, 60194, 60196, 60198, 60201, 60202, 60203, 60204, 60209, 60210, 60211, 68299, 58080, 63831, 63832, 16949, 15781, 18976, 17833, 17898, 17399, 17200, 72029, 18398, 17349, 17137, 20072, 15793, 17589, 17319, 17496
+
 # First berz. epic conversaion.
 # Lake of Ill Omen
 # Only for berz. Class
 # 9/13/07
 #quest::delglobal("berserk_epic");
-# items: 60189, 60190, 60195, 60199, 60205, 60192, 60193, 60194, 60196, 60198, 60201, 60202, 60203, 60204, 60209, 60210, 60211, 68299, 58080, 63831, 63832, 16949, 15781, 18976, 17833, 17898, 17399, 17200, 72029, 18398, 17349, 17137, 20072, 15793, 17589, 17319, 17496
 sub EVENT_SAY {
 	if($qglobals{berserk_epic} ==9) {
 	  if($text=~/enhance my axe/i) {
@@ -17,7 +19,7 @@ sub EVENT_SAY {
 	  }
 	  elsif ($text=~/metal/i) {
 	    quest::say("Ach, there's the rub! I dinnah know much about the metals ye brought back the first time as they were all used in those axes. Maybe ye should look for a smith from that area. You must let them look at the axe but be wary though fer little do we know of them.");
-	  }	  
+	  }
 	}
 	elsif(defined $qglobals{berserk_epic} && $qglobals{berserk_epic} >=7) {
 		if($text=~/hail/i) {
@@ -29,7 +31,7 @@ sub EVENT_SAY {
 		if($text=~/find out/i && $qglobals{berserk_epic}==7) {
 			quest::say("I dinnah not exactly know where she may be, but her name is Julei Direaxe and I fear that she may be in trouble. Please, hurry, strike out and find her, rescue her from any troubles she may be in. Return her to safety and bring me proof that she is alright and ye shall forever have me gratitude.");
 			quest::setglobal("berserk_epic",8, 5, "F");
-		}			
+		}
 	}
 	#epic 1.5
 	elsif(defined $qglobals{berserk_epic} && $qglobals{berserk_epic} >=1) {
@@ -40,7 +42,7 @@ sub EVENT_SAY {
 		}
 		if($text=~/hail/i && $qglobals{berserk_epic} ==1 && !plugin::check_hasitem($client, 11999)) {
 			quest::emote("Its good to see you again, friend. It seems my axe has fared well thus far, aye? Indeed it has. Have you spoke with your guildmaster yet? They will be glad to see that you are on your path towards controlling your rage.");
-		}		
+		}
 		if($text=~/matters/i && $qglobals{berserk_epic} ==1 && plugin::check_hasitem($client, 11999)) {
 			quest::say("Since the recent discovery of the portal on Taelosia, we've been finding many different types of ores, plants, and minerals that were unlike anything we'd ever seen before. These materials have been used to craft simple weapons, potions, and sometimes even been used in various recipes for. . .uh. . .some interesting dishes. Yet I believe that they can be used for [" . quest::saylink("something") . "] much, much more.");
 		}
@@ -64,7 +66,7 @@ sub EVENT_SAY {
 		}
 		if($text=~/hail/i && $qglobals{berserk_epic} ==4) {
 			quest::emote("once again looks lost in deep thought, 'Apologies $name. Another student o'mine has not returned yet and shall soon be overdue. I am beginning to worry that she may be in trouble. Yet she still has more time to complete her task so mayhap I shouldnah worry. Shaking himself of his concerns Keras asks, 'Come now, how well did the axes fair?'");
-		}		
+		}
 	  }
   #epic 1.0
   else {
@@ -110,22 +112,22 @@ sub EVENT_SAY {
 		quest::say("I will give ye no more hints. Ye must seek this creature out alone. Look far and use your mind and brawn to beat it. Yer noggin will give ye an advantage o'er this un.");
 		$imp=undef;
 	  }
-	 if($text=~/do/i && ($hunting == 1 || plugin::check_hasitem($client,60204))) { #Hunting stage complete 
-		quest::say("For my mirage to remain part of my trials, I need some very specific reagents. There is a sickly gorilla that carries a rotting organ which I am in need of. Also, I need a paw of a very special and dangerous kobold. Lastly, bring me the poison sac of a dangerous spider. A potion that allows us to create a gate from one place to another is also required. If ye believe ye can do this for me, tell me so, and I will give ye a bag to hold them in. When ye have all of the ingredients, combine them in the bag I've given ye, and bring it back to me. Good luck in your hunt!"); 
+	 if($text=~/do/i && ($hunting == 1 || plugin::check_hasitem($client,60204))) { #Hunting stage complete
+		quest::say("For my mirage to remain part of my trials, I need some very specific reagents. There is a sickly gorilla that carries a rotting organ which I am in need of. Also, I need a paw of a very special and dangerous kobold. Lastly, bring me the poison sac of a dangerous spider. A potion that allows us to create a gate from one place to another is also required. If ye believe ye can do this for me, tell me so, and I will give ye a bag to hold them in. When ye have all of the ingredients, combine them in the bag I've given ye, and bring it back to me. Good luck in your hunt!");
 		quest::summonitem(60205); # Item: McArik Reagent Satchel
-		$hunting=undef; 
-	  } 
-	  if($text=~/next challenge/i && ($mastery == 1 || plugin::check_hasitem($client,60210))) { 
-		quest::say("For this encounter, ye must be prepared for the unexpected and, in the face of chaos, be able to focus on the task at hand. Yer stamina will also be tested. When I first encountered this wicked trap in me travels, even I had to attempt it a couple of times. However, I do have faith in ye. With my advance warning, ye shouldn't be caught off guard. This challenge will also prove how loyal and skilled yer own friends are. One thing is for certain, ye can't complete this [next test] alone."); 
-	  } 
-	  if($text=~/next test/i && ($mastery == 1 || plugin::check_hasitem($client,60210))) { 
-		quest::say("Make your way to the woods in Kunark. Use the hunting skills ye have gained to find a most unusual and war-hungry creature. It has a very unique magic in its battle repertoire that will definitely test yer mettle. Off with ye, then. I do hope I see ye again...I've become quite fond of ye. I recently sent another like ye to do this trial and I haven't heard from him..."); 
-		$mastery=undef; 
-	  } 
+		$hunting=undef;
+	  }
+	  if($text=~/next challenge/i && ($mastery == 1 || plugin::check_hasitem($client,60210))) {
+		quest::say("For this encounter, ye must be prepared for the unexpected and, in the face of chaos, be able to focus on the task at hand. Yer stamina will also be tested. When I first encountered this wicked trap in me travels, even I had to attempt it a couple of times. However, I do have faith in ye. With my advance warning, ye shouldn't be caught off guard. This challenge will also prove how loyal and skilled yer own friends are. One thing is for certain, ye can't complete this [next test] alone.");
+	  }
+	  if($text=~/next test/i && ($mastery == 1 || plugin::check_hasitem($client,60210))) {
+		quest::say("Make your way to the woods in Kunark. Use the hunting skills ye have gained to find a most unusual and war-hungry creature. It has a very unique magic in its battle repertoire that will definitely test yer mettle. Off with ye, then. I do hope I see ye again...I've become quite fond of ye. I recently sent another like ye to do this trial and I haven't heard from him...");
+		$mastery=undef;
+	  }
 	}
-}	
+}
 
-		
+
 sub EVENT_ITEM {
 #1.0 turnins
   if (plugin::check_handin(\%itemcount, 60192 => 1, 60190 => 1)) { #Bloodbeast Tooth, Medal of Blood
@@ -159,30 +161,30 @@ sub EVENT_ITEM {
     quest::summonitem(68299); # Item: Kerasian Axe of Ire
 	quest::setglobal("berserk_epic", 1, 5, "F");
   }
-#1.5 turnins 
+#1.5 turnins
 #58080 Shimmering Aligned Ore
   elsif(plugin::check_handin(\%itemcount, 58080 => 4)) {
     quest::emote("eyes open wide in excitement as you hand him the 4 pieces of ore. 'Very good work indeed, young berserker!' As he examines each piece one at a time, he nods slowly, his smile widening each time, 'These pieces will do very well, no doubt. I will hold onto these until yew manage to bring me the rest of the components.");
 	quest::setglobal("berserk_epic_ore", 1, 5, "F");
-	Check5GlobalSerk();	
+	Check5GlobalSerk();
   }
 #63831 Hynid Blood
   elsif(plugin::check_handin(\%itemcount, 63831 => 4)) {
     quest::emote("takes the samples and slowly examines each one carefully. 'Ah, yes, the cragbeast blood and in very good condition too. This should work quite nicely for my experiment. It is my theory that capturing and utilizing the durability of cragbeasts could help to forge a weapon of unsurpassed durability. I will hold onto to these until yew bring me the rest of the necessary components.");
 	quest::setglobal("berserk_epic_hyn", 1, 5, "F");
-	Check5GlobalSerk();	
+	Check5GlobalSerk();
   }
 #63832 Cragbeast Blood
   elsif(plugin::check_handin(\%itemcount, 63832 => 4)){
     quest::emote("takes the samples and slowly examines each one carefully. 'Ah, yes, the cragbeast blood and in very good condition too. This should work quite nicely for my experiment. It is my theory that capturing and utilizing the durability of cragbeasts could help to forge a weapon of unsurpassed durability. I will hold onto to these until yew bring me the rest of the necessary components.");
 	quest::setglobal("berserk_epic_crag", 1, 5, "F");
-	Check5GlobalSerk();	
+	Check5GlobalSerk();
   }
 #16949 Taelosian Fern Sample
   elsif(plugin::check_handin(\%itemcount, 16949 => 4)) {
     quest::emote("begins to ruffle though the leaves holding them up to the light. 'Yes, surely these are the Taelosian Fern extracts I asked you to retrieve. They're far greener than I expected but surely these are the samples. It is said that the winds that roar down from the Taelosian mountains can strip the flesh from a man in but a few fleeting moments. Yet these gentle Ferns manage to survive because of their flexibility allows the winds to pass harmlessly through their branches. It is this essence of flexibility that I hope to capture and use. I will store these safely until yew return with the rest of the components.");
 	quest::setglobal("berserk_epic_fern", 1, 5, "F");
-	Check5GlobalSerk();	
+	Check5GlobalSerk();
   }
 #15781 Taelosian Tea Extract
   elsif(plugin::check_handin(\%itemcount, 15781 => 4)) {
@@ -201,7 +203,7 @@ sub EVENT_ITEM {
     quest::emote("'s demeanor quickly changes from one fraught with worry and guilt to one of relief. 'Ach! Julei is in good health. Tis good news indeed! My thanks to ye. If'in there be anything I can do for ye, ask and ye shall have it.");
     quest::setglobal("berserk_epic",9, 5, "F");
   }
-  elsif(plugin::check_handin(\%itemcount, 72029 => 1, 18398 => 1, 17349 => 1, 17137 => 1)) {  
+  elsif(plugin::check_handin(\%itemcount, 72029 => 1, 18398 => 1, 17349 => 1, 17137 => 1)) {
     quest::summonitem(20072); # Item: Unhoned Vengeful Taelosian Blood Axe
     quest::say("Ah ye've returned with the necessary components, me friend? Give me but a moment to look over what you've managed to get yer hands on. Yes, these should do the job quite nicely. We'll see just what potential can be unleashed in this axe of yours! So the Dragorn smith said to reinforce the haft with this ore, eh? I can accomplish that surely. Work with the Moonstone should be easy enough tew as it don't seem to require much enchantment from me. The Lightning Core will require a bit o' work though as I'm not very experienced with it. Still though, I can surely do something with it. I would na ever thought of using one of these on an axe though! Crafty Gnomes indeed.' After some time and a bit of effort, Keras hands you back your axe. 'Here ya go, lad. I tried honing the edge further but I dinnah have a whetstone strong enough. Maybe that smith o' yours can help ye futher?");
   }
@@ -216,12 +218,12 @@ sub EVENT_TIMER {
 }
 
 sub Check5GlobalSerk {
-  if($client->GetGlobal("berserk_epic_ore")==1 && $client->GetGlobal("berserk_epic_hyn")==1 && $client->GetGlobal("berserk_epic_crag")==1 && $client->GetGlobal("berserk_epic_fern")==1 && $client->GetGlobal("berserk_epic_tea")==1) { 		
+  if($client->GetGlobal("berserk_epic_ore")==1 && $client->GetGlobal("berserk_epic_hyn")==1 && $client->GetGlobal("berserk_epic_crag")==1 && $client->GetGlobal("berserk_epic_fern")==1 && $client->GetGlobal("berserk_epic_tea")==1) {
     quest::say("Excellent. I've managed to imbue all of the temper components you brought into the 4 pieces of Taelosian Tempered Ore. Take the samples to Baeldarr Hawkeye who can be found in the Plane of Knowledge. His knowledge and artistry of smithing is unmatched. Surely he can tell us the value of what we have created here.");
 	quest::summonitem(15793); #Taelosian Tempered Ore
 	quest::summonitem(17589); #Taelosian Tempered Ore
 	quest::summonitem(17319); #Taelosian Tempered Ore
-	quest::summonitem(17496); #Taelosian Tempered Ore	
+	quest::summonitem(17496); #Taelosian Tempered Ore
 	quest::delglobal("berserk_epic_ore");
 	quest::delglobal("berserk_epic_hyn");
 	quest::delglobal("berserk_epic_crag");

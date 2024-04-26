@@ -1,6 +1,6 @@
-#BeginFile: warslikswood\Lurking_Hopeful.pl
-#Quest for Warsliks Wood - Lurking Hopeful: Berserker Epic 1.0 (Trial of Mastery)
+# quest: Berserker Epic 1.0
 # items: 60210
+#Quest for Warsliks Wood - Lurking Hopeful: Berserker Epic 1.0 (Trial of Mastery)
 
 my $medal;
 
@@ -24,7 +24,7 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM {
   my $cash = $platinum * 1000 + $gold * 100 + $silver * 10 + $copper;
-  if(($ulevel > 45) && plugin::check_handin(\%itemcount, 60210 => 1)) { #Medal of Mastery    
+  if(($ulevel > 45) && plugin::check_handin(\%itemcount, 60210 => 1)) { #Medal of Mastery
     if(defined($qglobals{raving}) && ($qglobals{raving} == 1)) {
       quest::say("You must wait to attempt this again.");
       quest::summonitem(60210); #Medal of Mastery
@@ -44,4 +44,3 @@ sub EVENT_ITEM {
   }
   plugin::return_items(\%itemcount);
 }
-#EndFile: warslikswood\Lurking_Hopeful.pl (79115)

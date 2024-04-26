@@ -1,6 +1,5 @@
+-- quest: Berserker Epic 1.0
 -- items: 60199, 60200, 60201
-
--- Berserker Epic 1.0
 
 function event_say(e)
 
@@ -11,7 +10,7 @@ function event_say(e)
 				elseif e.message:findi("strategy") then
 					e.self:Say("It do have sense of stragegy. It a creature dat has got smartz wit da magic too. Da way it mixes its abilities is good stuffs. You gots to try to catch it when it eats. It usually comes out when it dark out. And when you kill it, can you get my axe back? Me lost it to dat beast. Plus me needs proof you killed it so me can give you sumtin to give to McArik.");
 				end
-				--e.self:Say("You berserker, but me have nothing for you!");	
+				--e.self:Say("You berserker, but me have nothing for you!");
 		else
 			e.self:Say("Me has nothing to do with you youngling.");
 		end
@@ -22,7 +21,7 @@ end
 
 function event_trade(e)
 	local item_lib = require("items");
-	
+
 	if item_lib.check_turn_in(e.trade, {item1 = 60199}) then  -- Item: Note for Treanik
 		e.self:Say("Me hopes you can hold your breath, ".. e.other:GetCleanName() ..". Me make sure to stock up before makin' dat long swim. Pesky goblins all over. Treanik must tell dat dere is much more dan pests here to taunt da likes of us. Dere be a beast down dere dat me not killed yet. Me much younger dan you, but me learn how dat [beast fights] -- it smarter dan da average creature, you know. Don't be fooled.");
 	elseif item_lib.check_turn_in(e.trade, {item1 = 60200}) then  -- Proper Flag so not to be skipable and Item: Treanik's Tarnished Axe

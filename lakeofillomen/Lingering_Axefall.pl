@@ -1,9 +1,11 @@
+# quest: Berserker Epic 1.0
+# items: 60189, 60191
+
 # First Zerker. Event
 # Lake of Ill Omen
 #
 # 9/13/07
 # Written: Wizardanim
-# items: 60189, 60191
 
 my $axe = 0;
 my $beast = 0;

@@ -1,3 +1,5 @@
+-- quest: Berserker Epic 1.0
+
 --Huffin revamp
 --Only adds item to loot drop if the event is done properly
 

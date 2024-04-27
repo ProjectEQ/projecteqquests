@@ -1,3 +1,4 @@
+# quest: Beastlord Epic 1.0
 # items: 57056, 9050, 17363, 9051, 9055, 9056, 9053, 9054, 9052, 52931
 sub EVENT_SAY {
   if ($text=~/hail/i) {

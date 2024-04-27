@@ -1,10 +1,11 @@
+-- quest: Beastlord Epic 1.0
 -- items: 9031, 9032, 9033
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("It is a pleasure to meet you, but I do not have time to speak. I am waiting on official word from Shar Vahl. If you have been sent to assist me, please show me the Official Seal of the Khati Sha at this time. If you are not such a person, please carry on with your business and leave me to tend to mine.");
 	end
 end
-    
+
 function event_trade(e)
 	local item_lib = require("items");
 

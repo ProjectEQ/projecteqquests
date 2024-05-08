@@ -49,6 +49,8 @@ local states = {
 	done      = 90,
 }
 
+local feign_available = true;
+
 local start_area = { min_x = -121, max_x = -65, min_y = -142, max_y = -40 }
 local dojo_area  = { min_x = -207, max_x = 18,  min_y = -344, max_y = -146 }
 local sensai_loc = { x = -92.875, y = -332.875, z = 253.5, h = 1.25 }
@@ -366,7 +368,8 @@ local function enemy_timer(e)
 			end
 		end
 	elseif mobid == 340619 and e.timer == "monk_fd" then
-		if e.self:GetHPRatio() <= 35 then -- fd
+		if e.self:GetHPRatio() <= 35 and feign_available then -- fd
+			feign_available = false;
 			make_attackable(e.self, false);
 			e.self:WipeHateList();
 			e.self:SetAppearance(3);	--lay down on floor
@@ -378,6 +381,7 @@ local function enemy_timer(e)
 		eq.set_timer("monk_fd", 5 * 1000);
 	elseif mobid == 340619 and e.timer == "reset_fd" then
 		eq.stop_timer(e.timer);
+		feign_available = true;
 	elseif mobid == 340619 and e.timer == "stand_up" then
 		eq.stop_timer(e.timer);
 		make_attackable(e.self, true);
@@ -401,11 +405,30 @@ function beetle_spawn(e)
 	eq.set_timer("monk_fd", 5 * 1000);
 end
 
+function steel_spawn(e)
+	e.self:ModSkillDmgTaken(0, -60);	-- 1h blunt
+	e.self:ModSkillDmgTaken(1, -60);	-- 1h slashing
+	e.self:ModSkillDmgTaken(2, -60);	-- 2h blunt
+	e.self:ModSkillDmgTaken(3, -60);	-- 2h slashing
+	e.self:ModSkillDmgTaken(8, -60);	-- backstab
+	e.self:ModSkillDmgTaken(10, -60);	-- bash
+	e.self:ModSkillDmgTaken(21, -60);	-- dragon punch
+	e.self:ModSkillDmgTaken(23, -60);	-- eagle strike
+	e.self:ModSkillDmgTaken(26, -60);	-- flying kick
+	e.self:ModSkillDmgTaken(28, -60);	-- hand to hand
+	e.self:ModSkillDmgTaken(30, -60);	-- kick
+	e.self:ModSkillDmgTaken(36, -60);	-- piercing
+	e.self:ModSkillDmgTaken(38, -60);	-- round kick
+	e.self:ModSkillDmgTaken(52, -60);	-- tiger claw
+	e.self:ModSkillDmgTaken(74, -60);	-- frenzy
+end
+
 function event_encounter_load(e)
 	eq.register_npc_event(Event.spawn, 340616, sensei_spawn) -- #Storm_Reach_Sensei
 	eq.register_npc_event(Event.timer, 340616, sensei_timer)
 	eq.register_npc_event(Event.spawn, 340624, deceit_spawn)
 	eq.register_npc_event(Event.spawn, 340619, beetle_spawn)
+	eq.register_npc_event(Event.spawn, 340618, steel_spawn)
 
 	for _, wave in pairs(waves) do
 		for _, npc in pairs(wave) do

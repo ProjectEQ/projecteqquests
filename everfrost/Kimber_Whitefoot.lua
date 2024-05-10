@@ -3,7 +3,7 @@
 -- items: 60306, 60305
 function event_say(e)
 	local qglobals = eq.get_qglobals(e.other);
-	if(e.message:findi("hail") and qglobals["warrior_epic"] >= "4") then
+	if(e.message:findi("hail") and qglobals["warrior_epic"] ~= nil and qglobals["warrior_epic"] >= "4") then
 		e.self:Say("Yes, yes, you again. I had a chance to examine the vial you gave me. Quite an interesting substance, I must say. Scary though. Where did you say you found it? Never mind, it's not important. I made a potion out of the vial, but I can feel an evil presence within. I want to be rid of it, so you can have it back. Please don't come to me with anything like that again. I'm really not into dealing with spirits of such heinous design. Good luck.");
 		e.other:SummonItem(60306); --Potion of Blackfall Spirit
 	end

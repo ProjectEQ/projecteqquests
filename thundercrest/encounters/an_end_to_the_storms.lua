@@ -131,6 +131,8 @@ function yar_death_complete(e)
 	eq.get_entity_list():FindDoor(30):SetLockPick(0); -- unlock door upon success
 	eq.get_entity_list():FindDoor(31):SetLockPick(0); -- unlock door upon success
 	eq.spawn2(340031,0,0, e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading()); -- NPC: a_chest
+	eq.depop_all(340029);
+	eq.depop_all(340030);
 
 	-- first server kill unlocks the Accursed Nest zone
 	if not had_gm and not don.is_nest_unlocked() then

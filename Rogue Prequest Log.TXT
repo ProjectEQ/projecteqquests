@@ -1,0 +1,1492 @@
+[Thu May 02 05:10:51 2024] Logging to 'eqlog.txt' is now *ON*.
+[Sat May 04 19:46:54 2024] Logging to 'eqlog.txt' is now *ON*.
+[Sat May 04 19:47:00 2024] You have completed achievement: Highpass Hold Traveler
+[Sat May 04 19:49:52 2024] Gurrdar begins casting Aina's Faithful.
+[Sat May 04 19:51:51 2024] A guard regards you indifferently -- You could probably win this fight. (Lvl: 26)
+[Sat May 04 19:54:13 2024] Targeted (NPC): Alhareen the Just
+[Sat May 04 19:54:13 2024] Right click on the NPC to consider her.
+[Sat May 04 19:54:14 2024] Alhareen the Just regards you indifferently -- looks kind of dangerous. (Lvl: 61)
+[Sat May 04 19:54:17 2024] You stop hiding.
+[Sat May 04 19:54:18 2024] Alhareen the Just regards you indifferently -- looks kind of dangerous. (Lvl: 61)
+[Sat May 04 19:54:21 2024] Targeted (Player): Zshawdo
+[Sat May 04 19:54:21 2024] Right click on yourself to bring up your own inspect window. Use the /toggleinspect command to enable or disable right-click inspecting. You can also enable Click Through Self in the Options Window to stop clicking on yourself.
+[Sat May 04 19:54:21 2024] Zshawdo regards you indifferently -- looks like quite a gamble. (Lvl: 70)
+[Sat May 04 19:54:22 2024] Targeted (Merchant): a shady Highpass citizen
+[Sat May 04 19:54:22 2024] Stand close to and right click on the Merchant to begin a transaction.
+[Sat May 04 19:54:23 2024] A shady Highpass citizen regards you indifferently -- You could probably win this fight. (Lvl: 40)
+[Sat May 04 19:54:25 2024] Targeted (NPC): a Highpass citizen
+[Sat May 04 19:54:25 2024] Right click on the NPC to consider her.
+[Sat May 04 19:54:26 2024] Targeted (NPC): a guard
+[Sat May 04 19:54:26 2024] Right click on the NPC to consider him.
+[Sat May 04 19:54:27 2024] A guard regards you indifferently -- You could probably win this fight. (Lvl: 27)
+[Sat May 04 19:54:28 2024] Targeted (NPC): a Highpass citizen
+[Sat May 04 19:54:28 2024] Right click on the NPC to consider her.
+[Sat May 04 19:54:28 2024] A Highpass citizen regards you indifferently -- You could probably win this fight. (Lvl: 20)
+[Sat May 04 19:54:34 2024] You stop sneaking.
+[Sat May 04 19:54:36 2024] Targeted (Merchant): a shady Highpass citizen
+[Sat May 04 19:54:36 2024] Stand close to and right click on the Merchant to begin a transaction.
+[Sat May 04 19:54:37 2024] You say, 'Hail, a shady Highpass citizen'
+[Sat May 04 19:54:38 2024] A shady Highpass citizen says, 'Take a load off and join me for awhile, Zshawdo.  The Tiger's Roar is the best watering hole in Antonica.  I come here every day to relax and take in the gorgeous view.'  He glances around at the other patrons of the tavern.  'See what I mean?  Like I said... Best bar this side of Norrath.  Now, if you are interested in talking business, I can't help but to assume that you are here because you wish to ingratiate yourself with Stanos and his lot.  It just so happens that I know of several jobs they need taken care of.  If you completed all three, then informed me when you were [done], I imagine it would get you in their good graces.  What will it be, hmm?  [One], [two], or [three]?'
+[Sat May 04 19:54:58 2024] You say, 'done'
+[Sat May 04 19:54:58 2024] A shady Highpass citizen raises an eyebrow and glares at you.  When the silence becomes unbearable, he finally speaks, 'Looks like someone needs a re-education in the subtle differences between 'done' and 'not done'.  You'll find yourself in the latter category, Zshawdo.  We all appreciate your help, you know we do, but you're going to have to take care of all our business before we can discuss this 'done' thing again.'
+[Sat May 04 19:55:14 2024] You say, 'One'
+[Sat May 04 19:55:14 2024] A shady Highpass citizen holds up a small but ornate urn, 'I have a trinket here that happens to be quite valuable.  As you may have guessed, it was not obtained legally, which in and of itself isn't usually a problem.  However, the previous owner happens to be a wealthy and influential nobleman who happens to have offered a sizable reward for its return.  The reward is even higher should the mercenaries bring back heads of the perpetrators.  Who would have known that the ashes of the old codger's ancestor would mean so much to him?  Now, I'm the type that likes to keep his head on his shoulders.  We need to get rid of this, and soon, but we're not willing to write it off as a loss.  You look like you could play the 'trustworthy' type.  Why don't you buy the urn from me and take it to the Keep Casino?  Trade it in for chips.  Play a few games, cash in early and walk away with the money.  Everybody wins.  Act casual.  Don't give yourself away.'
+[Sat May 04 19:56:03 2024] Targeted (Merchant): a shady Highpass citizen
+[Sat May 04 19:56:03 2024] Stand close to and right click on the Merchant to begin a transaction.
+[Sat May 04 19:56:04 2024] A shady Highpass citizen says, 'Welcome to my shop, Zshawdo. You would probably find a Gold-Leafed Urn handy.'
+[Sat May 04 19:56:16 2024] a shady Highpass citizen told you, 'That'll be 15749 platinum 9 gold 9 silver 9 copper for the Pouch of Gems.'
+[Sat May 04 19:56:26 2024] a shady Highpass citizen told you, 'That'll be 2099 platinum 9 gold 9 silver 9 copper for the Gold-Leafed Urn.'
+[Sat May 04 19:56:27 2024] a shady Highpass citizen told you, 'That'll be 3 silver 1 copper per Ale.'
+[Sat May 04 19:56:28 2024] a shady Highpass citizen told you, 'That'll be 1 silver 5 copper per Honey Mead.'
+[Sat May 04 19:56:28 2024] a shady Highpass citizen told you, 'That'll be 5 silver 2 copper per Mead.'
+[Sat May 04 19:56:29 2024] a shady Highpass citizen told you, 'That'll be 5 silver 2 copper per Short Ale.'
+[Sat May 04 19:56:30 2024] a shady Highpass citizen told you, 'That'll be 1 silver 5 copper per Short Beer.'
+[Sat May 04 19:57:16 2024] Eonaladin has offered you 2,200 platinum.
+[Sat May 04 19:57:22 2024] You complete the trade with Eonaladin.
+[Sat May 04 19:59:55 2024] Targeted (Merchant): a shady Highpass citizen
+[Sat May 04 19:59:55 2024] Stand close to and right click on the Merchant to begin a transaction.
+[Sat May 04 19:59:55 2024] A shady Highpass citizen says, 'Welcome to my shop, Zshawdo. You would probably find a Short Ale handy.'
+[Sat May 04 19:59:57 2024] a shady Highpass citizen told you, 'That'll be 2099 platinum 9 gold 9 silver 9 copper for the Gold-Leafed Urn.'
+[Sat May 04 20:00:04 2024] You purchased Gold-Leafed Urn from a shady Highpass citizen for  2099 platinum 9 gold 9 silver 9 copper.
+[Sat May 04 20:00:18 2024] Targeted (Merchant): a shady Highpass citizen
+[Sat May 04 20:00:18 2024] Stand close to and right click on the Merchant to begin a transaction.
+[Sat May 04 20:00:18 2024] A shady Highpass citizen says, 'Welcome to my shop, Zshawdo. You would probably find a Mead handy.'
+[Sat May 04 20:00:21 2024] Targeted (Merchant): a shady Highpass citizen
+[Sat May 04 20:00:21 2024] Stand close to and right click on the Merchant to begin a transaction.
+[Sat May 04 20:01:03 2024] Lyn Tarburner says, 'Hello there, Gurrdar. How about a nice Wine Yeast?'
+[Sat May 04 20:01:20 2024] Alhareen the Just begins casting Alacrity.
+[Sat May 04 20:01:24 2024] Alhareen the Just feels much faster.
+[Sat May 04 20:01:34 2024] A shady Highpass citizen says, 'Welcome to my shop, Eonaladin. You would probably find a Mead handy.'
+[Sat May 04 20:01:45 2024] A shady Highpass citizen says, 'Greetings, Zshawdo. You look like you could use a Short Ale.'
+[Sat May 04 20:01:56 2024] Targeted (Merchant): a shady Highpass citizen
+[Sat May 04 20:01:56 2024] Stand close to and right click on the Merchant to begin a transaction.
+[Sat May 04 20:02:18 2024] You say, 'two'
+[Sat May 04 20:02:19 2024] A shady Highpass citizen says, 'Fabulous choice.'  He pauses to light a cigar, taking short puffs of air into his mouth to coax it aflame.  'There's a man that goes by the name of Nichols who was slated to deliver a shipment of Luclinite, ohhh, about two weeks ago.  And when I say deliver I mean smuggle.  He's a reliable type, one of Stanos' best men, so it stands to reason that he's probably been caught and incarcerated.  Right about now, I imagine he's locked up tighter than a sister in the crying seas.  That's just a figure of speech, mind you.  We don't know where he is.  If you could find him and release him, well, that'd be fabulous.'  He takes another long puff and continues. 'Do whatever you have to.'
+[Sat May 04 20:03:01 2024] You say, 'three'
+[Sat May 04 20:03:01 2024] A shady Highpass citizen leans in close and whispers, 'You aren't above a bit of smuggling yourself, I hope.  I've got a package that needs to make it to Crow in Qeynos.  The guards are expecting its arrival and have increased their numbers and heightened their watch.  Fortunately for us, they don't know that we know that they know.  On top of that, they'll be expecting someone from the Highpass camp.  Do you understand?  The bottom line is, this shipment must reach Crow in Qeynos, and the deliverer mustn't get caught.  That's all you really need to know.  I'm counting on you to not botch this job, Zshawdo.'
+[Sat May 04 20:03:57 2024] You say, 'Sealed Silver Package'
+[Sat May 04 20:05:58 2024] You say, 'three'
+[Sat May 04 20:05:58 2024] A shady Highpass citizen leans in close and whispers, 'You aren't above a bit of smuggling yourself, I hope.  I've got a package that needs to make it to Crow in Qeynos.  The guards are expecting its arrival and have increased their numbers and heightened their watch.  Fortunately for us, they don't know that we know that they know.  On top of that, they'll be expecting someone from the Highpass camp.  Do you understand?  The bottom line is, this shipment must reach Crow in Qeynos, and the deliverer mustn't get caught.  That's all you really need to know.  I'm counting on you to not botch this job, Zshawdo.'
+[Sat May 04 20:05:58 2024] Duplicate Lore Items are not allowed.
+[Sat May 04 20:06:07 2024] You say, 'Hail, a shady Highpass citizen'
+[Sat May 04 20:06:07 2024] A shady Highpass citizen says, 'Take a load off and join me for awhile, Zshawdo.  The Tiger's Roar is the best watering hole in Antonica.  I come here every day to relax and take in the gorgeous view.'  He glances around at the other patrons of the tavern.  'See what I mean?  Like I said... Best bar this side of Norrath.  Now, if you are interested in talking business, I can't help but to assume that you are here because you wish to ingratiate yourself with Stanos and his lot.  It just so happens that I know of several jobs they need taken care of.  If you completed all three, then informed me when you were [done], I imagine it would get you in their good graces.  What will it be, hmm?  [One], [two], or [three]?'
+[Sat May 04 20:06:11 2024] You say, 'done'
+[Sat May 04 20:06:11 2024] A shady Highpass citizen raises an eyebrow and glares at you.  When the silence becomes unbearable, he finally speaks, 'Looks like someone needs a re-education in the subtle differences between 'done' and 'not done'.  You'll find yourself in the latter category, Zshawdo.  We all appreciate your help, you know we do, but you're going to have to take care of all our business before we can discuss this 'done' thing again.'
+[Sat May 04 20:06:14 2024] A shady Highpass citizen says, 'Hi there, Zshawdo. Just browsing?  Have you seen the Mead I just got in?'
+[Sat May 04 20:12:40 2024] Alhareen the Just begins casting Alacrity.
+[Sat May 04 20:12:44 2024] Alhareen the Just feels much faster.
+[Sat May 04 20:15:09 2024] Targeted (Merchant): a shady Highpass citizen
+[Sat May 04 20:15:09 2024] Stand close to and right click on the Merchant to begin a transaction.
+[Sat May 04 20:15:10 2024] A shady Highpass citizen says, 'Welcome to my shop, Zshawdo. You would probably find a Mead handy.'
+[Sat May 04 20:17:47 2024] Your speed fades.
+[Sat May 04 20:24:04 2024] Alhareen the Just begins casting Alacrity.
+[Sat May 04 20:24:09 2024] Alhareen the Just feels much faster.
+[Sat May 04 20:30:08 2024] Targeted (Merchant): a shady Highpass citizen
+[Sat May 04 20:30:08 2024] Stand close to and right click on the Merchant to begin a transaction.
+[Sat May 04 20:30:08 2024] A shady Highpass citizen says, 'Hi there, Zshawdo. Just browsing?  Have you seen the Mead I just got in?'
+[Sat May 04 20:32:07 2024] You successfully destroyed 1 Gloomingdeep Kobold Chain Sleeves.
+[Sat May 04 20:33:09 2024] Alhareen the Just begins casting Inner Fire.
+[Sat May 04 20:33:13 2024] Alhareen the Just's body pulses with energy.
+[Sat May 04 20:33:13 2024] Alhareen the Just healed herself for 20 hit points by Inner Fire.
+[Sat May 04 20:35:30 2024] Alhareen the Just begins casting Alacrity.
+[Sat May 04 20:35:34 2024] Alhareen the Just feels much faster.
+[Sat May 04 20:45:35 2024] A shady Highpass citizen says, 'Hello there, Zshawdo. How about a nice Mead?'
+[Sat May 04 20:45:41 2024] Targeted (Merchant): a shady Highpass citizen
+[Sat May 04 20:45:41 2024] Stand close to and right click on the Merchant to begin a transaction.
+[Sat May 04 20:45:41 2024] A shady Highpass citizen says, 'Welcome to my shop, Zshawdo. You would probably find a Gold-Leafed Urn handy.'
+[Sat May 04 20:45:42 2024] a shady Highpass citizen told you, 'That'll be 2099 platinum 9 gold 9 silver 9 copper for the Gold-Leafed Urn.'
+[Sat May 04 20:46:37 2024] You have become better at Safe Fall! (179)
+[Sat May 04 20:46:55 2024] LOADING, PLEASE WAIT...
+[Sat May 04 20:47:08 2024] You have entered High Keep.
+[Sat May 04 20:47:22 2024] You have completed achievement: High Keep Traveler
+[Sat May 04 20:48:06 2024] A pickclaw spiritist begins casting Spirit of Wolf.
+[Sat May 04 20:48:07 2024] Gurrdar has completed achievement: High Keep Traveler
+[Sat May 04 20:49:06 2024] Isabella Cellus says, 'I just adore this place.'
+[Sat May 04 20:50:01 2024] Targeted (Merchant): Dealer Maeline
+[Sat May 04 20:50:01 2024] Stand close to and right click on the Merchant to begin a transaction.
+[Sat May 04 20:50:04 2024] Dealer Maeline says, 'Rogues like you don't have any place in my shop. Now make way for welcome customers.'
+[Sat May 04 20:50:07 2024] Dealer Maeline glowers at you dubiously -- You could probably win this fight. (Lvl: 45)
+[Sat May 04 20:50:07 2024] This creature would take an army to defeat!
+[Sat May 04 20:51:07 2024] Dealer Shonta says, 'Greetings, Eonaladin. You look like you could use a Capt. Orlin's Spiced Ale.'
+[Sat May 04 20:51:12 2024] Dealer Maeline says, 'Welcome to my shop, Eonaladin. You would probably find a Barley handy.'
+[Sat May 04 20:51:59 2024] Targeted (Merchant): Dealer Maeline
+[Sat May 04 20:51:59 2024] Stand close to and right click on the Merchant to begin a transaction.
+[Sat May 04 20:51:59 2024] You offered 1 Gold-Leafed Urn to Dealer Maeline.
+[Sat May 04 20:52:05 2024] Dealer Maeline passes the urn to Guard Kovan for safekeeping.  She slides her left hand down her right sleeve and vice versa. 'Welcome to the High Keep Casino, Zshawdo.  The urn you brought is worth 1500 credits.  Let me know at any time if you want me to [deal you a hand], or if you'd rather [cash out].'
+[Sat May 04 20:52:05 2024] You gain experience (with a bonus)!
+[Sat May 04 20:52:05 2024] You complete the trade with Dealer Maeline.
+[Sat May 04 20:53:11 2024] You say, 'cash out'
+[Sat May 04 20:53:11 2024] Dealer Maeline says, 'Thanks for playing, Zshawdo.  Here are your...'
+[Sat May 04 20:53:11 2024] Dealer Maeline brandishes his blade, 'Not so fast.  There's something strange about... I knew it - this artifact was stolen!  You're one of those smugglers aren't you?  Think about your crimes while you rot in a cell, two-bit thief.  Your days of pilfering and plundering are over.'
+[Sat May 04 20:53:11 2024] Dealer Maeline begins casting Incapacitating Darkness.
+[Sat May 04 20:53:11 2024] You are surrounded by darkness.
+[Sat May 04 20:53:13 2024] A prisoner says, 'Guards! Guards! Help me!'
+[Sat May 04 20:53:13 2024] A prisoner says, 'Guards! Guards! Help me!'
+[Sat May 04 20:53:13 2024] A prisoner tries to punch YOU, but misses!
+[Sat May 04 20:53:13 2024] A prisoner tries to kick YOU, but misses!
+[Sat May 04 20:53:16 2024] A prisoner tries to punch YOU, but misses!
+[Sat May 04 20:53:19 2024] A prisoner punches YOU for 1 point of damage.
+[Sat May 04 20:53:21 2024] A prisoner tries to bash YOU, but misses!
+[Sat May 04 20:53:22 2024] A prisoner tries to punch YOU, but misses!
+[Sat May 04 20:53:25 2024] A prisoner tries to punch YOU, but misses!
+[Sat May 04 20:53:25 2024] A prisoner tries to punch YOU, but misses!
+[Sat May 04 20:53:28 2024] The darkness fades.
+[Sat May 04 20:53:28 2024] A prisoner tries to punch YOU, but misses!
+[Sat May 04 20:53:29 2024] A prisoner tries to bash YOU, but misses!
+[Sat May 04 20:53:31 2024] A prisoner tries to punch YOU, but misses!
+[Sat May 04 20:53:34 2024] A prisoner tries to punch YOU, but YOU dodge!
+[Sat May 04 20:53:35 2024] Auto attack is on.
+[Sat May 04 20:53:35 2024] You pierce a prisoner for 48 points of damage.
+[Sat May 04 20:53:35 2024] You must be behind your opponent to backstab!
+[Sat May 04 20:53:35 2024] You pierce a prisoner for 22 points of damage.
+[Sat May 04 20:53:37 2024] You slash a prisoner for 122 points of damage.
+[Sat May 04 20:53:37 2024] You try to pierce a prisoner, but a prisoner dodges!
+[Sat May 04 20:53:38 2024] You slash a prisoner for 18 points of damage.
+[Sat May 04 20:53:38 2024] You receive 6 silver and 9 copper as your split.
+[Sat May 04 20:53:38 2024] A prisoner's corpse says, 'My comrades will avenge my death.'
+[Sat May 04 20:53:38 2024] You have slain a prisoner!
+[Sat May 04 20:53:42 2024] You begin to sneak...
+[Sat May 04 20:53:42 2024] You begin to hide...
+[Sat May 04 20:53:42 2024] You have become better at Sneak! (153)
+[Sat May 04 20:53:42 2024] You are as quiet as a cat stalking its prey.
+[Sat May 04 20:53:42 2024] You have become better at Hide! (155)
+[Sat May 04 20:53:42 2024] You have hidden yourself from view.
+[Sat May 04 20:56:32 2024] You stop sneaking.
+[Sat May 04 20:56:32 2024] You have moved and are no longer hidden!
+[Sat May 04 20:56:42 2024] Targeted (Merchant): Dealer Maeline
+[Sat May 04 20:56:42 2024] Stand close to and right click on the Merchant to begin a transaction.
+[Sat May 04 20:56:42 2024] Dealer Maeline glowers at you dubiously -- You could probably win this fight. (Lvl: 45)
+[Sat May 04 20:56:42 2024] This creature would take an army to defeat!
+[Sat May 04 20:56:48 2024] You say, 'Hail, Dealer Maeline'
+[Sat May 04 20:56:48 2024] Dealer Maeline says, 'Greetings, Zshawdo.'
+[Sat May 04 20:56:53 2024] You say, 'deal you a hand'
+[Sat May 04 20:56:54 2024] Dealer Maeline says, 'You have no chips to bargain with.'
+[Sat May 04 20:57:19 2024] Eonaladin has offered you 2,200 platinum.
+[Sat May 04 20:57:21 2024] You complete the trade with Eonaladin.
+[Sat May 04 20:57:29 2024] You have become better at Safe Fall! (180)
+[Sat May 04 20:57:46 2024] LOADING, PLEASE WAIT...
+[Sat May 04 20:57:59 2024] You have entered Highpass Hold.
+[Sat May 04 20:58:50 2024] Targeted (Merchant): a shady Highpass citizen
+[Sat May 04 20:58:50 2024] Stand close to and right click on the Merchant to begin a transaction.
+[Sat May 04 20:58:50 2024] A shady Highpass citizen says, 'Welcome to my shop, Zshawdo. You would probably find a Honey Mead handy.'
+[Sat May 04 20:58:51 2024] a shady Highpass citizen told you, 'That'll be 2099 platinum 9 gold 9 silver 9 copper for the Gold-Leafed Urn.'
+[Sat May 04 20:58:53 2024] You purchased Gold-Leafed Urn from a shady Highpass citizen for  2099 platinum 9 gold 9 silver 9 copper.
+[Sat May 04 20:59:43 2024] LOADING, PLEASE WAIT...
+[Sat May 04 20:59:54 2024] You have entered High Keep.
+[Sat May 04 21:00:05 2024] --You left a Rough Silk on a prisoner.--
+[Sat May 04 21:00:14 2024] A pickclaw spiritist begins casting Spirit of Wolf.
+[Sat May 04 21:00:32 2024] Targeted (Merchant): Dealer Maeline
+[Sat May 04 21:00:32 2024] Stand close to and right click on the Merchant to begin a transaction.
+[Sat May 04 21:00:33 2024] You offered 1 Gold-Leafed Urn to Dealer Maeline.
+[Sat May 04 21:00:34 2024] Dealer Maeline passes the urn to Guard Kovan for safekeeping.  She slides her left hand down her right sleeve and vice versa. 'Welcome to the High Keep Casino, Zshawdo.  The urn you brought is worth 1500 credits.  Let me know at any time if you want me to [deal you a hand], or if you'd rather [cash out].'
+[Sat May 04 21:00:34 2024] You gain experience (with a bonus)!
+[Sat May 04 21:00:34 2024] You complete the trade with Dealer Maeline.
+[Sat May 04 21:00:36 2024] You say, 'deal you a hand'
+[Sat May 04 21:00:37 2024] Dealer Maeline deftly shuffles the cards together. 'Just a moment, hon, I'm still shuffling.'
+[Sat May 04 21:00:58 2024] You say, 'deal you a hand'
+[Sat May 04 21:00:58 2024] Dealer Maeline sweeps the cards from the table. 'Great!  You won several hands that round!'
+[Sat May 04 21:00:58 2024] Dealer Maeline says, 'You now have 1600 chips to gamble with.  Let me know at any time if you want me to [deal you a hand], or if you'd rather [cash out].'
+[Sat May 04 21:00:58 2024] Guard Kovan glares at you with distrust.
+[Sat May 04 21:01:06 2024] You say, 'deal you a hand'
+[Sat May 04 21:01:06 2024] Dealer Maeline deftly shuffles the cards together. 'Just a moment, hon, I'm still shuffling.'
+[Sat May 04 21:01:18 2024] You say, 'deal you a hand'
+[Sat May 04 21:01:19 2024] Dealer Maeline sweeps the cards from the table. 'Great!  You won several hands that round!'
+[Sat May 04 21:01:19 2024] Dealer Maeline says, 'You now have 1700 chips to gamble with.  Let me know at any time if you want me to [deal you a hand], or if you'd rather [cash out].'
+[Sat May 04 21:01:19 2024] Guard Kovan gives you a stern look of disapproval.
+[Sat May 04 21:01:24 2024] You say, 'deal you a hand'
+[Sat May 04 21:01:25 2024] Dealer Maeline deftly shuffles the cards together. 'Just a moment, hon, I'm still shuffling.'
+[Sat May 04 21:01:35 2024] You say, 'deal you a hand'
+[Sat May 04 21:01:36 2024] Dealer Maeline sweeps the cards from the table. 'Great!  You won several hands that round!'
+[Sat May 04 21:01:36 2024] Dealer Maeline says, 'You now have 1800 chips to gamble with.  Let me know at any time if you want me to [deal you a hand], or if you'd rather [cash out].'
+[Sat May 04 21:01:36 2024] Guard Kovan gives you a stern look of disapproval.
+[Sat May 04 21:01:36 2024] A noble says, 'Yes, but some of your other patrons have a most unsettling look about them.  It's as if you would let in any old thing off the street!'
+[Sat May 04 21:01:51 2024] You say, 'deal you a hand'
+[Sat May 04 21:01:52 2024] Dealer Maeline sweeps the cards from the table. 'Great!  You won several hands that round!'
+[Sat May 04 21:01:52 2024] Dealer Maeline says, 'You now have 1900 chips to gamble with.  Let me know at any time if you want me to [deal you a hand], or if you'd rather [cash out].'
+[Sat May 04 21:01:52 2024] Guard Kovan turns his attention to the nobles, 'Glad you folks could make it tonight.  I trust you were treated well at dinner?'
+[Sat May 04 21:02:08 2024] You say, 'deal you a hand'
+[Sat May 04 21:02:09 2024] Dealer Maeline sweeps the cards from the table. 'Great! You...'
+[Sat May 04 21:02:09 2024] Guard Kovan brandishes his blade, 'Wait one second here, I'm not sure this... I knew it - this artifact was stolen!  You're one of those smugglers aren't you?  Think about your crimes while you rot in a cell, two-bit thief.  Your days of pilfering and plundering are over.'
+[Sat May 04 21:02:09 2024] Dealer Maeline begins casting Incapacitating Darkness.
+[Sat May 04 21:02:09 2024] You are surrounded by darkness.
+[Sat May 04 21:02:09 2024] Dealer Maeline sweeps the cards from the table. 'Great!  You won several hands that round!'
+[Sat May 04 21:02:09 2024] Dealer Maeline says, 'You now have 2000 chips to gamble with.  Let me know at any time if you want me to [deal you a hand], or if you'd rather [cash out].'
+[Sat May 04 21:02:09 2024] Guard Kovan appears restless.  He taps his feet glances around the casino.
+[Sat May 04 21:02:09 2024] A noble says, 'Yes, but some of your other patrons have a most unsettling look about them.  It's as if you would let in any old thing off the street!'
+[Sat May 04 21:02:11 2024] A prisoner says, 'Guards! Guards! Help me!'
+[Sat May 04 21:02:11 2024] A prisoner tries to punch YOU, but misses!
+[Sat May 04 21:02:11 2024] A prisoner tries to bash YOU, but misses!
+[Sat May 04 21:02:14 2024] A prisoner tries to punch YOU, but misses!
+[Sat May 04 21:02:17 2024] A prisoner tries to punch YOU, but misses!
+[Sat May 04 21:02:19 2024] A prisoner tries to kick YOU, but YOU dodge!
+[Sat May 04 21:02:20 2024] A prisoner tries to punch YOU, but misses!
+[Sat May 04 21:02:22 2024] The darkness fades.
+[Sat May 04 21:02:23 2024] A prisoner tries to punch YOU, but misses!
+[Sat May 04 21:02:26 2024] A prisoner tries to punch YOU, but misses!
+[Sat May 04 21:02:27 2024] A prisoner tries to bash YOU, but misses!
+[Sat May 04 21:02:29 2024] A prisoner tries to punch YOU, but misses!
+[Sat May 04 21:02:32 2024] A prisoner tries to punch YOU, but misses!
+[Sat May 04 21:02:33 2024] You must be behind your opponent to backstab!
+[Sat May 04 21:02:33 2024] You pierce a prisoner for 22 points of damage.
+[Sat May 04 21:02:33 2024] Auto attack is on.
+[Sat May 04 21:02:34 2024] You pierce a prisoner for 66 points of damage.
+[Sat May 04 21:02:34 2024] You pierce a prisoner for 104 points of damage.
+[Sat May 04 21:02:35 2024] Your target is too far away, get closer!
+[Sat May 04 21:02:35 2024] You pierce a prisoner for 18 points of damage.
+[Sat May 04 21:02:35 2024] You receive 6 silver and 7 copper as your split.
+[Sat May 04 21:02:35 2024] A prisoner's corpse says, 'My comrades will avenge my death.'
+[Sat May 04 21:02:35 2024] You have slain a prisoner!
+[Sat May 04 21:02:39 2024] You begin to sneak...
+[Sat May 04 21:02:39 2024] You begin to hide...
+[Sat May 04 21:02:39 2024] You have become better at Sneak! (154)
+[Sat May 04 21:02:39 2024] You are as quiet as a cat stalking its prey.
+[Sat May 04 21:02:39 2024] You have become better at Hide! (156)
+[Sat May 04 21:02:39 2024] You have hidden yourself from view.
+[Sat May 04 21:02:40 2024] Targeted (Player): Zshawdo
+[Sat May 04 21:02:40 2024] Right click on yourself to bring up your own inspect window. Use the /toggleinspect command to enable or disable right-click inspecting. You can also enable Click Through Self in the Options Window to stop clicking on yourself.
+[Sat May 04 21:02:48 2024] Targeted (Player): Zshawdo
+[Sat May 04 21:02:48 2024] Right click on yourself to bring up your own inspect window. Use the /toggleinspect command to enable or disable right-click inspecting. You can also enable Click Through Self in the Options Window to stop clicking on yourself.
+[Sat May 04 21:03:09 2024] You stop sneaking.
+[Sat May 04 21:03:10 2024] You stop hiding.
+[Sat May 04 21:03:11 2024] Targeted (Merchant): Dealer Maeline
+[Sat May 04 21:03:11 2024] Stand close to and right click on the Merchant to begin a transaction.
+[Sat May 04 21:03:15 2024] You say, 'deal you a hand'
+[Sat May 04 21:03:15 2024] Dealer Maeline says, 'You have no chips to bargain with.'
+[Sat May 04 21:03:17 2024] Isabella Cellus says, 'I just adore this place.'
+[Sat May 04 21:03:20 2024] You say, 'cash out'
+[Sat May 04 21:03:20 2024] Dealer Maeline says, 'You have no winnings to cash in.'
+[Sat May 04 21:03:41 2024] Eonaladin has offered you 2,200 platinum.
+[Sat May 04 21:03:45 2024] You complete the trade with Eonaladin.
+[Sat May 04 21:03:55 2024] You have become better at Safe Fall! (181)
+[Sat May 04 21:03:56 2024] You have become better at Safe Fall! (182)
+[Sat May 04 21:04:32 2024] Blundr tells Rogue:2, 'gi'
+[Sat May 04 21:04:39 2024] LOADING, PLEASE WAIT...
+[Sat May 04 21:04:52 2024] You have entered Highpass Hold.
+[Sat May 04 21:05:28 2024] Blundr tells Rogue:2, 'any tips for lame 90s roguer? '
+[Sat May 04 21:05:52 2024] Targeted (Merchant): a shady Highpass citizen
+[Sat May 04 21:05:52 2024] Stand close to and right click on the Merchant to begin a transaction.
+[Sat May 04 21:05:52 2024] A shady Highpass citizen says, 'Greetings, Zshawdo. You look like you could use a Mead.'
+[Sat May 04 21:05:59 2024] Blundr tells Rogue:2, 'or maybe only thing can we do.? holwing stones. chardok. is about all i umm think about'
+[Sat May 04 21:08:26 2024] Chubzze tells Rogue:2, 'Solo? Thats hard, I rolled a Necro just to drag my Rogue to 125'
+[Sat May 04 21:11:01 2024] Blundr tells Rogue:2, 'well not  epe ting to get oo max that fast. maybe some fun. ive been stuck well . through re plays. DSH. giant robot, somehows. veeshans..  umm. yeah. i remembemr. a super dex heroic.  solo. was funny to watch. that and umm the brother. isle. was my end of run. sorry for the plague of words'
+[Sat May 04 21:11:52 2024] Alhareen the Just begins casting Alacrity.
+[Sat May 04 21:11:56 2024] Alhareen the Just feels much faster.
+[Sat May 04 21:11:58 2024] Blundr tells Rogue:2, 'doing good. hyeah. to what not. yeah. thats why i quit before. but getting used to .1 anyways. more fun with quests. progression other things'
+[Sat May 04 21:12:36 2024] Targeted (Merchant): a shady Highpass citizen
+[Sat May 04 21:12:36 2024] Stand close to and right click on the Merchant to begin a transaction.
+[Sat May 04 21:12:37 2024] A shady Highpass citizen says, 'Greetings, Zshawdo. You look like you could use a Mead.'
+[Sat May 04 21:13:12 2024] Blundr tells Rogue:2, 'yeah that makes sense. that and the fear snare. thanks for reminding me!'
+[Sat May 04 21:13:13 2024] Chubzze tells Rogue:2, 'Get your epic clicky if you dont have it yet'
+[Sat May 04 21:13:38 2024] Blundr tells Rogue:2, 'oh? never bothers. may be nice. okie'
+[Sat May 04 21:16:46 2024] Blundr tells Rogue:2, 'hmm, much to think about. i remember seeign some site. almar. stuff prolly easy now. yeah. very helpful /?'
+[Sat May 04 21:17:07 2024] Blundr tells Rogue:2, 'po sky or else, k. prolly why i hit such a wall before. thanks'
+[Sat May 04 21:17:21 2024] Blundr tells Rogue:2, 'droool/ mrylokar/ etc'
+[Sat May 04 21:18:35 2024] Blundr tells Rogue:2, 'k true. thnaks / bow'
+[Sat May 04 21:20:35 2024] Targeted (Merchant): a shady Highpass citizen
+[Sat May 04 21:20:35 2024] Stand close to and right click on the Merchant to begin a transaction.
+[Sat May 04 21:20:35 2024] A shady Highpass citizen says, 'Welcome to my shop, Zshawdo. You would probably find a Mead handy.'
+[Sat May 04 21:23:17 2024] Alhareen the Just begins casting Alacrity.
+[Sat May 04 21:23:21 2024] Alhareen the Just feels much faster.
+[Sat May 04 21:23:26 2024] Blundr tells Rogue:2, 'thanks for vague as funk info. online i expect ?'
+[Sat May 04 21:24:50 2024] Targeted (Merchant): a shady Highpass citizen
+[Sat May 04 21:24:50 2024] Stand close to and right click on the Merchant to begin a transaction.
+[Sat May 04 21:24:50 2024] A shady Highpass citizen says, 'Hi there, Zshawdo. Just browsing?  Have you seen the Mead I just got in?'
+[Sat May 04 21:27:29 2024] Blundr tells Rogue:2, '90 rog lfg'
+[Sat May 04 21:28:23 2024] Targeted (Player): Zshawdo
+[Sat May 04 21:28:23 2024] Right click on yourself to bring up your own inspect window. Use the /toggleinspect command to enable or disable right-click inspecting. You can also enable Click Through Self in the Options Window to stop clicking on yourself.
+[Sat May 04 21:29:16 2024] Blundr tells Rogue:2, 'smoke bombs on AC units / UN HQ/ !'
+[Sat May 04 21:29:33 2024] Blundr tells Rogue:2, 'i mean the smelly things. fuck all else. ez brake windows'
+[Sat May 04 21:31:50 2024] A shady Highpass citizen says, 'Hi there, Zshawdo. Just browsing?  Have you seen the Mead I just got in?'
+[Sat May 04 21:34:41 2024] Alhareen the Just begins casting Alacrity.
+[Sat May 04 21:34:45 2024] Alhareen the Just feels much faster.
+[Sat May 04 21:35:26 2024] Targeted (Merchant): a shady Highpass citizen
+[Sat May 04 21:35:26 2024] Stand close to and right click on the Merchant to begin a transaction.
+[Sat May 04 21:35:27 2024] A shady Highpass citizen says, 'Greetings, Zshawdo. You look like you could use a Pouch of Gems.'
+[Sat May 04 21:37:03 2024] Auto-granting of AAs will occur the next time you enter the game from character select or when your character level changes.
+[Sat May 04 21:37:23 2024] AAs will no longer be auto-granted.
+[Sat May 04 21:37:30 2024] Targeted (Merchant): a shady Highpass citizen
+[Sat May 04 21:37:30 2024] Stand close to and right click on the Merchant to begin a transaction.
+[Sat May 04 21:37:30 2024] A shady Highpass citizen says, 'Welcome to my shop, Zshawdo. You would probably find a Mead handy.'
+[Sat May 04 21:39:28 2024] Targeted (Merchant): a shady Highpass citizen
+[Sat May 04 21:39:28 2024] Stand close to and right click on the Merchant to begin a transaction.
+[Sat May 04 21:39:29 2024] A shady Highpass citizen says, 'Hello there, Zshawdo. How about a nice Mead?'
+[Sat May 04 21:44:46 2024] Targeted (Merchant): a shady Highpass citizen
+[Sat May 04 21:44:46 2024] Stand close to and right click on the Merchant to begin a transaction.
+[Sat May 04 21:44:47 2024] A shady Highpass citizen says, 'Welcome to my shop, Zshawdo. You would probably find a Ale handy.'
+[Sat May 04 21:45:03 2024] Targeted (Merchant): a shady Highpass citizen
+[Sat May 04 21:45:03 2024] Stand close to and right click on the Merchant to begin a transaction.
+[Sat May 04 21:45:04 2024] A shady Highpass citizen says, 'Welcome to my shop, Zshawdo. You would probably find a Ale handy.'
+[Sat May 04 21:45:10 2024] Alhareen the Just begins casting Harnessing of Spirit.
+[Sat May 04 21:45:15 2024] Targeted (Merchant): a shady Highpass citizen
+[Sat May 04 21:45:15 2024] Stand close to and right click on the Merchant to begin a transaction.
+[Sat May 04 21:45:16 2024] A shady Highpass citizen says, 'Welcome to my shop, Zshawdo. You would probably find a Gold-Leafed Urn handy.'
+[Sat May 04 21:45:18 2024] a shady Highpass citizen told you, 'That'll be 2099 platinum 9 gold 9 silver 9 copper for the Gold-Leafed Urn.'
+[Sat May 04 21:45:20 2024] Alhareen the Just looks tougher.
+[Sat May 04 21:45:20 2024] Alhareen the Just healed herself for 251 hit points by Harnessing of Spirit.
+[Sat May 04 21:45:20 2024] You purchased Gold-Leafed Urn from a shady Highpass citizen for  2099 platinum 9 gold 9 silver 9 copper.
+[Sat May 04 21:46:14 2024] LOADING, PLEASE WAIT...
+[Sat May 04 21:46:26 2024] You have entered High Keep.
+[Sat May 04 21:47:04 2024] Targeted (Merchant): Dealer Maeline
+[Sat May 04 21:47:04 2024] Stand close to and right click on the Merchant to begin a transaction.
+[Sat May 04 21:47:04 2024] You offered 1 Gold-Leafed Urn to Dealer Maeline.
+[Sat May 04 21:47:06 2024] Dealer Maeline passes the urn to Guard Kovan for safekeeping.  She slides her left hand down her right sleeve and vice versa. 'Welcome to the High Keep Casino, Zshawdo.  The urn you brought is worth 1500 credits.  Let me know at any time if you want me to [deal you a hand], or if you'd rather [cash out].'
+[Sat May 04 21:47:06 2024] You gain experience (with a bonus)!
+[Sat May 04 21:47:06 2024] You complete the trade with Dealer Maeline.
+[Sat May 04 21:47:09 2024] You say, 'deal you a hand'
+[Sat May 04 21:47:09 2024] Dealer Maeline deftly shuffles the cards together. 'Just a moment, hon, I'm still shuffling.'
+[Sat May 04 21:47:19 2024] You say, 'deal you a hand'
+[Sat May 04 21:47:19 2024] Dealer Maeline sweeps the cards from the table. 'Great!  You won several hands that round!'
+[Sat May 04 21:47:19 2024] Dealer Maeline says, 'You now have 1600 chips to gamble with.  Let me know at any time if you want me to [deal you a hand], or if you'd rather [cash out].'
+[Sat May 04 21:47:19 2024] Guard Kovan glares at you with distrust.
+[Sat May 04 21:47:27 2024] You say, 'deal you a hand'
+[Sat May 04 21:47:28 2024] Dealer Maeline deftly shuffles the cards together. 'Just a moment, hon, I'm still shuffling.'
+[Sat May 04 21:47:41 2024] You say, 'deal you a hand'
+[Sat May 04 21:47:41 2024] Dealer Maeline sweeps the cards from the table. 'Great!  You won several hands that round!'
+[Sat May 04 21:47:41 2024] Dealer Maeline says, 'You now have 1700 chips to gamble with.  Let me know at any time if you want me to [deal you a hand], or if you'd rather [cash out].'
+[Sat May 04 21:47:41 2024] Guard Kovan gives you a stern look of disapproval.
+[Sat May 04 21:47:48 2024] You say, 'deal you a hand'
+[Sat May 04 21:47:48 2024] Dealer Maeline deftly shuffles the cards together. 'Just a moment, hon, I'm still shuffling.'
+[Sat May 04 21:47:57 2024] You say, 'deal you a hand'
+[Sat May 04 21:47:57 2024] Dealer Maeline sweeps the cards from the table. 'Great!  You won several hands that round!'
+[Sat May 04 21:47:57 2024] Dealer Maeline says, 'You now have 1800 chips to gamble with.  Let me know at any time if you want me to [deal you a hand], or if you'd rather [cash out].'
+[Sat May 04 21:47:57 2024] Guard Kovan gives you a stern look of disapproval.
+[Sat May 04 21:47:57 2024] A noble says, 'Yes, but some of your other patrons have a most unsettling look about them.  It's as if you would let in any old thing off the street!'
+[Sat May 04 21:48:16 2024] You say, 'deal you a hand'
+[Sat May 04 21:48:16 2024] Dealer Maeline sweeps the cards from the table. 'Great!  You won several hands that round!'
+[Sat May 04 21:48:16 2024] Dealer Maeline says, 'You now have 1900 chips to gamble with.  Let me know at any time if you want me to [deal you a hand], or if you'd rather [cash out].'
+[Sat May 04 21:48:16 2024] Guard Kovan turns his attention to the nobles, 'Glad you folks could make it tonight.  I trust you were treated well at dinner?'
+[Sat May 04 21:48:22 2024] You say, 'cash out'
+[Sat May 04 21:48:22 2024] Dealer Maeline says, 'Thanks for playing, Zshawdo.  Here are your winnings.  Come back to our establishment again anytime.'
+[Sat May 04 21:48:22 2024] You receive 1900 platinum .
+[Sat May 04 21:48:22 2024] You have unloaded the stolen urn, completing the first task for the Smuggler's Camp.
+[Sat May 04 21:49:10 2024] Ran Flamespinner begins casting Manaskin.
+[Sat May 04 21:49:15 2024] Ran Flamespinner's skin gleams with an incandescent glow.
+[Sat May 04 21:49:40 2024] You have become better at Safe Fall! (183)
+[Sat May 04 21:50:00 2024] Isabella Cellus says, 'Would you please stop following me!'
+[Sat May 04 21:54:54 2024] You no longer have a target.
+[Sat May 04 21:55:04 2024] You successfully destroyed 1 Rogue Ring (Test).
+[Sat May 04 21:55:19 2024] You successfully destroyed 1 Rogue Earring (Test).
+[Sat May 04 21:55:26 2024] You successfully destroyed 1 Rogue Necklace (Test).
+[Sat May 04 21:55:42 2024] You successfully destroyed 1 Rogue Secondary (Test).
+[Sat May 04 21:55:57 2024] You successfully destroyed 1 Rogue Tunic (Test).
+[Sat May 04 21:56:03 2024] A pickclaw spiritist begins casting Inner Fire.
+[Sat May 04 21:56:06 2024] a pickclaw spiritist's body pulses with energy.
+[Sat May 04 21:56:06 2024] a pickclaw spiritist healed itself for 20 hit points by Inner Fire.
+[Sat May 04 21:56:21 2024] You successfully destroyed 1 Rogue Leggings (Test).
+[Sat May 04 21:56:29 2024] You successfully destroyed 1 Rogue Sleeves (Test).
+[Sat May 04 21:56:46 2024] A pickclaw spiritist begins casting Inner Fire.
+[Sat May 04 21:56:49 2024] a pickclaw lookout's body pulses with energy.
+[Sat May 04 21:56:49 2024] a pickclaw spiritist healed a pickclaw lookout for 20 hit points by Inner Fire.
+[Sat May 04 21:56:52 2024] You successfully destroyed 1 Flawed Defiant Chain Leggings.
+[Sat May 04 21:58:54 2024] You successfully destroyed 1 Rogue Helm (Test).
+[Sat May 04 21:59:01 2024] You successfully destroyed 1 Rogue Belt (Test).
+[Sat May 04 21:59:08 2024] You successfully destroyed 1 Rogue Range (Test).
+[Sat May 04 21:59:50 2024] You successfully destroyed 1 Rogue Bracer (Test).
+[Sat May 04 22:01:53 2024] A pickclaw spiritist begins casting Spirit of Wolf.
+[Sat May 04 22:02:00 2024] You begin casting Throne of Heroes.
+[Sat May 04 22:02:17 2024] LOADING, PLEASE WAIT...
+[Sat May 04 22:02:40 2024] You have entered Guild Lobby.
+[Sat May 04 22:02:54 2024] Keuchella creates a mystic portal.
+[Sat May 04 22:02:54 2024] Burrse creates a mystic portal.
+[Sat May 04 22:02:54 2024] Fluttlecake begins singing Purifying Chorus.
+[Sat May 04 22:02:54 2024] Fluttlecake begins singing Song of Sustenance.
+[Sat May 04 22:02:54 2024] Fluttlecake begins singing Chorus of Marr.
+[Sat May 04 22:02:54 2024] Fluttlecake begins singing Purifying Chorus.
+[Sat May 04 22:02:54 2024] Channels: 1=Rogue(41)
+[Sat May 04 22:02:54 2024] Channels: 1=Rogue(41), 2=Planes(208)
+[Sat May 04 22:02:56 2024] Fluttlecake begins singing Song of Sustenance.
+[Sat May 04 22:02:58 2024] Fluttlecake begins singing Chorus of Marr.
+[Sat May 04 22:03:01 2024] The chorus of Marr renews your spirit.
+[Sat May 04 22:03:01 2024] Fluttlecake begins singing Purifying Chorus.
+[Sat May 04 22:03:04 2024] You feel an aura of vigorous protection surrounding you.
+[Sat May 04 22:03:04 2024] Fluttlecake begins singing Song of Sustenance.
+[Sat May 04 22:03:07 2024] Fluttlecake begins singing Chorus of Marr.
+[Sat May 04 22:03:59 2024] LOADING, PLEASE WAIT...
+[Sat May 04 22:04:19 2024] You have entered The Plane of Knowledge.
+[Sat May 04 22:04:44 2024] Dontyou begins casting Growl of the Jaguar.
+[Sat May 04 22:04:44 2024] Dontyou healed himself over time for 252 hit points by Growl of the Jaguar.
+[Sat May 04 22:04:44 2024] A clockwork soother CCCXXIX begins casting Healing Splash Rk. II.
+[Sat May 04 22:04:44 2024] a clockwork soother CCCXXIX healed Dontyou`s warder over time for 2491 (2787) hit points by Earnest Elixir Rk. II.
+[Sat May 04 22:04:44 2024] Dontyou healed Dontyou`s warder over time for 252 hit points by Growl of the Jaguar.
+[Sat May 04 22:04:44 2024] a clockwork soother CCCXXIX glows with health.
+[Sat May 04 22:04:44 2024] a clockwork soother CCCXXIX healed itself for 0 (8107) hit points by Healing Splash Rk. II.
+[Sat May 04 22:04:44 2024] Wergona glows with health.
+[Sat May 04 22:04:44 2024] a clockwork soother CCCXXIX healed Wergona for 0 (8107) hit points by Healing Splash Rk. II.
+[Sat May 04 22:04:44 2024] Molalle glows with health.
+[Sat May 04 22:04:44 2024] a clockwork soother CCCXXIX healed Molalle for 0 (8107) hit points by Healing Splash Rk. II.
+[Sat May 04 22:04:44 2024] Dontyou`s warder glows with health.
+[Sat May 04 22:04:44 2024] a clockwork soother CCCXXIX healed Dontyou`s warder for 0 (8107) hit points by Healing Splash Rk. II.
+[Sat May 04 22:04:44 2024] Dontyou glows with health.
+[Sat May 04 22:04:44 2024] a clockwork soother CCCXXIX healed Dontyou for 0 (8107) hit points by Healing Splash Rk. II.
+[Sat May 04 22:04:44 2024] Ciggwin glows with health.
+[Sat May 04 22:04:44 2024] a clockwork soother CCCXXIX healed Ciggwin for 0 (8107) hit points by Healing Splash Rk. II.
+[Sat May 04 22:04:57 2024] Dontyou begins casting Taste of Blood IV.
+[Sat May 04 22:04:59 2024] Dontyou begins casting Hobble of Spirits IV.
+[Sat May 04 22:05:00 2024] Dontyou`s warder is imbued with the spirit of the marsh.
+[Sat May 04 22:05:27 2024] Dontyou begins casting Spirit of Kron.
+[Sat May 04 22:05:29 2024] Dontyou`s warder is imbued with the spirit of Kron.
+[Sat May 04 22:05:33 2024] Dontyou begins casting Callous Ferocity.
+[Sat May 04 22:05:34 2024] Dontyou`s warder's lips curl in a feral snarl.
+[Sat May 04 22:05:36 2024] Dontyou begins casting Growl of the Tiger.
+[Sat May 04 22:05:38 2024] Dontyou`s warder snarls with feral fury.
+[Sat May 04 22:05:38 2024] Dontyou snarls with feral fury.
+[Sat May 04 22:05:38 2024] a clockwork soother CCCXXIX healed Dontyou`s warder over time for 498 (2787) hit points by Earnest Elixir Rk. II.
+[Sat May 04 22:05:38 2024] Dontyou healed Dontyou`s warder over time for 327 hit points by Growl of the Tiger.
+[Sat May 04 22:05:42 2024] Dontyou healed himself over time for 327 hit points by Growl of the Tiger.
+[Sat May 04 22:06:13 2024] Lalasya begins singing Chorus of Restoration.
+[Sat May 04 22:06:16 2024] You feel replenished.
+[Sat May 04 22:06:17 2024] Lalasya begins singing War March of Meldrath.
+[Sat May 04 22:06:20 2024] Lalasya begins singing Chorus of Restoration.
+[Sat May 04 22:06:23 2024] You feel replenished.
+[Sat May 04 22:06:23 2024] Lalasya begins singing War March of Meldrath.
+[Sat May 04 22:07:43 2024] Origin Location: Shar Vahl
+[Sat May 04 22:07:43 2024] Bind Points: The Plane of Knowledge, Shar Vahl
+[Sat May 04 22:07:45 2024] You begin casting Origin.
+[Sat May 04 22:08:02 2024] LOADING, PLEASE WAIT...
+[Sat May 04 22:08:16 2024] You have entered Shar Vahl.
+[Sat May 04 22:08:23 2024] You have completed achievement: The City of Shar Vahl Traveler
+[Sat May 04 22:08:23 2024] Channels: 1=Rogue(41)
+[Sat May 04 22:08:23 2024] Channels: 1=Rogue(41), 2=Luclin(41)
+[Sat May 04 22:09:06 2024] It's locked and you're not holding the key.
+[Sat May 04 22:09:09 2024] Targeted (NPC): a prisoner
+[Sat May 04 22:09:09 2024] Right click on the NPC to consider him.
+[Sat May 04 22:09:15 2024] You say, 'Hail, a prisoner'
+[Sat May 04 22:09:15 2024] A prisoner leans forward and whispers, 'Psst, you'll never get the guards here to budge.  They don't make deals, don't take bribes and they are much too careful to catch by surprise.  If you promise to help me, I can tell you [where to find the keys].'
+[Sat May 04 22:09:34 2024] You say, 'where to find the keys'
+[Sat May 04 22:09:34 2024] A prisoner nods and continues to whisper, 'Before we were brought to these cells, we were held in Katta briefly.  I bet you'd find a keys to these blasted cages and another key to our shackles there, and the best part is that the guards are much more careless...  Are you with me?  [Do you understand]?'
+[Sat May 04 22:09:49 2024] You say, 'Do you understand'
+[Sat May 04 22:09:49 2024] A prisoner says, 'Lift the keys, kill them, whatever.  I don't care.  Just do it quickly and do it quietly.  Don't know how much longer before they move us to a new location.  This may be our only chance to escape.'
+[Sat May 04 22:10:14 2024] Shainai glances about, looking a bit lost.  'Well this doesn't look like a place I belong in at all.'
+[Sat May 04 22:10:49 2024] Targeted (Merchant): Laanas Sejiir
+[Sat May 04 22:10:49 2024] Stand close to and right click on the Merchant to begin a transaction.
+[Sat May 04 22:10:50 2024] Laanas Sejiir says, 'Welcome to my shop, Zshawdo. You would probably find a The Shar Vahl Tribune Vol. 8 No. 4 handy.'
+[Sat May 04 22:12:32 2024] LOADING, PLEASE WAIT...
+[Sat May 04 22:12:46 2024] You have entered Shadeweaver's Thicket.
+[Sat May 04 22:12:52 2024] You have completed achievement: Shadeweaver's Thicket Traveler
+[Sat May 04 22:13:38 2024] LOADING, PLEASE WAIT...
+[Sat May 04 22:13:53 2024] You have entered The Plane of Knowledge.
+[Sat May 04 22:14:14 2024] Channels: 1=Rogue(39)
+[Sat May 04 22:14:14 2024] Channels: 1=Rogue(39), 2=Planes(208)
+[Sat May 04 22:15:52 2024] LOADING, PLEASE WAIT...
+[Sat May 04 22:16:03 2024] You have entered The Nexus.
+[Sat May 04 22:16:06 2024] Channels: 1=Rogue(39)
+[Sat May 04 22:16:06 2024] Channels: 1=Rogue(39), 2=Luclin(26)
+[Sat May 04 22:16:16 2024] You have completed achievement: The Nexus Traveler
+[Sat May 04 22:16:36 2024] LOADING, PLEASE WAIT...
+[Sat May 04 22:16:50 2024] You have entered Shadow Haven.
+[Sat May 04 22:17:00 2024] You have completed achievement: Shadow Haven Traveler
+[Sat May 04 22:17:40 2024] LOADING, PLEASE WAIT...
+[Sat May 04 22:17:52 2024] You have entered Echo Caverns.
+[Sat May 04 22:18:06 2024] You have completed achievement: The Echo Caverns Traveler
+[Sat May 04 22:18:10 2024] A needlite tries to sting Lieutenant Arathur, but Lieutenant Arathur parries!
+[Sat May 04 22:18:11 2024] A needlite tries to sting Lieutenant Arathur, but misses!
+[Sat May 04 22:18:12 2024] Lieutenant Arathur slashes a needlite for 37 points of damage.
+[Sat May 04 22:18:12 2024] Lieutenant Arathur bashes a needlite for 29 points of damage.
+[Sat May 04 22:18:13 2024] Targeted (NPC): Lieutenant Arathur
+[Sat May 04 22:18:13 2024] Right click on the NPC to consider him.
+[Sat May 04 22:18:14 2024] A needlite stings Lieutenant Arathur for 4 points of damage.
+[Sat May 04 22:18:14 2024] A needlite bashes Lieutenant Arathur for 1 point of damage.
+[Sat May 04 22:18:14 2024] Lieutenant Arathur slashes a needlite for 80 points of damage.
+[Sat May 04 22:18:15 2024] A needlite tries to sting Lieutenant Arathur, but misses!
+[Sat May 04 22:18:16 2024] A needlite tries to sting Lieutenant Arathur, but misses!
+[Sat May 04 22:18:17 2024] Lieutenant Arathur slashes a needlite for 80 points of damage.
+[Sat May 04 22:18:17 2024] Lieutenant Arathur tries to slash a needlite, but a needlite parries!
+[Sat May 04 22:18:17 2024] A needlite stings Lieutenant Arathur for 2 points of damage.
+[Sat May 04 22:18:18 2024] A needlite tries to sting Lieutenant Arathur, but misses!
+[Sat May 04 22:18:18 2024] You have become better at Pick Pockets! (131)
+[Sat May 04 22:18:18 2024] --Zshawdo stole coin from Lieutenant Arathur!--
+[Sat May 04 22:18:18 2024] You have stolen 1 platinum.
+[Sat May 04 22:18:19 2024] A needlite tries to sting Lieutenant Arathur, but misses!
+[Sat May 04 22:18:19 2024] Lieutenant Arathur slashes a needlite for 73 points of damage.
+[Sat May 04 22:18:20 2024] Lieutenant Arathur says, 'Better to spill your blood here than in the halls of our city, knave!'
+[Sat May 04 22:18:20 2024] Lieutenant Arathur tries to bash a needlite, but misses!
+[Sat May 04 22:18:20 2024] A needlite tries to sting Lieutenant Arathur, but misses!
+[Sat May 04 22:18:21 2024] A needlite stings Lieutenant Arathur for 11 points of damage.
+[Sat May 04 22:18:22 2024] Lieutenant Arathur slashes a needlite for 73 points of damage.
+[Sat May 04 22:18:22 2024] A needlite tries to sting Lieutenant Arathur, but misses!
+[Sat May 04 22:18:22 2024] A needlite tries to bash Lieutenant Arathur, but misses!
+[Sat May 04 22:18:23 2024] A needlite tries to sting Lieutenant Arathur, but misses!
+[Sat May 04 22:18:23 2024] A needlite tries to sting Lieutenant Arathur, but misses!
+[Sat May 04 22:18:24 2024] A needlite stings Lieutenant Arathur for 24 points of damage.
+[Sat May 04 22:18:24 2024] A needlite tries to sting Lieutenant Arathur, but misses!
+[Sat May 04 22:18:24 2024] Lieutenant Arathur slashes a needlite for 80 points of damage.
+[Sat May 04 22:18:35 2024] You resist Wormspore Stick!
+[Sat May 04 22:18:35 2024] You resist Wormspore Stick!
+[Sat May 04 22:18:50 2024] You resist Wormspore Stick!
+[Sat May 04 22:18:57 2024] You resist Wormspore Stick!
+[Sat May 04 22:19:06 2024] LOADING, PLEASE WAIT...
+[Sat May 04 22:19:19 2024] You have entered The Fungus Grove.
+[Sat May 04 22:19:34 2024] You have completed achievement: The Fungus Grove Traveler
+[Sat May 04 22:19:39 2024] Targeted (NPC): Guard Kartim
+[Sat May 04 22:19:39 2024] Right click on the NPC to consider him.
+[Sat May 04 22:19:41 2024] Guard Kartim looks your way apprehensively -- looks kind of dangerous. (Lvl: 60)
+[Sat May 04 22:19:48 2024] You have become better at Pick Pockets! (132)
+[Sat May 04 22:19:48 2024] Your attempt at stealing was unsuccessful.
+[Sat May 04 22:19:48 2024] --Zshawdo failed to steal from Guard Kartim.--
+[Sat May 04 22:20:14 2024] You begin to sneak...
+[Sat May 04 22:20:14 2024] You begin to hide...
+[Sat May 04 22:20:15 2024] You have become better at Sneak! (155)
+[Sat May 04 22:20:15 2024] You are as quiet as a cat stalking its prey.
+[Sat May 04 22:20:15 2024] You have become better at Hide! (157)
+[Sat May 04 22:20:15 2024] You have hidden yourself from view.
+[Sat May 04 22:20:31 2024] Targeted (NPC): a small mushroom
+[Sat May 04 22:20:31 2024] Right click on the NPC to consider it.
+[Sat May 04 22:20:32 2024] A small mushroom regards you indifferently -- You could probably win this fight. (Lvl: 48)
+[Sat May 04 22:21:05 2024] You have become better at Safe Fall! (184)
+[Sat May 04 22:21:15 2024] You have become better at Safe Fall! (185)
+[Sat May 04 22:21:39 2024] You have become better at Safe Fall! (186)
+[Sat May 04 22:21:40 2024] You have become better at Safe Fall! (187)
+[Sat May 04 22:22:14 2024] LOADING, PLEASE WAIT...
+[Sat May 04 22:22:28 2024] You have entered The Twilight Sea.
+[Sat May 04 22:22:38 2024] You have completed achievement: The Twilight Sea Traveler
+[Sat May 04 22:22:43 2024] You have become better at Safe Fall! (188)
+[Sat May 04 22:22:47 2024] You have become better at Safe Fall! (189)
+[Sat May 04 22:22:49 2024] You have become better at Safe Fall! (190)
+[Sat May 04 22:23:16 2024] You have become better at Swimming! (176)
+[Sat May 04 22:23:28 2024] You have become better at Swimming! (177)
+[Sat May 04 22:23:34 2024] You have become better at Swimming! (178)
+[Sat May 04 22:23:46 2024] You have become better at Swimming! (179)
+[Sat May 04 22:24:05 2024] You have become better at Swimming! (180)
+[Sat May 04 22:24:11 2024] You have become better at Swimming! (181)
+[Sat May 04 22:24:39 2024] LOADING, PLEASE WAIT...
+[Sat May 04 22:24:53 2024] You have entered Katta Castellum.
+[Sat May 04 22:25:02 2024] You have completed achievement: Katta Castellum Traveler
+[Sat May 04 22:27:40 2024] You kick over some wilted flowers.
+[Sat May 04 22:27:40 2024] Targeted (NPC): Guard Lennon
+[Sat May 04 22:27:40 2024] Right click on the NPC to consider him.
+[Sat May 04 22:27:48 2024] You step on a fresh grave and the soil around you springs to life!
+[Sat May 04 22:27:56 2024] Targeted (NPC): a reanimated corpse
+[Sat May 04 22:27:56 2024] Right click on the NPC to consider him.
+[Sat May 04 22:27:57 2024] A reanimated corpse regards you indifferently -- You could probably win this fight. (Lvl: 34)
+[Sat May 04 22:27:57 2024] The smell of decay seems to be moving with you.
+[Sat May 04 22:28:04 2024] Targeted (NPC): Rett Jimmins
+[Sat May 04 22:28:04 2024] Right click on the NPC to consider him.
+[Sat May 04 22:28:05 2024] Rett Jimmins regards you indifferently -- You could probably win this fight. (Lvl: 10)
+[Sat May 04 22:28:17 2024] Guard Lennon regards you indifferently -- looks kind of dangerous. (Lvl: 55)
+[Sat May 04 22:28:22 2024] You are no longer hidden.
+[Sat May 04 22:28:22 2024] You stop sneaking.
+[Sat May 04 22:28:22 2024] You have become better at Pick Pockets! (133)
+[Sat May 04 22:28:22 2024] Your attempt at stealing was unsuccessful.
+[Sat May 04 22:28:22 2024] --Zshawdo failed to steal from Guard Lennon.--
+[Sat May 04 22:28:27 2024] You begin to sneak...
+[Sat May 04 22:28:27 2024] You have become better at Sneak! (156)
+[Sat May 04 22:28:27 2024] You are as quiet as a cat stalking its prey.
+[Sat May 04 22:28:27 2024] You begin to hide...
+[Sat May 04 22:28:28 2024] You have become better at Hide! (158)
+[Sat May 04 22:28:28 2024] You have hidden yourself from view.
+[Sat May 04 22:28:36 2024] You are no longer hidden.
+[Sat May 04 22:28:36 2024] You stop sneaking.
+[Sat May 04 22:28:36 2024] You have become better at Pick Pockets! (134)
+[Sat May 04 22:28:36 2024] Your attempt at stealing was unsuccessful.
+[Sat May 04 22:28:40 2024] You begin to hide...
+[Sat May 04 22:28:41 2024] You have become better at Hide! (159)
+[Sat May 04 22:28:41 2024] You have hidden yourself from view.
+[Sat May 04 22:28:41 2024] You begin to sneak...
+[Sat May 04 22:28:41 2024] You have become better at Sneak! (157)
+[Sat May 04 22:28:41 2024] You are as quiet as a cat stalking its prey.
+[Sat May 04 22:28:44 2024] Guard Lennon says, 'Don't think you'll get away from me so easily!'
+[Sat May 04 22:28:44 2024] A glyph covered corpse punches Guard Lennon for 46 points of damage.
+[Sat May 04 22:28:44 2024] A glyph covered corpse bashes Guard Lennon for 13 points of damage.
+[Sat May 04 22:28:45 2024] Guard Lennon slashes a glyph covered corpse for 4336 points of damage.
+[Sat May 04 22:28:45 2024] Guard Lennon says, 'Serves you right, knave.  This is what happens to those who break the law.'
+[Sat May 04 22:28:45 2024] A glyph covered corpse falls dead, as the symbols on its skin lose their glow.
+[Sat May 04 22:28:45 2024] A glyph covered corpse has been slain by Guard Lennon!
+[Sat May 04 22:28:46 2024] Guard Lennon says, 'Don't think you'll get away from me so easily!'
+[Sat May 04 22:28:46 2024] A glyph covered corpse punches Guard Lennon for 73 points of damage.
+[Sat May 04 22:28:46 2024] A glyph covered corpse tries to bash Guard Lennon, but misses!
+[Sat May 04 22:28:47 2024] Guard Lennon slashes a glyph covered corpse for 4336 points of damage.
+[Sat May 04 22:28:47 2024] Guard Lennon says, 'Serves you right, knave.  This is what happens to those who break the law.'
+[Sat May 04 22:28:47 2024] A glyph covered corpse falls dead, as the symbols on its skin lose their glow.
+[Sat May 04 22:28:47 2024] A glyph covered corpse has been slain by Guard Lennon!
+[Sat May 04 22:28:52 2024] You are no longer hidden.
+[Sat May 04 22:28:52 2024] You stop sneaking.
+[Sat May 04 22:28:52 2024] You have become better at Pick Pockets! (135)
+[Sat May 04 22:28:52 2024] Your attempt at stealing was unsuccessful.
+[Sat May 04 22:28:54 2024] You begin to hide...
+[Sat May 04 22:28:54 2024] You have become better at Hide! (160)
+[Sat May 04 22:28:54 2024] You have hidden yourself from view.
+[Sat May 04 22:28:54 2024] You begin to sneak...
+[Sat May 04 22:28:55 2024] You have become better at Sneak! (158)
+[Sat May 04 22:28:55 2024] You are as quiet as a cat stalking its prey.
+[Sat May 04 22:28:58 2024] Did something just touch your foot?
+[Sat May 04 22:29:03 2024] You are no longer hidden.
+[Sat May 04 22:29:03 2024] You stop sneaking.
+[Sat May 04 22:29:04 2024] You have become better at Pick Pockets! (136)
+[Sat May 04 22:29:04 2024] Your attempt at stealing was unsuccessful.
+[Sat May 04 22:29:04 2024] --Zshawdo failed to steal from Guard Lennon.--
+[Sat May 04 22:29:05 2024] You begin to sneak...
+[Sat May 04 22:29:05 2024] You begin to hide...
+[Sat May 04 22:29:05 2024] You have become better at Sneak! (159)
+[Sat May 04 22:29:05 2024] You are as quiet as a cat stalking its prey.
+[Sat May 04 22:29:05 2024] You have become better at Hide! (161)
+[Sat May 04 22:29:05 2024] You have hidden yourself from view.
+[Sat May 04 22:29:23 2024] You are no longer hidden.
+[Sat May 04 22:29:23 2024] You stop sneaking.
+[Sat May 04 22:29:23 2024] You have become better at Pick Pockets! (137)
+[Sat May 04 22:29:23 2024] Your attempt at stealing was unsuccessful.
+[Sat May 04 22:29:24 2024] You begin to sneak...
+[Sat May 04 22:29:24 2024] You begin to hide...
+[Sat May 04 22:29:25 2024] You have become better at Sneak! (160)
+[Sat May 04 22:29:25 2024] You are as quiet as a cat stalking its prey.
+[Sat May 04 22:29:25 2024] You have become better at Hide! (162)
+[Sat May 04 22:29:25 2024] You have hidden yourself from view.
+[Sat May 04 22:29:35 2024] You are no longer hidden.
+[Sat May 04 22:29:35 2024] You stop sneaking.
+[Sat May 04 22:29:35 2024] You have become better at Pick Pockets! (138)
+[Sat May 04 22:29:35 2024] Your attempt at stealing was unsuccessful.
+[Sat May 04 22:29:36 2024] You begin to sneak...
+[Sat May 04 22:29:36 2024] You begin to hide...
+[Sat May 04 22:29:36 2024] You have become better at Sneak! (161)
+[Sat May 04 22:29:36 2024] You are as quiet as a cat stalking its prey.
+[Sat May 04 22:29:36 2024] You have become better at Hide! (163)
+[Sat May 04 22:29:36 2024] You have hidden yourself from view.
+[Sat May 04 22:29:46 2024] You are no longer hidden.
+[Sat May 04 22:29:46 2024] You stop sneaking.
+[Sat May 04 22:29:46 2024] You have become better at Pick Pockets! (139)
+[Sat May 04 22:29:46 2024] --Zshawdo stole Shar Vahl Cell Key from Guard Lennon!--
+[Sat May 04 22:29:46 2024] You have stolen a Shar Vahl Cell Key
+[Sat May 04 22:29:49 2024] You begin to sneak...
+[Sat May 04 22:29:49 2024] You begin to hide...
+[Sat May 04 22:29:49 2024] You have become better at Sneak! (162)
+[Sat May 04 22:29:49 2024] You are as quiet as a cat stalking its prey.
+[Sat May 04 22:29:49 2024] You have become better at Hide! (164)
+[Sat May 04 22:29:49 2024] You have hidden yourself from view.
+[Sat May 04 22:31:00 2024] You no longer have a target.
+[Sat May 04 22:31:01 2024] You step on a fresh grave and the soil around you springs to life!
+[Sat May 04 22:31:21 2024] Did something just touch your foot?
+[Sat May 04 22:31:30 2024] Did something just touch your foot?
+[Sat May 04 22:34:52 2024] Targeted (NPC): Legionnaire Giovesanes
+[Sat May 04 22:34:52 2024] Right click on the NPC to consider him.
+[Sat May 04 22:34:53 2024] Legionnaire Giovesanes regards you indifferently -- You could probably win this fight. (Lvl: 45)
+[Sat May 04 22:34:55 2024] Targeted (NPC): Legionnaire Valesco
+[Sat May 04 22:34:55 2024] Right click on the NPC to consider him.
+[Sat May 04 22:34:55 2024] Legionnaire Valesco regards you indifferently -- You could probably win this fight. (Lvl: 42)
+[Sat May 04 22:35:01 2024] Legionnaire Valesco regards you indifferently -- You could probably win this fight. (Lvl: 42)
+[Sat May 04 22:35:01 2024] Targeted (NPC): Legionnaire Zexolicor
+[Sat May 04 22:35:01 2024] Right click on the NPC to consider him.
+[Sat May 04 22:35:02 2024] Legionnaire Zexolicor regards you indifferently -- You could probably win this fight. (Lvl: 44)
+[Sat May 04 22:35:03 2024] Targeted (NPC): Legionnaire Devorialius
+[Sat May 04 22:35:03 2024] Right click on the NPC to consider him.
+[Sat May 04 22:35:04 2024] Legionnaire Devorialius regards you indifferently -- You could probably win this fight. (Lvl: 45)
+[Sat May 04 22:35:13 2024] Targeted (NPC): Guard Zimmer
+[Sat May 04 22:35:13 2024] Right click on the NPC to consider him.
+[Sat May 04 22:35:14 2024] Guard Zimmer regards you indifferently -- he appears to be quite formidable. (Lvl: 65)
+[Sat May 04 22:35:14 2024] You suspect that this being can see you.
+[Sat May 04 22:35:35 2024] You activate Sneak Attack.
+[Sat May 04 22:35:35 2024] You take careful aim at your opponent.
+[Sat May 04 22:35:36 2024] You have moved and are no longer hidden!
+[Sat May 04 22:35:36 2024] Guard Zimmer says, 'Don't think you'll get away from me so easily!'
+[Sat May 04 22:35:36 2024] You backstab Guard Zimmer for 24745 points of damage.
+[Sat May 04 22:35:36 2024] You backstab Guard Zimmer for 255 points of damage.
+[Sat May 04 22:35:36 2024] You have gained an ability point!  You now have 3 ability points.
+[Sat May 04 22:35:36 2024] You gain experience (with a bonus)!
+[Sat May 04 22:35:36 2024] Guard Zimmer's corpse collapses to the floor.
+[Sat May 04 22:35:36 2024] You have slain Guard Zimmer!
+[Sat May 04 22:36:43 2024] --You have looted a Rough-Hewn Shackle Key from Guard Zimmer's corpse.--
+[Sat May 04 22:36:51 2024] You begin to hide...
+[Sat May 04 22:36:51 2024] You have become better at Hide! (165)
+[Sat May 04 22:36:51 2024] You have hidden yourself from view.
+[Sat May 04 22:38:28 2024] You are no longer hidden.
+[Sat May 04 22:38:28 2024] You stop sneaking.
+[Sat May 04 22:38:28 2024] You begin casting Origin.
+[Sat May 04 22:38:44 2024] LOADING, PLEASE WAIT...
+[Sat May 04 22:38:56 2024] You have entered Shar Vahl.
+[Sat May 04 22:39:22 2024] You begin to sneak...
+[Sat May 04 22:39:22 2024] You begin to hide...
+[Sat May 04 22:39:22 2024] You have become better at Sneak! (163)
+[Sat May 04 22:39:22 2024] You are as quiet as a cat stalking its prey.
+[Sat May 04 22:39:23 2024] You have become better at Hide! (166)
+[Sat May 04 22:39:23 2024] You have hidden yourself from view.
+[Sat May 04 22:39:36 2024] It's locked and you're not holding the key.
+[Sat May 04 22:39:39 2024] It's locked and you're not holding the key.
+[Sat May 04 22:39:40 2024] It's locked and you're not holding the key.
+[Sat May 04 22:39:40 2024] It's locked and you're not holding the key.
+[Sat May 04 22:39:48 2024] It's locked and you're not holding the key.
+[Sat May 04 22:39:51 2024] It's locked and you're not holding the key.
+[Sat May 04 22:39:52 2024] It's locked and you're not holding the key.
+[Sat May 04 22:39:58 2024] It's locked and you're not holding the key.
+[Sat May 04 22:40:25 2024] You can't use pick lock on that.
+[Sat May 04 22:40:34 2024] It's locked and you're not holding the key.
+[Sat May 04 22:40:36 2024] It's locked and you're not holding the key.
+[Sat May 04 22:40:37 2024] It's locked and you're not holding the key.
+[Sat May 04 22:40:38 2024] It's locked and you're not holding the key.
+[Sat May 04 22:40:46 2024] It's locked and you're not holding the key.
+[Sat May 04 22:40:47 2024] It's locked and you're not holding the key.
+[Sat May 04 22:40:48 2024] You can't use pick lock on that.
+[Sat May 04 22:40:56 2024] It's locked and you're not holding the key.
+[Sat May 04 22:41:32 2024] Targeted (Player): Zshawdo
+[Sat May 04 22:41:32 2024] Right click on yourself to bring up your own inspect window. Use the /toggleinspect command to enable or disable right-click inspecting. You can also enable Click Through Self in the Options Window to stop clicking on yourself.
+[Sat May 04 22:41:37 2024] Shainai glances about, looking a bit lost.  'Well this doesn't look like a place I belong in at all.'
+[Sat May 04 22:41:46 2024] Targeted (Player): Zshawdo
+[Sat May 04 22:41:46 2024] Right click on yourself to bring up your own inspect window. Use the /toggleinspect command to enable or disable right-click inspecting. You can also enable Click Through Self in the Options Window to stop clicking on yourself.
+[Sat May 04 22:41:46 2024] You try the Cell Key on the lock and it's a perfect fit.
+[Sat May 04 22:41:52 2024] You try the Cell Key on the lock and it's a perfect fit.
+[Sat May 04 22:41:56 2024] You are low on drink.
+[Sat May 04 22:42:36 2024] Targeted (NPC): a prisoner
+[Sat May 04 22:42:36 2024] Right click on the NPC to consider him.
+[Sat May 04 22:42:40 2024] Targeted (NPC): a prisoner
+[Sat May 04 22:42:40 2024] Right click on the NPC to consider him.
+[Sat May 04 22:42:40 2024] You offered 1 Rough-Hewn Shackle Key to a prisoner.
+[Sat May 04 22:42:42 2024] You are low on drink.
+[Sat May 04 22:42:52 2024] You have freed Nichols, completing the second task for the Smuggler's Camp.
+[Sat May 04 22:42:52 2024] Nichols unlocks his manacles and stands up.  As he dusts himself off and stretches out his limbs, he greets you, 'Well met, Zshawdo.  You have my thanks, but more importantly, I think you'll find that assisting our faction comes with great rewards.'
+[Sat May 04 22:42:52 2024] You have gained an ability point!  You now have 4 ability points.
+[Sat May 04 22:42:52 2024] You gain experience (with a bonus)!
+[Sat May 04 22:42:52 2024] You complete the trade with Nichols.
+[Sat May 04 22:43:07 2024] You say, 'Hail, Nichols'
+[Sat May 04 22:43:13 2024] Targeted (Player): Zshawdo
+[Sat May 04 22:43:13 2024] Right click on yourself to bring up your own inspect window. Use the /toggleinspect command to enable or disable right-click inspecting. You can also enable Click Through Self in the Options Window to stop clicking on yourself.
+[Sat May 04 22:43:14 2024] You try the Cell Key on the lock and it's a perfect fit.
+[Sat May 04 22:43:17 2024] You try the Cell Key on the lock and it's a perfect fit.
+[Sat May 04 22:43:28 2024] You are low on drink.
+[Sat May 04 22:44:14 2024] You are low on drink.
+[Sat May 04 22:45:00 2024] You are low on drink.
+[Sat May 04 22:45:46 2024] You are low on drink.
+[Sat May 04 22:46:10 2024] You stop hiding.
+[Sat May 04 22:46:12 2024] You begin to hide...
+[Sat May 04 22:46:12 2024] You have become better at Hide! (167)
+[Sat May 04 22:46:12 2024] You have hidden yourself from view.
+[Sat May 04 22:46:32 2024] You are low on drink.
+[Sat May 04 22:47:14 2024] LOADING, PLEASE WAIT...
+[Sat May 04 22:47:27 2024] You have entered Shadeweaver's Thicket.
+[Sat May 04 22:48:09 2024] You are low on drink.
+[Sat May 04 22:48:11 2024] LOADING, PLEASE WAIT...
+[Sat May 04 22:48:26 2024] You have entered The Plane of Knowledge.
+[Sat May 04 22:48:44 2024] Channels: 1=Rogue(41)
+[Sat May 04 22:48:44 2024] Channels: 1=Rogue(41), 2=Planes(206)
+[Sat May 04 22:49:02 2024] LOADING, PLEASE WAIT...
+[Sat May 04 22:49:15 2024] You have entered North Qeynos.
+[Sat May 04 22:49:18 2024] Channels: 1=Rogue(41)
+[Sat May 04 22:49:18 2024] Channels: 1=Rogue(41), 2=Antonica(80)
+[Sat May 04 22:49:19 2024] A gruff voice shouts, 'Stay alert, men.  Word is that the package will be delivered shortly.  The smuggler is likely already here.'
+[Sat May 04 22:49:32 2024] You have completed achievement: North Qeynos Traveler
+[Sat May 04 22:49:57 2024] You are low on drink.
+[Sat May 04 22:50:02 2024] Targeted (Player): Zshawdo
+[Sat May 04 22:50:02 2024] Right click on yourself to bring up your own inspect window. Use the /toggleinspect command to enable or disable right-click inspecting. You can also enable Click Through Self in the Options Window to stop clicking on yourself.
+[Sat May 04 22:50:03 2024] Targeted (Player): Zshawdo
+[Sat May 04 22:50:03 2024] Right click on yourself to bring up your own inspect window. Use the /toggleinspect command to enable or disable right-click inspecting. You can also enable Click Through Self in the Options Window to stop clicking on yourself.
+[Sat May 04 22:50:05 2024] Targeted (NPC): Elite Guard Evanet
+[Sat May 04 22:50:05 2024] Right click on the NPC to consider him.
+[Sat May 04 22:50:07 2024] Elite Guard Evanet regards you indifferently -- he appears to be quite formidable. (Lvl: 65)
+[Sat May 04 22:50:07 2024] This creature would take an army to defeat!
+[Sat May 04 22:50:07 2024] You suspect that this being can see you.
+[Sat May 04 22:50:12 2024] Targeted (NPC): Elite Guard Lewot
+[Sat May 04 22:50:12 2024] Right click on the NPC to consider him.
+[Sat May 04 22:50:13 2024] Elite Guard Lewot regards you indifferently -- he appears to be quite formidable. (Lvl: 65)
+[Sat May 04 22:50:13 2024] This creature would take an army to defeat!
+[Sat May 04 22:50:13 2024] You suspect that this being can see you.
+[Sat May 04 22:50:19 2024] Targeted (NPC): Guard Hewet
+[Sat May 04 22:50:19 2024] Right click on the NPC to consider him.
+[Sat May 04 22:50:20 2024] Guard Hewet regards you indifferently -- You could probably win this fight. (Lvl: 10)
+[Sat May 04 22:50:20 2024] Elite Guard Lewot says, 'I've found them, and they have the package!  Stop, thief!'
+[Sat May 04 22:50:23 2024] Elite Guard Lewot punches YOU for 7980 points of damage.
+[Sat May 04 22:50:23 2024] Elite Guard Lewot says, 'That'll teach the smuggling scum.  I feel a promotion coming on.'
+[Sat May 04 22:50:23 2024] You have been knocked unconscious!
+[Sat May 04 22:50:23 2024] You have been slain by Elite Guard Lewot!
+[Sat May 04 22:50:23 2024] Elite Guard Evanet begins casting Relentless Salubrity.
+[Sat May 04 22:50:23 2024] Elite Guard Evanet shrugs off afflictions.
+[Sat May 04 22:51:03 2024] Elite Guard Lewot begins casting Relentless Salubrity.
+[Sat May 04 22:51:03 2024] Elite Guard Lewot shrugs off afflictions.
+[Sat May 04 22:51:09 2024] Elite Guard Sarve begins casting Relentless Salubrity.
+[Sat May 04 22:51:09 2024] Elite Guard Sarve shrugs off afflictions.
+[Sat May 04 22:52:22 2024] Elite Guard Sarve begins casting Relentless Salubrity.
+[Sat May 04 22:52:22 2024] Elite Guard Sarve shrugs off afflictions.
+[Sat May 04 22:52:28 2024] Fippy Darkpaw shouts, '<BBBBBAAAARRRKKKK!>  You humans will pay for ruining our homeland!  GRRRRRRRR!  Family Darkpaw of the Sabertooth Clan will slay you all!  <BARK!>'
+[Sat May 04 22:52:42 2024] To remove consent, use /deny <playername>
+[Sat May 04 22:52:43 2024] You have given eonaladin permission to drag your corpse in North Qeynos.
+[Sat May 04 22:53:07 2024] Eonaladin begins casting Resurrection.
+[Sat May 04 22:53:12 2024] You have been offered a resurrection.
+[Sat May 04 22:53:21 2024] You regain some experience from resurrection.
+[Sat May 04 22:53:21 2024] Returning to Resurrect. Please wait...
+[Sat May 04 22:53:27 2024] You begin to sneak...
+[Sat May 04 22:53:27 2024] You have become better at Sneak! (164)
+[Sat May 04 22:53:27 2024] You are as quiet as a cat stalking its prey.
+[Sat May 04 22:53:27 2024] You begin to hide...
+[Sat May 04 22:53:27 2024] You have become better at Hide! (168)
+[Sat May 04 22:53:27 2024] You have hidden yourself from view.
+[Sat May 04 22:53:28 2024] Targeted (NPC): Elite Guard Jedis
+[Sat May 04 22:53:28 2024] Right click on the NPC to consider him.
+[Sat May 04 22:53:29 2024] Elite Guard Jedis regards you indifferently -- he appears to be quite formidable. (Lvl: 65)
+[Sat May 04 22:53:29 2024] This creature would take an army to defeat!
+[Sat May 04 22:53:29 2024] You suspect that this being can see you.
+[Sat May 04 22:53:34 2024] Targeted (NPC): Elite Guard Etter
+[Sat May 04 22:53:34 2024] Right click on the NPC to consider him.
+[Sat May 04 22:53:40 2024] Eonaladin begins casting Illusion: Feir'Dal.
+[Sat May 04 22:53:46 2024] Eonaladin's image shimmers.
+[Sat May 04 22:54:07 2024] You are low on drink.
+[Sat May 04 22:54:47 2024] Elite Guard Sarve begins casting Relentless Salubrity.
+[Sat May 04 22:54:51 2024] Targeted (NPC): Elite Guard Sarve
+[Sat May 04 22:54:51 2024] Right click on the NPC to consider him.
+[Sat May 04 22:54:53 2024] You are low on drink.
+[Sat May 04 22:54:59 2024] Targeted (NPC): Guard Gehnus
+[Sat May 04 22:54:59 2024] Right click on the NPC to consider him.
+[Sat May 04 22:55:32 2024] Targeted (NPC): Elite Guard Etter
+[Sat May 04 22:55:32 2024] Right click on the NPC to consider him.
+[Sat May 04 22:55:33 2024] Elite Guard Etter regards you indifferently -- he appears to be quite formidable. (Lvl: 65)
+[Sat May 04 22:55:33 2024] This creature would take an army to defeat!
+[Sat May 04 22:55:33 2024] You suspect that this being can see you.
+[Sat May 04 22:55:36 2024] Lashun Novashine shouts, 'Cease this endless conflict and seek salvation in the Temple of Life!  The glory of Rodcet Nife awaits you!'
+[Sat May 04 22:55:39 2024] You are low on drink.
+[Sat May 04 22:55:39 2024] Elite Guard Etter begins casting Relentless Salubrity.
+[Sat May 04 22:55:39 2024] Elite Guard Etter shrugs off afflictions.
+[Sat May 04 22:56:06 2024] LOADING, PLEASE WAIT...
+[Sat May 04 22:56:21 2024] You have entered The Plane of Knowledge.
+[Sat May 04 22:56:39 2024] Channels: 1=Rogue(40)
+[Sat May 04 22:56:39 2024] Channels: 1=Rogue(40), 2=Planes(208)
+[Sat May 04 22:57:02 2024] You are low on drink.
+[Sat May 04 22:57:46 2024] You feel your strength return.
+[Sat May 04 22:57:48 2024] You are low on drink.
+[Sat May 04 22:57:57 2024] LOADING, PLEASE WAIT...
+[Sat May 04 22:58:13 2024] You have entered Misty Thicket.
+[Sat May 04 22:58:15 2024] Ella Foodcrafter is surrounded by a brief lupine aura.
+[Sat May 04 22:58:15 2024] Channels: 1=Rogue(40)
+[Sat May 04 22:58:15 2024] Channels: 1=Rogue(40), 2=Antonica(82)
+[Sat May 04 22:58:54 2024] You are low on drink.
+[Sat May 04 22:59:00 2024] LOADING, PLEASE WAIT...
+[Sat May 04 22:59:12 2024] You have entered Rivervale.
+[Sat May 04 22:59:45 2024] LOADING, PLEASE WAIT...
+[Sat May 04 22:59:56 2024] You have entered Kithicor Forest.
+[Sat May 04 23:00:39 2024] You are low on drink.
+[Sat May 04 23:00:57 2024] LOADING, PLEASE WAIT...
+[Sat May 04 23:01:09 2024] You have entered Highpass Hold.
+[Sat May 04 23:01:21 2024] An orc medic begins casting Spirit of Wolf.
+[Sat May 04 23:01:25 2024] an orc scout is surrounded by a brief lupine aura.
+[Sat May 04 23:01:50 2024] You are low on drink.
+[Sat May 04 23:02:11 2024] You stop sneaking.
+[Sat May 04 23:02:12 2024] You begin to sneak...
+[Sat May 04 23:02:12 2024] You stop hiding.
+[Sat May 04 23:02:12 2024] You have become better at Sneak! (165)
+[Sat May 04 23:02:12 2024] You are as quiet as a cat stalking its prey.
+[Sat May 04 23:02:13 2024] Targeted (Merchant): a shady Highpass citizen
+[Sat May 04 23:02:13 2024] Stand close to and right click on the Merchant to begin a transaction.
+[Sat May 04 23:02:14 2024] You say, 'Hail, a shady Highpass citizen'
+[Sat May 04 23:02:15 2024] A shady Highpass citizen says, 'Take a load off and join me for awhile, Zshawdo.  The Tiger's Roar is the best watering hole in Antonica.  I come here every day to relax and take in the gorgeous view.'  He glances around at the other patrons of the tavern.  'See what I mean?  Like I said... Best bar this side of Norrath.  Now, if you are interested in talking business, I can't help but to assume that you are here because you wish to ingratiate yourself with Stanos and his lot.  It just so happens that I know of several jobs they need taken care of.  If you completed all three, then informed me when you were [done], I imagine it would get you in their good graces.  What will it be, hmm?  [One], [two], or [three]?'
+[Sat May 04 23:02:16 2024] You say, 'three'
+[Sat May 04 23:02:16 2024] A shady Highpass citizen leans in close and whispers, 'You aren't above a bit of smuggling yourself, I hope.  I've got a package that needs to make it to Crow in Qeynos.  The guards are expecting its arrival and have increased their numbers and heightened their watch.  Fortunately for us, they don't know that we know that they know.  On top of that, they'll be expecting someone from the Highpass camp.  Do you understand?  The bottom line is, this shipment must reach Crow in Qeynos, and the deliverer mustn't get caught.  That's all you really need to know.  I'm counting on you to not botch this job, Zshawdo.'
+[Sat May 04 23:02:28 2024] You stop sneaking.
+[Sat May 04 23:02:28 2024] You begin casting Throne of Heroes.
+[Sat May 04 23:02:36 2024] You are low on drink.
+[Sat May 04 23:02:45 2024] LOADING, PLEASE WAIT...
+[Sat May 04 23:03:00 2024] You have entered Guild Lobby.
+[Sat May 04 23:03:12 2024] Fluttlecake begins singing Purifying Chorus.
+[Sat May 04 23:03:12 2024] Fluttlecake begins singing Song of Sustenance.
+[Sat May 04 23:03:12 2024] Fluttlecake begins singing Chorus of Marr.
+[Sat May 04 23:03:13 2024] Channels: 1=Rogue(40)
+[Sat May 04 23:03:13 2024] Channels: 1=Rogue(40), 2=Planes(209)
+[Sat May 04 23:03:13 2024] Fluttlecake begins singing Purifying Chorus.
+[Sat May 04 23:03:16 2024] Fluttlecake begins singing Song of Sustenance.
+[Sat May 04 23:03:19 2024] Fluttlecake begins singing Chorus of Marr.
+[Sat May 04 23:03:28 2024] LOADING, PLEASE WAIT...
+[Sat May 04 23:03:43 2024] You have entered The Plane of Knowledge.
+[Sat May 04 23:04:23 2024] You are low on drink.
+[Sat May 04 23:04:59 2024] Ahmaal begins casting Allure of Death.
+[Sat May 04 23:05:09 2024] You are low on drink.
+[Sat May 04 23:05:55 2024] You are low on drink.
+[Sat May 04 23:06:41 2024] You are low on drink.
+[Sat May 04 23:07:28 2024] You are low on drink.
+[Sat May 04 23:08:14 2024] You are low on drink.
+[Sat May 04 23:09:00 2024] You are low on drink.
+[Sat May 04 23:09:46 2024] You are low on drink.
+[Sat May 04 23:10:32 2024] You are low on drink.
+[Sat May 04 23:11:12 2024] LOADING, PLEASE WAIT...
+[Sat May 04 23:11:25 2024] You have entered North Qeynos.
+[Sat May 04 23:11:28 2024] Channels: 1=Rogue(38)
+[Sat May 04 23:11:28 2024] Channels: 1=Rogue(38), 2=Antonica(87)
+[Sat May 04 23:11:28 2024] A gruff voice shouts, 'Stay alert, men.  Word is that the package will be delivered shortly.  The smuggler is likely already here.'
+[Sat May 04 23:12:07 2024] You are low on drink.
+[Sat May 04 23:12:53 2024] You are low on drink.
+[Sat May 04 23:13:39 2024] You are low on drink.
+[Sat May 04 23:14:25 2024] You are low on drink.
+[Sat May 04 23:14:56 2024] Nixx Darkpaw shouts, '<BBBBBAAAARRRKKKK!>  You humans will pay for ruining our homeland!  GRRRRRRRR!  Family Darkpaw of the Sabertooth Clan will slay you all!  <BARK!>'
+[Sat May 04 23:15:11 2024] You are low on drink.
+[Sat May 04 23:15:47 2024] You begin to hide...
+[Sat May 04 23:15:48 2024] You have become better at Hide! (169)
+[Sat May 04 23:15:48 2024] You have hidden yourself from view.
+[Sat May 04 23:15:48 2024] You begin to sneak...
+[Sat May 04 23:15:48 2024] You have become better at Sneak! (166)
+[Sat May 04 23:15:48 2024] You are as quiet as a cat stalking its prey.
+[Sat May 04 23:15:57 2024] You are low on drink.
+[Sat May 04 23:16:43 2024] You are low on drink.
+[Sat May 04 23:17:29 2024] You are low on drink.
+[Sat May 04 23:18:16 2024] You are low on drink.
+[Sat May 04 23:19:02 2024] You are low on drink.
+[Sat May 04 23:19:48 2024] You are low on drink.
+[Sat May 04 23:20:34 2024] You are low on drink.
+[Sat May 04 23:21:20 2024] You are low on drink.
+[Sat May 04 23:21:55 2024] Fippy Darkpaw shouts, '<BBBBBAAAARRRKKKK!>  You humans will pay for ruining our homeland!  GRRRRRRRR!  Family Darkpaw of the Sabertooth Clan will slay you all!  <BARK!>'
+[Sat May 04 23:22:06 2024] You are low on drink.
+[Sat May 04 23:22:52 2024] You are low on drink.
+[Sat May 04 23:23:38 2024] You are low on drink.
+[Sat May 04 23:24:24 2024] You are low on drink.
+[Sat May 04 23:25:10 2024] You are low on drink.
+[Sat May 04 23:25:56 2024] You are low on drink.
+[Sat May 04 23:26:42 2024] You are low on drink.
+[Sat May 04 23:27:28 2024] You are low on drink.
+[Sat May 04 23:28:14 2024] You are low on drink.
+[Sat May 04 23:28:59 2024] Fippy Darkpaw shouts, '<BBBBBAAAARRRKKKK!>  You humans will pay for ruining our homeland!  GRRRRRRRR!  Family Darkpaw of the Sabertooth Clan will slay you all!  <BARK!>'
+[Sat May 04 23:29:01 2024] You are low on drink.
+[Sat May 04 23:29:06 2024] Lashun Novashine shouts, 'Cease this endless conflict and seek salvation in the Temple of Life!  The glory of Rodcet Nife awaits you!'
+[Sat May 04 23:29:47 2024] You are low on drink.
+[Sat May 04 23:30:33 2024] You are low on drink.
+[Sat May 04 23:31:19 2024] You are low on drink.
+[Sat May 04 23:32:05 2024] You are low on drink.
+[Sat May 04 23:32:43 2024] Lashun Novashine shouts, 'Cease this endless conflict and seek salvation in the Temple of Life!  The glory of Rodcet Nife awaits you!'
+[Sat May 04 23:32:51 2024] You are low on drink.
+[Sat May 04 23:33:37 2024] You are low on drink.
+[Sat May 04 23:34:23 2024] You are low on drink.
+[Sat May 04 23:35:09 2024] You are low on drink.
+[Sat May 04 23:35:52 2024] Lashun Novashine shouts, 'Cease this endless conflict and seek salvation in the Temple of Life!  The glory of Rodcet Nife awaits you!'
+[Sat May 04 23:35:55 2024] You are low on drink.
+[Sat May 04 23:36:08 2024] Grarrax Darkpaw shouts, '<BBBBBAAAARRRKKKK!>  You humans will pay for ruining our homeland!  GRRRRRRRR!  Family Darkpaw of the Sabertooth Clan will slay you all!  <BARK!>'
+[Sat May 04 23:36:41 2024] You are low on drink.
+[Sat May 04 23:37:27 2024] You are low on drink.
+[Sat May 04 23:38:13 2024] You are low on drink.
+[Sat May 04 23:38:59 2024] You are low on drink.
+[Sat May 04 23:39:45 2024] You are low on drink.
+[Sat May 04 23:40:31 2024] You are low on drink.
+[Sat May 04 23:41:03 2024] LOADING, PLEASE WAIT...
+[Sat May 04 23:41:14 2024] You have entered The Qeynos Aqueduct System.
+[Sat May 04 23:41:20 2024] You have become better at Swimming! (182)
+[Sat May 04 23:41:22 2024] You have completed achievement: The Qeynos Aqueduct System Traveler
+[Sat May 04 23:41:57 2024] You are low on drink.
+[Sat May 04 23:42:03 2024] You have become better at Swimming! (183)
+[Sat May 04 23:42:16 2024] LOADING, PLEASE WAIT...
+[Sat May 04 23:42:28 2024] You have entered North Qeynos.
+[Sat May 04 23:42:30 2024] Jaylia the Faithful begins casting Divine Favor.
+[Sat May 04 23:42:30 2024] Jaylia the Faithful is surrounded by an aura of Divine Favor.
+[Sat May 04 23:42:32 2024] A gruff voice shouts, 'Stay alert, men.  Word is that the package will be delivered shortly.  The smuggler is likely already here.'
+[Sat May 04 23:43:10 2024] You are low on drink.
+[Sat May 04 23:43:31 2024] Fippy Darkpaw shouts, '<BBBBBAAAARRRKKKK!>  You humans will pay for ruining our homeland!  GRRRRRRRR!  Family Darkpaw of the Sabertooth Clan will slay you all!  <BARK!>'
+[Sat May 04 23:43:56 2024] You are low on drink.
+[Sat May 04 23:44:42 2024] You are low on drink.
+[Sat May 04 23:45:14 2024] Targeted (NPC): Jorren Boxmover
+[Sat May 04 23:45:14 2024] Right click on the NPC to consider him.
+[Sat May 04 23:45:16 2024] Jorren Boxmover regards you indifferently -- You could probably win this fight. (Lvl: 12)
+[Sat May 04 23:45:28 2024] You are low on drink.
+[Sat May 04 23:46:08 2024] Rineval Talyas begins casting Alacrity.
+[Sat May 04 23:46:14 2024] You are low on drink.
+[Sat May 04 23:46:38 2024] Rineval Talyas begins casting Feedback.
+[Sat May 04 23:47:00 2024] You are low on drink.
+[Sat May 04 23:47:47 2024] You are low on drink.
+[Sat May 04 23:48:33 2024] You are low on drink.
+[Sat May 04 23:49:19 2024] You are low on drink.
+[Sat May 04 23:50:05 2024] You are low on drink.
+[Sat May 04 23:50:40 2024] Fippy Darkpaw shouts, '<BBBBBAAAARRRKKKK!>  You humans will pay for ruining our homeland!  GRRRRRRRR!  Family Darkpaw of the Sabertooth Clan will slay you all!  <BARK!>'
+[Sat May 04 23:50:51 2024] You are low on drink.
+[Sat May 04 23:51:37 2024] You are low on drink.
+[Sat May 04 23:52:23 2024] You are low on drink.
+[Sat May 04 23:52:46 2024] Rineval Talyas begins casting Alacrity.
+[Sat May 04 23:53:09 2024] You are low on drink.
+[Sat May 04 23:53:55 2024] You are low on drink.
+[Sat May 04 23:54:41 2024] You are low on drink.
+[Sat May 04 23:55:27 2024] You are low on drink.
+[Sat May 04 23:56:00 2024] Rineval Talyas begins casting Feedback.
+[Sat May 04 23:56:13 2024] You are low on drink.
+[Sat May 04 23:56:59 2024] You are low on drink.
+[Sat May 04 23:57:45 2024] You are low on drink.
+[Sat May 04 23:58:07 2024] Fippy Darkpaw shouts, '<BBBBBAAAARRRKKKK!>  You humans will pay for ruining our homeland!  GRRRRRRRR!  Family Darkpaw of the Sabertooth Clan will slay you all!  <BARK!>'
+[Sat May 04 23:58:31 2024] You are low on drink.
+[Sat May 04 23:59:17 2024] You are low on drink.
+[Sat May 04 23:59:27 2024] Rineval Talyas begins casting Alacrity.
+[Sun May 05 00:00:03 2024] You are low on drink.
+[Sun May 05 00:00:03 2024] Rineval Talyas begins casting Major Shielding.
+[Sun May 05 00:00:49 2024] You are low on drink.
+[Sun May 05 00:01:33 2024] Lashun Novashine shouts, 'Cease this endless conflict and seek salvation in the Temple of Life!  The glory of Rodcet Nife awaits you!'
+[Sun May 05 00:01:35 2024] You are low on drink.
+[Sun May 05 00:02:21 2024] You are low on drink.
+[Sun May 05 00:03:08 2024] You are low on drink.
+[Sun May 05 00:03:54 2024] You are low on drink.
+[Sun May 05 00:04:33 2024] Lashun Novashine shouts, 'Cease this endless conflict and seek salvation in the Temple of Life!  The glory of Rodcet Nife awaits you!'
+[Sun May 05 00:04:40 2024] You are low on drink.
+[Sun May 05 00:05:25 2024] Rineval Talyas begins casting Feedback.
+[Sun May 05 00:05:26 2024] You are out of drink.
+[Sun May 05 00:05:31 2024] Fippy Darkpaw shouts, '<BBBBBAAAARRRKKKK!>  You humans will pay for ruining our homeland!  GRRRRRRRR!  Family Darkpaw of the Sabertooth Clan will slay you all!  <BARK!>'
+[Sun May 05 00:06:08 2024] Rineval Talyas begins casting Alacrity.
+[Sun May 05 00:06:12 2024] You are out of drink.
+[Sun May 05 00:06:58 2024] You are out of drink.
+[Sun May 05 00:07:38 2024] Lashun Novashine shouts, 'Cease this endless conflict and seek salvation in the Temple of Life!  The glory of Rodcet Nife awaits you!'
+[Sun May 05 00:07:44 2024] You are out of drink.
+[Sun May 05 00:08:30 2024] You are out of drink.
+[Sun May 05 00:09:16 2024] You are out of drink.
+[Sun May 05 00:10:02 2024] You are out of drink.
+[Sun May 05 00:10:48 2024] You are out of drink.
+[Sun May 05 00:11:34 2024] You are out of drink.
+[Sun May 05 00:12:20 2024] You are out of drink.
+[Sun May 05 00:12:42 2024] Fippy Darkpaw shouts, '<BBBBBAAAARRRKKKK!>  You humans will pay for ruining our homeland!  GRRRRRRRR!  Family Darkpaw of the Sabertooth Clan will slay you all!  <BARK!>'
+[Sun May 05 00:12:43 2024] Rineval Talyas begins casting Alacrity.
+[Sun May 05 00:13:06 2024] You are out of drink.
+[Sun May 05 00:13:52 2024] You are out of drink.
+[Sun May 05 00:14:38 2024] You are out of drink.
+[Sun May 05 00:14:47 2024] Rineval Talyas begins casting Feedback.
+[Sun May 05 00:15:24 2024] You are out of drink.
+[Sun May 05 00:16:10 2024] You are out of drink.
+[Sun May 05 00:16:57 2024] You are out of drink.
+[Sun May 05 00:17:43 2024] You are out of drink.
+[Sun May 05 00:17:46 2024] Targeted (Player): Gurrdar
+[Sun May 05 00:17:46 2024] Stand close to and right click on the Player to consider and inspect him. Use the /toggleinspect command to enable or disable right-click inspecting.
+[Sun May 05 00:17:48 2024] Targeted (Player): Gurrdar
+[Sun May 05 00:17:48 2024] Stand close to and right click on the Player to consider and inspect him. Use the /toggleinspect command to enable or disable right-click inspecting.
+[Sun May 05 00:18:13 2024] You stop hiding.
+[Sun May 05 00:18:16 2024] Gurrdar begins casting Spirit of Bih`Li.
+[Sun May 05 00:18:21 2024] Gurrdar is surrounded by a brief lupine aura.
+[Sun May 05 00:18:21 2024] You feel the spirit of Bih`Li enter you.
+[Sun May 05 00:18:22 2024] You begin to hide...
+[Sun May 05 00:18:22 2024] You have become better at Hide! (170)
+[Sun May 05 00:18:22 2024] You have hidden yourself from view.
+[Sun May 05 00:18:29 2024] You are out of drink.
+[Sun May 05 00:19:15 2024] You are out of drink.
+[Sun May 05 00:19:18 2024] Rineval Talyas begins casting Alacrity.
+[Sun May 05 00:19:44 2024] Fippy Darkpaw shouts, '<BBBBBAAAARRRKKKK!>  You humans will pay for ruining our homeland!  GRRRRRRRR!  Family Darkpaw of the Sabertooth Clan will slay you all!  <BARK!>'
+[Sun May 05 00:20:01 2024] You are out of drink.
+[Sun May 05 00:20:47 2024] You are out of drink.
+[Sun May 05 00:21:33 2024] You are out of drink.
+[Sun May 05 00:21:41 2024] Targeted (NPC): Elite Guard Jedis
+[Sun May 05 00:21:41 2024] Right click on the NPC to consider him.
+[Sun May 05 00:22:19 2024] You are out of drink.
+[Sun May 05 00:22:23 2024] Elite Guard Evanet begins casting Relentless Salubrity.
+[Sun May 05 00:22:23 2024] Elite Guard Sarve begins casting Relentless Salubrity.
+[Sun May 05 00:22:23 2024] Elite Guard Sarve shrugs off afflictions.
+[Sun May 05 00:23:05 2024] You are out of drink.
+[Sun May 05 00:23:37 2024] Tubal Weaver says, 'Whew.  I am parched.  I will be back in a few minutes.'
+[Sun May 05 00:23:51 2024] You are out of drink.
+[Sun May 05 00:24:37 2024] You are out of drink.
+[Sun May 05 00:25:23 2024] You are out of drink.
+[Sun May 05 00:25:29 2024] Elite Guard Jedis begins casting Relentless Salubrity.
+[Sun May 05 00:25:29 2024] Elite Guard Jedis shrugs off afflictions.
+[Sun May 05 00:26:06 2024] Elite Guard Lika begins casting Relentless Salubrity.
+[Sun May 05 00:26:06 2024] Elite Guard Lika shrugs off afflictions.
+[Sun May 05 00:26:09 2024] Elite Guard Etter begins casting Relentless Salubrity.
+[Sun May 05 00:26:09 2024] Elite Guard Etter shrugs off afflictions.
+[Sun May 05 00:26:09 2024] You are out of drink.
+[Sun May 05 00:26:15 2024] Elite Guard Vaughn begins casting Relentless Salubrity.
+[Sun May 05 00:26:30 2024] Elite Guard Inski begins casting Relentless Salubrity.
+[Sun May 05 00:26:47 2024] Fippy Darkpaw shouts, '<BBBBBAAAARRRKKKK!>  You humans will pay for ruining our homeland!  GRRRRRRRR!  Family Darkpaw of the Sabertooth Clan will slay you all!  <BARK!>'
+[Sun May 05 00:26:48 2024] Elite Guard Vaughn begins casting Relentless Salubrity.
+[Sun May 05 00:26:48 2024] Elite Guard Vaughn shrugs off afflictions.
+[Sun May 05 00:26:55 2024] You are out of drink.
+[Sun May 05 00:26:57 2024] Elite Guard Lika begins casting Relentless Salubrity.
+[Sun May 05 00:26:57 2024] Elite Guard Lika shrugs off afflictions.
+[Sun May 05 00:27:14 2024] Guard Gehnus slashes Fippy Darkpaw for 136 points of damage.
+[Sun May 05 00:27:14 2024] Fippy Darkpaw has been slain by Guard Gehnus!
+[Sun May 05 00:27:15 2024] Elite Guard Etter begins casting Relentless Salubrity.
+[Sun May 05 00:27:15 2024] Elite Guard Etter shrugs off afflictions.
+[Sun May 05 00:27:18 2024] Lieutenant Dagarok says, 'Time to die, Eonaladin.'
+[Sun May 05 00:27:18 2024] Lieutenant Dagarok says, 'I shall rid the land of another infamous villain!'
+[Sun May 05 00:27:19 2024] Zannsin Resdinet says, 'Hey, [Hanns]...  Have you gotten word from [Prak] about the spy in Carson's guards?'
+[Sun May 05 00:27:19 2024] Zannsin Resdinet says, '[Rujahn] Tahslek, huh?  I've never heard of him, but those bandits seem to have a new leader every month or so.'
+[Sun May 05 00:27:19 2024] Zannsin Resdinet says, 'I'll send one of our best men to Highpass and eliminate [Rujahn]'s spy.'
+[Sun May 05 00:27:24 2024] Elite Guard Vaughn begins casting Relentless Salubrity.
+[Sun May 05 00:27:24 2024] Elite Guard Vaughn shrugs off afflictions.
+[Sun May 05 00:27:32 2024] Eonaladin is blessed by life.
+[Sun May 05 00:27:32 2024] Eonaladin healed himself for 0 (830) hit points by Blessing of Life IX.
+[Sun May 05 00:27:33 2024] A beggar begins casting Skin like Wood.
+[Sun May 05 00:27:36 2024] a beggar's skin turns hard as wood.
+[Sun May 05 00:27:39 2024] Elite Guard Lika begins casting Relentless Salubrity.
+[Sun May 05 00:27:39 2024] Elite Guard Lika shrugs off afflictions.
+[Sun May 05 00:27:41 2024] You are out of drink.
+[Sun May 05 00:27:41 2024] Lieutenant Dagarok begins casting Shadow Vortex.
+[Sun May 05 00:27:57 2024] Elite Guard Etter begins casting Relentless Salubrity.
+[Sun May 05 00:27:57 2024] Elite Guard Etter shrugs off afflictions.
+[Sun May 05 00:28:05 2024] Eonaladin slashes Lieutenant Dagarok for 318 points of damage.
+[Sun May 05 00:28:05 2024] Eonaladin slashes Lieutenant Dagarok for 560 points of damage.
+[Sun May 05 00:28:06 2024] Elite Guard Vaughn begins casting Relentless Salubrity.
+[Sun May 05 00:28:06 2024] Eonaladin tries to bash Lieutenant Dagarok, but misses!
+[Sun May 05 00:28:07 2024] Eonaladin slashes Lieutenant Dagarok for 3 points of damage.
+[Sun May 05 00:28:07 2024] Lieutenant Dagarok has been slain by Eonaladin!
+[Sun May 05 00:28:15 2024] Elite Guard Inski begins casting Relentless Salubrity.
+[Sun May 05 00:28:27 2024] You are out of drink.
+[Sun May 05 00:28:57 2024] Elite Guard Etter begins casting Relentless Salubrity.
+[Sun May 05 00:28:57 2024] Elite Guard Etter shrugs off afflictions.
+[Sun May 05 00:28:57 2024] Elite Guard Lika begins casting Relentless Salubrity.
+[Sun May 05 00:28:57 2024] Elite Guard Lika shrugs off afflictions.
+[Sun May 05 00:29:07 2024] Corporal Lancot begins casting Daring.
+[Sun May 05 00:29:07 2024] Jaylia the Faithful begins casting Divine Favor.
+[Sun May 05 00:29:08 2024] Eonaladin begins casting Levitation.
+[Sun May 05 00:29:08 2024] Jaylia the Faithful is surrounded by an aura of Divine Favor.
+[Sun May 05 00:29:09 2024] Guard Imkar looks daring.
+[Sun May 05 00:29:09 2024] Corporal Lancot healed Guard Imkar for 106 hit points by Daring.
+[Sun May 05 00:29:13 2024] Corporal Lancot begins casting Symbol of Ryltan.
+[Sun May 05 00:29:13 2024] You are out of drink.
+[Sun May 05 00:29:17 2024] Guard Imkar is cloaked in a shimmer of glowing symbols.
+[Sun May 05 00:29:17 2024] Corporal Lancot healed Guard Imkar for 158 hit points by Symbol of Ryltan.
+[Sun May 05 00:29:28 2024] Elite Guard Lika begins casting Relentless Salubrity.
+[Sun May 05 00:29:28 2024] Elite Guard Lika shrugs off afflictions.
+[Sun May 05 00:29:28 2024] Elite Guard Vaughn begins casting Relentless Salubrity.
+[Sun May 05 00:29:28 2024] Elite Guard Vaughn shrugs off afflictions.
+[Sun May 05 00:29:58 2024] Elite Guard Vaughn begins casting Relentless Salubrity.
+[Sun May 05 00:29:59 2024] You are out of drink.
+[Sun May 05 00:30:16 2024] Elite Guard Inski begins casting Relentless Salubrity.
+[Sun May 05 00:30:19 2024] Elite Guard Lika begins casting Relentless Salubrity.
+[Sun May 05 00:30:19 2024] Elite Guard Lika shrugs off afflictions.
+[Sun May 05 00:30:31 2024] Elite Guard Etter begins casting Relentless Salubrity.
+[Sun May 05 00:30:31 2024] Elite Guard Etter shrugs off afflictions.
+[Sun May 05 00:30:31 2024] Elite Guard Vaughn begins casting Relentless Salubrity.
+[Sun May 05 00:30:31 2024] Elite Guard Vaughn shrugs off afflictions.
+[Sun May 05 00:30:45 2024] You are out of drink.
+[Sun May 05 00:31:13 2024] Elite Guard Etter begins casting Relentless Salubrity.
+[Sun May 05 00:31:13 2024] Elite Guard Etter shrugs off afflictions.
+[Sun May 05 00:31:19 2024] Elite Guard Vaughn begins casting Relentless Salubrity.
+[Sun May 05 00:31:31 2024] You are out of drink.
+[Sun May 05 00:31:47 2024] Elite Guard Lika begins casting Relentless Salubrity.
+[Sun May 05 00:31:47 2024] Elite Guard Lika shrugs off afflictions.
+[Sun May 05 00:31:56 2024] Elite Guard Jedis begins casting Relentless Salubrity.
+[Sun May 05 00:31:56 2024] Elite Guard Jedis shrugs off afflictions.
+[Sun May 05 00:32:17 2024] You are out of drink.
+[Sun May 05 00:32:20 2024] Elite Guard Aterbome begins casting Relentless Salubrity.
+[Sun May 05 00:32:23 2024] Corporal Lancot begins casting Symbol of Ryltan.
+[Sun May 05 00:32:27 2024] Corporal Lancot is cloaked in a shimmer of glowing symbols.
+[Sun May 05 00:32:27 2024] Corporal Lancot healed himself for 158 hit points by Symbol of Ryltan.
+[Sun May 05 00:32:29 2024] Corporal Lancot begins casting Daring.
+[Sun May 05 00:32:31 2024] Guard Liben looks daring.
+[Sun May 05 00:32:31 2024] Corporal Lancot healed Guard Liben for 106 hit points by Daring.
+[Sun May 05 00:32:35 2024] Elite Guard Inski begins casting Relentless Salubrity.
+[Sun May 05 00:32:35 2024] Elite Guard Inski shrugs off afflictions.
+[Sun May 05 00:32:44 2024] Elite Guard Lika begins casting Relentless Salubrity.
+[Sun May 05 00:32:44 2024] Elite Guard Lika shrugs off afflictions.
+[Sun May 05 00:32:59 2024] Elite Guard Vaughn begins casting Relentless Salubrity.
+[Sun May 05 00:32:59 2024] Elite Guard Vaughn shrugs off afflictions.
+[Sun May 05 00:33:04 2024] You are out of drink.
+[Sun May 05 00:33:18 2024] Knargon Lanenda says, 'Hey, Pelshia. How's business?'
+[Sun May 05 00:33:18 2024] Pelshia Thuxpire says, 'Um, just fine, Knargon. What do you want now, huh?'
+[Sun May 05 00:33:18 2024] Knargon Lanenda says, 'How about you and I go take a stroll under the docks tonight?'
+[Sun May 05 00:33:18 2024] Pelshia Thuxpire says, 'How about you go, and I'll catch up with you... never?'
+[Sun May 05 00:33:23 2024] Lashun Novashine shouts, 'Cease this endless conflict and seek salvation in the Temple of Life!  The glory of Rodcet Nife awaits you!'
+[Sun May 05 00:33:32 2024] Elite Guard Inski begins casting Relentless Salubrity.
+[Sun May 05 00:33:32 2024] Elite Guard Inski shrugs off afflictions.
+[Sun May 05 00:33:45 2024] Fippy Darkpaw shouts, '<BBBBBAAAARRRKKKK!>  You humans will pay for ruining our homeland!  GRRRRRRRR!  Family Darkpaw of the Sabertooth Clan will slay you all!  <BARK!>'
+[Sun May 05 00:33:50 2024] You are out of drink.
+[Sun May 05 00:33:50 2024] Elite Guard Vaughn begins casting Relentless Salubrity.
+[Sun May 05 00:33:50 2024] Elite Guard Vaughn shrugs off afflictions.
+[Sun May 05 00:33:53 2024] Lieutenant Dagarok says, 'Time to die, Eonaladin.'
+[Sun May 05 00:33:53 2024] Lieutenant Dagarok says, 'Your foul deeds have earned my contempt!'
+[Sun May 05 00:33:53 2024] Elite Guard Etter begins casting Relentless Salubrity.
+[Sun May 05 00:33:53 2024] Elite Guard Etter shrugs off afflictions.
+[Sun May 05 00:33:55 2024] Lieutenant Dagarok tries to slash Eonaladin, but misses!
+[Sun May 05 00:33:56 2024] Elite Guard Aterbome begins casting Relentless Salubrity.
+[Sun May 05 00:33:56 2024] Elite Guard Aterbome shrugs off afflictions.
+[Sun May 05 00:33:57 2024] Lieutenant Dagarok tries to slash Eonaladin, but misses!
+[Sun May 05 00:33:57 2024] Lieutenant Dagarok begins casting Harm Touch.
+[Sun May 05 00:33:59 2024] Lieutenant Dagarok tries to slash Eonaladin, but misses!
+[Sun May 05 00:33:59 2024] Lieutenant Dagarok tries to slash Eonaladin, but misses!
+[Sun May 05 00:34:00 2024] Lieutenant Dagarok tries to bash Eonaladin, but misses!
+[Sun May 05 00:34:01 2024] Lieutenant Dagarok tries to slash Eonaladin, but misses!
+[Sun May 05 00:34:03 2024] Lieutenant Dagarok tries to slash Eonaladin, but misses!
+[Sun May 05 00:34:05 2024] Lieutenant Dagarok tries to slash Eonaladin, but misses!
+[Sun May 05 00:34:05 2024] Lieutenant Dagarok tries to slash Eonaladin, but misses!
+[Sun May 05 00:34:07 2024] Lieutenant Dagarok tries to slash Eonaladin, but misses!
+[Sun May 05 00:34:09 2024] Lieutenant Dagarok tries to slash Eonaladin, but Eonaladin ripostes!
+[Sun May 05 00:34:09 2024] Lieutenant Dagarok tries to slash Eonaladin, but misses!
+[Sun May 05 00:34:11 2024] Lieutenant Dagarok tries to slash Eonaladin, but misses!
+[Sun May 05 00:34:13 2024] Lieutenant Dagarok tries to slash Eonaladin, but misses!
+[Sun May 05 00:34:13 2024] Lieutenant Dagarok tries to slash Eonaladin, but misses!
+[Sun May 05 00:34:15 2024] Lieutenant Dagarok tries to slash Eonaladin, but misses!
+[Sun May 05 00:34:17 2024] Lieutenant Dagarok tries to slash Eonaladin, but Eonaladin parries!
+[Sun May 05 00:34:17 2024] Jaylia the Faithful begins casting Divine Favor.
+[Sun May 05 00:34:18 2024] Jaylia the Faithful is surrounded by an aura of Divine Favor.
+[Sun May 05 00:34:19 2024] Lieutenant Dagarok tries to slash Eonaladin, but misses!
+[Sun May 05 00:34:20 2024] Elite Guard Inski begins casting Relentless Salubrity.
+[Sun May 05 00:34:20 2024] Elite Guard Inski shrugs off afflictions.
+[Sun May 05 00:34:21 2024] Lieutenant Dagarok tries to slash Eonaladin, but misses!
+[Sun May 05 00:34:21 2024] Lieutenant Dagarok tries to slash Eonaladin, but misses!
+[Sun May 05 00:34:23 2024] Lieutenant Dagarok tries to slash Eonaladin, but misses!
+[Sun May 05 00:34:25 2024] Lieutenant Dagarok tries to slash Eonaladin, but misses!
+[Sun May 05 00:34:25 2024] Lieutenant Dagarok is pierced by Eonaladin's thorns for 87 points of non-melee damage.
+[Sun May 05 00:34:25 2024] Lieutenant Dagarok slashes Eonaladin for 171 points of damage.
+[Sun May 05 00:34:27 2024] Lieutenant Dagarok tries to slash Eonaladin, but misses!
+[Sun May 05 00:34:29 2024] Lieutenant Dagarok tries to slash Eonaladin, but misses!
+[Sun May 05 00:34:31 2024] Lieutenant Dagarok tries to slash Eonaladin, but misses!
+[Sun May 05 00:34:31 2024] Lieutenant Dagarok tries to slash Eonaladin, but misses!
+[Sun May 05 00:34:33 2024] Lieutenant Dagarok tries to slash Eonaladin, but misses!
+[Sun May 05 00:34:33 2024] Lieutenant Dagarok tries to slash Eonaladin, but misses!
+[Sun May 05 00:34:35 2024] Lieutenant Dagarok tries to slash Eonaladin, but misses!
+[Sun May 05 00:34:35 2024] Lieutenant Dagarok tries to slash Eonaladin, but misses!
+[Sun May 05 00:34:36 2024] You are out of drink.
+[Sun May 05 00:34:37 2024] Lieutenant Dagarok tries to slash Eonaladin, but misses!
+[Sun May 05 00:34:39 2024] Lieutenant Dagarok tries to slash Eonaladin, but misses!
+[Sun May 05 00:34:41 2024] Lieutenant Dagarok tries to slash Eonaladin, but misses!
+[Sun May 05 00:34:41 2024] Elite Guard Vaughn begins casting Relentless Salubrity.
+[Sun May 05 00:34:41 2024] Elite Guard Vaughn shrugs off afflictions.
+[Sun May 05 00:34:43 2024] Lieutenant Dagarok tries to slash Eonaladin, but misses!
+[Sun May 05 00:34:45 2024] Lieutenant Dagarok tries to slash Eonaladin, but Eonaladin parries!
+[Sun May 05 00:34:47 2024] Lieutenant Dagarok tries to slash Eonaladin, but Eonaladin ripostes!
+[Sun May 05 00:34:47 2024] Elite Guard Lika begins casting Relentless Salubrity.
+[Sun May 05 00:34:47 2024] Elite Guard Lika shrugs off afflictions.
+[Sun May 05 00:34:49 2024] Lieutenant Dagarok tries to slash Eonaladin, but misses!
+[Sun May 05 00:34:51 2024] Lieutenant Dagarok tries to slash Eonaladin, but misses!
+[Sun May 05 00:34:53 2024] Lieutenant Dagarok tries to slash Eonaladin, but misses!
+[Sun May 05 00:34:53 2024] Lieutenant Dagarok tries to slash Eonaladin, but misses!
+[Sun May 05 00:34:54 2024] Lieutenant Dagarok tries to bash Eonaladin, but misses!
+[Sun May 05 00:34:55 2024] Lieutenant Dagarok is pierced by Eonaladin's thorns for 87 points of non-melee damage.
+[Sun May 05 00:34:55 2024] Lieutenant Dagarok slashes Eonaladin for 215 points of damage.
+[Sun May 05 00:34:55 2024] Lieutenant Dagarok tries to slash Eonaladin, but misses! (Riposte)
+[Sun May 05 00:34:55 2024] Eonaladin tries to slash Lieutenant Dagarok, but misses!
+[Sun May 05 00:34:56 2024] Elite Guard Inski begins casting Relentless Salubrity.
+[Sun May 05 00:34:57 2024] Lieutenant Dagarok tries to slash Eonaladin, but Eonaladin ripostes!
+[Sun May 05 00:34:57 2024] Eonaladin slashes Lieutenant Dagarok for 611 points of damage. (Riposte)
+[Sun May 05 00:34:57 2024] Lieutenant Dagarok tries to slash Eonaladin, but misses!
+[Sun May 05 00:34:57 2024] Eonaladin slashes Lieutenant Dagarok for 1677 points of damage.
+[Sun May 05 00:34:57 2024] Eonaladin slashes Lieutenant Dagarok for 699 points of damage.
+[Sun May 05 00:34:57 2024] Eonaladin slashes Lieutenant Dagarok for 2196 points of damage.
+[Sun May 05 00:34:59 2024] Lieutenant Dagarok tries to slash Eonaladin, but misses!
+[Sun May 05 00:34:59 2024] Lieutenant Dagarok tries to slash Eonaladin, but misses!
+[Sun May 05 00:34:59 2024] Eonaladin tries to slash Lieutenant Dagarok, but Lieutenant Dagarok parries!
+[Sun May 05 00:34:59 2024] Eonaladin slashes Lieutenant Dagarok for 699 points of damage.
+[Sun May 05 00:35:01 2024] Lieutenant Dagarok tries to slash Eonaladin, but misses!
+[Sun May 05 00:35:01 2024] Eonaladin tries to slash Lieutenant Dagarok, but misses!
+[Sun May 05 00:35:01 2024] Eonaladin slashes Lieutenant Dagarok for 2196 points of damage.
+[Sun May 05 00:35:02 2024] Lieutenant Dagarok tries to bash Eonaladin, but misses!
+[Sun May 05 00:35:03 2024] Lieutenant Dagarok tries to slash Eonaladin, but Eonaladin dodges!
+[Sun May 05 00:35:03 2024] Eonaladin slashes Lieutenant Dagarok for 1569 points of damage.
+[Sun May 05 00:35:03 2024] Eonaladin tries to slash Lieutenant Dagarok, but Lieutenant Dagarok parries!
+[Sun May 05 00:35:05 2024] Lieutenant Dagarok tries to slash Eonaladin, but misses!
+[Sun May 05 00:35:05 2024] Lieutenant Dagarok tries to slash Eonaladin, but misses!
+[Sun May 05 00:35:05 2024] Eonaladin slashes Lieutenant Dagarok for 699 points of damage.
+[Sun May 05 00:35:05 2024] Eonaladin tries to slash Lieutenant Dagarok, but misses!
+[Sun May 05 00:35:07 2024] Lieutenant Dagarok tries to slash Eonaladin, but misses!
+[Sun May 05 00:35:07 2024] Lieutenant Dagarok is pierced by Eonaladin's thorns for 87 points of non-melee damage.
+[Sun May 05 00:35:07 2024] Lieutenant Dagarok slashes Eonaladin for 171 points of damage.
+[Sun May 05 00:35:07 2024] Eonaladin slashes Lieutenant Dagarok for 1057 points of damage.
+[Sun May 05 00:35:07 2024] Eonaladin is blessed by life.
+[Sun May 05 00:35:07 2024] Eonaladin healed himself for 171 (830) hit points by Blessing of Life IX.
+[Sun May 05 00:35:09 2024] Lieutenant Dagarok tries to slash Eonaladin, but misses!
+[Sun May 05 00:35:09 2024] Eonaladin slashes Lieutenant Dagarok for 770 points of damage.
+[Sun May 05 00:35:09 2024] Eonaladin slashes Lieutenant Dagarok for 1156 points of damage. (Riposte Strikethrough)
+[Sun May 05 00:35:10 2024] Lieutenant Dagarok tries to bash Eonaladin, but misses!
+[Sun May 05 00:35:11 2024] Lieutenant Dagarok tries to slash Eonaladin, but misses!
+[Sun May 05 00:35:11 2024] Eonaladin slashes Lieutenant Dagarok for 804 points of damage.
+[Sun May 05 00:35:11 2024] Eonaladin slashes Lieutenant Dagarok for 406 points of damage.
+[Sun May 05 00:35:11 2024] Eonaladin slashes Lieutenant Dagarok for 1720 points of damage.
+[Sun May 05 00:35:13 2024] Lieutenant Dagarok tries to slash Eonaladin, but misses!
+[Sun May 05 00:35:13 2024] Lieutenant Dagarok tries to slash Eonaladin, but misses!
+[Sun May 05 00:35:13 2024] Eonaladin slashes Lieutenant Dagarok for 1885 points of damage. (Strikethrough)
+[Sun May 05 00:35:13 2024] Eonaladin tries to slash Lieutenant Dagarok, but misses!
+[Sun May 05 00:35:13 2024] Knargon Lanenda says, 'And what about you, gorgeous? Looking as delightful as ever, I must say.'
+[Sun May 05 00:35:15 2024] Lieutenant Dagarok tries to slash Eonaladin, but misses!
+[Sun May 05 00:35:15 2024] Eonaladin tries to slash Lieutenant Dagarok, but misses!
+[Sun May 05 00:35:15 2024] Eonaladin slashes Lieutenant Dagarok for 699 points of damage.
+[Sun May 05 00:35:17 2024] Lieutenant Dagarok tries to slash Eonaladin, but Eonaladin parries!
+[Sun May 05 00:35:17 2024] Lieutenant Dagarok is pierced by Eonaladin's thorns for 87 points of non-melee damage.
+[Sun May 05 00:35:17 2024] Lieutenant Dagarok slashes Eonaladin for 171 points of damage.
+[Sun May 05 00:35:17 2024] Eonaladin tries to slash Lieutenant Dagarok, but misses!
+[Sun May 05 00:35:17 2024] Eonaladin tries to slash Lieutenant Dagarok, but Lieutenant Dagarok dodges!
+[Sun May 05 00:35:18 2024] Lieutenant Dagarok tries to bash Eonaladin, but misses!
+[Sun May 05 00:35:19 2024] Lieutenant Dagarok tries to slash Eonaladin, but misses!
+[Sun May 05 00:35:19 2024] Lieutenant Dagarok tries to slash Eonaladin, but misses!
+[Sun May 05 00:35:19 2024] Eonaladin slashes Lieutenant Dagarok for 641 points of damage.
+[Sun May 05 00:35:21 2024] Lieutenant Dagarok tries to slash Eonaladin, but misses!
+[Sun May 05 00:35:21 2024] Lieutenant Dagarok is pierced by Eonaladin's thorns for 87 points of non-melee damage.
+[Sun May 05 00:35:21 2024] Lieutenant Dagarok slashes Eonaladin for 171 points of damage.
+[Sun May 05 00:35:21 2024] Eonaladin slashes Lieutenant Dagarok for 717 points of damage.
+[Sun May 05 00:35:21 2024] Eonaladin slashes Lieutenant Dagarok for 2196 points of damage.
+[Sun May 05 00:35:22 2024] You are out of drink.
+[Sun May 05 00:35:23 2024] Eonaladin slashes Lieutenant Dagarok for 1988 points of damage.
+[Sun May 05 00:35:23 2024] Lieutenant Dagarok tries to slash Eonaladin, but Eonaladin dodges!
+[Sun May 05 00:35:23 2024] Lieutenant Dagarok tries to slash Eonaladin, but misses!
+[Sun May 05 00:35:25 2024] Eonaladin tries to slash Lieutenant Dagarok, but misses!
+[Sun May 05 00:35:25 2024] Lieutenant Dagarok tries to slash Eonaladin, but misses!
+[Sun May 05 00:35:26 2024] Lieutenant Dagarok tries to bash Eonaladin, but misses!
+[Sun May 05 00:35:26 2024] Eonaladin bashes Lieutenant Dagarok for 671 points of damage.
+[Sun May 05 00:35:27 2024] Eonaladin tries to slash Lieutenant Dagarok, but misses!
+[Sun May 05 00:35:27 2024] Eonaladin slashes Lieutenant Dagarok for 1781 points of damage. (Strikethrough)
+[Sun May 05 00:35:28 2024] Lieutenant Dagarok tries to slash Eonaladin, but misses!
+[Sun May 05 00:35:28 2024] Lieutenant Dagarok tries to slash Eonaladin, but misses!
+[Sun May 05 00:35:29 2024] Eonaladin slashes Lieutenant Dagarok for 4706 points of damage. (Critical)
+[Sun May 05 00:35:29 2024] Eonaladin slashes Lieutenant Dagarok for 32 points of damage.
+[Sun May 05 00:35:29 2024] Lieutenant Dagarok's corpse says, 'My comrades will avenge my death.'
+[Sun May 05 00:35:29 2024] Lieutenant Dagarok has been slain by Eonaladin!
+[Sun May 05 00:35:29 2024] Elite Guard Etter begins casting Relentless Salubrity.
+[Sun May 05 00:35:29 2024] Elite Guard Etter shrugs off afflictions.
+[Sun May 05 00:35:29 2024] Elite Guard Inski begins casting Relentless Salubrity.
+[Sun May 05 00:35:29 2024] Elite Guard Inski shrugs off afflictions.
+[Sun May 05 00:35:29 2024] Jaylia the Faithful begins casting Valor of Marr.
+[Sun May 05 00:35:33 2024] Jaylia the Faithful feels the blessing of Mithaniel Marr.
+[Sun May 05 00:35:41 2024] Elite Guard Vaughn begins casting Relentless Salubrity.
+[Sun May 05 00:35:53 2024] Elite Guard Jedis begins casting Relentless Salubrity.
+[Sun May 05 00:35:53 2024] Elite Guard Jedis shrugs off afflictions.
+[Sun May 05 00:35:53 2024] Moodoro Finharn begins casting Lesser Shielding.
+[Sun May 05 00:36:02 2024] Elite Guard Inski begins casting Relentless Salubrity.
+[Sun May 05 00:36:02 2024] Elite Guard Inski shrugs off afflictions.
+[Sun May 05 00:36:08 2024] You are out of drink.
+[Sun May 05 00:36:16 2024] Knargon Lanenda says, 'So, yea, that Pelshia, she's all over me. And Renux, too. She was giving me the look, man. I'm telling ya, Zan, all the ladies want a piece of the Knargman.'
+[Sun May 05 00:36:16 2024] Zannsin Resdinet says, 'Yeah, whatever, Knarg. If I were you, I wouldn't mess around with [Renux]. She's in tight with [Hanns], and you know how he is.'
+[Sun May 05 00:36:20 2024] Elite Guard Vaughn begins casting Relentless Salubrity.
+[Sun May 05 00:36:20 2024] Elite Guard Vaughn shrugs off afflictions.
+[Sun May 05 00:36:38 2024] Elite Guard Jedis begins casting Relentless Salubrity.
+[Sun May 05 00:36:38 2024] Elite Guard Jedis shrugs off afflictions.
+[Sun May 05 00:36:43 2024] Lashun Novashine shouts, 'Cease this endless conflict and seek salvation in the Temple of Life!  The glory of Rodcet Nife awaits you!'
+[Sun May 05 00:36:47 2024] Elite Guard Etter begins casting Relentless Salubrity.
+[Sun May 05 00:36:47 2024] Elite Guard Etter shrugs off afflictions.
+[Sun May 05 00:36:53 2024] Corporal Lancot begins casting Daring.
+[Sun May 05 00:36:54 2024] You are out of drink.
+[Sun May 05 00:36:56 2024] Guard Buce looks daring.
+[Sun May 05 00:36:56 2024] Corporal Lancot healed Guard Buce for 106 hit points by Daring.
+[Sun May 05 00:37:00 2024] Corporal Lancot begins casting Symbol of Ryltan.
+[Sun May 05 00:37:04 2024] Guard Buce is cloaked in a shimmer of glowing symbols.
+[Sun May 05 00:37:04 2024] Corporal Lancot healed Guard Buce for 158 hit points by Symbol of Ryltan.
+[Sun May 05 00:37:15 2024] Elite Guard Inski begins casting Relentless Salubrity.
+[Sun May 05 00:37:24 2024] Elite Guard Lika begins casting Relentless Salubrity.
+[Sun May 05 00:37:24 2024] Elite Guard Lika shrugs off afflictions.
+[Sun May 05 00:37:24 2024] Zannsin Resdinet says, 'Hey, [Hanns]...  Have you gotten word from [Prak] about the spy in Carson's guards?'
+[Sun May 05 00:37:24 2024] Zannsin Resdinet says, '[Rujahn] Tahslek, huh?  I've never heard of him, but those bandits seem to have a new leader every month or so.'
+[Sun May 05 00:37:24 2024] Zannsin Resdinet says, 'I'll send one of our best men to Highpass and eliminate [Rujahn]'s spy.'
+[Sun May 05 00:37:40 2024] You are out of drink.
+[Sun May 05 00:37:59 2024] Elite Guard Lika begins casting Relentless Salubrity.
+[Sun May 05 00:37:59 2024] Elite Guard Lika shrugs off afflictions.
+[Sun May 05 00:38:26 2024] You are out of drink.
+[Sun May 05 00:38:30 2024] Elite Guard Lika begins casting Relentless Salubrity.
+[Sun May 05 00:38:30 2024] Elite Guard Lika shrugs off afflictions.
+[Sun May 05 00:38:33 2024] A beggar begins casting Skin like Wood.
+[Sun May 05 00:38:36 2024] a beggar's skin turns hard as wood.
+[Sun May 05 00:38:42 2024] Elite Guard Etter begins casting Relentless Salubrity.
+[Sun May 05 00:38:42 2024] Elite Guard Etter shrugs off afflictions.
+[Sun May 05 00:39:03 2024] Elite Guard Vaughn begins casting Relentless Salubrity.
+[Sun May 05 00:39:12 2024] You are out of drink.
+[Sun May 05 00:39:30 2024] Jaylia the Faithful begins casting Divine Favor.
+[Sun May 05 00:39:31 2024] Jaylia the Faithful is surrounded by an aura of Divine Favor.
+[Sun May 05 00:39:36 2024] Elite Guard Etter begins casting Relentless Salubrity.
+[Sun May 05 00:39:36 2024] Elite Guard Etter shrugs off afflictions.
+[Sun May 05 00:39:47 2024] Lashun Novashine shouts, 'Cease this endless conflict and seek salvation in the Temple of Life!  The glory of Rodcet Nife awaits you!'
+[Sun May 05 00:39:51 2024] Guard Rashik looks daring.
+[Sun May 05 00:39:51 2024] Corporal Lancot healed Guard Rashik for 106 hit points by Daring.
+[Sun May 05 00:39:58 2024] You are out of drink.
+[Sun May 05 00:39:59 2024] Guard Rashik is cloaked in a shimmer of glowing symbols.
+[Sun May 05 00:39:59 2024] Corporal Lancot healed Guard Rashik for 158 hit points by Symbol of Ryltan.
+[Sun May 05 00:40:13 2024] Elite Guard Vaughn begins casting Relentless Salubrity.
+[Sun May 05 00:40:13 2024] Elite Guard Vaughn shrugs off afflictions.
+[Sun May 05 00:40:28 2024] Elite Guard Inski begins casting Relentless Salubrity.
+[Sun May 05 00:40:28 2024] Elite Guard Inski shrugs off afflictions.
+[Sun May 05 00:40:37 2024] Elite Guard Etter begins casting Relentless Salubrity.
+[Sun May 05 00:40:37 2024] Elite Guard Etter shrugs off afflictions.
+[Sun May 05 00:40:44 2024] You are out of drink.
+[Sun May 05 00:41:01 2024] Corporal Lancot begins casting Daring.
+[Sun May 05 00:41:04 2024] Guard Erabb looks daring.
+[Sun May 05 00:41:04 2024] Corporal Lancot healed Guard Erabb for 106 hit points by Daring.
+[Sun May 05 00:41:07 2024] Corporal Lancot begins casting Symbol of Ryltan.
+[Sun May 05 00:41:10 2024] Elite Guard Lika begins casting Relentless Salubrity.
+[Sun May 05 00:41:10 2024] Elite Guard Lika shrugs off afflictions.
+[Sun May 05 00:41:11 2024] Guard Erabb is cloaked in a shimmer of glowing symbols.
+[Sun May 05 00:41:11 2024] Corporal Lancot healed Guard Erabb for 158 hit points by Symbol of Ryltan.
+[Sun May 05 00:41:13 2024] Elite Guard Vaughn begins casting Relentless Salubrity.
+[Sun May 05 00:41:13 2024] Elite Guard Vaughn shrugs off afflictions.
+[Sun May 05 00:41:14 2024] Fippy Darkpaw shouts, '<BBBBBAAAARRRKKKK!>  You humans will pay for ruining our homeland!  GRRRRRRRR!  Family Darkpaw of the Sabertooth Clan will slay you all!  <BARK!>'
+[Sun May 05 00:41:16 2024] Elite Guard Inski begins casting Relentless Salubrity.
+[Sun May 05 00:41:19 2024] Elite Guard Etter begins casting Relentless Salubrity.
+[Sun May 05 00:41:19 2024] Elite Guard Etter shrugs off afflictions.
+[Sun May 05 00:41:30 2024] You are out of drink.
+[Sun May 05 00:41:49 2024] Elite Guard Etter begins casting Relentless Salubrity.
+[Sun May 05 00:41:49 2024] Elite Guard Etter shrugs off afflictions.
+[Sun May 05 00:41:49 2024] Elite Guard Vaughn begins casting Relentless Salubrity.
+[Sun May 05 00:41:49 2024] Elite Guard Vaughn shrugs off afflictions.
+[Sun May 05 00:42:07 2024] Elite Guard Inski begins casting Relentless Salubrity.
+[Sun May 05 00:42:16 2024] You are out of drink.
+[Sun May 05 00:42:32 2024] Elite Guard Vaughn begins casting Relentless Salubrity.
+[Sun May 05 00:42:32 2024] Elite Guard Vaughn shrugs off afflictions.
+[Sun May 05 00:42:41 2024] Elite Guard Inski begins casting Relentless Salubrity.
+[Sun May 05 00:42:47 2024] Elite Guard Etter begins casting Relentless Salubrity.
+[Sun May 05 00:42:47 2024] Elite Guard Etter shrugs off afflictions.
+[Sun May 05 00:43:02 2024] Elite Guard Vaughn begins casting Relentless Salubrity.
+[Sun May 05 00:43:02 2024] Elite Guard Vaughn shrugs off afflictions.
+[Sun May 05 00:43:02 2024] You are out of drink.
+[Sun May 05 00:43:29 2024] Elite Guard Etter begins casting Relentless Salubrity.
+[Sun May 05 00:43:29 2024] Elite Guard Etter shrugs off afflictions.
+[Sun May 05 00:43:38 2024] Elite Guard Inski begins casting Relentless Salubrity.
+[Sun May 05 00:43:48 2024] You are out of drink.
+[Sun May 05 00:44:11 2024] Elite Guard Vaughn begins casting Relentless Salubrity.
+[Sun May 05 00:44:11 2024] Elite Guard Vaughn shrugs off afflictions.
+[Sun May 05 00:44:17 2024] Elite Guard Lika begins casting Relentless Salubrity.
+[Sun May 05 00:44:17 2024] Elite Guard Lika shrugs off afflictions.
+[Sun May 05 00:44:32 2024] Elite Guard Inski begins casting Relentless Salubrity.
+[Sun May 05 00:44:32 2024] Elite Guard Inski shrugs off afflictions.
+[Sun May 05 00:44:32 2024] Targeted (Merchant): Crow
+[Sun May 05 00:44:32 2024] Stand close to and right click on the Merchant to begin a transaction.
+[Sun May 05 00:44:33 2024] Targeted (Merchant): Crow
+[Sun May 05 00:44:33 2024] Stand close to and right click on the Merchant to begin a transaction.
+[Sun May 05 00:44:34 2024] You offered 1 Sealed Silver Package to Crow.
+[Sun May 05 00:44:34 2024] You are out of drink.
+[Sun May 05 00:44:35 2024] You have smuggled the mysterious package into Qeynos, completing the third task for the Smuggler's Camp.
+[Sun May 05 00:44:35 2024] Crow opens the package and examines the contents, then quickly shuts it again.  'You can go now.'
+[Sun May 05 00:44:35 2024] You gain experience (with a bonus)!
+[Sun May 05 00:44:35 2024] You complete the trade with Crow.
+[Sun May 05 00:44:38 2024] Jaylia the Faithful begins casting Divine Favor.
+[Sun May 05 00:44:39 2024] Jaylia the Faithful is surrounded by an aura of Divine Favor.
+[Sun May 05 00:44:50 2024] Jaylia the Faithful begins casting Valor.
+[Sun May 05 00:44:53 2024] Jaylia the Faithful looks valorous.
+[Sun May 05 00:44:53 2024] Jaylia the Faithful healed herself for 200 hit points by Valor.
+[Sun May 05 00:44:57 2024] Sabnie Blagard says, 'Did someone order an ale up here?'
+[Sun May 05 00:45:08 2024] Elite Guard Lika begins casting Relentless Salubrity.
+[Sun May 05 00:45:08 2024] Elite Guard Lika shrugs off afflictions.
+[Sun May 05 00:45:15 2024] You are no longer hidden.
+[Sun May 05 00:45:15 2024] You stop sneaking.
+[Sun May 05 00:45:15 2024] You begin casting Throne of Heroes.
+[Sun May 05 00:45:20 2024] You are out of drink.
+[Sun May 05 00:45:32 2024] LOADING, PLEASE WAIT...
+[Sun May 05 00:45:51 2024] You have entered Guild Lobby.
+[Sun May 05 00:46:03 2024] Fluttlecake begins singing Purifying Chorus.
+[Sun May 05 00:46:03 2024] Fluttlecake begins singing Song of Sustenance.
+[Sun May 05 00:46:03 2024] Fluttlecake begins singing Chorus of Marr.
+[Sun May 05 00:46:03 2024] Fluttlecake begins singing Purifying Chorus.
+[Sun May 05 00:46:03 2024] Channels: 1=Rogue(40)
+[Sun May 05 00:46:03 2024] Channels: 1=Rogue(40), 2=Planes(197)
+[Sun May 05 00:46:05 2024] Fluttlecake begins singing Song of Sustenance.
+[Sun May 05 00:46:08 2024] Fluttlecake begins singing Chorus of Marr.
+[Sun May 05 00:46:11 2024] Fluttlecake begins singing Purifying Chorus.
+[Sun May 05 00:46:21 2024] LOADING, PLEASE WAIT...
+[Sun May 05 00:46:21 2024] You can't reach that, get closer.
+[Sun May 05 00:46:37 2024] You have entered The Plane of Knowledge.
+[Sun May 05 00:46:59 2024] You can't reach that, get closer.
+[Sun May 05 00:47:16 2024] You are out of drink.
+[Sun May 05 00:47:53 2024] Elcharmo begins casting Speed of Salik.
+[Sun May 05 00:47:56 2024] Xarektik's body quickens.
+[Sun May 05 00:48:02 2024] You are out of drink.
+[Sun May 05 00:48:48 2024] You are out of drink.
+[Sun May 05 00:49:19 2024] LOADING, PLEASE WAIT...
+[Sun May 05 00:49:32 2024] You have entered Misty Thicket.
+[Sun May 05 00:49:34 2024] Channels: 1=Rogue(40)
+[Sun May 05 00:49:34 2024] Channels: 1=Rogue(40), 2=Antonica(62)
+[Sun May 05 00:50:13 2024] You are out of drink.
+[Sun May 05 00:50:19 2024] LOADING, PLEASE WAIT...
+[Sun May 05 00:50:31 2024] You have entered Rivervale.
+[Sun May 05 00:51:05 2024] Targeted (Merchant): Uma Sweetcookie
+[Sun May 05 00:51:05 2024] Stand close to and right click on the Merchant to begin a transaction.
+[Sun May 05 00:51:06 2024] Uma Sweetcookie says, 'Greetings, Zshawdo. You look like you could use a Mixxy's Delicacies Vol 1.'
+[Sun May 05 00:51:13 2024] You are out of drink.
+[Sun May 05 00:51:29 2024] Bimble Babbinsbort says, 'Welcome to my shop, Zshawdo. You would probably find a Blessed Parchment handy.'
+[Sun May 05 00:51:59 2024] You are out of drink.
+[Sun May 05 00:52:18 2024] Targeted (Player): Zshawdo
+[Sun May 05 00:52:18 2024] Right click on yourself to bring up your own inspect window. Use the /toggleinspect command to enable or disable right-click inspecting. You can also enable Click Through Self in the Options Window to stop clicking on yourself.
+[Sun May 05 00:52:27 2024] LOADING, PLEASE WAIT...
+[Sun May 05 00:52:38 2024] You have entered Kithicor Forest.
+[Sun May 05 00:52:44 2024] You begin to sneak...
+[Sun May 05 00:52:44 2024] You begin to hide...
+[Sun May 05 00:52:44 2024] You have become better at Sneak! (167)
+[Sun May 05 00:52:44 2024] You are as quiet as a cat stalking its prey.
+[Sun May 05 00:52:44 2024] You have become better at Hide! (171)
+[Sun May 05 00:52:44 2024] You have hidden yourself from view.
+[Sun May 05 00:53:21 2024] You are out of drink.
+[Sun May 05 00:54:07 2024] You are out of drink.
+[Sun May 05 00:54:53 2024] You are out of drink.
+[Sun May 05 00:55:39 2024] You are out of drink.
+[Sun May 05 00:55:49 2024] LOADING, PLEASE WAIT...
+[Sun May 05 00:56:03 2024] You have entered Highpass Hold.
+[Sun May 05 00:56:43 2024] You are out of drink.
+[Sun May 05 00:57:02 2024] You stop sneaking.
+[Sun May 05 00:57:02 2024] You stop hiding.
+[Sun May 05 00:57:03 2024] Targeted (Merchant): a shady Highpass citizen
+[Sun May 05 00:57:03 2024] Stand close to and right click on the Merchant to begin a transaction.
+[Sun May 05 00:57:05 2024] You say, 'Hail, a shady Highpass citizen'
+[Sun May 05 00:57:05 2024] A shady Highpass citizen says, 'Take a load off and join me for awhile, Zshawdo.  The Tiger's Roar is the best watering hole in Antonica.  I come here every day to relax and take in the gorgeous view.'  He glances around at the other patrons of the tavern.  'See what I mean?  Like I said... Best bar this side of Norrath.  Now, if you are interested in talking business, I can't help but to assume that you are here because you wish to ingratiate yourself with Stanos and his lot.  It just so happens that I know of several jobs they need taken care of.  If you completed all three, then informed me when you were [done], I imagine it would get you in their good graces.  What will it be, hmm?  [One], [two], or [three]?'
+[Sun May 05 00:57:07 2024] You say, 'done'
+[Sun May 05 00:57:08 2024] A shady Highpass citizen says, 'So you are.' He extends his palm and shakes your hand in an unfamiliar fashion. 'You've paid your dues Zshawdo, both literally and figuratively.  Let me be the first to warmly welcome you to our little circle.'
+[Sun May 05 00:57:16 2024] You say, 'Hail, a shady Highpass citizen'
+[Sun May 05 00:57:17 2024] A shady Highpass citizen says, 'Take a load off and join me for awhile, Zshawdo.  The Tiger's Roar is the best watering hole in Antonica.  I come here every day to relax and take in the gorgeous view.'  He glances around at the other patrons of the tavern.  'See what I mean?  Like I said... Best bar this side of Norrath.  Now, if you are interested in talking business, I can't help but to assume that you are here because you wish to ingratiate yourself with Stanos and his lot.  It just so happens that I know of several jobs they need taken care of.  If you completed all three, then informed me when you were [done], I imagine it would get you in their good graces.  What will it be, hmm?  [One], [two], or [three]?'
+[Sun May 05 00:57:20 2024] You say, 'One'
+[Sun May 05 00:57:20 2024] A shady Highpass citizen holds up a small but ornate urn, 'I have a trinket here that happens to be quite valuable.  As you may have guessed, it was not obtained legally, which in and of itself isn't usually a problem.  However, the previous owner happens to be a wealthy and influential nobleman who happens to have offered a sizable reward for its return.  The reward is even higher should the mercenaries bring back heads of the perpetrators.  Who would have known that the ashes of the old codger's ancestor would mean so much to him?  Now, I'm the type that likes to keep his head on his shoulders.  We need to get rid of this, and soon, but we're not willing to write it off as a loss.  You look like you could play the 'trustworthy' type.  Why don't you buy the urn from me and take it to the Keep Casino?  Trade it in for chips.  Play a few games, cash in early and walk away with the money.  Everybody wins.  Act casual.  Don't give yourself away.'
+[Sun May 05 00:57:25 2024] You say, 'two'
+[Sun May 05 00:57:25 2024] A shady Highpass citizen says, 'Fabulous choice.'  He pauses to light a cigar, taking short puffs of air into his mouth to coax it aflame.  'There's a man that goes by the name of Nichols who was slated to deliver a shipment of Luclinite, ohhh, about two weeks ago.  And when I say deliver I mean smuggle.  He's a reliable type, one of Stanos' best men, so it stands to reason that he's probably been caught and incarcerated.  Right about now, I imagine he's locked up tighter than a sister in the crying seas.  That's just a figure of speech, mind you.  We don't know where he is.  If you could find him and release him, well, that'd be fabulous.'  He takes another long puff and continues. 'Do whatever you have to.'
+[Sun May 05 00:57:29 2024] You are out of drink.
+[Sun May 05 00:57:30 2024] You say, 'three'
+[Sun May 05 00:57:30 2024] A shady Highpass citizen leans in close and whispers, 'You aren't above a bit of smuggling yourself, I hope.  I've got a package that needs to make it to Crow in Qeynos.  The guards are expecting its arrival and have increased their numbers and heightened their watch.  Fortunately for us, they don't know that we know that they know.  On top of that, they'll be expecting someone from the Highpass camp.  Do you understand?  The bottom line is, this shipment must reach Crow in Qeynos, and the deliverer mustn't get caught.  That's all you really need to know.  I'm counting on you to not botch this job, Zshawdo.'
+[Sun May 05 00:57:37 2024] You successfully destroyed 1 Sealed Silver Package.
+[Sun May 05 00:57:43 2024] You say, 'done'
+[Sun May 05 00:57:43 2024] A shady Highpass citizen says, 'So you are.' He extends his palm and shakes your hand in an unfamiliar fashion. 'You've paid your dues Zshawdo, both literally and figuratively.  Let me be the first to warmly welcome you to our little circle.'
+[Sun May 05 00:57:48 2024] You no longer have a target.

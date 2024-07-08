@@ -30,7 +30,7 @@ sub EVENT_ITEM {
 		quest::faction(236, 30);#Add some Dark Bargainers faciton
 		quest::faction(370, 30);#Add some Dreadguard Inner faction
 		quest::faction(334, 30);#Add some Dreadguard Outer faction
-		quest::giveexp(243890);#1% level 30 experience
+		quest::exp(243890);#1% level 30 experience
 
 	}
   plugin::return_items(\%itemcount);

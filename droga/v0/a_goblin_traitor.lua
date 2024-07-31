@@ -21,6 +21,7 @@ function event_trade(e)
 		if(item_lib.check_turn_in(e.trade, {item1 = 5728})) then -- Di'zok Signet of Service
 			e.self:Emote("looks relieved when he sees your signet of service and eyes you with a bit more respect. 'Good! They tell'd me to wait here for ya, can't say I like it but here I sits. Itbe good to be rid of Skargus though, so I be a happy one, oh yes. Want to know the [plan] then?'");
 			e.other:QuestReward(e.self,{itemid = 5728}) -- 5728  Di'zok Signet of Service
+			eq.set_global("RegalBandBathezid","1",5,"Y1");
 		end
 	end
 	item_lib.return_items(e.self, e.other, e.trade)

@@ -18,7 +18,7 @@ function event_trade(e)
 
   if ( (qglobals["ranger_epic15_pre"] == "9" or qglobals["ranger_epic15_pre"] == "10") and item_lib.check_turn_in(e.trade, {item1=62637})) then
     e.self:Say("Thank you!");
-    e.self:Emote("breaths [sic] into the jar. You hear nothing, but she seals the jar");
+    e.self:Emote("breathes into the jar. You hear nothing, but she seals the jar.");
     e.self:Say("Now all you must do is free my spirit! Do so and you may know the perfect sound of the wind and I will be free!");
 
     eq.set_global("ranger_epic15_pre","10",5,"F");
@@ -29,4 +29,6 @@ function event_trade(e)
 
     e.self:AddToHateList(e.other,1);
   end
+
+  item_lib.return_items(e.self, e.other, e.trade);
 end

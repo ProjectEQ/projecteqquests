@@ -19,10 +19,10 @@ local egg_locations				= {
 -- General Functions
 
 function setup_event()
-	eq.spawn2(343093,0,0,-4667,814,132,497.8):SetAppearance(3); -- NPC: corrupted_drake
-	eq.spawn2(343165,0,0,-4279,576,132,322.5):SetAppearance(3); -- NPC: corrupted_drake
-	eq.spawn2(343166,0,0,-4362,165,131,335.0):SetAppearance(3); -- NPC: corrupted_drake
-	eq.spawn2(343167,0,0,-4662, 67,131,335.0):SetAppearance(3); -- NPC: corrupted_drake
+	eq.unique_spawn(343093,0,0,-4667,814,132,497.8):SetAppearance(3); -- NPC: corrupted_drake
+	eq.unique_spawn(343165,0,0,-4279,576,132,322.5):SetAppearance(3); -- NPC: corrupted_drake
+	eq.unique_spawn(343166,0,0,-4362,165,131,335.0):SetAppearance(3); -- NPC: corrupted_drake
+	eq.unique_spawn(343167,0,0,-4662, 67,131,335.0):SetAppearance(3); -- NPC: corrupted_drake
 end
 
 function reset_event()
@@ -288,7 +288,7 @@ function event_encounter_load(e)
 	eq.register_npc_event(Event.spawn,			343095, Egg_Spawn);
 	eq.register_npc_event(Event.death_complete,	343159, Incorporeal_Death);
 	eq.register_npc_event(Event.spawn,			343160, Lifedrain_Spawn);
-	eq.register_npc_event(Event.death_complete,	343162, Cloud_Death);
+	eq.register_npc_event(Event.death,			343162, Cloud_Death);
 	eq.register_npc_event(Event.say,			343163,	Mourning_Say);
 
 	-- Player Deaths

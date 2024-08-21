@@ -6,7 +6,7 @@ sub EVENT_SAY {
     else {
       quest::say("Vasha, friend. Welcome to Crescent Reach, the diamond of the mountains. As a newcomer here I invite you to familiarize yourself with our fair city.  All youths should visit their guildmasters for training at the bottom of this path. Seek out Initiate Dakkan and Innkeeper Fathus.  Dakkan has plenty of work and Fathus will help you gain a goodly reputation with the Six -- our great dragons -- so that they might acknowledge you. Glory to Veeshan!");
     }
-    if (!quest::istaskcomplete(2)) {
+    if (!quest::istaskcompleted(2)) {
       quest::taskselector(2); #Task: Welcome to Crescent Reach
     }
   }

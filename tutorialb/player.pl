@@ -1,6 +1,6 @@
 sub EVENT_ENTERZONE {
 
-  quest::movepc(189, 2, -146, 19.6, 303.75); # Zone: tutorialb
+  quest::MovePCInstance(189, $instanceid, 2, -146, 19.6, 303.75); # Zone: tutorialb
 
   if (!defined($qglobals{tutbind}) && ($ulevel <= 2)) {
     quest::selfcast(2049);

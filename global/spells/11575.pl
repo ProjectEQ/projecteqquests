@@ -9,7 +9,7 @@ $PRace = $Client_->GetRace();
 		if($NPCTypeID == 38175 || $NPCTypeID == 38176 || $NPCTypeID == 38177){
 	 		if($random_result > 3) {
 				$Client_->Message(0,"SPLAT! Your victim is covered in a warm gooey squash pie.");
-              		$Client_->SignalClient($Client_, 666);
+              		$Client_->SignalClient(666);
 				$npc->Kill();
 			}
 			else {
@@ -40,7 +40,7 @@ $TZone = $client->GetZoneID();
 $TRace = $client->GetRace();
 	if(!$Caster){
 		$client->Message(0,"SPLAT! You are covered in warm gooey squash pie, better go clean up!");
-		$client->SignalClient($client, 667);
+		$client->SignalClient(667);
 	}
 	else {
 	$PRace = $Caster->GetRace();
@@ -48,9 +48,9 @@ $TRace = $client->GetRace();
 			if($TRace == 82){
 				if($TZone == 38){
 					$client->Message(0,"SPLAT! You are covered in warm gooey squash pie, better go clean up!");
-					$client->SignalClient($client, 667);
+					$client->SignalClient(667);
 					$Caster->Message(0,"SPLAT! Your victim is covered in a warm gooey squash pie.");
-					$Caster->SignalClient($Caster, 666);
+					$Caster->SignalClient(666);
 				}
 				else {
 					$Caster->Message(0,"SPLAT! Your victim is covered in a warm gooey squash pie.");

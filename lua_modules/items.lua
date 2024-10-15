@@ -64,7 +64,7 @@ function items.check_turn_in(trade, trade_check)
 end
 
 function items.return_items(npc, client, trade, text)
-	return false
+	client:ReturnHandinItems();
 end
 
 function items.return_bot_items(bot, client, trade, text)

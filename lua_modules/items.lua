@@ -57,14 +57,14 @@ function items.check_turn_in(trade, trade_check)
 	end
 
     if (trade.self) then
-        return trade.other:CheckHandin(trade.self, handin_data, required_data, item_data);
+        return trade.self:CheckHandin(trade.other, handin_data, required_data, item_data);
     else
         return false
     end
 end
 
 function items.return_items(npc, client, trade, text)
-	client:ReturnHandinItems();
+	npc:ReturnHandinItems(client);
 end
 
 function items.return_bot_items(bot, client, trade, text)

@@ -15,7 +15,7 @@ sub check_handin {
 	}
 
     my @item_insts = (plugin::val('item1_inst'), plugin::val('item2_inst'), plugin::val('item3_inst'), plugin::val('item4_inst'));
-    return $client->CheckHandin($npc, \%{$hashref}, \%required, @item_insts);
+    return $npc->CheckHandin($client, \%{$hashref}, \%required, @item_insts);
 }
 
 sub return_items {

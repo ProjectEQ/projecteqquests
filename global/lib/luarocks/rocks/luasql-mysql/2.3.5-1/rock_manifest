@@ -1,0 +1,36 @@
+rock_manifest = {
+   doc = {
+      br = {
+         ['examples.html'] = "ddc16a018fa1a65cdce283dca0925356",
+         ['history.html'] = "b5b65b2e94d29163b3553474521d690e",
+         ['index.html'] = "a296a03e6ed1b4290289f22872a824fe",
+         ['license.html'] = "4b1a85bd9cfdbd5e4e6f64f29ad591f8",
+         ['luasql.png'] = "a858d251851675daefb731baacafd1b8",
+         ['manual.html'] = "296c8dc866d5a343bce3419890c59607"
+      },
+      fr = {
+         ['doc.css'] = "d0a913514fb190240b3b4033d105cbc0",
+         ['examples.html'] = "ac400f8c25880c355239cc553863bf20",
+         ['history.html'] = "cbab789ae8fe289409f6af05b16e5691",
+         ['index.html'] = "9a2c0bed67d59f2713da8e107f759cb6",
+         ['license.html'] = "66567e98ce30262a987b42bd88db71a8",
+         ['luasql.png'] = "a858d251851675daefb731baacafd1b8",
+         ['manual.html'] = "45ad06d64a62e56047d17e73ce9f608f"
+      },
+      us = {
+         ['doc.css'] = "d0a913514fb190240b3b4033d105cbc0",
+         ['examples.html'] = "ac400f8c25880c355239cc553863bf20",
+         ['history.html'] = "a937ce3ca0a070b3b82b8f29db4805c6",
+         ['index.html'] = "90a31f9551bbcde04cb5e54daa2c3ee2",
+         ['license.html'] = "62f494ac81fe39a4f6afcda9a6d7b310",
+         ['luasql.png'] = "a858d251851675daefb731baacafd1b8",
+         ['manual.html'] = "45ad06d64a62e56047d17e73ce9f608f"
+      }
+   },
+   lib = {
+      luasql = {
+         ['mysql.so'] = "84b855efa7269b46fdc7ea9a4a60e42c"
+      }
+   },
+   ['luasql-mysql-2.3.5-1.rockspec'] = "0703ea942b7ad2230423e7560a3e982e"
+}

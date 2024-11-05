@@ -1,0 +1,37 @@
+commands = {}
+dependencies = {
+   ['luasql-mysql'] = {
+      ['2.3.5-1'] = {
+         {
+            constraints = {
+               {
+                  op = ">=",
+                  version = {
+                     5, 1, string = "5.1"
+                  }
+               }
+            },
+            name = "lua"
+         }
+      }
+   }
+}
+modules = {
+   ['luasql.mysql'] = {
+      "luasql-mysql/2.3.5-1"
+   }
+}
+repository = {
+   ['luasql-mysql'] = {
+      ['2.3.5-1'] = {
+         {
+            arch = "installed",
+            commands = {},
+            dependencies = {},
+            modules = {
+               ['luasql.mysql'] = "luasql/mysql.so"
+            }
+         }
+      }
+   }
+}

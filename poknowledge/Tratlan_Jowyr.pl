@@ -24,7 +24,7 @@ sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 15960 => 1)) {#The Reflecting Pools of Tanaan
     quest::emote("leafs quickly through the book. 'Thank you, it will take quite some time to go through all the information here. Here is a little something for your troubles.'");
     quest::summonitem(9321); #Fine Cut, Diamond Inlaid Mask
-    quest::gainexp(150000);#Can do at 30, giving 5% of 31 xp...gotta run to droga, bit of a pain.
+    quest::exp(150000);#Can do at 30, giving 5% of 31 xp...gotta run to droga, bit of a pain.
   }
   
   plugin::return_items(\%itemcount);

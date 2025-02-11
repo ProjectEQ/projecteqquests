@@ -1,7 +1,7 @@
 -- Tallon_Zek Event
 
-local tallon_id		= 214026
-local pp_id			= 218068
+local tallon_id		= 214026;
+local pp_id			= 218068;
 local pp_counter	= 0;
 
 function Tallon_Combat(e)
@@ -39,7 +39,7 @@ function Tallon_Timer(e)
 end
 
 function Tallon_Death(e)
-	eq.spawn2(214305,0,0,e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading());	--A_Planar_Projection (214305)
+	eq.spawn2(pp_id,0,0,e.self:GetX(), e.self:GetY(), e.self:GetZ(), e.self:GetHeading());
 end
 
 function AggroBounce(e)

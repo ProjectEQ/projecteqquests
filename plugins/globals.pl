@@ -94,50 +94,24 @@ sub setval
 # Returns 1 if the NPC has been given a particular item or set of items. Otherwise, returns 0.
 # Parameters: Hash consisting of ItemID => RequiredCount pairs
 # NOTE: \%itemcount parameter from older "check_handin" function is NOT necessary and should not be passed!
-sub givenItems
-{
-  my $itemcount = plugin::var('itemcount');
-  my %required = @_;
-  
-  foreach my $req (keys %required)
-  {
-    if ((!defined($itemcount->{$req})) || ($itemcount->{$req} < $required{$req}))
-    {
-      return 0;
-    }
-  }
-
-  return 1;
+sub givenItems {
+    my $itemcount = plugin::var('itemcount');
+    my %required = @_;
+    my $npc = plugin::val('npc');
+    my $client = plugin::val('client');
+    my @item_insts = (plugin::val('item1_inst'), plugin::val('item2_inst'), plugin::val('item3_inst'), plugin::val('item4_inst'));
+    return $npc->CheckHandin($client, $itemcount, \%required, @item_insts);
 }
 
 # Like givenItems(), only removes the items from the %itemcount collection for an appropriate returnUnusedItems() call later
 # This works just like the old check_handin() function, only again, don't pass \%itemcount.
-sub takeItems
-{
-  my $itemcount = plugin::var('itemcount');
-  my %required = @_;
-  
-  foreach my $req (keys %required)
-  {
-    if ((!defined($itemcount->{$req})) || ($itemcount->{$req} < $required{$req}))
-    {
-      return 0;
-    }
-  }
-
-  foreach my $req (keys %required)
-  {
-    if ($required{$req} < $itemcount->{$req})
-    {
-      $itemcount->{$req} -= $required{$req};
-    }
-    else
-    {
-      delete $itemcount->{$req};
-    }
-  }
-
-  return 1;
+sub takeItems {
+    my $itemcount = plugin::var('itemcount');
+    my %required = @_;
+    my $npc = plugin::val('npc');
+    my $client = plugin::val('client');
+    my @item_insts = (plugin::val('item1_inst'), plugin::val('item2_inst'), plugin::val('item3_inst'), plugin::val('item4_inst'));
+    return $npc->CheckHandin($client, $itemcount, \%required, @item_insts);
 }
 
 # Checks to see whether the player gave the NPC a requested amount of currency, regardless of actual denominations given.
@@ -151,10 +125,28 @@ sub givenCoin
   $g1 = 0 if (!defined($g1));
   $p1 = 0 if (!defined($p1));
   
-  my $coin1 = $c1 + (10 * $s1) + (100 * $g1) + (1000 * $p1);
-  my $coin2 = $c2 + (10 * $s2) + (100 * $g2) + (1000 * $p2);
+  my ($c, $s, $g, $p) = (shift, shift, shift, shift);
+  my $itemcount = plugin::var('itemcount');
+	my %required = @_;
+	my $client = plugin::val('client');
+	my $npc = plugin::val('npc');
 
-  return ($coin1 <= $coin2);
+  $required->{"copper"} = $c;
+  $required->{"silver"} = $s;
+  $required->{"gold"} = $g;
+  $required->{"platinum"} = $p;
+
+  my @currencies = ("platinum", "gold", "silver", "copper");
+
+	foreach my $currency (@currencies) {
+		my $value = plugin::val("\$$currency");
+		if ($value > 0) {
+			$itemcount->{$currency} = $value;
+		}
+	}
+
+  my @item_insts = (plugin::val('item1_inst'), plugin::val('item2_inst'), plugin::val('item3_inst'), plugin::val('item4_inst'));
+  return $npc->CheckHandin($client, $itemcount, \%required, @item_insts);
 }
 
 # Like givenCoin(), only takes the required coins if given enough by the player, also leaving change to be returned with returnUnusedItems().
@@ -180,12 +172,33 @@ sub takeCoin
     $g2 = (int($coin2 / 100) % 10);
     $p2 = int($coin2 / 1000);
 
+    my $itemcount = plugin::var('itemcount');
+    my %required = ();
+
+    if ($c2) {
+      $itemcount->{"copper"} = plugin::val('$copper');
+      $required{"copper"} = $c2;
+    }
+    if ($s2) {
+      $itemcount->{"silver"} = plugin::val('$silver');
+      $required{"silver"} = $s2;
+    }
+    if ($g2) {
+      $itemcount->{"gold"} = plugin::val('$gold');
+      $required{"gold"} = $g2;
+    }
+    if ($p2) {
+      $itemcount->{"platinum"} = plugin::val('$platinum');
+      $required{"platinum"} = $p2;
+    }
+
     plugin::setval('$copper'  , $c2);
     plugin::setval('$silver'  , $s2);
     plugin::setval('$gold'    , $g2);
     plugin::setval('$platinum', $p2);
     
-    return 1; # 1 = Successfully took coins
+    my @item_insts = (plugin::val('item1_inst'), plugin::val('item2_inst'), plugin::val('item3_inst'), plugin::val('item4_inst'));
+    return plugin::val("npc")->CheckHandin(plugin::val("client"), $itemcount, \%required, @item_insts);
   }
   
   return 0; # 0 = Insufficient funds
@@ -219,26 +232,39 @@ sub takeItemsCoin
   }
 
   my ($c, $s, $g, $p) = (shift, shift, shift, shift);
-  
-  if (plugin::givenCoin($c, $s, $g, $p))
-  {
-    if (plugin::takeItems(@_))
-    {
-      plugin::takeCoin($c, $s, $g, $p);
-      
-      return 1;
-    }
-  }
+  my $itemcount = plugin::var('itemcount');
+	my %required = @_;
+	my $client = plugin::val('client');
+	my $npc = plugin::val('npc');
 
-  return 0;
+  $required->{"copper"} = $c;
+  $required->{"silver"} = $s;
+  $required->{"gold"} = $g;
+  $required->{"platinum"} = $p;
+
+  my @currencies = ("platinum", "gold", "silver", "copper");
+
+	foreach my $currency (@currencies) {
+		my $value = plugin::val("\$$currency");
+		if ($value > 0) {
+			$itemcount->{$currency} = $value;
+		}
+	}
+
+  my @item_insts = (plugin::val('item1_inst'), plugin::val('item2_inst'), plugin::val('item3_inst'), plugin::val('item4_inst'));
+  return $npc->CheckHandin($client, $itemcount, \%required, @item_insts);
 }
 
 # Checks to see whether the player gave the NPC a requested number of platinum
 sub givenPlatinum
 {
   my $p = shift;
-  
-  return plugin::givenCoin(0, 0, 0, defined($p) ? $p : 0);
+  my $itemcount = plugin::var('itemcount');
+  $itemcount->{"platinum"} = plugin::val('$platinum');
+  my %required = ();
+  $required{"platinum"} = $p;
+  my @item_insts = (plugin::val('item1_inst'), plugin::val('item2_inst'), plugin::val('item3_inst'), plugin::val('item4_inst'));
+  return plugin::val("npc")->CheckHandin(plugin::val("client"), $itemcount, \%required, @item_insts);
 }
 
 # Takes provided coins given by the player
@@ -252,9 +278,13 @@ sub takePlatinum
 # Checks to see whether the player gave the NPC a requested number of gold
 sub givenGold
 {
-  my $g = shift;
-  
-  return plugin::givenCoin(0, 0, defined($g) ? $g : 0, 0);
+  my $p = shift;
+  my $itemcount = plugin::var('itemcount');
+  $itemcount->{"gold"} = plugin::val('$gold');
+  my %required = ();
+  $required{"gold"} = $p;
+  my @item_insts = (plugin::val('item1_inst'), plugin::val('item2_inst'), plugin::val('item3_inst'), plugin::val('item4_inst'));
+  return plugin::val("npc")->CheckHandin(plugin::val("client"), $itemcount, \%required, @item_insts);
 }
 
 # Takes provided coins given by the player
@@ -268,9 +298,13 @@ sub takeGold
 # Checks to see whether the player gave the NPC a requested number of silver
 sub givenSilver
 {
-  my $s = shift;
-  
-  return plugin::givenCoin(0, defined($s) ? $s : 0, 0, 0);
+  my $p = shift;
+  my $itemcount = plugin::var('itemcount');
+  $itemcount->{"silver"} = plugin::val('$silver');
+  my %required = ();
+  $required{"silver"} = $p;
+  my @item_insts = (plugin::val('item1_inst'), plugin::val('item2_inst'), plugin::val('item3_inst'), plugin::val('item4_inst'));
+  return plugin::val("npc")->CheckHandin(plugin::val("client"), $itemcount, \%required, @item_insts);
 }
 
 # Takes provided coins given by the player
@@ -284,9 +318,13 @@ sub takeSilver
 # Checks to see whether the player gave the NPC a requested number of copper
 sub givenCopper
 {
-  my $c = shift;
-  
-  return plugin::givenCoin(defined($c) ? $c : 0, 0, 0, 0);
+  my $p = shift;
+  my $itemcount = plugin::var('itemcount');
+  $itemcount->{"copper"} = plugin::val('$copper');
+  my %required = ();
+  $required{"copper"} = $p;
+  my @item_insts = (plugin::val('item1_inst'), plugin::val('item2_inst'), plugin::val('item3_inst'), plugin::val('item4_inst'));
+  return plugin::val("npc")->CheckHandin(plugin::val("client"), $itemcount, \%required, @item_insts);
 }
 
 # Takes provided coins given by the player
@@ -299,77 +337,6 @@ sub takeCopper
 
 # Returns any unwanted items and coins to the user with an appropriate message.
 sub returnUnusedItems
-{    
-  my $name = plugin::assocName();
-
-  my $itemcount = plugin::var('$itemcount');
-  my $items = 0;
-  
-  foreach my $k (keys(%$itemcount))
-  {
-    next if($k == 0);
-    my $r;
-    
-    for($r = 0; $r < $itemcount->{$k}; $r++)
-    {
-      $items++;
-      
-      quest::summonitem($k);
-    }
-    
-    delete $itemcount->{$k};
-  }
-  
-  if ($items > 0)
-  {
-    if (plugin::humanoid())
-    {
-      my $itemtext1 = ($items == 1) ? 'this item' : 'these items';
-      my $itemtext2 = ($items == 1) ? 'it' : 'them';
-      
-      quest::say("I have no need for $itemtext1, $name. You can have $itemtext2 back.");
-      quest::doanim(64); # Point
-    }
-    else
-    {
-      my $itemtext1 = ($items == 1) ? 'item' : 'items';
-      
-      quest::me("This creature has no need for the $itemtext1 you are offering.");
-    }
-  }
-  
-  my($platinum, $gold, $silver, $copper) = (plugin::val('$platinum'), plugin::val('$gold'), plugin::val('$silver'), plugin::val('$copper'));
-  
-  if ($platinum || $gold || $silver || $copper)
-  {
-    if ($items == 0) # NOTE: If $items > 0, already giving back items with message, just tack coin onto it
-    {
-      if ((plugin::val('$item1') == 0) && (plugin::val('$item2') == 0) && (plugin::val('$item3') == 0) && (plugin::val('$item4') == 0))
-      {
-        # No items, just money
-        
-        if (plugin::humanoid())
-        {
-          quest::say("I appreciate the offer, but I can't take this money, $name.");
-        }
-        else
-        {
-          quest::me('This creature has no need for your money.');
-        }
-      }
-      else
-      {
-        # Items given and accepted
-        
-        if (plugin::humanoid())
-        {
-          quest::say("Here is your change, $name.");
-        }
-      }
-    
-      quest::doanim(64); # Point
-    }
-    
-    quest::givecash($copper, $silver, $gold, $platinum);
-  }
+{
+  #returnUnusedItems-no-op - This is now handled by the source entirely
 }

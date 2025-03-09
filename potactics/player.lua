@@ -1,6 +1,6 @@
 function event_loot(e)
 	if e.self:GetClass() == Class.MAGICIAN and e.item:GetID() == 16807 then -- Item: Elemental Essence of Fire
-		local qglobals = eq.get_qglobals(e.other);
+		local qglobals = eq.get_qglobals(e.self);
 
 		if qglobals["mage_epic_fire1"] ~= nil and qglobals["mage_epic_fire1"] == "1" then
 			if qglobals["mage_epic_potchest"] == nil then

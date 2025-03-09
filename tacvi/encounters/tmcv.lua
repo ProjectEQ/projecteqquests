@@ -488,7 +488,7 @@ function LP_Combat(e)
 end
 
 function LP_Death(e)
-	e.self:SpellFinished(6495, e.self:GetID()); -- Spell: Spiritual Wake
+	e.self:SpellFinished(6495, e.self); -- Spell: Spiritual Wake
 end
 
 function LP_Timer(e)

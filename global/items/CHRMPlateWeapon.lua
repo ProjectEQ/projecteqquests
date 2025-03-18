@@ -17,7 +17,7 @@ function event_scale_calc(e)
                              [8] = {Class.PALADIN,0,225},
                              [9] = {Class.PALADIN,1,225},
                              [10] = {Class.PALADIN,2,225},
-                             [11] = {Class.PALADIN3,3,225},
+                             [11] = {Class.PALADIN,3,225},
                              [12] = {Class.PALADIN,7,75},
                              [13] = {Class.PALADIN,36,230},
                              [14] = {Class.SHADOWKNIGHT,0,225},

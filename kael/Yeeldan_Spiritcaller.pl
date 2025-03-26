@@ -97,7 +97,7 @@ sub EVENT_ITEM {
       quest::emote("smiles warmly as he hands you your reward.");
       quest::say("You have done well.");
     }
-    elsif (plugin::check_handin(\%itemcount, 25632 => 3, 24908 => 1)) { # legs
+    elsif (plugin::check_handin(\%itemcount, 25827 => 3, 24908 => 1)) { # legs
       quest::summonitem(25361); # Item: Spirit Caller's Greaves
       quest::exp(150000);
       quest::faction(429,20); # King Tormax

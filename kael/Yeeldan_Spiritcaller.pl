@@ -4,7 +4,7 @@
 #
 #NPC Name: Yeeldan Spiritcaller
 #NPC ID: 113184
-# items: 25841, 24912, 25356, 25805, 24907, 25357, 25815, 24909, 25358, 25836, 24911, 25359, 25840, 24913, 25360, 25632, 24908, 25361, 25838, 24910, 25362
+# items: 25841, 24912, 25356, 25805, 24907, 25357, 25815, 24909, 25358, 25836, 24911, 25359, 25840, 24913, 25360, 25827, 24908, 25361, 25838, 24910, 25362
 
 sub EVENT_SAY {
   if ($faction == 1) { #requires ally Kromzek faction
@@ -97,7 +97,7 @@ sub EVENT_ITEM {
       quest::emote("smiles warmly as he hands you your reward.");
       quest::say("You have done well.");
     }
-    elsif (plugin::check_handin(\%itemcount, 25632 => 3, 24908 => 1)) { # legs
+    elsif (plugin::check_handin(\%itemcount, 25827 => 3, 24908 => 1)) { # legs
       quest::summonitem(25361); # Item: Spirit Caller's Greaves
       quest::exp(150000);
       quest::faction(429,20); # King Tormax

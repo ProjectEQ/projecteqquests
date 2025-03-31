@@ -12,7 +12,7 @@ sub EVENT_SPAWN {
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {
-    if (quest::istaskactivityactive(1448, 2)) {
+    if (quest::istaskactivityactive(1448, 3)) {
       if ($class eq "Berserker" || $class eq "Rogue" || $class eq "Shaman" || $class eq "Ranger") {
         quest::summonitem(67111); # Item: Gloomingdeep Kobold Chain Sleeves
       }

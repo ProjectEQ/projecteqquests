@@ -33,13 +33,13 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM {
   if ($client->GetGlobal("mage_epic_fire1") == 1) {
-    if (quest::handin({32409 => 1, 15791 => 1}) {
+    if (quest::handin({32409 => 1, 15791 => 1})) {
       quest::say("Eh? I see ol' Gnaap 'as gotten' 'imself in'o a pickle again. Well le's see. I figu'e tha'ye need a good solven'. Ye'll need t'fin yer'self some metallic liquid, 'at'll make a fine suspension. Then fin' yerself some'un good wit' a brew barrel. Have'em mix tha' wit' sum 'ydro-lize'd ether, an' sum 'evy water.");
       quest::summonitem(16577); #reinforced flask
     }
   }
   if ($ulevel > 54) { #Must be level 55 or higher
-    if (quest::handin({$platinuum => 500}) { #Money for class emblem
+    if (quest::handin({$platinuum => 500})) { #Money for class emblem
     #This is very ugly.  Should be a case/switch instead, but dunno
     #if that's available.
       if ($class eq "Warrior") {

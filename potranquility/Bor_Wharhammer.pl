@@ -39,7 +39,7 @@ sub EVENT_ITEM {
     }
   }
   if ($ulevel > 54) { #Must be level 55 or higher
-    if (quest::handin({$platinuum => 500})) { #Money for class emblem
+    if (quest::handin({$platinum => 500})) { #Money for class emblem
     #This is very ugly.  Should be a case/switch instead, but dunno
     #if that's available.
       if ($class eq "Warrior") {

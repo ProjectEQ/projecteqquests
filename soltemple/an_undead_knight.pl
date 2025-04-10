@@ -32,12 +32,5 @@ sub EVENT_ITEM {
     quest::say("Well done, $name, here is your reward.");
     quest::summonitem(3146); # Item: Darkforge Boots
   }
-  else {
-    if($platinum != 0 || $gold !=0 || $silver != 0 || $copper != 0) {
-      quest::givecash($copper, $silver, $gold, $platinum);
-    }
-  }
-  plugin::return_items(\%itemcount);
 }
-# Updated and corrected by mystic414
 # END of FILE Zone:soltemple  ID:80000 -- an_undead_knight

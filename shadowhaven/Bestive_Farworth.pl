@@ -9,8 +9,7 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  my $cash = ($platinum * 1000) + ($gold * 100) + ($silver * 10) + $copper;
-  if (($cash >= 1000) && plugin::check_handin(\%itemcount, 30662 => 1)) { #Pristine Rhino Beetle Carapace
+  if (quest::handin({"platinum" => 1, 30662 => 1})) { #1pp and Pristine Rhino Beetle Carapace
     quest::emote("rattles around in a drawer and pulls out some tools and hinges. 'Ah yes, this will do. shouldn't take but a minute.'");
     quest::say("Yep! Here you are, one pristine beetle box to go and I will even throw in a little spare coin to go in it. Remember,they are quite special-you can only ever carry one.");
     quest::summonitem(17072); #Pristine Beetle Box
@@ -21,6 +20,5 @@ sub EVENT_ITEM {
     quest::exp(100);
     quest::givecash(8,2,0,0); #Copper x 8, Silver x 2
   }
-  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:shadowhaven  ID:150231 -- Bestive_Farworth

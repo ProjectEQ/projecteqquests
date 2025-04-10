@@ -23,9 +23,8 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  my $cash = $platinum * 1000 + $gold * 100 + $silver * 10 + $copper;
-  if(($ulevel > 45) && plugin::check_handin(\%itemcount, 60210 => 1)) { #Medal of Mastery    
-    if(defined($qglobals{raving}) && ($qglobals{raving} == 1)) {
+  if (($ulevel > 45) && (quest::handin({60210 => 1}))) { #Medal of Mastery    
+    if (defined($qglobals{raving}) && ($qglobals{raving} == 1)) {
       quest::say("You must wait to attempt this again.");
       quest::summonitem(60210); #Medal of Mastery
     }
@@ -35,13 +34,12 @@ sub EVENT_ITEM {
       $medal = 1;
     }
   }
-  if(($medal == 1) && ($cash >= 1000000)) {
+  if (($medal == 1) && (quest::handin({"platinum" => 1000))) {
     quest::say("Good timing. Me can hear him giggling. Go down to da stream's end where it opens into a big river between da cliffs. Crazy goblin is usually in dat area stirring up troubles. Go tell him dat you are a berserker and be ready. He go nuts. Good lucks. Me go find help.");
     quest::spawn2(79127,0,0,395.2,888.8,-212,370); #Raving Goblinmaster - Quest
     quest::setglobal("raving",1,0,"M59");
     $medal = 0;
     quest::depop_withtimer();
   }
-  plugin::return_items(\%itemcount);
 }
 #EndFile: warslikswood\Lurking_Hopeful.pl (79115)

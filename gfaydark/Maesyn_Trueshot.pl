@@ -46,7 +46,7 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 12112 => 1)) { #Pack of Materials
     quest::say("I shall see that my father gets the materials. I hope this can be of use to you. It will serve as your starting point toward fletching a Trueshot longbow. It is unfortunate that we are unable to enchant the bow to its [next incarnation], but it is still a fine weapon. You do know the [correct components] needed for fletching such a bow, do you not?");
-    quest::givecash(0,6,0,0); #6 gold
+    quest::givecash(0,0,6,0); #6 gold
     quest::summonitem(8091); #Treant Bow Staff
     quest::faction(246,10); #Faydark's Champions
     quest::faction(279,10); #King Tearis Thex

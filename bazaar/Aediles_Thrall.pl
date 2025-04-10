@@ -212,18 +212,7 @@ sub EVENT_ITEM {
          $client->Message(6,"You have $success out of $sbcount possible Individuals.");
          $success = 0;
       }
-      else {
-         if($platinum != 0 || $gold !=0 || $silver != 0 || $copper != 0) {
-            quest::givecash($copper, $silver, $gold, $platinum);
-         }
-      }
    }
-   else {
-      if($platinum != 0 || $gold !=0 || $silver != 0 || $copper != 0) {
-         quest::givecash($copper, $silver, $gold, $platinum);
-      }
-   }
-   plugin::return_items(\%itemcount);
    quest::settimer("face", 45);
 }
 
@@ -247,4 +236,3 @@ sub EVENT_SIGNAL {
    }
 }
 # END of FILE Zone:bazaar -- Aediles_Thrall.pl
-

@@ -169,37 +169,37 @@ sub EVENT_ITEM {
    if(defined $qglobals{bot_spawn_limit} && (quest::spawnbotcount() > $qglobals{bot_spawn_limit})) {
       my $success = 0;
       if(($ulevel >= $firstbotlevel) && ($qglobals{bot_spawn_limit} <= 0)) {
-         if(($platinum == $firstbotcost) && plugin::check_handin(\%itemcount, 13475 => 4)) { #baking
+         if(quest::handin({"platinum" => $firstbotcost, 13475 => 4})) { #baking
             $success = $qglobals{bot_spawn_limit}+1;
          }
       }
       elsif(($ulevel >= $secondbotlevel) && ($qglobals{bot_spawn_limit} <= 1)) {
-         if(($platinum == $secondbotcost) && plugin::check_handin(\%itemcount, 13037 => 4)) { #brewing
+         if(quest::handin({"platinum" => $secondbotcost, 13037 => 4})) { #brewing
             $success = $qglobals{bot_spawn_limit}+1;
          }
       }
       elsif(($ulevel >= $thirdbotlevel) && ($qglobals{bot_spawn_limit} <= 2)) {
-         if(($platinum == $thirdbotcost) && plugin::check_handin(\%itemcount, 16939 => 4)) { #pottery
+         if(quest::handin({"platinum" => $thirdbotcost, 16939 => 4})) { #pottery
             $success = $qglobals{bot_spawn_limit}+1;
          }
       }
       elsif(($ulevel >= $fourthbotlevel) && ($qglobals{bot_spawn_limit} <= 3)) {
-         if(($platinum == $fourthbotcost) && plugin::check_handin(\%itemcount, 2204 => 4)) { #tailoring/smithing
+         if(quest::handin({"platinum" => $fourthbotcost, 2204 => 4})) { #tailoring/smithing
             $success = $qglobals{bot_spawn_limit}+1;
          }
       }
       elsif(($ulevel >= $fifthbotlevel) && ($qglobals{bot_spawn_limit} <= 4)) {
-         if(($platinum == $fifthbotcost) && plugin::check_handin(\%itemcount, 3061 => 4)) { #smithing
+         if(quest::handin({"platinum" => $fifthbotcost, 3061 => 4})) { #smithing
             $success = $qglobals{bot_spawn_limit}+1;
          }
       }
       elsif(($ulevel >= $nextbotlevel) && ($qglobals{bot_spawn_limit} <= 5)) {
-         if(($platinum == $nextbotcost) && plugin::check_handin(\%itemcount, 8689 => 4)) { #fletching
+         if(quest::handin({"platinum" => $nextbotcost, 8689 => 4})) { #fletching
             $success = $qglobals{bot_spawn_limit}+1;
          }
       }
       elsif(($ulevel >= $nextbotlevel) && ($qglobals{bot_spawn_limit} >= 6)) {
-         if(($platinum == $nextextracost) || (($platinum == $nextbotcost) && plugin::check_handin(\%itemcount, 8689 => 4))) {
+         if((quest::handin({"platinum" => $nextextracost}) || (quest::handin({"platinum" => $nextbotcost}))) && (quest::handin({8689 => 4}))) {
             $success = $qglobals{bot_spawn_limit}+1;
          }
       }

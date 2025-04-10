@@ -35,7 +35,6 @@ function event_trade(e)
 		e.other:Faction(336,10,0); -- Faction: Coalition of Tradefolk Underground
 		e.other:Faction(329,10,0); -- Faction: Carson McCabe
 		e.other:AddEXP(1000);
-		e.other:GiveCash(0,0,0,0);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

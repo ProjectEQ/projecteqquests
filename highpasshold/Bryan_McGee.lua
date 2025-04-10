@@ -23,7 +23,6 @@ function event_trade(e)
 		e.other:Faction(230,1,0); -- Corrupt Qeynos Guards
 		e.other:Faction(330,1,0); -- The Freeport Militia
 		e.other:AddEXP(15000);
-		e.other:GiveCash(0,0,0,0);
 		
 		eq.signal(407027,3) -- NPC: Beef new highpasshold
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 12365})) then

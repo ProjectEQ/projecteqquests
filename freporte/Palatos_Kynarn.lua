@@ -22,7 +22,6 @@ function event_trade(e)
 		e.other:Faction(267,1,0); -- High Guard of Erudin
 		e.other:Faction(265,-1,0); -- Heretics
 		e.other:AddEXP(100);
-		e.other:GiveCash(0,0,0,0);
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 13818})) then
 		e.self:Say("Thanks.. That saved me a lot of money. Now I can spend more time with the captain before I give this back to Lenka Stoutheart. Here is a little so...mething.");
 		e.other:Ding();

@@ -86,20 +86,28 @@ function KingSpawn(e)
 	king			= e.self;
 	princecount		= 0;
 	add_sequence	= 0;
+
+	eq.set_timer("tether", 6 * 1000);
+	eq.set_timer("spawn_delayed", 1000);
+	timerstate[e.self:GetID()] = false;
+end
+
+function KingSpawnDelayed(e) 
 	eq.unique_spawn(334040, 0, 0, -215.000000, -580.000000, -768.375000, 0.000000);	-- Ilsin
 	eq.unique_spawn(334039, 0, 0, -181.529999, -579.500000, -775.599976, 1.6);		-- Cynin
 	eq.unique_spawn(334038, 0, 0, -148.000000, -580.000000, -768.375000, 0);		-- Scyllus
 	eq.unique_spawn(334037, 0, 0, 59.000000, -580.000000, -768.375000, 0);			-- Britalic
 	eq.unique_spawn(334036, 0, 0, 92.400002, -579.369995, -775.599976, 0);			-- Allin
 	eq.unique_spawn(334035, 0, 0, 127.000000, -580.000000, -768.375000, 0);			-- Kiranus
-	eq.set_timer("tether", 6 * 1000);
-	CheckPortals();																	-- need to verify (#repop can break the encounter loading :P)
-	timerstate[e.self:GetID()] = false;
+	CheckPortals();
 end
 
 function KingTimer(e)
 	if e.timer == "tether" then
 		CheckLeash(e);
+	elseif e.timer == "spawn_delayed" then
+		KingSpawnDelayed(e);
+		eq.stop_timer(e.timer);
 	elseif e.timer == "portals" then
 		if e.self:IsEngaged() then
 			eq.set_timer("portals", math.random(40,60) * 1000); -- 40-60 sec
@@ -373,7 +381,6 @@ function event_encounter_load(e)
 	eq.register_npc_event("king", Event.timer, 334110, AddTimer);
 
 	-- spawn portals
-	CheckPortals()
 	local temp = eq.get_entity_list():GetMobByNpcTypeID(334041); -- incase he's up already for some reason
 	if temp.valid then
 		king = temp:CastToNPC();

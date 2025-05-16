@@ -78,20 +78,28 @@ function QueenSpawn(e)
 	queen = e.self;
 	princesscount = 0;
 	add_sequence = 0;
+
+	eq.set_timer("tether", 6 * 1000);
+	eq.set_timer("spawn_delayed", 1000);
+	timerstate[e.self:GetID()] = false;
+end
+
+function QueenSpawnDelayed(e) 
 	eq.unique_spawn(334048, 0, 0, 25, -725, 308.750000, 0);							-- Zulaqua
 	eq.unique_spawn(334047, 0, 0, 64.239998, -725.890015, 301.559998, 511.200012);	-- Yelnia
 	eq.unique_spawn(334045, 0, 0, 310.910004, -726.130005, 301.464203, 0);			-- Quellon
 	eq.unique_spawn(334043, 0, 0, 387.399994, -727.260010, 301.464233, 0);			-- Puja
 	eq.unique_spawn(334044, 0, 0, 348.929993, -726.700012, 301.464233, 0);			-- Lana
 	eq.unique_spawn(334046, 0, 0, 101.529999, -725.630005, 301.464203, 1.5);		-- Kira
-	eq.set_timer("tether", 6 * 1000);
 	CheckPortals(); -- need to verify (#repop can break the encounter loading :P)
-	timerstate[e.self:GetID()] = false;
 end
 
 function QueenTimer(e)
 	if e.timer == "tether" then
 		CheckLeash(e);
+	elseif e.timer == "spawn_delayed" then
+		QueenSpawnDelayed(e);
+		eq.stop_timer(e.timer);
 	elseif e.timer == "portals" then
 		if e.self:IsEngaged() then
 			eq.set_timer("portals", math.random(40,60) * 1000); -- 40-60 sec
@@ -339,7 +347,6 @@ function event_encounter_load(e)
 	eq.register_npc_event("queen", Event.timer, 334086, AddTimer);
 
 	-- spawn portals
-	CheckPortals();
 	local temp = eq.get_entity_list():GetMobByNpcTypeID(334049); -- incase he's up already for some reason
 	if temp.valid then
 		queen = temp:CastToNPC();

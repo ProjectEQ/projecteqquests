@@ -1,5 +1,5 @@
 function event_spawn(e)
-eq.set_timer("spiders", 40 * 1000);
+eq.set_timer("spiders", 140 * 1000);
 end
 
 function event_timer(e)

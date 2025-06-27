@@ -46,9 +46,9 @@ sub EVENT_SAY{
   if($text=~/North Qeynos/i)
   {
   quest::say("Off you go!");
- quest::movepc(2,-54.21,436,3.33,119) ;
+  quest::movepc(2,-54.21,436,3.33,119) ;
   }
-        
+      
   if($text=~/Halas/i)
   {
   quest::say("Off you go!");

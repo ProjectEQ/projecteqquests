@@ -127,12 +127,12 @@ sub KICK_ALL_PLAYERS {
 }
 
 sub SPAWN_WAVE1 {
-  quest::settimer(1,895); # 15 Minute timer for the kickout event!!
-  quest::settimer(2,180); # 3 Minute timer for second wave spawn
-  quest::settimer(3,300); # 5 Minute timer for third wave
-  quest::settimer(4,600); # 10 Minute timer for the emote
-  quest::settimer(5,720); # 12 Minute timer for the emote
-  quest::settimer(6,840); # 14 Minute timer for the emote
+  quest::settimer(1,1895); # 15 Minute timer for the kickout event!! (Added 1000 seconds 5/15/2025 - Chan)
+  quest::settimer(2,580); # 3 Minute timer for second wave spawn (Added 400 
+  quest::settimer(3,800); # 5 Minute timer for third wave (Added 500
+  quest::settimer(4,600); # 10 Minute timer for the emote(Added 600
+  quest::settimer(5,1220); # 12 Minute timer for the emote(Added 400
+  quest::settimer(6,1440); # 14 Minute timer for the emote(Added 
 
   quest::signalwith(216048,1,0); #Signal fake coirnav for first wave emote
   my $count = 0;

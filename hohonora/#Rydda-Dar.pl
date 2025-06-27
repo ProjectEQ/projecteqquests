@@ -4,7 +4,7 @@ sub EVENT_SPAWN {
 
 sub EVENT_TIMER {
 	if($timer == 2) {
-		quest::updatespawntimer(44017,86400000); #trydan Faye 24h on fail
+		quest::updatespawntimer(44017,27200); #trydan Faye 24h on fail
 		quest::depop();
 	}
 }

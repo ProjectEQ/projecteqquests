@@ -49,7 +49,7 @@ sub EVENT_TIMER {
     quest::spawn2(quest::ChooseRandom(200003,200004),0,0,$x,$y,$z,$h); # NPC(s): Corrupted_Pusling (200003), Foul_Pusling (200004)
     quest::spawn2(quest::ChooseRandom(200003,200004),0,0,$x,$y,$z,$h); # NPC(s): Corrupted_Pusling (200003), Foul_Pusling (200004)
     quest::spawn2(quest::ChooseRandom(200003,200004),0,0,$x,$y,$z,$h); # NPC(s): Corrupted_Pusling (200003), Foul_Pusling (200004)
-    quest::spawn2(200059,0,0,$x,$y,$z,$h); # NPC: Overlord_Banord_Paffa
+    quest::unique_spawn(200059,0,0,$x,$y,$z,$h); # NPC: Overlord_Banord_Paffa
     
     quest::depop_withtimer();
   }

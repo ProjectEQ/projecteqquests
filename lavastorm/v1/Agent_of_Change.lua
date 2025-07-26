@@ -1,6 +1,6 @@
 local soldungb_raid = {
     expedition = { name="Lair of Lord Nagafen", min_players=1, max_players=72},
-    instance   = { zone="soldungb", version=0, duration=eq.seconds("8h") }, -- zone lasts 8 hours
+    instance   = { zone="soldungb", version=0, duration=eq.seconds("7d") }, -- zone lasts 8 hours
     safereturn = { zone="lavastorm", x=561.44, y=408, z=-45.1, h=439.25 },
     zonein     = { x=-263.68, y=-424.21, z=-108.34, h=128 },
 }

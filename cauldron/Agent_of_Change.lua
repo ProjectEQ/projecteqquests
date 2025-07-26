@@ -1,6 +1,6 @@
 local aoc_raid = {
     expedition = { name="Kedge Keep", min_players=1, max_players=72},
-    instance   = { zone="kedge", version=0, duration=eq.seconds("8h") }, -- zone lasts 8 hours
+    instance   = { zone="kedge", version=0, duration=eq.seconds("7d") }, -- zone lasts 8 hours
     safereturn = { zone="cauldron", x=-885, y=-209, z=235, h=227 },
     zonein     = { x=14, y=100, z=305.5, h=0 },
 }

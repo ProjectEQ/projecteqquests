@@ -1,6 +1,6 @@
 local aoc_raid = {
     expedition = { name="Emerald Jungle", min_players=1, max_players=72},
-    instance   = { zone="emeraldjungle", version=0, duration=eq.seconds("8h") }, -- zone lasts 8 hours
+    instance   = { zone="emeraldjungle", version=0, duration=eq.seconds("7d") }, -- zone lasts 8 hours
     safereturn = { zone="fieldofbone", x=-939.59, y=-1627.94, z=11.95, h=227.0 }, --outside portal
     zonein     = { x=4648, y=-1223, z=1.10, h=260 },
 }

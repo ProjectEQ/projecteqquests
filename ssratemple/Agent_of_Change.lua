@@ -1,6 +1,6 @@
 local aoc_raid = {
     expedition = { name="SSRA Temple", min_players=1, max_players=72},
-    instance   = { zone="ssratemple", version=0, duration=eq.seconds("8h") }, -- zone lasts 8 hours
+    instance   = { zone="ssratemple", version=0, duration=eq.seconds("7d") }, -- zone lasts 8 hours
     safereturn = { zone="ssratemple", x=-10.75, y=1.96, z=6.02, h=227.0 }, -- grey entrance
     zonein     = { x=-10.75, y=1.96, z=6.02, h=227.0 },
 }

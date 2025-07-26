@@ -1,6 +1,6 @@
 local aoc_raid = {
     expedition = { name="The Hole", min_players=1, max_players=72},
-    instance   = { zone="hole", version=0, duration=eq.seconds("8h") }, -- zone lasts 8 hours
+    instance   = { zone="hole", version=0, duration=eq.seconds("7d") }, -- zone lasts 8 hours
     safereturn = { zone="paineel", x=255.98, y=783.48, z=3.74, h=227 },
     zonein     = { x=189.14, y=748.06, z=-89.10, h=0 },
 }

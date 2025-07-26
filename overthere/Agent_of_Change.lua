@@ -1,6 +1,6 @@
 local aoc_raid = {
     expedition = { name="Skyfire Mountains", min_players=1, max_players=72},
-    instance   = { zone="skyfire", version=0, duration=eq.seconds("8h") }, -- zone lasts 8 hours
+    instance   = { zone="skyfire", version=0, duration=eq.seconds("7d") }, -- zone lasts 8 hours
     safereturn = { zone="overthere", x=3708, y=-1090, z=62.10, h=227.0 }, --outside portal
     zonein     = { x=-4320.45, y=-1202.75, z=41.78, h=260 },
 }

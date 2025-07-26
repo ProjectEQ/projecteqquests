@@ -1,6 +1,6 @@
 local aoc_raid = {
     expedition = { name="Lair of Lady Vox", min_players=1, max_players=72},
-    instance   = { zone="permafrost", version=0, duration=eq.seconds("8h") }, -- zone lasts 8 hours
+    instance   = { zone="permafrost", version=0, duration=eq.seconds("7d") }, -- zone lasts 8 hours
     safereturn = { zone="everfrost", x=-7010, y=2033, z=-60.1, h=315.25 },
     zonein     = { x=61, y=-121, z=2, h=256 },
 }

@@ -48,21 +48,38 @@ sub EVENT_SPAWN_ZONE {
   }
 }
 
+#sub EVENT_DEATH_ZONE {
+#  if ($killed_npc_id == 89181 || $killed_npc_id == 89128 || $killed_npc_id == 89154) { # npc: Trakanon or hard Trakanon or bard epic version
+#    my $dz = quest::get_expedition();
+#    if ($dz) {
+#      $dz->AddLockout("Replay Timer", 259200); # 3 day lockout
+#    }
+#  }
+#  
+#  if ($killed_npc_id == 89181 || $killed_npc_id == 89128 || $killed_npc_id == 89154) { # npc: Trakanon or hard Trakanon or bard epic version
+#    my $dz = quest::get_expedition();
+#    if ($dz) {
+#      $dz->AddLockout("Trakanon", 259200); # 3 day lockout
+#    }
+#  }
+#}
+
 sub EVENT_DEATH_ZONE {
-  if ($killed_npc_id == 89181 || $killed_npc_id == 89128 || $killed_npc_id == 89154) { # npc: Trakanon or hard Trakanon or bard epic version
+  # Define the NPC IDs in a hash for quick lookups
+  my %npc_ids = map { $_ => 1 } (89181, 89128, 89154); # npc: Trakanon or hard Trakanon or bard epic version
+
+  # Check if $killed_npc_id exists in the hash
+  if (exists $npc_ids{$killed_npc_id}) {
     my $dz = quest::get_expedition();
     if ($dz) {
       $dz->AddLockout("Replay Timer", 259200); # 3 day lockout
     }
   }
-  
-  if ($killed_npc_id == 89181 || $killed_npc_id == 89128 || $killed_npc_id == 89154) { # npc: Trakanon or hard Trakanon or bard epic version
+
+  if (exists $npc_ids{$killed_npc_id}) {
     my $dz = quest::get_expedition();
     if ($dz) {
       $dz->AddLockout("Trakanon", 259200); # 3 day lockout
     }
   }
-  
-  
-  
 }

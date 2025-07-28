@@ -1,6 +1,6 @@
 local aoc_raid = {
     expedition = { name="Timorous Deep", min_players=1, max_players=72},
-    instance   = { zone="timorous", version=0, duration=eq.seconds("8h") }, -- zone lasts 8 hours
+    instance   = { zone="timorous", version=0, duration=eq.seconds("7d") }, -- zone lasts 8 hours
     safereturn = { zone="butcher", x=2961.91, y=1237.54, z=0.64, h=227.0 }, --outside portal
     zonein     = { x=2194.00, y=-5392.00, z=6.25, h=260 },
 }

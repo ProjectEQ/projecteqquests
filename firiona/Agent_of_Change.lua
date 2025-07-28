@@ -1,6 +1,6 @@
 local aoc_raid = {
     expedition = { name="Dreadlands", min_players=1, max_players=72},
-    instance   = { zone="dreadlands", version=0, duration=eq.seconds("8h") }, -- zone lasts 8 hours
+    instance   = { zone="dreadlands", version=0, duration=eq.seconds("7d") }, -- zone lasts 8 hours
     safereturn = { zone="firiona", x=5755, y=246.88, z=-58.40, h=227 },
     zonein     = { x=5631.98, y=170.18, z=1204.65, h=0 },
 }

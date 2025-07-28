@@ -1,6 +1,6 @@
 local aoc_raid = {
     expedition = { name="Wakening Lands", min_players=1, max_players=72},
-    instance   = { zone="wakening", version=0, duration=eq.seconds("8h") }, -- zone lasts 8 hours
+    instance   = { zone="wakening", version=0, duration=eq.seconds("7d") }, -- zone lasts 8 hours
     safereturn = { zone="kael", x=3169.80, y=-235.38, z=-392.67, h=227.0 },
     zonein     = { x=3167.90, y=-228.84, z=-394.21, h=260 },
 }

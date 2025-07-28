@@ -1,6 +1,6 @@
 local aoc_raid = {
     expedition = { name="Icewell Keep", min_players=1, max_players=72},
-    instance   = { zone="thurgadinb", version=0, duration=eq.seconds("8h") }, -- zone lasts 8 hours
+    instance   = { zone="thurgadinb", version=0, duration=eq.seconds("7d") }, -- zone lasts 8 hours
     safereturn = { zone="greatdivide", x=-73.68, y=-204.86, z=97.57, h=227.0 }, --outside portal
     zonein     = { x=0, y=250, z=4.62, h=260 },
 }

@@ -1,6 +1,6 @@
 local aoc_raid = {
     expedition = { name="Plane of Hate", min_players=1, max_players=72},
-    instance   = { zone="hateplane", version=0, duration=eq.seconds("8h") }, -- zone lasts 8 hours
+    instance   = { zone="hateplane", version=0, duration=eq.seconds("7d") }, -- zone lasts 8 hours
     safereturn = { zone="oasis", x=914, y=322, z=-2, h=227 },
     zonein     = { x=-353.08, y=-374.8, z=3.75, h=0 },
 }

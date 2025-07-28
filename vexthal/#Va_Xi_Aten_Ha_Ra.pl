@@ -19,6 +19,7 @@ sub EVENT_SPAWN {
 
 sub EVENT_DEATH_COMPLETE {
   quest::depopall(158094);
+  quest::spawn2(158096,0,0,1412,0,248.63,384); # NPC: #Aten_Ha_Ra_
 }
 
 #End of File, Zone:vexthal  NPC:158009 -- #Va_Xi_Aten_Ha_Ra

@@ -10,6 +10,13 @@ sub EVENT_TIMER {
 my $variance = int(rand(1));
 my $spawntime = 6 + $variance;
 $check = 0;
+my $dzid = 0;
+my $dz = quest::get_expedition();
+if ($dz) {
+  $dzid = $dz->GetDynamicZoneID();
+}
+my $bucket_key = $dzid . "-vulak";
+my $bucket_value = quest::get_data($bucket_key);
   if($timer eq "vulak") {
     $check_boss = $entity_list->GetMobByNpcTypeID(124077);#Lady_Mirenilla
     if ($check_boss) {
@@ -39,13 +46,14 @@ $check = 0;
     } 
     if ($check == 0 && $entity_list->IsMobSpawnedByNpcTypeID(124155)) {
     }
-    elsif ($check == 0 && !defined $qglobals{vulak}) {
+    elsif ($check == 0 && $bucket_value != 1) {
+      quest::set_data($bucket_key, 1, "M$spawntime");
       quest::spawn2(124155,0,0,-739.4,517.2,121,510); # NPC: #Vulak`Aerr
       quest::depop_withtimer();
-      quest::setglobal("vulak",1,2,"M$spawntime");
+      #quest::setglobal("vulak",1,2,"M$spawntime");
     }
   }
- $qglobals{vulak} = undef;
+ #$qglobals{vulak} = undef;
 }      
 
 #EOF

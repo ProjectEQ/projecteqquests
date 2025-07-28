@@ -1,6 +1,6 @@
 local aoc_raid = {
     expedition = { name="Velketors Lab", min_players=1, max_players=72},
-    instance   = { zone="velketor", version=0, duration=eq.seconds("8h") }, -- zone lasts 8 hours
+    instance   = { zone="velketor", version=0, duration=eq.seconds("7d") }, -- zone lasts 8 hours
     safereturn = { zone="greatdivide", x=3215.71, y=-6762.87, z=-32.74, h=227.0 }, --outside portal
     zonein     = { x=-65, y=581, z=-150.31, h=260 },
 }

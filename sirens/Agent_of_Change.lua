@@ -1,6 +1,6 @@
 local aoc_raid = {
     expedition = { name="Western Wastes", min_players=1, max_players=72},
-    instance   = { zone="westwastes", version=0, duration=eq.seconds("8h") }, -- zone lasts 8 hours
+    instance   = { zone="westwastes", version=0, duration=eq.seconds("7d") }, -- zone lasts 8 hours
     safereturn = { zone="sirens", x=-81.39, y=197.54, z=5.62, h=227.0 }, --outside portal
     zonein     = { x=-3842.11, y=-5155.79, z=-246.12, h=260 },
 }

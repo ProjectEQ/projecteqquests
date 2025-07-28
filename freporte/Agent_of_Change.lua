@@ -1,6 +1,6 @@
 local aoc_raid = {
     expedition = { name="Plane of Sky", min_players=1, max_players=72},
-    instance   = { zone="airplane", version=0, duration=eq.seconds("8h") }, -- zone lasts 8 hours
+    instance   = { zone="airplane", version=0, duration=eq.seconds("7d") }, -- zone lasts 8 hours
     safereturn = { zone="freporte", x=-856.12, y=16.70, z=-50.34, h=227 },
     zonein     = { x=614, y=1415, z=-661.10, h=0 },
 }

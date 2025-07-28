@@ -21,7 +21,7 @@ sub EVENT_SIGNAL {
 
 sub EVENT_TIMER {
 	if($timer == 1 && $villager == 4) {
-		quest::updatespawntimer(44016,86400000); #Rhaliq Trell 24 hours on fail
+		quest::updatespawntimer(44016,27200); #Rhaliq Trell 24 hours on fail
 		$villager=undef;
 		$badguys=undef;
 		quest::stoptimer(2);

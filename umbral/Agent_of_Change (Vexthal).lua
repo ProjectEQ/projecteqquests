@@ -1,9 +1,9 @@
 local aoc_raid = {
-    expedition = { name="Veeshans Peak", min_players=1, max_players=72},
-    instance   = { zone="veeshan", version=0, duration=eq.seconds("7d") }, -- zone lasts 8 hours
-    safereturn = { zone="skyfire", x=2887.09, y=2679.29, z=-75.45, h=227.0 }, --outside portal
-    zonein     = { x=1783.0, y=-5, z=11.5, h=260 },
-	key = 20884
+    expedition = { name="Vex Thal", min_players=1, max_players=72},
+    instance   = { zone="vexthal", version=1, duration=eq.seconds("7d") }, -- zone lasts 7 days
+    safereturn = { zone="umbral", x=-596, y=-1341, z=39.7, h=227.0 }, --outside portal
+    zonein     = { x=-1655, y=257, z=-35, h=260 },
+	key = 22198
 }
 
 function event_say(e)
@@ -17,7 +17,7 @@ function event_say(e)
 	elseif(e.message:findi("request")) then
 		if e.other:KeyRingCheck(aoc_raid.key) then
 			local dz = e.other:CreateExpedition(aoc_raid)
-			dz:AddReplayLockout(eq.seconds("1d")) -- 9 hour lockout
+			dz:AddReplayLockout(eq.seconds("9h")) -- 9 hour lockout
 			e.self:Say("Tell me when you're [" .. eq.say_link("ready") .. "] to enter")
 		else
 			e.self:Say("You do not have the key")

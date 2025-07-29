@@ -5,7 +5,7 @@ function event_say(e)
   local totalCost = 0;
 
   if e.message:findi("hail") then
-    eq.get_entity_list():MessageClose(e.self, true, 100, MT.SayEcho, "Greetings, are you interested to learn [" .. eq.say_link("something new") .. "] or [" .. eq.say_link("reset") .. "]?.'")
+    eq.get_entity_list():MessageClose(e.self, true, 100, MT.SayEcho, "Greetings, are you interested to learn [" .. eq.say_link("something new") .. "]? Please pause between each character before using this")
   elseif e.message:findi("something new") then
     -- Get all available spells/discs   
     eq.debug("Level: " .. level);
@@ -229,9 +229,10 @@ function event_say(e)
     else
       eq.get_entity_list():MessageClose(e.self, true, 100, MT.SayEcho, "There is nothing more for me to teach you")
     end
-  elseif e.message:findi("reset") then
-      player:UntrainDiscAll();
-      player:UnscribeSpellAll();
-      eq.debug("Reset all discs/spells");
-    end
+  --This was used for debugging the script
+  --elseif e.message:findi("reset") then
+  --    player:UntrainDiscAll();
+  --    player:UnscribeSpellAll();
+  --    eq.debug("Reset all discs/spells");
+  end
 end

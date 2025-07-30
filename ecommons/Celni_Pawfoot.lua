@@ -1,11 +1,12 @@
 function event_say(e)
   local player = e.other
   local level = player:GetLevel();
-
+  --Tax % added to total cost of scrolls/times
+  local tax = 0.15
   local totalCost = 0;
 
   if e.message:findi("hail") then
-    eq.get_entity_list():MessageClose(e.self, true, 100, MT.SayEcho, "Greetings, are you interested to learn [" .. eq.say_link("something new") .. "]? Please pause between each character before using this")
+    eq.get_entity_list():MessageClose(e.self, true, 100, MT.SayEcho, "Greetings, are you interested to learn [" .. eq.say_link("something new") .. "]? This will cost more than learning on your own, but is much more convenient. Please pause between each character before using this")
   elseif e.message:findi("something new") then
     -- Get all available spells/discs   
     eq.debug("Level: " .. level);
@@ -59,7 +60,6 @@ function event_say(e)
     new_disc_list = player:GetLearnableDisciplines(1, level);
     if #new_disc_list > 0 then
       local conditions = {}
-      local rawCopper = 0;
       for i = 1, #new_disc_list do --#new_spell_list
           local disc = new_disc_list[i];
           --eq.debug("Disc: " .. eq.get_spell_name(disc));
@@ -104,12 +104,14 @@ function event_say(e)
       db:close()
     end
     if totalCost > 0 then
+      --15% tax
+      totalCost = totalCost + (totalCost * tax)
       --Print spell info to player
       local pp = math.floor(totalCost / 1000)
       local gp = math.floor((totalCost % 1000) / 100)
       local sp = math.floor((totalCost % 100) / 10)
       local cp = totalCost % 10
-      eq.get_entity_list():MessageClose(e.self, true, 100, MT.SayEcho, string.format("Total cost will be %dpp %dgp %dsp %dcp", pp, gp, sp, cp))
+      eq.get_entity_list():MessageClose(e.self, true, 100, MT.SayEcho, string.format("Total cost (including a %.0fpct tax) will be %dpp %dgp %dsp %dcp", tax * 100, pp, gp, sp, cp))
       eq.get_entity_list():MessageClose(e.self, true, 100, MT.SayEcho, "Do you [" .. eq.say_link("accept") .. "]?.'")
     else
       eq.get_entity_list():MessageClose(e.self, true, 100, MT.SayEcho, "There is nothing more for me to teach you")
@@ -168,7 +170,6 @@ function event_say(e)
     new_disc_list = player:GetLearnableDisciplines(1, level);
     if #new_disc_list > 0 then
       local conditions = {}
-      local rawCopper = 0;
       for i = 1, #new_disc_list do --#new_spell_list
           local disc = new_disc_list[i];
           --eq.debug("Disc: " .. eq.get_spell_name(disc));
@@ -214,6 +215,8 @@ function event_say(e)
     end
     --Check if player has enough money
     if totalCost > 0 then
+      --15% tax
+      totalCost = totalCost + (totalCost * tax)
       if rawPlayerMoney >= totalCost then
         eq.debug("Player has enough money")
         player:TakeMoneyFromPP(totalCost, true)

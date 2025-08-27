@@ -4,6 +4,8 @@ function event_say(e)
   --Tax % added to total cost of scrolls/times
   local tax = 0.15
   local totalCost = 0;
+  --Set max spell id to Planes of Power
+  local maxSpellId = 3683
 
   if e.message:findi("hail") then
     eq.get_entity_list():MessageClose(e.self, true, 100, MT.SayEcho, "Greetings, are you interested to learn [" .. eq.say_link("something new") .. "]? This will cost more than learning on your own, but is much more convenient. Please pause between each character before using this")
@@ -11,10 +13,22 @@ function event_say(e)
     -- Get all available spells/discs   
     eq.debug("Level: " .. level);
     new_spell_list = player:GetScribeableSpells(1, level);
+    pruned_spell_list = {}
     if #new_spell_list > 0 then
-      local conditions = {}
       for i = 1, #new_spell_list do --#new_spell_list
           local spell = new_spell_list[i];
+          --Check if the id is within expansion range
+          if spell < maxSpellId then
+            table.insert(pruned_spell_list, spell)
+          end
+      end
+    end
+    if #pruned_spell_list > 0 then
+      local conditions = {}
+      for i = 1, #pruned_spell_list do --#new_spell_list
+          local spell = pruned_spell_list[i];
+          --Check if the id is within expansion range
+          --Insert into sql query
           --eq.debug("Spell: " .. eq.get_spell_name(spell));
           table.insert(conditions, 'name = "Spell: ' .. eq.get_spell_name(spell) .. '"')
       end
@@ -58,10 +72,22 @@ function event_say(e)
     end
     
     new_disc_list = player:GetLearnableDisciplines(1, level);
-    if #new_disc_list > 0 then
+    pruned_disc_list = new_disc_list
+    --if #new_disc_list > 0 then
+    --  for i = 1, #new_disc_list do --#new_spell_list
+    --      eq.debug('checking disc id')
+    --      local disc = new_disc_list[i];
+    --      -- Only add within desired expansion
+    --      if disc < maxSpellId then
+    --        --eq.debug("Disc: " .. eq.get_spell_name(disc));
+    --        table.insert(pruned_disc_list, disc)
+    --      end
+    --  end
+    --end
+    if #pruned_disc_list > 0 then
       local conditions = {}
-      for i = 1, #new_disc_list do --#new_spell_list
-          local disc = new_disc_list[i];
+      for i = 1, #pruned_disc_list do --#new_spell_list
+          local disc = pruned_disc_list[i];
           --eq.debug("Disc: " .. eq.get_spell_name(disc));
           table.insert(conditions, 'name like "Tome%' .. eq.get_spell_name(disc) .. '"')
       end
@@ -121,10 +147,22 @@ function event_say(e)
     local rawPlayerMoney = player:GetAllMoney()
     eq.debug(string.format("Player has %d money", rawPlayerMoney))
     new_spell_list = player:GetScribeableSpells(1, level);
+    pruned_spell_list = {}
     if #new_spell_list > 0 then
-      local conditions = {}
       for i = 1, #new_spell_list do --#new_spell_list
           local spell = new_spell_list[i];
+          --Check if the id is within expansion range
+          if spell < maxSpellId then
+            table.insert(pruned_spell_list, spell)
+          end
+      end
+    end
+    if #pruned_spell_list > 0 then
+      local conditions = {}
+      for i = 1, #pruned_spell_list do --#new_spell_list
+          local spell = pruned_spell_list[i];
+          --Check if the id is within expansion range
+          --Insert into sql query
           --eq.debug("Spell: " .. eq.get_spell_name(spell));
           table.insert(conditions, 'name = "Spell: ' .. eq.get_spell_name(spell) .. '"')
       end
@@ -168,10 +206,21 @@ function event_say(e)
     end
 
     new_disc_list = player:GetLearnableDisciplines(1, level);
-    if #new_disc_list > 0 then
+    pruned_disc_list = new_disc_list
+    --if #new_disc_list > 0 then
+    --  for i = 1, #new_disc_list do --#new_spell_list
+    --      local disc = new_disc_list[i];
+    --      -- Only add within desired expansion
+    --      if disc < maxSpellId then
+    --        eq.debug("Disc: " .. eq.get_spell_name(disc));
+    --        table.insert(pruned_disc_list, disc)
+    --      end
+    --  end
+    --end
+    if #pruned_disc_list > 0 then
       local conditions = {}
-      for i = 1, #new_disc_list do --#new_spell_list
-          local disc = new_disc_list[i];
+      for i = 1, #pruned_disc_list do --#new_spell_list
+          local disc = pruned_disc_list[i];
           --eq.debug("Disc: " .. eq.get_spell_name(disc));
           table.insert(conditions, 'name like "Tome%' .. eq.get_spell_name(disc) .. '"')
       end
@@ -220,10 +269,14 @@ function event_say(e)
       if rawPlayerMoney >= totalCost then
         eq.debug("Player has enough money")
         player:TakeMoneyFromPP(totalCost, true)
-        player:ScribeSpells(1, level);
-        player:LearnDisciplines(1, level);
-        for i = 1, #new_disc_list do
-            local disc = new_disc_list[i];
+        -- scribe discs within desired expansion spell id
+        for i = 1, #pruned_spell_list do --#new_spell_list
+            local spell = pruned_spell_list[i];
+            player:ScribeSpell(spell, player:GetNextAvailableSpellBookSlot(), true)
+        end
+        for i = 1, #pruned_disc_list do --#new_spell_list
+            local disc = pruned_disc_list[i];
+            player:TrainDiscBySpellID(disc)
             eq.get_entity_list():MessageClose(e.self, true, 100, MT.SayEcho, "You learned: " .. eq.get_spell_name(disc));
         end
       else
@@ -233,9 +286,9 @@ function event_say(e)
       eq.get_entity_list():MessageClose(e.self, true, 100, MT.SayEcho, "There is nothing more for me to teach you")
     end
   --This was used for debugging the script
-  --elseif e.message:findi("reset") then
-  --    player:UntrainDiscAll();
-  --    player:UnscribeSpellAll();
-  --    eq.debug("Reset all discs/spells");
+  elseif e.message:findi("reset") then
+      player:UntrainDiscAll();
+      player:UnscribeSpellAll();
+      eq.debug("Reset all discs/spells");
   end
 end

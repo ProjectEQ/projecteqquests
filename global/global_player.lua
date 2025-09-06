@@ -369,9 +369,12 @@ function event_task_complete(e)
 end
 
 function event_discover_item(e)    
-    --:: Create a scalar variable to store the item link
-    local item_link = eq.item_link(e.item:ID());
-	local name_link = e.self:GetCleanName();
-    --:: Emote the discovery to all zones
-    eq.world_emote(335, "" .. name_link .. " has discovered " .. item_link .. "!  Yay!");
+    local admin_status = e.self:Admin();
+    if admin_status < 200 then
+      --:: Create a scalar variable to store the item link
+      local item_link = eq.item_link(e.item:ID());
+      local name_link = e.self:GetCleanName();
+      --:: Emote the discovery to all zones
+      eq.world_emote(335, "" .. name_link .. " has discovered " .. item_link .. "!  Yay!");
+    end
 end

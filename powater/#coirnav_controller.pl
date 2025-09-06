@@ -38,7 +38,7 @@ sub EVENT_SIGNAL {
     quest::depopall(216074); #Depop any remaining trash creatures Triloun-057, regrua-067, hraquis-074
     quest::depopall(216067);
     quest::depopall(216057);
-    quest::setglobal("coirnav_done", 3, 7, "D4"); # You can't attempt this again for 5 days
+    quest::setglobal("coirnav_done", 3, 7, "H4"); # You can't attempt this again for 5 days
     quest::spawn2(216066,0,0,$x,$y,$z,138); #Spawn Essence of Water
   }
 }

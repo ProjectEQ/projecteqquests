@@ -7,7 +7,7 @@ sub EVENT_SAY {
     quest::say("You seek to move behind this door, yet I cannot allow that until someone with a like mind as me comes forward. Only they will understand the calling and only they can do what is necessary to proceed. If there be anyone who matches my ambitions, step forward to [" . quest::saylink("answer the challenge") . "].");
   }
   elsif ($text=~/challenge/i) {
-    if (($class eq "Cleric") || ($class eq "Druid") || ($class eq "Shaman") || $status >= 80) {
+    if ($class=~/^(Cleric|Druid|Shaman)$/i) {
       $client->Message(0, "You are a priest. It is your ability -- in fact, your very calling -- that requires you to be able to manipulate it. You must sew these together and return to me the product so that I can verify the truth in your words and in your soul.");
       quest::summonitem(60241, 4); # Item: Dried Segment of Flesh x 4
     }
@@ -20,8 +20,8 @@ sub EVENT_SAY {
       if (!$entity_list->IsMobSpawnedByNpcTypeID(294614)) {
         quest::spawn2(294614,0,0,213,-100,20,0); # NPC: #Trigger_Ikkinz_4
       }
-      my $InInstanceIkky7 = quest::GetInstanceID("ikkinz",6);
-	  if ($InInstanceIkky7) {
+      my $InInstanceIkky7 = quest::GetInstanceID("ikkinz", 6);
+      if ($InInstanceIkky7) {
         quest::MovePCInstance(294,$InInstanceIkky7,195,-86,21,0); # Zone: ikkinz
       }
     }
@@ -31,7 +31,7 @@ sub EVENT_SAY {
       if (!$entity_list->IsMobSpawnedByNpcTypeID(294614)) {
         quest::spawn2(294614,0,0,213,-100,20,0); # NPC: #Trigger_Ikkinz_4
       }
-      my $InInstanceIkky7 = quest::GetInstanceID("ikkinz",6);
+      my $InInstanceIkky7 = quest::GetInstanceID("ikkinz", 6);
       if ($InInstanceIkky7) {
         quest::MovePCInstance(294,$InInstanceIkky7,206,-154,20,0); # Zone: ikkinz
       }

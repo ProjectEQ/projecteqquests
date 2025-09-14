@@ -9,9 +9,7 @@ end
 
 function event_trade(e)
 
-	local item_lib = require("items");
-	
-	if(item_lib.check_turn_in(e.trade, {item1 = (18150 or 18151)})) then
+	if (eq.handin({[18150] = 1}) or eq.handin({[18151] = 1})) then
 		local random_gold = math.random(6);
 		e.self:Say("Incoming mail - very good! Please take this gold for your troubles.");
 		e.other:Ding();
@@ -22,7 +20,7 @@ function event_trade(e)
 		e.other:Faction(285,-1,0); -- Faction: Mayong Mistmoore
 		e.other:AddEXP(1550);
 		e.other:GiveCash(0,0,random_gold,0);
-	elseif(item_lib.check_turn_in(e.trade, {item1 = (18153 or 18154)})) then
+	elseif (eq.handin({[18153] = 1}) or eq.handin({[18154] = 1})) then
 		local random_gold = math.random(12);
 		e.self:Say("Incoming mail - very good! Please take this gold for your troubles.");
 		e.other:Ding();
@@ -34,7 +32,5 @@ function event_trade(e)
 		e.other:AddEXP(1550);
 		e.other:GiveCash(0,0,random_gold,0);
 	end
-	
-	item_lib.return_items(e.self, e.other, e.trade)
 	
 end

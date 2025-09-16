@@ -1,7 +1,5 @@
 function event_say(e)
 	if e.message:findi("hail") then
-		e.self:Say("Hello " .. e.other:GetName() .. ". Welcome to the Kunark translocation area. The [teleport system] back to Norrath is completely automated. I have no direct control over when the portal will turn on, although I can say that the system works on a schedule of approximately ten minutes.");
-    elseif e.message:findi("teleport system") then
-		e.self:Say("The teleport system is pretty simple from your perspective. Simply listen for the voice saying that the portals will become active soon. When the time nears, you should stand on the elevated pad you see next to me. Shortly after you see the message that the teleporters are active, you will be transported to your destination..");
+		e.self:Say("Hello, $name. Welcome to the Kunark translocation area. Please step onto the pad and when the teleport is activated you will be taken to your destination.");
 	end
 end

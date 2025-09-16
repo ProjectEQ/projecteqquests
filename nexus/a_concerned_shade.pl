@@ -1,0 +1,18 @@
+sub EVENT_SAY {
+  if ($text=~/hail/i) {
+    quest::say("Oh, good. I was hoping I could speak with some adventurers if I waited here. I have been sent on behalf of Mayong Mistmoore. The lord of blood has gone missing and I am hoping to find some heroes to go find him. We are aware that you may have a history with Mayong and that you may not wish to assist us in finding him. However, I can assure you that [omens] of great dread have been sent to us. Finding him will prove critical in the righting of a horrible wrong, to the restoration of the way things should be. I cannot elaborate upon these omens, as they are not fully understood.");
+  }
+  elsif ($text=~/omens/i) {
+    quest::say("Shadow and blood are all we see, along with a sense of treachery and stolen power and a sense of urgency and dread. I am not one to ask favors of flesh and blood creatures, but I must. I have taken some of the [stones] these wizards use to link people to places so that the power in this place can send them there. I have infused them with magic that will instead take you to the place you must start your search, Maiden's Eye. You will need to take care, however. The Akheva have grown stronger. Their faith seems to have been restored and their drive to rule enhanced. I believe that it is this that Mayong was [looking into].");
+  }
+  elsif ($text=~/stones/i) {
+    quest::say("This is that stone. Keep it on your person and enter the space between the spires. When the call comes to transport people to Lceanium, this stone will take you to Maiden's Eye instead. If, of course, you have the other, unchanged, version of this stone, its power will override the altered one and you will find yourself in Lceanium.");
+    quest::summonitem(145329); # Item: Spire Stone of Maiden's Eye
+  }
+  elsif ($text=~/looking into/i) {
+    quest::say("He was acting oddly before he left. He spoke to his commanders and other leaders openly about where he was going. Many were uncomfortable, as the room was well lit and such creatures are shy of the light. I only heard about this afterward, for I am not one of those leaders, only a messenger. I heard those leaders whispering to each other. I must admit that I wished to harm them, for the very first thing that they whispered was that their master told them not to discuss what they were told outside of that meeting, and that was exactly what I found them doing. I can repeat to you [what they said], as I was not given any such orders.");
+  }
+  elsif ($text=~/what they said/i) {
+    quest::say("It turns out that they knew very little. Mayong told them that he was going to leave to investigate the shadows, to attempt to settle an ancient conflict. He told them that they were to continue on as if he was still in residence, as they often do. The lord of blood is rarely in his various castles. Then those 'trusted servants' went on to speculate, suggesting that their master was going to investigate the Akheva or perhaps even their goddess, Luclin. They implied that the Maiden of Shadow, the Mistress of Whispers, might have treated their master poorly long, long ago. But the nature of that mistreatment was unknown, only that they had seen research their lord had done on Shadow, potions of shade and various magical items with similar powers. Their speculation then passed on to useless, trivial, and petty matters of intrigue in their court and I grew bored. When I told this to one of the seers, they told me of the portents and tasked me with finding you and urging you to seek out Mayong on Luclin.");
+  }
+}

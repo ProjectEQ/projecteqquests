@@ -1,7 +1,7 @@
 function event_say(e)
 	if e.message:findi("hail") then
-		e.self:Say("Greetings " .. e.other:GetName() .. ". I am Kendal Groetan. I am here to assist and watch over those who wish to return to the continent of Odus. Due to the limited space I share this area with the portal to Velious. The [teleport system] back to Norrath is completely automated. I have no direct control over when the portal will turn on, although I can say that the system works on a schedule of approximately ten minutes.");
-    elseif e.message:findi("teleport system") then
-		e.self:Say("The teleport system is pretty simple from your perspective. Simply listen for the voice saying that the portals will become active soon. When the time nears, you should stand on the elevated pad you see next to me. Shortly after you see the message that the teleporters are active, you will be transported to your destination..");
+		e.self:Say("Greetings, " .. e.other:GetName() .. ". I am Kendal Groetan. I am here to assist and watch over those who wish to return to the continent of Odus.  A voice will shout throughout the zone informing you of when the [teleports] will become active. When you are told, proceed onto the pad and await teleportation.");
+    elseif e.message:findi("teleports") then
+		e.self:Say("The teleports become active approximately four times an hour. Most of the time, you can catch them midcycle, reducing your wait time. When told to, walk onto the pad and you will be teleported.");
 	end
 end

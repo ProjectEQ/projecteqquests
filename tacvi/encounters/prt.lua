@@ -149,6 +149,9 @@ function PRT_Timer(e)
 		golems_spawn = false;
 		construct = 0;		
 		eq.signal(298223,2); -- Unlock Doors
+		e.self:SetSpecialAbility(SpecialAbility.flurry, 0);
+		e.self:SetSpecialAbilityParam(SpecialAbility.flurry, 0, 0)
+		e.self:ModifyNPCStat("attack_delay","16");
 	elseif (e.timer == "check") then
 		local instance_id = eq.get_zone_instance_id();
 		e.self:ForeachHateList(

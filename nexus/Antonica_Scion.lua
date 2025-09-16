@@ -5,8 +5,3 @@ function event_say(e)
 		e.self:Say("The teleport system is pretty simple from your perspective. Simply listen for the voice saying that the portals will become active soon. When the time nears, you should stand on the elevated pad you see next to me. Shortly after you see the message that the teleporters are active, you will be transported to your destination..");
 	end
 end
-
-function event_trade(e)
-	local item_lib = require("items");
-	item_lib.return_items(e.self, e.other, e.trade)
-end

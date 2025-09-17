@@ -13,7 +13,7 @@ function event_say(e)
 	elseif (e.message:findi("shadowed rapier")) then
 		e.self:Say("Shadowed men, foes to all, have appeared. Many lands do they walk. Invisible are they, but for the items they wield. Seek them out and return to me a shadowed rapier. Return it with haste before 'poof' goes the rapier!! No time to camp have you.");
 	elseif (e.message:findi("ring of the ancients")) then
-		e.self:Say("Ancient cyclopes [sic] do march the land. Long have they lived and crafted the rings of the ancients. I must have one and you shall go and fetch one for me. Seek the lands of the oldest cyclops clans. Seek the plains, seek the island in tears and search the dunes for there is one who is last. His clan was blown from the sands.");
+		e.self:Say("Ancient cyclopes do march the land. Long have they lived and crafted the rings of the ancients. I must have one and you shall go and fetch one for me. Seek the lands of the oldest cyclops clans. Seek the plains, seek the island in tears and search the dunes for there is one who is last. His clan was blown from the sands.");
 	end
 end
 

@@ -144,7 +144,7 @@ quest::movepc(68,-220.70,2758.13,7.16) ;
   if($text=~/The Overthere/i)
   {
   quest::say("Off you go!");
-  quest::movepc(93,2436.84,3076.81,-52.10);
+ quest::movepc(93,1776.32,3358.73,-48.10);
   } 
   
    if($text=~/Plane of Sky/i)

@@ -66,5 +66,11 @@ sub EVENT_KILLED_MERIT {
 		when (212055) {quest::setglobal("pop_sol_ro_xuzl", 1, 5, "F"); $client->Message(4,"You receive a character flag!");}
 		# Solusek_Ro in Solusek Ro Tower
 		when (212025) {quest::setglobal("pop_sol_ro_solusk", 1, 5, "F"); $client->Message(4,"You receive a character flag!");}
+		# Quarm in Plane of Time
+		when (223201) {$client->AddAAPoints(1); $client->Message(4,"You receive an Alternate Advancement point!");}
+		# Emperor Ssraeshza in Ssraeshza Temple
+		when (162227) {$client->AddAAPoints(1); $client->Message(4,"You receive an Alternate Advancement point!");}
+		# Vulak`Aerr in Temple of Veeshan
+		when (124155) {$client->AddAAPoints(1); $client->Message(4,"You receive an Alternate Advancement point!");}
 	}
 }

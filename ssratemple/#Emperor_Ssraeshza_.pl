@@ -1,37 +1,35 @@
-#BEGIN File: ssratemple\#Emperor_Ssraeshza_.pl (Real)
+# quests/ssratemple/#Emperor_Ssraeshza_.pl
+my $activated = 0;
 
-my $engaged;
+sub _activate {
+  return if $activated;
+  $npc->SetSpecialAbility(24, 0); # WILL_NOT_AGGRO off
+  $npc->SetSpecialAbility(25, 0); # IMMUNE_AGGRO off
+  # hate nudge so he picks a target
+  my @clients = $entity_list->GetClientList();
+  foreach my $c (@clients) {
+    next if !$c;
+    if ($c->CalculateDistance($npc->GetX(), $npc->GetY(), $npc->GetZ()) <= 150) {
+      $npc->AddToHateList($c, 50);
+      last;
+    }
+  }
+  $activated = 1;
+}
 
 sub EVENT_SPAWN {
-  $engaged = 0;
-  quest::settimer("EmpDepop", 1800);
+  # spawn locked; controller will unlock
+  $npc->SetSpecialAbility(24, 1);
+  $npc->SetSpecialAbility(25, 1);
 }
 
-sub EVENT_TIMER {
-  quest::stoptimer("EmpDepop");
-  quest::signalwith(162260,3,0); #EmpCycle
-  quest::depop();
-}
+sub EVENT_SIGNAL { if ($signal == 1) { _activate(); } }
 
-sub EVENT_COMBAT {
-  if (($combat_state == 1) && ($engaged == 0)) {
-    quest::settimer("EmpDepop", 2400);
-    $engaged = 1;
-  }
-}
-  
 sub EVENT_DEATH_COMPLETE {
   quest::emote("'s corpse says 'How...did...ugh...'");
-  quest::spawn2(162210,0,0,877, -326, 408,385); # NPC: A_shissar_wraith
-  quest::spawn2(162210,0,0,953, -293, 404,385); # NPC: A_shissar_wraith
-  quest::spawn2(162210,0,0,953, -356, 404,385); # NPC: A_shissar_wraith
-  quest::spawn2(162210,0,0,773, -360, 403,128); # NPC: A_shissar_wraith
-  quest::spawn2(162210,0,0,770, -289, 403,128); # NPC: A_shissar_wraith
-  quest::signalwith(162260,2,0); #EmpCycle
+  quest::spawn2(162210,0,0,877, -326, 408,385);
+  quest::spawn2(162210,0,0,953, -293, 404,385);
+  quest::spawn2(162210,0,0,953, -356, 404,385);
+  quest::spawn2(162210,0,0,773, -360, 403,128);
+  quest::spawn2(162210,0,0,770, -289, 403,128);
 }
-
-sub EVENT_SLAY {
-  quest::say("Your god has found you lacking.");
-}
-
-# EOF zone: ssratemple ID: 162227 NPC: #Emperor_Ssraeshza_ (Real)

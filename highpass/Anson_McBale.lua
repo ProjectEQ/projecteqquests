@@ -1,40 +1,57 @@
 -- items: 28014
 function event_say(e)
-	local fac = e.other:GetFaction(e.self);
-	local class = e.other:Class();
-	local level = e.other:GetLevel();
-	
-	if(fac <= 5) then
-		if(e.message:findi("hail")) then
-			e.self:Emote("looks at you suspiciously. 'Yeah? Whacha want?'");
-		elseif(e.message:findi("see stanos") and class == "Rogue" and level >= 50) then
-			e.self:Say("This better be important.");
-			eq.spawn2(5088,0,0,336,10,45,450); -- NPC: Stanos_Herkanor
-		end
-	else
-		e.self:Say("Go away! We don't have time for the likes of you.");
-	end
+    local fac = e.other:GetFaction(e.self);
+    local class = e.other:Class();
+    local level = e.other:GetLevel();
+    
+    if(fac <= 5) then
+        if(e.message:findi("hail")) then
+            e.self:Emote("looks at you suspiciously. 'Yeah? Whacha want?'");
+        elseif(e.message:findi("see stanos")) then
+            if(class == "Rogue" and level >= 50) then
+                e.self:Say("This better be important.");
+                eq.spawn2(5088,0,0,336,10,45,450); -- NPC: Stanos_Herkanor
+            elseif(class ~= "Rogue") then
+                e.self:Say("Only rogues have any business with Stanos.");
+            elseif(level < 50) then
+                e.self:Say("You’re too inexperienced. Come back when you’ve proven yourself more.");
+            end
+        end
+    else
+        e.self:Say("Go away! We don't have time for the likes of you. Your reputation with us is far too poor.");
+    end
 end
 
 function event_trade(e)
-	local item_lib = require("items");
-	if(item_lib.check_turn_in(e.trade, {item1 = 28014}) and e.other:Class() == "Rogue" and e.other:GetLevel() >= 50) then
-		e.self:Say("Ah, we have been expecting this. Let me get Stanos, he will want to inspect it first, but here are your coins.");
-		e.other:Ding();
-		e.other:Faction(332,50,0); -- Faction: Highpass Guards
-		e.other:Faction(329,7,0); -- Faction: Carson McCabe
-		e.other:Faction(331,7,0); -- Faction: Merchants of Highpass
-		e.other:Faction(230,2,0); -- Faction: Corrupt Qeynos Guards
-		e.other:Faction(330,2,0); -- Faction: The Freeport Militia
-		e.other:AddEXP(500);
-		e.other:Message(MT.Yellow,"You receive 35 platinum from Anson McBale.")
-		e.other:AddMoneyToPP(0, 0, 0, 35, true);
-		eq.spawn2(5088,0,0,336,10,45,450); -- NPC: Stanos_Herkanor
-	end
-	item_lib.return_items(e.self, e.other, e.trade)
+    local item_lib = require("items");
+    local class = e.other:Class();
+    local level = e.other:GetLevel();
+
+    if(item_lib.check_turn_in(e.trade, {item1 = 28014})) then
+        if(class == "Rogue" and level >= 50) then
+            e.self:Say("Ah, we have been expecting this. Let me get Stanos, he will want to inspect it first, but here are your coins.");
+            e.other:Ding();
+            e.other:Faction(332,50,0); -- Faction: Highpass Guards
+            e.other:Faction(329,7,0);  -- Faction: Carson McCabe
+            e.other:Faction(331,7,0);  -- Faction: Merchants of Highpass
+            e.other:Faction(230,2,0);  -- Faction: Corrupt Qeynos Guards
+            e.other:Faction(330,2,0);  -- Faction: The Freeport Militia
+            e.other:AddEXP(500);
+            e.other:Message(MT.Yellow,"You receive 35 platinum from Anson McBale.");
+            e.other:AddMoneyToPP(0, 0, 0, 35, true);
+            eq.spawn2(5088,0,0,336,10,45,450); -- NPC: Stanos_Herkanor
+        elseif(class ~= "Rogue") then
+            e.self:Say("This means nothing to me. Only a rogue would know the value of this.");
+            e.other:SummonItem(28014); -- return the item
+        elseif(level < 50) then
+            e.self:Say("You are not ready yet. Return when you have more experience.");
+            e.other:SummonItem(28014); -- return the item
+        end
+    end
+    item_lib.return_items(e.self, e.other, e.trade)
 end
 
 function event_signal(e)
-	e.self:Say("Vilnius has always had a good eye for talent. I think we can trust this one. But will he trust us? You have to wonder if he even knows who we are...");
-	eq.signal(5088, 0); --stanos
+    e.self:Say("Vilnius has always had a good eye for talent. I think we can trust this one. But will he trust us? You have to wonder if he even knows who we are...");
+    eq.signal(5088, 0); --stanos
 end

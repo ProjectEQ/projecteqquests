@@ -35,3 +35,50 @@ sub EVENT_TIMER {
 	}
 	
 }
+
+sub EVENT_ITEM {
+	# consume item script for custom AA Stalwart Hardiness
+
+my $key = $client->CharacterID() . "-Stalwart_AA";
+my $value = quest::get_data($key);
+
+	if (plugin::check_handin(\%itemcount, 300002 => 1)) {
+		if(!defined($client->CharacterID() . "-Stalwart_AA") == 1){
+			quest::set_data($key, 0);
+		}
+		if ($value == 0){
+			$client->IncrementAA(6119);
+			quest::set_data($key, $value+1);
+		} else {
+			$client->Message(14, "You have learned nothing new!");
+		}
+	}
+
+	if (plugin::check_handin(\%itemcount, 300001 => 1)) {
+		if(!defined($client->CharacterID() . "-Stalwart_AA") == 1){
+			quest::set_data($key, 0);
+		}
+		if ($value == 1){
+			$client->IncrementAA(6119);
+			quest::set_data($key, $value+1);
+		} elsif ($value < 1) {
+			$client->Message(14, "You cannot use this item yet!");
+		} else {
+			$client->Message(14, "You have learned nothing new!");
+		}
+	}
+
+	if (plugin::check_handin(\%itemcount, 300000 => 1)) {
+		if(!defined($client->CharacterID() . "-Stalwart_AA") == 1){
+			quest::set_data($key, 0);
+		}
+		if ($value == 2){
+			$client->IncrementAA(6119);
+			quest::set_data($key, $value+1);
+		} elsif ($value < 2) {
+			$client->Message(14, "You cannot use this item yet!");
+		} else {
+			$client->Message(14, "You have learned nothing new!");
+		}
+	}
+}

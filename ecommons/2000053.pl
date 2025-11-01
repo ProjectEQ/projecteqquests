@@ -4,7 +4,7 @@ sub EVENT_SAY {
     my $aaint = $client->GetAAPoints();
 
     if ($text=~/Hail/i && $aaint >= $aabuy) {
-        plugin::Whisper("Ye be welcome $name, would ye like to " . quest::saylink("buy") . " a doubloon fer the low, low price o' $aabuy AA points today? You can trade these back in for 10 AA points by handing me a doubloon.  Make sure to hand them to me one at a time, since I can't count so well");
+        plugin::Whisper("Ye be welcome $name, would ye like to " . quest::saylink("buy") . " a doubloon fer the low, low price o' $aabuy AA points today? You can trade these back in for 25 AA points by handing me a doubloon.  Make sure to hand them to me one at a time, since I can't count so well");
     } 
         
 	if ($text=~/Buy/i && $aaint >= $aabuy) {

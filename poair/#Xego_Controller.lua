@@ -1,6 +1,6 @@
 function event_spawn(e)
   eq.set_timer('xegoevent', 6 * 1000);
-  eq.set_timer('muzlakh', 60);
+  eq.set_timer('muzlakh', 30 * 60 * 1000); -- 30 minutes
 end
 
 

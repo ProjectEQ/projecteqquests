@@ -8,16 +8,17 @@ function event_enter_zone(e)
 end
 
 function event_click_door(e)
-	local qglobals = eq.get_qglobals(e.self)
-	-- chair to click down to bertox event
-	if (e.door:GetDoorID() == 7) then
-		if(qglobals["pop_cod_preflag"] == "1" or e.self:GetGM()) then
-			e.self:MovePC(200, 0, -16, -289, 256)
-		else
-			--made up
-			e.self:Message(MT.Default, "There is still more work to be done.")
-		end
-	end
+    local qglobals = eq.get_qglobals(e.self)
+
+    -- Chair to click down to Bertoxxulous event
+    if e.door:GetDoorID() == 7 then
+        if (qglobals["pop_cod_preflag"] == "1") or e.self:GetGM() then
+            -- Move within the same zone (no zoning)
+            e.self:GMMove(0, -16, -289, 256)  -- X, Y, Z, Heading
+        else
+            e.self:Message(MT.Default, "There is still more work to be done.")
+        end
+    end
 end
 
 function event_loot(e)

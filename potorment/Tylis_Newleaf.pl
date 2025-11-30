@@ -16,8 +16,7 @@ sub EVENT_SIGNAL {
 }
 
 sub EVENT_SAY {
-	
-	if ($pop_pot_shadyglade == 1) {
+	if ($qglobals{pop_pot_shadyglade} == 1) {
 		if ($text=~/Hail/i && $sphere == undef) {
 			quest::emote("doesn't move, but struggles to whisper, '...help ...end this torment ...will you come? I can show you the pain... it moves in the shadows of my mind... will you assist me?'");
 		}
@@ -55,16 +54,13 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-
-	if ($pop_pot_shadyglade == 1 && plugin::check_handin(\%itemcount, 22954 => 1)) {
+	if ($qglobals{pop_pot_shadyglade} == 1 && quest::handin({22954 => 1})) { # Item: Screaming Sphere
 		quest::summonitem(22954); # Item: Screaming Sphere
 		quest::say("Please tell me when you are ready. I do not know if I have enough energy to channel all of you, but I can try. When you are ready, I will channel you into my pain.");
 		quest::settimer(1,300);
 		$sphere = 1;
 	}
-  plugin::return_items(\%itemcount);
 }
-
 
 sub EVENT_TIMER {
     if ($timer == 1) {
@@ -76,6 +72,4 @@ sub EVENT_TIMER {
         $npc->SetAppearance(3);
     }
 }
-
 # End of File  Zone: PoTorment  ID: 207014 -- Tylis_Newleaf
-# Written by Romai, so you have someone to blame if I botch it

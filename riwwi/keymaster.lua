@@ -15,12 +15,17 @@ local SPAWN_LOCS = {
 
 local function is_item_on_ground(item_id)
   local list = eq.get_entity_list():GetObjectList()
-  if not list or not list.entries then return false end
+
+  if not list or not list.entries then
+    return false
+  end
+
   for obj in list.entries do
     if obj.valid and obj:GetItemID() == item_id then
       return true
     end
   end
+
   return false
 end
 
@@ -29,29 +34,26 @@ local function spawn_random_ground_item(item_id)
   eq.create_ground_object(item_id, unpack(SPAWN_LOCS[idx]))
 end
 
-local function cooldown_active()
-  return eq.get_data(COOLDOWN_KEY) ~= nil
+local function is_cooldown_active()
+  if eq.get_data(COOLDOWN_KEY) == nil or eq.get_data(COOLDOWN_KEY) == '' then
+    return false
+  else
+    return true
+  end
 end
 
 local function start_cooldown()
-  eq.set_data(COOLDOWN_KEY, "1", RESPAWN_SECONDS)
+  eq.set_data(COOLDOWN_KEY, "1", tostring(RESPAWN_SECONDS))
 end
 
 function event_spawn(e)
   eq.set_timer(TIMER_NAME, CHECK_INTERVAL_MS)
-
-  if not is_item_on_ground(BIC_ITEM_ID) and not cooldown_active() then
-    spawn_random_ground_item(BIC_ITEM_ID)
-    start_cooldown()
-  end
 end
 
 function event_timer(e)
-  if e.timer ~= TIMER_NAME then return end
-
   local item_present = is_item_on_ground(BIC_ITEM_ID)
 
-  if not item_present and not cooldown_active() then
+  if not item_present and not is_cooldown_active() then
     spawn_random_ground_item(BIC_ITEM_ID)
     start_cooldown()
   end

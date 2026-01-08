@@ -18,7 +18,7 @@ if($text=~/ward/i && $pop_pod_alder_fuirstel == undef)
 	}
 if($text=~/hail/i && $pop_pod_alder_fuirstel == 1 && $pop_pod_grimmus_planar_projection == 1)
 	{
-	quest::say("Please you must hurry! Take the ward that surrounds you back to my brother and lift the sickness that has come over him!");
+	quest::say("Please you must hurry! Take the ward that surrounds you back to my brother, Elder Fuirstel, and lift the sickness that has come over him! You will find him in the Sickbay");
 
 	}
 {

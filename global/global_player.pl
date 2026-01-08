@@ -1,4 +1,18 @@
 # items: 67704
+
+# Discovery broadcast when an item is first identified by a player
+sub EVENT_DISCOVER_ITEM {
+    # $itemid is provided by the quest engine for this event
+    my $item_id = $itemid;
+    return unless $item_id;
+
+    my $item_link = quest::varlink($item_id);
+    my $name_link = ($client) ? $client->GetCleanName() : $name;
+
+    # 335 = same tint you used in Lua; world emote to all players
+    quest::we(335, $name_link . " has discovered " . $item_link . "! Yay!");
+}
+
 sub EVENT_ENTERZONE { #message only appears in Cities / Pok and wherever the Wayfarer Camps (LDON) is in.  This message won't appear in the player's home city.
   if($ulevel >= 15 && !defined($qglobals{Wayfarer})) {
     if($client->GetStartZone()!=$zoneid && ($zoneid == 1 || $zoneid == 2 || $zoneid == 3 || $zoneid == 8 || $zoneid == 9 || $zoneid == 10 || $zoneid == 19 || $zoneid == 22 || $zoneid == 23 || $zoneid == 24 || $zoneid == 29 || $zoneid == 30 || $zoneid == 34 || $zoneid == 35 || $zoneid == 40 || $zoneid == 41 || $zoneid == 42 || $zoneid == 45 || $zoneid == 49 || $zoneid == 52 || $zoneid == 54 || $zoneid == 55 || $zoneid == 60 || $zoneid == 61 || $zoneid == 62 || $zoneid == 67 || $zoneid == 68 || $zoneid == 75 || $zoneid == 82 || $zoneid == 106 || $zoneid == 155 || $zoneid == 202 || $zoneid == 382 || $zoneid == 383 || $zoneid == 392 || $zoneid == 393 || $zoneid == 408)) {
@@ -26,8 +40,8 @@ sub EVENT_COMBINE_VALIDATE {
 sub EVENT_COMBINE_SUCCESS {
     if ($recipe_id =~ /^1090[4-7]$/) {
         $client->Message(1,
-            "The gem resonates with power as the shards placed within glow unlocking some of the stone's power. ".
-            "You were successful in assembling most of the stone but there are four slots left to fill, ".
+            "The gem resonates with power as the shards placed within glow unlocking some of the stone's power. " .
+            "You were successful in assembling most of the stone but there are four slots left to fill, " .
             "where could those four pieces be?"
         );
     }

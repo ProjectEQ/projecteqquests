@@ -1,22 +1,8 @@
 #Guardian_of_Coirnav
 #Signals coirnav_controller with the Event start
 
-sub IsInstancePoWater {
-  my $iid2 = quest::GetInstanceID("powater", 2);
-  my $iid1 = quest::GetInstanceID("powater", 1);
-  return 1 if ($iid2 && $iid2 > 0);
-  return 1 if ($iid1 && $iid1 > 0);
-  return 0;
-}
-
 sub EVENT_SPAWN {
-  # If we're in an instance/DZ, ignore open-world lockout globals
-  if (IsInstancePoWater()) {
-    return;
-  }
-
-  # OPEN WORLD ONLY: respect the lockout
-  if (defined $qglobals{coirnav_done} && $qglobals{coirnav_done} == 3) {
+  if(defined $qglobals{coirnav_done} && $qglobals{coirnav_done} == 3) {
     quest::settimer(1,3);
   }
 }

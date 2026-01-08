@@ -1,20 +1,5 @@
 my $namedcount = 0; # Sets the named counter for later use
 
-# ---------- INSTANCE HELPER ----------
-sub IsInstancePoWater {
-  # check higher versions first since you said you have V0, V1, V2 of all NPCs
-  my $iid2 = quest::GetInstanceID("powater", 2);
-  my $iid1 = quest::GetInstanceID("powater", 1);
-
-  # if either v1 or v2 returns >0, we're in a DZ/instance
-  return 1 if ($iid2 && $iid2 > 0);
-  return 1 if ($iid1 && $iid1 > 0);
-
-  # otherwise treat as open world
-  return 0;
-}
-# -------------------------------------
-
 sub EVENT_SPAWN { #Only needed for #repop during testing
   quest::stopalltimers();
 }
@@ -22,7 +7,6 @@ sub EVENT_SPAWN { #Only needed for #repop during testing
 sub EVENT_SIGNAL {
   if ($signal == 1) { #signal on death of #Guardian_of_Coirnav
     SPAWN_WAVE1();
-
   } elsif ($signal == 2) { # Called when the weak version of the 3 named die
     if($qglobals{coirnav_wave} == 4) { # must be on wave 4
       my $pweloncheck = $entity_list->GetMobByNpcTypeID(216109);
@@ -34,7 +18,6 @@ sub EVENT_SIGNAL {
         SPAWN_WAVE5();
       }
     }
-
   } elsif($signal == 4) {
     if ($qglobals{coirnav_wave} == 3) { #make sure we're on 3rd wave
       my $check_trash1 = $entity_list->GetMobByNpcTypeID(216071); # - Triloun Vapourfiend
@@ -45,23 +28,17 @@ sub EVENT_SIGNAL {
         quest::depop(216065); # Depop "tough" #Nrinda_of_Ice
         quest::depop(216061); # Depop "tough" #Vamuil_of_Water
         quest::spawn2(216109,0,0,$x+5,$y-20,$z+5,138); # Repop weak Pwelon_of_Vapor
-        quest::spawn2(216108,0,0,$x-10,$y,$z+5,138);   # Repop weak Nrinda_of_Ice
+        quest::spawn2(216108,0,0,$x-10,$y,$z+5,138); # Repop weak Nrinda_of_Ice
         quest::spawn2(216110,0,0,$x+5,$y+20,$z+5,138); # Repop weak Vamuil_of_Water
         quest::setglobal("coirnav_wave", 4, 7, "M10");
       }
     }
-
   } elsif($signal == 5) { #Signalled on death of the real coirnav
     quest::stopalltimers();
     quest::depopall(216074); #Depop any remaining trash creatures Triloun-057, regrua-067, hraquis-074
     quest::depopall(216067);
     quest::depopall(216057);
-
-    # OPEN WORLD ONLY: apply the real lockout
-    if (!IsInstancePoWater()) {
-      quest::setglobal("coirnav_done", 3, 7, "H4"); # You can't attempt this again for 5 days
-    }
-
+    quest::setglobal("coirnav_done", 3, 7, "H4"); # You can't attempt this again for 5 days
     quest::spawn2(216066,0,0,$x,$y,$z,138); #Spawn Essence of Water
   }
 }
@@ -87,12 +64,7 @@ sub EVENT_TIMER {
     quest::depop(216108);
     quest::depop(216109);
     quest::depop(216110);
-
-    # OPEN WORLD ONLY: failed attempt lockout
-    if (!IsInstancePoWater()) {
-      quest::setglobal("coirnav_done", 3, 7, "H2"); # You can't attempt this again for 2 hours
-    }
-
+    quest::setglobal("coirnav_done", 3, 7, "H2"); # You can't attempt this again for 2 hours
     quest::settimer(7,45); # Reset kickout timer
   }
 
@@ -121,9 +93,8 @@ sub EVENT_TIMER {
 
   if($timer == 7){ # kick players
     quest::stoptimer(7);
-    KICK_ALL_PLAYERS();
+	KICK_ALL_PLAYERS();
   }
-
   if($timer == 8){ # Wave 4 check
     if ($qglobals{coirnav_wave} == 3) { #make sure we're on 3rd wave
       my $check_trash1 = $entity_list->GetMobByNpcTypeID(216071); # - Triloun Vapourfiend
@@ -134,7 +105,6 @@ sub EVENT_TIMER {
       }
     }
   }
-
   if($timer == 9) { #wave 5 check
     if($qglobals{coirnav_wave} == 4) { # must be on wave 4
       my $pweloncheck = $entity_list->GetMobByNpcTypeID(216109);
@@ -157,12 +127,12 @@ sub KICK_ALL_PLAYERS {
 }
 
 sub SPAWN_WAVE1 {
-  quest::settimer(1,1895);  # 15 Minute timer for the kickout event!! (Added 1000 seconds 5/15/2025 - Chan)
-  quest::settimer(2,580);   # 3 Minute timer for second wave spawn (Added 400 
-  quest::settimer(3,800);   # 5 Minute timer for third wave (Added 500
-  quest::settimer(4,600);   # 10 Minute timer for the emote(Added 600
-  quest::settimer(5,1220);  # 12 Minute timer for the emote(Added 400
-  quest::settimer(6,1440);  # 14 Minute timer for the emote(Added 
+  quest::settimer(1,1895); # 15 Minute timer for the kickout event!! (Added 1000 seconds 5/15/2025 - Chan)
+  quest::settimer(2,580); # 3 Minute timer for second wave spawn (Added 400 
+  quest::settimer(3,800); # 5 Minute timer for third wave (Added 500
+  quest::settimer(4,600); # 10 Minute timer for the emote(Added 600
+  quest::settimer(5,1220); # 12 Minute timer for the emote(Added 400
+  quest::settimer(6,1440); # 14 Minute timer for the emote(Added 
 
   quest::signalwith(216048,1,0); #Signal fake coirnav for first wave emote
   my $count = 0;
@@ -175,13 +145,13 @@ sub SPAWN_WAVE1 {
     $randPNY = int(rand(2));
     $randPNZ = int(rand(2));
     if($randPNX == 1) {
-      $randX = -$randX;
+	  $randX = -$randX;
     }
     if($randPNY == 1) {
-      $randY = -$randY;
+	  $randY = -$randY;
     }
     if($randPNZ == 1) {
-      $randZ = -$randZ;
+	  $randZ = -$randZ;
     }
     quest::spawn2(216071,0,0,$x+$randX,$y+$randY,$z+$randZ,$randH); # Triloun Vaporfiend
     $count ++;
@@ -202,13 +172,13 @@ sub SPAWN_WAVE2 {
     $randPNY = int(rand(2));
     $randPNZ = int(rand(2));
     if($randPNX == 1) {
-      $randX = -$randX;
+	  $randX = -$randX;
     }
     if($randPNY == 1) {
-      $randY = -$randY;
+	  $randY = -$randY;
     }
     if($randPNZ == 1) {
-      $randZ = -$randZ;
+	  $randZ = -$randZ;
     }
     quest::spawn2(216076,0,0,$x+$randX,$y+$randY,$z+$randZ,$randH); #Hraquis icefiend
     $count ++;
@@ -231,13 +201,13 @@ sub SPAWN_WAVE3 {
     $randPNY = int(rand(2));
     $randPNZ = int(rand(2));
     if($randPNX == 1) {
-      $randX = -$randX;
+	  $randX = -$randX;
     }
     if($randPNY == 1) {
-      $randY = -$randY;
+	  $randY = -$randY;
     }
     if($randPNZ == 1) {
-      $randZ = -$randZ;
+	  $randZ = -$randZ;
     }
     quest::spawn2(216060,0,0,$x+$randX,$y+$randY,$z+$randZ,$randH); # Regrua waterfiend
     $count ++;
@@ -252,7 +222,7 @@ sub SPAWN_WAVE4 {
   quest::depop(216065); # Depop "tough" #Nrinda_of_Ice
   quest::depop(216061); # Depop "tough" #Vamuil_of_Water
   quest::spawn2(216109,0,0,$x+5,$y-20,$z+5,138); # Repop weak Pwelon_of_Vapor
-  quest::spawn2(216108,0,0,$x-10,$y,$z+5,138);   # Repop weak Nrinda_of_Ice
+  quest::spawn2(216108,0,0,$x-10,$y,$z+5,138); # Repop weak Nrinda_of_Ice
   quest::spawn2(216110,0,0,$x+5,$y+20,$z+5,138); # Repop weak Vamuil_of_Water
   quest::setglobal("coirnav_wave", 4, 7, "M15");
   quest::stoptimer(8);
@@ -270,13 +240,13 @@ sub SPAWN_WAVE5 {
     $randPNY = int(rand(2));
     $randPNZ = int(rand(2));
     if($randPNX == 1) {
-      $randX = -$randX;
+	  $randX = -$randX;
     }
     if($randPNY == 1) {
-      $randY = -$randY;
+	  $randY = -$randY;
     }
     if($randPNZ == 1) {
-      $randZ = -$randZ;
+	  $randZ = -$randZ;
     }
     if ($count <= 9) {
       quest::spawn2(216057,0,0,$x+$randX,$y+$randY,$z+$randZ,$randH); #Triloun Vaporling
@@ -287,7 +257,7 @@ sub SPAWN_WAVE5 {
     }
     $count ++;
   }
-  quest::spawn2(216094,0,0,$x,$y,$z-10,138); # The Real Coirnav
+  quest::spawn2(216094,0,0,$x,$y,$z-10,138); # The Real Corinav
   quest::setglobal("coirnav_wave", 5, 7, "M10");
   quest::stoptimer(9);
 }

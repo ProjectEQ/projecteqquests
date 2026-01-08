@@ -26,7 +26,7 @@ sub EVENT_SAY {
         my $normalize_link = quest::saylink("normalize", 1);
 
         quest::say(
-            "Greetings, $name. (Lockout Oracle v$SCRIPT_VERSION) " .
+            "Greetings, $name." .
             "I can normalize ALL expedition lockouts on this server so that no timer " .
             "exceeds $MAX_HOURS hours. Click [$normalize_link] to apply this."
         );

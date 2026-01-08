@@ -1,5 +1,9 @@
+-- #War_Chieftan_Birak.lua
+-- When this Chieftain dies, tell the Warlord spawner to re-check.
+-- Kill order does NOT matter; the spawner decides when all 3 are dead.
+
+local WARLORD_SPAWNER_NPCID = 222023  -- #Warlord_Spawner
+
 function event_death_complete(e)
-	if not eq.get_entity_list():IsMobSpawnedByNpcTypeID(222020) and not eq.get_entity_list():IsMobSpawnedByNpcTypeID(222022) and not eq.get_entity_list():IsMobSpawnedByNpcTypeID(222021) and eq.get_entity_list():IsMobSpawnedByNpcTypeID(222023) and not eq.get_entity_list():IsMobSpawnedByNpcTypeID(222016) and not eq.get_entity_list():IsMobSpawnedByNpcTypeID(222017) and eq.get_entity_list():IsMobSpawnedByNpcTypeID(222018) then
-		eq.signal(222023,0); -- NPC: #Warlord_Spawner
-	end
+    eq.signal(WARLORD_SPAWNER_NPCID, 1)
 end

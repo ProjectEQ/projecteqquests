@@ -21,7 +21,7 @@ my %epics = (
         10652  => "Celetial fists",              # Monk Epic
         8495  => "Claw of the Savage Spirit",    # Beastlord Epic  
         8496  => "Claw of the Savage Spirit",    # Beastlord Epic
-
+        14341  => "Staff of the Four",           # Wizard Epic
         # Add missing epics here if you want ALL classes supported
 );
 

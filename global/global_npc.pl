@@ -1,17 +1,20 @@
 use v5.10;
 
-sub EVENT_SPAWN {
-    if ($npc->GetOwnerID() > 0 && $entity_list->GetMobByID($npc->GetOwnerID())->IsClient()) {
-        quest::settimer("Rename", 5);
-    }
+
+# global_npc.pl
+# Failsafe: if NPC is/was owned (pet/charm), block loot and wipe items on death.
+
+sub EVENT_DEATH_COMPLETE {
+  my $owner_id = 0;
+  eval { $owner_id = $npc->GetOwnerID(); };
+  $owner_id = 0 if (!$owner_id);
+
+  if ($owner_id > 0) {
+    $npc->ClearItemList();
+    $npc->SetLootable(0);
+  }
 }
 
-sub EVENT_TIMER {
-    if ($timer eq "Rename") {
-        quest::stoptimer("Rename");
-        $entity_list->GetClientByID($npc->GetOwnerID())->SignalClient(2);
-    }
-}
 
 sub EVENT_DEATH_COMPLETE {
 

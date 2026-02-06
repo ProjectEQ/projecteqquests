@@ -1,124 +1,68 @@
-###############################################
-# NPC: Lockout Oracle (Global Lockout Doctor)
-# Version 1.4 - 2025-11-24
-#
-# Behavior:
-#   - ANY PLAYER can use this NPC.
-#   - "hail"      -> explains function + shows clickable [normalize] link.
-#   - "normalize" -> clamps ALL rows in character_expedition_lockouts so
-#                   no lockout exceeds 9 hours.
-#
-# Summary:
-#   This script enforces the global server rule:
-#     "No lockout shall ever exceed 9 hours."
-###############################################
+# Epic Reforger NPC
+# Base epics -> Ancient (+2,000,000)
+# Primal epics (+1,000,000) -> Ancient (+1,000,000 more)
 
-my $SCRIPT_VERSION = "1.4";
-my $MAX_HOURS      = 9;
-my $MAX_SECONDS    = $MAX_HOURS * 3600;
+my %epics = (
+        5532   => "Water Sprinkler of Nem Ankh", # Cleric
+        1683   => "Celestial Fists",             # Monk
+        20488  => "Earthcaller",                 # Ranger
+        20487  => "Swiftwind",                   # Ranger alt
+        10099  => "Fiery Defender",              # Paladin
+        6640   => "Baton of Faith",              # Paladin alt
+        5504   => "SoulFire",                    # Paladin pre-epic
+        5127   => "Greenmist",                   # Shadowknight
+        14383  => "Innoruuk's Curse",            # Shadowknight alt
+        20544  => "Scythe of the Shadowed Soul", # Necromancer
+        20542  => "Singing Short Sword",         # Bard
+        10650  => "Staff of the Serpent",        # Enchanter
+        28034  => "Orb of Mastery",              # Magician
+        66177  => "Blade of Strategy",           # Warrior
+        66176  => "Blade of Tactics",            # Warrior
+        66175  => "Jagged Blade of War",         # Warrior
+        68299  => "Kerasian Axe of Ire",         # Berserker Epic
+        10651  => "Spear of Fate",               # Shaman Epic
+        11057  => "Ragebringer",                 # Rogue Epic
+        10652  => "Celetial fists",              # Monk Epic (typo kept as-is)
+        8495   => "Claw of the Savage Spirit",   # Beastlord Epic
+        8496   => "Claw of the Savage Spirit",   # Beastlord Epic (alt/dual)
+        14341  => "Staff of the Four",           # Wizard Epic
+        # Add missing epics here if you want ALL classes supported
+);
+
+use constant PRIMAL_OFFSET  => 1000000;
+use constant ANCIENT_OFFSET => 2000000;
 
 sub EVENT_SAY {
-
-    ###############################################
-    # GREETING — show clickable normalize link
-    ###############################################
-    if ($text =~ /hail/i) {
-        my $normalize_link = quest::saylink("normalize", 1);
-
-        quest::say(
-            "Greetings, $name. (Lockout Oracle v$SCRIPT_VERSION) " .
-            "I can normalize ALL expedition lockouts on this server so that no timer " .
-            "exceeds $MAX_HOURS hours. Click [$normalize_link] to apply this."
-        );
-        return;
-    }
-
-    ###############################################
-    # NORMALIZE (GLOBAL – ANYONE CAN USE)
-    ###############################################
-    if ($text =~ /normalize/i) {
-
-        quest::say("Loading database handle...");
-
-        # Load DB connection using EQEmu's built-in plugin
-        my $dbh = plugin::LoadMysql();
-        if (!$dbh) {
-            quest::say("Failed to obtain database handle.");
-            return;
-        }
-
-        ###############################################
-        # Step 1: Count rows violating the 9-hour rule
-        ###############################################
-        my $count_sql = qq{
-            SELECT COUNT(*) AS cnt
-            FROM character_expedition_lockouts
-            WHERE duration > $MAX_SECONDS
-               OR TIMESTAMPDIFF(SECOND, NOW(), expire_time) > $MAX_SECONDS
-        };
-
-        my $count = 0;
-        my $sth1  = $dbh->prepare($count_sql);
-
-        if ($sth1 && $sth1->execute()) {
-            if (my $row = $sth1->fetchrow_hashref()) {
-                $count = $row->{cnt} || 0;
-            }
-            $sth1->finish();
-        } else {
-            quest::say("Failed to count lockouts: " . ($dbh->errstr || "unknown error"));
-            $dbh->disconnect();
-            return;
-        }
-
-        if ($count == 0) {
-            quest::say("All expedition lockouts already comply with the ${MAX_HOURS}-hour limit.");
-            $dbh->disconnect();
-            return;
-        }
-
-        quest::say("Found $count lockout record(s) exceeding ${MAX_HOURS}h. Normalizing...");
-
-        ###############################################
-        # Step 2: Global clamp on ANY rows > 9 hours
-        ###############################################
-        my $update_sql = qq{
-            UPDATE character_expedition_lockouts
-            SET
-                duration = CASE
-                    WHEN duration > $MAX_SECONDS THEN $MAX_SECONDS
-                    ELSE duration
-                END,
-                expire_time = CASE
-                    WHEN TIMESTAMPDIFF(SECOND, NOW(), expire_time) > $MAX_SECONDS
-                    THEN DATE_ADD(NOW(), INTERVAL $MAX_SECONDS SECOND)
-                    ELSE expire_time
-                END
-            WHERE duration > $MAX_SECONDS
-               OR TIMESTAMPDIFF(SECOND, NOW(), expire_time) > $MAX_SECONDS
-        };
-
-        my $sth2 = $dbh->prepare($update_sql);
-        my $rows = 0;
-
-        if ($sth2 && $sth2->execute()) {
-            $rows = $sth2->rows;
-            $sth2->finish();
-        } else {
-            quest::say("Failed to update lockouts: " . ($dbh->errstr || "unknown error"));
-            $dbh->disconnect();
-            return;
-        }
-
-        $dbh->disconnect();
-
-        ###############################################
-        # Step 3: Report result
-        ###############################################
-        quest::say(
-            "Normalization complete. " .
-            "Rows needing correction: $count. Rows updated: $rows. " .
-            "No expedition lockout now exceeds $MAX_HOURS hours."
+    if ($text=~/hail/i) {
+        plugin::Whisper(
+            "Greetings, hero. Hand me your epic (base or Primal) and I will reforge it into its Ancient form. "
+            . "Base epics become Ancient directly; Primal epics are upgraded to Ancient."
         );
     }
+}
+
+sub EVENT_ITEM {
+
+    foreach my $base_id (keys %epics) {
+
+        my $primal_id  = $base_id + PRIMAL_OFFSET;
+        my $ancient_id = $base_id + ANCIENT_OFFSET;
+
+        # If they hand in a BASE epic -> give ANCIENT
+        if (plugin::check_handin(\%itemcount, $base_id => 1)) {
+            quest::summonitem($ancient_id);
+            plugin::Whisper("Your $epics{$base_id} has been reborn as an Ancient weapon!");
+            return;
+        }
+
+        # If they hand in a PRIMAL epic -> give ANCIENT
+        if (plugin::check_handin(\%itemcount, $primal_id => 1)) {
+            quest::summonitem($ancient_id);
+            plugin::Whisper("Your Primal $epics{$base_id} has been reforged into an Ancient weapon!");
+            return;
+        }
+    }
+
+    # If no matches, return items
+    plugin::return_items(\%itemcount);
 }

@@ -178,7 +178,7 @@ function Thrower_Death(e) -- Count these, if 2 Spawn Fortification mobs at their
 			eq.spawn2(218072,0,0,-575.21,-271.35,85.75,132.0); -- NPC: A_Stone_Fortification
 			eq.spawn2(218072,0,0,-575.24,-260.60,85.75,130.3); -- NPC: A_Stone_Fortification
 			eq.spawn2(218072,0,0,-574.49,-245.75,85.75,128.8); -- NPC: A_Stone_Fortification
-			throwing_dead=0;
+			thrower_dead=0;
 		end
 end
 			
@@ -811,7 +811,7 @@ function Dusty_Spawn(e)
 end
 
 function Dusty_Death(e)
-	eq.spawn2(218064,0,0,-250,04.-1373.41,-34.25,511); -- NPC: A_Dust_Devotee
+	eq.spawn2(218064,0,0,-250.04,-1373.41,-34.25,511); -- NPC: A_Dust_Devotee
 	eq.spawn2(218064,0,0,-200.04,-1297.00,-40.55,472.8); -- NPC: A_Dust_Devotee
 	eq.spawn2(218064,0,0,-217.44,-1238.85,-42.13,289.8); -- NPC: A_Dust_Devotee
 	eq.spawn2(218064,0,0,-296.53,-1238.57,-41.95,205.8); -- NPC: A_Dust_Devotee

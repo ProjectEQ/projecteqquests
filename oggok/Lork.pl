@@ -48,7 +48,7 @@ sub EVENT_ITEM {
     quest::faction(228,10); # Faction: Clurg
     quest::faction(261,-10); # Faction: Green Blood Knights
     quest::exp(100);
-    quest::ChooseRandom(13359,13355,2136,2130,2135,2132,2128);
+    quest::summonitem(quest::ChooseRandom(13359,13355,2136,2130,2135,2132,2128));
   }
   #do all other handins first with plugin, then let it do disciplines
   plugin::try_tome_handins(\%itemcount, $class, 'Warrior');

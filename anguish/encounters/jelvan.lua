@@ -1,4 +1,4 @@
--- Jevlan Event
+-- Jelvan Event
 
 local event_started		= false;
 local tanthi_aggro		= false;
@@ -14,10 +14,10 @@ local blessing_spell	= true;
 local lowest_npc		= 0;
 
 function Jelvan_Spawn()
-	clear_event(e);
+	clear_event();
 end
 
-function clear_event(e)
+function clear_event()
 	eq.stop_all_timers();
 	event_started		= false;
 	tanthi_aggro		= false;
@@ -38,7 +38,7 @@ function Jelvan_Say(e)
 			e.self:Say("The tormentors. They are trying to break me. They want me to be one of them. They want my power. You must [help] me. You must destroy them.");
 		elseif e.message:findi("help") then
 			e.self:Say("They must be killed! They... Can you here them? They are coming close. I will help you while I can, but I can already feel their taint seeping into my bones");
-			clear_event(e);
+			clear_event();
 			event_started		= true;
 			depopping			= true;
 			eq.unique_spawn(317099,0,0, -174, 2152, -149, 334);	-- NPC: Tanthi_the_Tormentor
@@ -94,13 +94,13 @@ function Jelvan_Timer(e)
 		end
 	elseif e.timer == "depop_event" then
 		if not tanthi_aggro and not tantho_aggro and not tanthu_aggro and depopping then -- Still not on aggro, reset event
-			clear_event(e);
+			clear_event();
 			eq.depop_all(317099);
 			eq.depop_all(317100);
 			eq.depop_all(317101);
 		end
 	elseif e.timer == "check_leash" then
-			Leash_Tormentors(e);
+			Leash_Tormentors();
 	elseif e.timer == "balance_check" and (tanthi_aggro or tantho_aggro or tanthu_aggro) then
 		local tanthi_hp		= 100;
 		local tantho_hp		= 100;
@@ -216,7 +216,7 @@ end
 function Tormentor_Combat(e)
 	local myid = e.self:GetNPCTypeID();
 	if e.joined then
-		eq.set_timer("cast", 	math.random(10,45) * 1000);
+		eq.set_timer("cast", math.random(10,45) * 1000);
 
 		if myid == 317099 then
 			tanthi_aggro = true;
@@ -259,7 +259,7 @@ function Tormentor_Timer(e)
 		eq.set_timer("cast", 45 * 1000);		
 	elseif e.timer == "check_leash" then	
 		if e.self:CalculateDistance( -256, 2100, -120.9) > 140 or e.self:GetZ() > -130 or e.self:GetZ() < -160 then
-			Leash_Tormentors(e);		
+			Leash_Tormentors();		
 		end
 	elseif e.timer == "unleash" then
 		eq.stop_timer("leasing");
@@ -295,15 +295,15 @@ function Leash_Tormentors()
 	local tanthu_u = eq.get_entity_list():GetNPCByNPCTypeID(317101);
 	
 	if tanthi_l.valid then
-		if tanthi_l:CalculateDistance( -256, 2100, -120.9) > 140 or tanthi_l:GetZ() > -130 or tanthi_l:GetZ() < -160 then
+		if tanthi_l:CalculateDistance(-256, 2100, -120.9) > 140 or tanthi_l:GetZ() > -130 or tanthi_l:GetZ() < -160 then
 			eq.signal(317099,1); -- NPC: Tanthi_the_Tormentor
 		end
 	elseif tantho_o.valid then
-		if tantho_o:CalculateDistance( -256, 2100, -120.9) > 140 or tantho_o:GetZ() > -130 or tantho_o:GetZ() < -160 then
+		if tantho_o:CalculateDistance(-256, 2100, -120.9) > 140 or tantho_o:GetZ() > -130 or tantho_o:GetZ() < -160 then
 			eq.signal(317100,1); -- NPC: Tantho_the_Tormentor
 		end
 	elseif tanthu_u.valid then
-		if tanthu_u:CalculateDistance( -256, 2100, -120.9) > 140 or tanthu_u:GetZ() > -130 or tanthu_u:GetZ() < -160 then
+		if tanthu_u:CalculateDistance(-256, 2100, -120.9) > 140 or tanthu_u:GetZ() > -130 or tanthu_u:GetZ() < -160 then
 			eq.signal(317101,1); -- NPC: Tanthu_the_Tormentor
 		end
 	end

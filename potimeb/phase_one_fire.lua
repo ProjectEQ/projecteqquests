@@ -52,7 +52,7 @@ function event_signal(e)
 
 			-- Check on which version to spawn
 			local expedition = eq.get_expedition()
-			if (expedition.valid and not expedition:HasLockout('Kazrok of Firer')) then
+			if (expedition.valid and not expedition:HasLockout('Kazrok of Fire')) then
 				eq.unique_spawn(223090,0,0,68,573,504,371);  	--#Kazrok_of_Fire (223090)
 			else
 				eq.unique_spawn(223244,0,0,68,573,504,371);	--#Shadow_of_Kazrok (223244)  PH version

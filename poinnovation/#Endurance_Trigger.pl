@@ -24,7 +24,7 @@ sub EVENT_SIGNAL {
     quest::spawn2(206079,0,0,-171,-734,3,376); # NPC: a_manaetic_gadget
     quest::spawn2(206078,0,0,-172,-785,3,386); # NPC: a_manaetic_device
   }
-  elseif ($counter == 16) {
+  elsif ($counter == 16) {
     quest::spawn2(206078,0,0,-266,-879,3,4); # NPC: a_manaetic_device
     quest::spawn2(206077,0,0,-314,-880,3,510); # NPC: a_manaetic_contraption
     quest::spawn2(206078,0,0,-406,-783,3,130); # NPC: a_manaetic_device
@@ -34,7 +34,7 @@ sub EVENT_SIGNAL {
     quest::spawn2(206079,0,0,-171,-734,3,376); # NPC: a_manaetic_gadget
     quest::spawn2(206077,0,0,-172,-785,3,386); # NPC: a_manaetic_contraption
   }
-  elseif($counter == 24) {
+  elsif($counter == 24) {
     quest::spawn2(206077,0,0,-266,-879,3,4); # NPC: a_manaetic_contraption
     quest::spawn2(206077,0,0,-314,-880,3,510); # NPC: a_manaetic_contraption
     quest::spawn2(206079,0,0,-406,-783,3,130); # NPC: a_manaetic_gadget
@@ -44,7 +44,7 @@ sub EVENT_SIGNAL {
     quest::spawn2(206077,0,0,-171,-734,3,376); # NPC: a_manaetic_contraption
     quest::spawn2(206078,0,0,-172,-785,3,386); # NPC: a_manaetic_device
   }
-  elseif ($counter == 32) {
+  elsif ($counter == 32) {
     quest::spawn2(206078,0,0,-266,-879,3,4); # NPC: a_manaetic_device
     quest::spawn2(206079,0,0,-314,-880,3,510); # NPC: a_manaetic_gadget
     quest::spawn2(206079,0,0,-406,-783,3,130); # NPC: a_manaetic_gadget
@@ -54,7 +54,7 @@ sub EVENT_SIGNAL {
     quest::spawn2(206078,0,0,-171,-734,3,376); # NPC: a_manaetic_device
     quest::spawn2(206079,0,0,-172,-785,3,386); # NPC: a_manaetic_gadget
   }
-  elseif ($counter == 40) {
+  elsif ($counter == 40) {
     quest::spawn2(206082,0,0,-266,-879,3,4); # NPC: a_manaetic_contraption
     quest::spawn2(206083,0,0,-314,-880,3,510); # NPC: a_manaetic_device
     quest::spawn2(206082,0,0,-406,-783,3,130); # NPC: a_manaetic_contraption
@@ -64,10 +64,10 @@ sub EVENT_SIGNAL {
     quest::spawn2(206082,0,0,-171,-734,3,376); # NPC: a_manaetic_contraption
     quest::spawn2(206083,0,0,-172,-785,3,386); # NPC: a_manaetic_device
   }
-  elseif ($counter == 48) {
+  elsif ($counter == 48) {
     quest::spawn2(206080,0,0,-289,-760,2,500); # NPC: #Assistant_Kelrig
   }
-  elseif ($counter == 56) {
+  elsif ($counter == 56) {
     quest::spawn2(206078,0,0,-266,-879,3,4); # NPC: a_manaetic_device
     quest::spawn2(206077,0,0,-314,-880,3,510); # NPC: a_manaetic_contraption
     quest::spawn2(206078,0,0,-406,-783,3,130); # NPC: a_manaetic_device
@@ -77,7 +77,7 @@ sub EVENT_SIGNAL {
     quest::spawn2(206078,0,0,-171,-734,3,376); # NPC: a_manaetic_device
     quest::spawn2(206078,0,0,-172,-785,3,386); # NPC: a_manaetic_device
   }
- elseif ($counter == 64) {
+ elsif ($counter == 64) {
     quest::spawn2(206078,0,0,-266,-879,3,4); # NPC: a_manaetic_device
     quest::spawn2(206079,0,0,-314,-880,3,510); # NPC: a_manaetic_gadget
     quest::spawn2(206078,0,0,-406,-783,3,130); # NPC: a_manaetic_device
@@ -87,7 +87,7 @@ sub EVENT_SIGNAL {
     quest::spawn2(206077,0,0,-171,-734,3,376); # NPC: a_manaetic_contraption
     quest::spawn2(206077,0,0,-172,-785,3,386); # NPC: a_manaetic_contraption
   }
-  elseif ($counter == 72) {
+  elsif ($counter == 72) {
     quest::spawn2(206082,0,0,-266,-879,3,4); # NPC: a_manaetic_contraption
     quest::spawn2(206083,0,0,-314,-880,3,510); # NPC: a_manaetic_device
     quest::spawn2(206082,0,0,-406,-783,3,130); # NPC: a_manaetic_contraption
@@ -97,7 +97,7 @@ sub EVENT_SIGNAL {
     quest::spawn2(206082,0,0,-171,-734,3,376); # NPC: a_manaetic_contraption
     quest::spawn2(206083,0,0,-172,-785,3,386); # NPC: a_manaetic_device
   }
-  elseif ($counter == 80) {
+  elsif ($counter == 80) {
     quest::signalwith(206080,1,1); # NPC: #Assistant_Kelrig
   }
 }

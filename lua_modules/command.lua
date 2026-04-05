@@ -1,6 +1,6 @@
 --copy or symbolic link this file to /server/lua_modules/, it will not work in /server/quests/lua_modules/
 
-local commands_path = "lua_modules/commands/";
+local commands_path = "commands/";
 local commands      = { };
 
 commands["don"]       = { 80,  require(commands_path .. "don") };

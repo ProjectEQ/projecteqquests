@@ -1,4 +1,7 @@
 -- items: 9963, 17323
+local trade_count = 0;
+local max_trades = 6;
+
 function event_spawn(e)
 	eq.set_timer("depop",240*1000);
 end
@@ -28,11 +31,15 @@ end
 function event_trade(e)
 	local item_lib = require("items");
 	if(item_lib.check_turn_in(e.trade, {item1 = 9963})) then
+		trade_count = trade_count + 1;
 		e.self:Emote(" laughs quietly as the energy of the gem is absorbed into her being. She begins to chant in what you presume to be Akhevan. She suddenly cries out in pain and her image begins to flicker. She looks at " .. e.other:GetName() .. " directly in the eyes and says, 'Vyanemis Tuis, use my gift wisely.' She disappears into the black marble leaving only a dark scepter frame lying on the floor. " .. e.other:GetName() .. " picks it up.");
 		e.other:SummonItem(17323); -- Item: Shadowed Scepter Frame
 		e.other:AddEXP(20000);
 		e.other:Ding();
-		eq.depop();
+		if(trade_count >= max_trades) then
+			eq.depop();
+			trade_count = 0;
+		end
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end

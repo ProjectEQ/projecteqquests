@@ -21,10 +21,13 @@ sub IsInstancePoWater {
   return ScopeInstanceId() > 0;
 }
 
-sub EventGlobalKey {
-  my ($base) = @_;
-  my $iid = ScopeInstanceId();
-  return ($iid > 0) ? "${iid}_${base}" : $base;
+sub OwLockoutKey {
+  return "powater-ow-coirnav_done";
+}
+
+sub SetOwLockout {
+  my ($duration) = @_;
+  quest::set_data(OwLockoutKey(), 3, $duration);
 }
 
 sub EventDataKey {
@@ -41,23 +44,17 @@ sub GetCoirnavWave {
   if (defined $w && $w ne "") {
     return int($w);
   }
-  my $gkey = EventGlobalKey("${EVENT_PREFIX}_wave");
-  if (defined $qglobals{$gkey}) {
-    return int($qglobals{$gkey});
-  }
   return 0;
 }
 
 sub SetCoirnavWave {
   my ($val) = @_;
   quest::set_data(EventDataKey("${EVENT_PREFIX}_wave"), $val, $DATA_TTL);
-  quest::setglobal(EventGlobalKey("${EVENT_PREFIX}_wave"), $val, 7, "M15");
 }
 
 sub ClearCoirnavEventState {
   quest::delete_data(EventDataKey("${EVENT_PREFIX}_wave"));
   quest::delete_data(EventDataKey("${EVENT_PREFIX}_fail_at"));
-  quest::delglobal(EventGlobalKey("${EVENT_PREFIX}_wave"));
 }
 
 sub ApplyDzLockout {
@@ -109,7 +106,7 @@ sub TriggerEventFail {
   ClearCoirnavEventState();
 
   if (!IsInstancePoWater()) {
-    quest::setglobal("coirnav_done", 3, 7, "H2");
+    SetOwLockout("H2");
   }
 
   ApplyDzLockout();
@@ -161,7 +158,7 @@ sub EVENT_SIGNAL {
     ClearCoirnavEventState();
 
     if (!IsInstancePoWater()) {
-      quest::setglobal("coirnav_done", 3, 7, "H4");
+      SetOwLockout("H4");
     }
 
     ApplyDzLockout();

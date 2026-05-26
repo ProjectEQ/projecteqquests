@@ -16,8 +16,11 @@ sub IsInstancePoWater {
 }
 
 sub EVENT_SPAWN {
-  if (!IsInstancePoWater() && defined $qglobals{coirnav_done}) {
-    quest::delglobal("coirnav_done");
+  if (!IsInstancePoWater()) {
+    my $lockout = quest::get_data("powater-ow-coirnav_done");
+    if (defined $lockout && $lockout ne "") {
+      quest::delete_data("powater-ow-coirnav_done");
+    }
   }
 }
 

@@ -21,7 +21,8 @@ sub EVENT_SPAWN {
     return;
   }
 
-  if (defined $qglobals{coirnav_done} && $qglobals{coirnav_done} == 3) {
+  my $lockout = quest::get_data("powater-ow-coirnav_done");
+  if (defined $lockout && $lockout ne "" && int($lockout) == 3) {
     quest::settimer(1, 3);
   }
 }

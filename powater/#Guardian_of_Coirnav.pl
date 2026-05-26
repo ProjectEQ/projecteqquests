@@ -1,23 +1,28 @@
 #Guardian_of_Coirnav
 #Signals coirnav_controller with the Event start
 
+sub ScopeInstanceId {
+  if (defined $instanceid && $instanceid > 0) {
+    return $instanceid;
+  }
+  my $iid = quest::GetInstanceID("powater", 2);
+  if (!$iid || $iid == 0) {
+    $iid = quest::GetInstanceID("powater", 1);
+  }
+  return $iid || 0;
+}
+
 sub IsInstancePoWater {
-  my $iid2 = quest::GetInstanceID("powater", 2);
-  my $iid1 = quest::GetInstanceID("powater", 1);
-  return 1 if ($iid2 && $iid2 > 0);
-  return 1 if ($iid1 && $iid1 > 0);
-  return 0;
+  return ScopeInstanceId() > 0;
 }
 
 sub EVENT_SPAWN {
-  # If we're in an instance/DZ, ignore open-world lockout globals
   if (IsInstancePoWater()) {
     return;
   }
 
-  # OPEN WORLD ONLY: respect the lockout
   if (defined $qglobals{coirnav_done} && $qglobals{coirnav_done} == 3) {
-    quest::settimer(1,3);
+    quest::settimer(1, 3);
   }
 }
 
@@ -27,7 +32,7 @@ sub EVENT_AGGRO {
 
 sub EVENT_DEATH_COMPLETE {
   quest::say("Even now Coirnav awaits to deal swift death to you. Flee, weaklings.");
-  quest::signalwith(216107,1,0); # NPC: #coirnav_controller
+  quest::signalwith(216107, 1, 0);
 }
 
 sub EVENT_TIMER {

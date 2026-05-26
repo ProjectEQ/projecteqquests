@@ -11,6 +11,7 @@ function Lockouts_Def.Lockout_Globals()
 			{ "ikkylockout5", "Ikkinz Raid #3: Chambers of Transcendence"},
 			{ "ikkylockout6", "Ikkinz Raid #4: Chambers of Destruction"},
 			{ "uqualockout", "Uqua, the Ocean God Chantry"},
+			{ "Reef of Coirnav", "Reef of Coirnav (DZ)" },
 			{ "Ink_Kelekdrix", "Kelekdrix, Herald of Trushar" },
 			{ "Ink_Mites", "Stonemite Event" },
 			{ "Ink_Golems", "Inktu`Ta Golems" },

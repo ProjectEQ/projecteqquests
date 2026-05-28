@@ -3,10 +3,12 @@
 local commands_path = "commands/";
 local commands      = { };
 
-commands["don"]       = { 80,  require(commands_path .. "don") };
-commands["endurance"] = { 50,  require(commands_path .. "endurance") };
-commands["lockouts"]  = { 0,   require(commands_path .. "lockouts") };
-commands["timeleft"]  = { 0,   require(commands_path .. "time_left") };
+commands["don"]       = { 80, require(commands_path .. "don") };
+commands["endurance"] = { 50, require(commands_path .. "endurance") };
+commands["lockouts"]  = {  0, require(commands_path .. "lockouts") };
+commands["timeleft"]  = {  0, require(commands_path .. "time_left") };
+commands["hotzone"]   = {  0, require(commands_path .. "hotzone") };
+commands["hotzones"]  = {  0, require(commands_path .. "hotzone") };
 
 function eq.DispatchCommands(e)
 	local command = commands[e.command];

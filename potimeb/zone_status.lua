@@ -1,7 +1,7 @@
 -- NPC ID 223097
 
 local scope = require("quest_scope")
-local DATA_TTL = "M32"
+local DATA_TTL = "M10080" -- match 7-day instance duration
 
 local charid_list;
 local entity_list;
@@ -238,7 +238,7 @@ function RestorePhaseThreeEnvironment()
 	for _, boss in ipairs(P3_BOSS_SPAWNS) do
 		if not expedition:HasLockout(boss.lockout) then
 			local spawn_id = boss.id
-			if boss.wave < wave then
+			if boss.id ~= boss.target and boss.wave <= wave then
 				spawn_id = boss.target
 			end
 			eq.spawn2(spawn_id, 0, 0, boss.x, boss.y, boss.z, boss.h)
@@ -247,6 +247,12 @@ function RestorePhaseThreeEnvironment()
 end
 
 function BeginPhaseThree()
+	local expedition = GetExpedition()
+	if expedition.valid and expedition:HasLockout(PHASE3COMPLETE) then
+		ClearPersistedState()
+		return
+	end
+
 	local saved_phase = scope.get_data("p3_phase")
 	if saved_phase and saved_phase ~= "" then
 		current_phase = saved_phase
@@ -410,6 +416,9 @@ function event_signal(e)
 	elseif (e.signal == 7) then
 		current_phase = "QuarmDead";
 		eq.set_timer("lockout", 50 * 60 * 1000);
+	-- signal 9 clears persisted Phase 3 bucket (GM reset / token skip repop)
+	elseif (e.signal == 9) then
+		ClearPersistedState()
 	-- signal 8 comes from Druzzil_Ro
 	elseif (e.signal == 8) then
 		-- update the zone status

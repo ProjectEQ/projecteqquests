@@ -36,6 +36,7 @@ function event_trade(e)
 	if (item_lib.check_turn_in(e.trade, {item1 = TOKEN_ID})) then
 		local dz = eq.get_expedition();
 		if (dz.valid) then
+			eq.signal(223097, 9)
 			dz:AddLockout('Phase 1 Complete', 43200);
 			dz:AddLockout('Phase 2 Complete', 475200);
 			dz:AddLockout('Phase 3 Complete', 475200);

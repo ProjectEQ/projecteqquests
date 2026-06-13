@@ -1,15 +1,16 @@
 -- NPC ID 223097
 
+local scope = require("quest_scope")
+local DATA_TTL = "M32"
+
 local charid_list;
 local entity_list;
 local Lockouts = {};
 local current_phase = "Phase0";
 local event_counter = 0;
 local instance_id = 0;
-local player_limit;
-local echo = false;
-local timer_echo = false;
 local p1_started = false;
+local locs = {};
 
 
 -- These Lockouts are Live Like
@@ -118,6 +119,145 @@ Lockouts = {
 		[999999] = {PHASE5COMPLETE,    		eq.seconds('12h')}
 };
 
+local P1_TRIALS = {
+	{lockout = P1EARTH,  npc = 223169, x = 13.5,  y = 1632.4, z = 492.3, h = 0},
+	{lockout = P1AIR,    npc = 223170, x = 10.1,  y = 1350,   z = 492.6, h = 0},
+	{lockout = P1UNDEAD, npc = 223171, x = 18.0,  y = 1107,   z = 492.2, h = 0},
+	{lockout = P1WATER,  npc = 223172, x = 11.5,  y = 857,    z = 492.5, h = 0},
+	{lockout = P1FIRE,   npc = 223173, x = 13.2,  y = 574.2,  z = 492.3, h = 0},
+}
+
+local GUIDE_SPAWNS = {
+	{-35, 1636, 496, 124}, -- Earth
+	{-36, 1352, 496, 124}, -- Air
+	{-27, 1103, 496, 124}, -- Undead
+	{-51,  857, 496, 124}, -- Water
+	{-55,  569, 496, 124}, -- Fire
+}
+
+local P3_BOSS_SPAWNS = {
+	{id = 223010, target = 223047, lockout = NEEDLETUSK, wave = 5, x = 1280, y = 1010, z = 359.38, h = 390},
+	{id = 223011, target = 223046, lockout = RIANIT,      wave = 5, x = 1280, y = 1030, z = 359.38, h = 390},
+	{id = 223012, target = 223038, lockout = SINRUNAL,    wave = 4, x = 1260, y = 1250, z = 359.38, h = 390},
+	{id = 223013, target = 223037, lockout = HERLSOAKIAN,  wave = 4, x = 1260, y = 1270, z = 359.38, h = 390},
+	{id = 223014, target = 223051, lockout = XERSKEL,     wave = 6, x = 1280, y = 1210, z = 359.38, h = 390},
+	{id = 223015, target = 223050, lockout = DERSOOL,     wave = 6, x = 1280, y = 1190, z = 359.38, h = 390},
+	{id = 223016, target = 223025, lockout = KRAKSMAAL,   wave = 2, x = 1260, y = 950,  z = 359.38, h = 390},
+	{id = 223017, target = 223024, lockout = XEROAN,      wave = 2, x = 1260, y = 970,  z = 359.38, h = 390},
+	{id = 223018, target = 223066, lockout = DREAMWARP,   wave = 8, x = 1300, y = 1070, z = 359.38, h = 390},
+	{id = 223019, target = 223065, lockout = TORMENT,      wave = 8, x = 1300, y = 1090, z = 359.38, h = 390},
+	{id = 223020, target = 223058, lockout = DARKKNIGHT,   wave = 7, x = 1300, y = 1130, z = 359.38, h = 390},
+	{id = 223021, target = 223057, lockout = SQUADLEADER,  wave = 7, x = 1300, y = 1150, z = 359.38, h = 390},
+	{id = 223022, target = 223032, lockout = DEADLYWARBOAR,wave = 3, x = 1230, y = 1330, z = 359.38, h = 350},
+	{id = 223023, target = 223031, lockout = SKULLSMASH,   wave = 3, x = 1230, y = 1310, z = 359.38, h = 350},
+	{id = 223008, target = 223008, lockout = FEROCIOUSWARBOAR, wave = 1, x = 1250, y = 1135, z = 359.5, h = 384},
+	{id = 223009, target = 223009, lockout = BLACKHEART,   wave = 1, x = 1250, y = 1085, z = 359.5, h = 384},
+}
+
+function GetExpedition()
+	local zone_id = eq.get_zone_id()
+	instance_id = eq.get_zone_instance_id()
+	return eq.get_expedition_by_zone_instance(zone_id, instance_id)
+end
+
+function ClearPersistedState()
+	scope.delete_data("p3_phase")
+	scope.delete_data("p3_counter")
+end
+
+function ClearPhaseThreeState()
+	ClearPersistedState()
+end
+
+function CountPhaseOneClears(expedition)
+	local count = 0
+	for _, trial in ipairs(P1_TRIALS) do
+		if expedition:HasLockout(trial.lockout) then
+			count = count + 1
+		end
+	end
+	return count
+end
+
+function EnsurePhaseOneComplete(expedition)
+	if CountPhaseOneClears(expedition) >= 5 and not expedition:HasLockout(PHASE1COMPLETE) then
+		expedition:AddLockout(PHASE1COMPLETE, 43200)
+	end
+end
+
+function SpawnPhaseOneTriggers(expedition)
+	for _, trial in ipairs(P1_TRIALS) do
+		if not expedition:HasLockout(trial.lockout) then
+			eq.spawn2(trial.npc, 0, 0, trial.x, trial.y, trial.z, trial.h)
+		end
+	end
+end
+
+function SpawnPhaseOneGuides()
+	eq.depop_all(223300);
+	for _, loc in ipairs(GUIDE_SPAWNS) do
+		eq.spawn2(223300, 0, 0, loc[1], loc[2], loc[3], loc[4]);
+	end
+end
+
+function PersistPhaseThreeState()
+	if current_phase:find("^Phase3") then
+		scope.set_data("p3_phase", current_phase, DATA_TTL)
+		scope.set_data("p3_counter", event_counter, DATA_TTL)
+	end
+end
+
+function PhaseThreeWave(phase)
+	if phase == "Phase3" or phase == "Phase3.1" then
+		return 1
+	end
+	return tonumber(phase:match("Phase3%.(%d+)")) or 1
+end
+
+function RestorePhaseThreeEnvironment()
+	instance_id = eq.get_zone_instance_id()
+	local expedition = GetExpedition()
+	locs = {[1] = {1250, 1085, 360}, [2] = {1250, 1135, 360}}
+
+	if current_phase == "Phase3.9" then
+		if not expedition:HasLockout(AVATAR) then
+			eq.spawn2(223073, 0, 0, 1492, 1110, 374.1, 391)
+		end
+		if not expedition:HasLockout(SUPGUARDIAN) then
+			eq.spawn2(223074, 0, 0, 1563, 1110, 374.1, 391)
+		end
+		return
+	end
+
+	local wave = PhaseThreeWave(current_phase)
+	local cond = wave + 1
+	if cond >= 2 and cond <= 9 then
+		eq.spawn_condition("potimeb", instance_id, cond, 1)
+	end
+
+	for _, boss in ipairs(P3_BOSS_SPAWNS) do
+		if not expedition:HasLockout(boss.lockout) then
+			local spawn_id = boss.id
+			if boss.wave < wave then
+				spawn_id = boss.target
+			end
+			eq.spawn2(spawn_id, 0, 0, boss.x, boss.y, boss.z, boss.h)
+		end
+	end
+end
+
+function BeginPhaseThree()
+	local saved_phase = scope.get_data("p3_phase")
+	if saved_phase and saved_phase ~= "" then
+		current_phase = saved_phase
+		event_counter = tonumber(scope.get_data("p3_counter")) or 0
+		RestorePhaseThreeEnvironment()
+	else
+		current_phase = "Phase3"
+		ControlPhaseThree()
+	end
+end
+
 function event_spawn(e)
 	ResetVariables();
 
@@ -125,56 +265,47 @@ function event_spawn(e)
 	ResetSpawnConditions();
 
 	instance_id = eq.get_zone_instance_id();
-	local expedition = eq.get_expedition();
-	local entity_list = eq.get_entity_list();
+	local expedition = GetExpedition();
+
+	if not expedition.valid then
+		return
+	end
+
+	EnsurePhaseOneComplete(expedition)
 
 	-- Check Lockouts to decide what phase
-	if not expedition:HasLockout('Phase 1 Complete') then
-		-- Spawn phase 1
-		eq.spawn2(223169,0,0,13.5,1632.4,492.3,0); -- earth trigger
-		eq.spawn2(223170,0,0,10.1,1350,492.6,0); -- air trigger
-		eq.spawn2(223171,0,0,18.0,1107,492.2,0); -- undead trigger
-		eq.spawn2(223172,0,0,11.5,857,492.5,0); -- water trigger
-		eq.spawn2(223173,0,0,13.2,574.2,492.3,0); -- fire trigger
-	elseif (expedition:HasLockout('Phase 1 Complete') and not expedition:HasLockout('Phase 2 Complete')) then
-		UpdateFailTimer(60);
-		current_phase = "Phase2";
-		-- send signal to flavor text NPC
-		eq.signal(223227,2); -- Emoter
-		-- spawn phase 2 controller
-		eq.unique_spawn(223242,0,0,190,1070,494,0); --phase_two_controller (223242)
-	elseif (expedition:HasLockout('Phase 1 Complete') and expedition:HasLockout('Phase 2 Complete') and not expedition:HasLockout('Phase 3 Complete')) then
-		UpdateFailTimer(75);
-		current_phase = "Phase3";
-		-- send signal to flavor text NPC
-		eq.signal(223227,3); -- Emoter
-		-- begin Phase 3
-		ControlPhaseThree();
-	elseif (expedition:HasLockout('Phase 1 Complete') and expedition:HasLockout('Phase 2 Complete') and expedition:HasLockout('Phase 3 Complete') and not expedition:HasLockout('Phase 4 Complete')) then
-		UpdateFailTimer(240); -- TODO UPDATE TIMER BASED ON NUMBER OF P4 GODS UP
-		current_phase = "Phase4";
-		-- send signal to flavor text NPC
-		eq.signal(223227,4); -- Emoter
-		SpawnPhaseFour();
-	elseif (expedition:HasLockout('Phase 1 Complete') and expedition:HasLockout('Phase 2 Complete') and expedition:HasLockout('Phase 3 Complete') and expedition:HasLockout('Phase 4 Complete') and not expedition:HasLockout('Phase 5 Complete')) then
-		-- UpdateFailTimer(240); -- TODO UPDATE TIMER BASED ON NUMBER OF P5 GODS UP
-		current_phase = "Phase5";
-		-- send signal to flavor text NPC
-		eq.signal(223227,5); -- Emoter
-		SpawnPhaseFive();
-	elseif (expedition:HasLockout('Phase 1 Complete') and expedition:HasLockout('Phase 2 Complete') and expedition:HasLockout('Phase 3 Complete') and expedition:HasLockout('Phase 4 Complete') and expedition:HasLockout('Phase 5 Complete') and not expedition:HasLockout('Phase 6 Complete')) then
-		UpdateFailTimer(120);
-		current_phase = "Phase6";
-		-- send signal to flavor text NPC
-		eq.signal(223227,6); -- Emoter
-		-- spawn Quarm
-		if not expedition:HasLockout('Quarm') then -- If left DZ and zone before P6 Complete lockout
-			eq.spawn2(223201,0,0,-401,-1106,32.5,132);
-			-- spawn #A_Servitor_of_Peace
-			eq.spawn2(223101,0,0,244,-1106,-1.125,194.0625);
+	if not expedition:HasLockout(PHASE1COMPLETE) then
+		event_counter = CountPhaseOneClears(expedition)
+		if event_counter > 0 then
+			p1_started = true
+			current_phase = "Phase1"
 		end
-		-- spawn untargetable Zebuxoruk's Cage
-		eq.spawn2(223228,0,0,-579,-1119,60.625,0);
+		SpawnPhaseOneTriggers(expedition)
+		SpawnPhaseOneGuides()
+	elseif (expedition:HasLockout(PHASE1COMPLETE) and not expedition:HasLockout(PHASE2COMPLETE)) then
+		current_phase = "Phase2"
+		eq.signal(223227, 2) -- Emoter
+		eq.unique_spawn(223242, 0, 0, 190, 1070, 494, 0) -- phase_two_controller
+	elseif (expedition:HasLockout(PHASE1COMPLETE) and expedition:HasLockout(PHASE2COMPLETE) and not expedition:HasLockout(PHASE3COMPLETE)) then
+		current_phase = "Phase3"
+		eq.signal(223227, 3) -- Emoter
+		BeginPhaseThree()
+	elseif (expedition:HasLockout(PHASE1COMPLETE) and expedition:HasLockout(PHASE2COMPLETE) and expedition:HasLockout(PHASE3COMPLETE) and not expedition:HasLockout(PHASE4COMPLETE)) then
+		current_phase = "Phase4"
+		eq.signal(223227, 4) -- Emoter
+		SpawnPhaseFour()
+	elseif (expedition:HasLockout(PHASE1COMPLETE) and expedition:HasLockout(PHASE2COMPLETE) and expedition:HasLockout(PHASE3COMPLETE) and expedition:HasLockout(PHASE4COMPLETE) and not expedition:HasLockout(PHASE5COMPLETE)) then
+		current_phase = "Phase5"
+		eq.signal(223227, 5) -- Emoter
+		SpawnPhaseFive()
+	elseif (expedition:HasLockout(PHASE1COMPLETE) and expedition:HasLockout(PHASE2COMPLETE) and expedition:HasLockout(PHASE3COMPLETE) and expedition:HasLockout(PHASE4COMPLETE) and expedition:HasLockout(PHASE5COMPLETE) and not expedition:HasLockout('Phase 6 Complete')) then
+		current_phase = "Phase6"
+		eq.signal(223227, 6) -- Emoter
+		if not expedition:HasLockout(QUARM) then
+			eq.spawn2(223201, 0, 0, -401, -1106, 32.5, 132)
+			eq.spawn2(223101, 0, 0, 244, -1106, -1.125, 194.0625)
+		end
+		eq.spawn2(223228, 0, 0, -579, -1119, 60.625, 0)
 	end
 end
 
@@ -182,7 +313,7 @@ function AddLockout(lockout)
 	local lockout_name = lockout[1];
 	local lockout_duration = lockout[2];
 
-	local expedition = eq.get_expedition()
+	local expedition = GetExpedition()
 	if expedition.valid then
 		-- this should add the lockout to:
 		-- 1) the expedition internally, so anyone that gets added after and zones in will receive it
@@ -193,7 +324,7 @@ function AddLockout(lockout)
 end
 
 function event_signal(e)
-	local expedition = eq.get_expedition()
+	local expedition = GetExpedition()
 	instance_id = eq.get_zone_instance_id();
 	eq.GM_Message(MT.Red,string.format("signal[%s]!", e.signal));	--debug
 
@@ -210,7 +341,6 @@ function event_signal(e)
 		current_phase = "Phase1";
 		-- send signal to flavor text NPC
 		eq.signal(223227,1); -- Emoter
-		UpdateFailTimer(60);
 	-- signal 2 comes from the mobs in the final wave of each phase 1 event
 	elseif (e.signal == 2) then
 		-- check that all 5 phase 1 events are down.
@@ -218,10 +348,10 @@ function event_signal(e)
 
 		eq.GM_Message(MT.Red,string.format("[Phase 1] Event Counter = [%i]!", event_counter));	--debug
 		if event_counter >= 5 then
+			eq.depop_all(223300);
 			expedition:AddLockout('Phase 1 Complete', 43200);
 			if not expedition:HasLockout('Phase 2 Complete') then -- Moving to Phase 2
 				event_counter = 0;
-				UpdateFailTimer(60); -- Add 60 Minutes to fail timer
 				eq.unique_spawn(223242,0,0,190,1070,494,0); --phase_two_controller (223242)
 				eq.signal(223227,2); -- Emoter
 			elseif (expedition:HasLockout('Phase 2 Complete') and not expedition:HasLockout('Phase 3 Complete')) then -- Moving to Phase 3
@@ -251,13 +381,7 @@ function event_signal(e)
 			end
 			if not expedition:HasLockout('Phase 5 Complete') then
 				current_phase = "Phase5";
-				-- add 4 hours to the fail timer
-				-- UpdateFailTimer(240); -- 60 Minutes per God
-				-- send signal to flavor text NPC
 				eq.signal(223227,5); -- Emoter
-				-- reset counter for later use
-				-- event_counter = 0;
-				-- spawn phase 5
 				SpawnPhaseFive();
 			end
 		end
@@ -273,9 +397,6 @@ function event_signal(e)
 			eq.spawn_condition("potimeb",instance_id,14,0);
 			if not expedition:HasLockout('Quarm') or not expedition:HasLockout('Phase 6 Complete')  then
 				current_phase = "Phase6";
-				-- add 2 hours to the fail timer
-				UpdateFailTimer(120);
-				-- send signal to flavor text NPC
 				eq.signal(223227,6); -- Emoter
 				-- spawn Quarm
 				eq.spawn2(223201,0,0,-401,-1106,32.5,185.625);
@@ -288,13 +409,13 @@ function event_signal(e)
 	-- signal 7 comes from Quarm
 	elseif (e.signal == 7) then
 		current_phase = "QuarmDead";
-		eq.stop_timer("event_hb");
 		eq.set_timer("lockout", 50 * 60 * 1000);
 	-- signal 8 comes from Druzzil_Ro
 	elseif (e.signal == 8) then
 		-- update the zone status
 		expedition:AddLockout('Phase 6 Complete', 475200);
 		SetZoneLockout();
+		ClearPersistedState();
 		-- port everyone in the zone back to the PoK library top floor
 		local client_list = entity_list:GetClientList();
 		for c in client_list.entries do
@@ -303,23 +424,6 @@ function event_signal(e)
 			end
 		end
 		ControllerDepop();
-	--GM toggle reporting of player counts/event timers 
-	elseif (e.signal == 98) then	
-		if timer_echo then
-			timer_echo = false;
-			eq.GM_Message(MT.Lime,"Event Timer Reports [OFF]")
-		else
-			timer_echo = true;
-			eq.GM_Message(MT.Lime,"Event Timer Reports [ON]")
-		end
-	elseif (e.signal == 99) then	
-		if echo then
-			echo = false;
-			eq.GM_Message(MT.Lime,"Player Count Reports [OFF]")
-		else
-			echo = true;
-			eq.GM_Message(MT.Lime,"Player Count Reports [ON]")
-		end
 	end
 end
 
@@ -327,10 +431,7 @@ function ResetVariables()
 	current_phase = "Phase0";
 	event_counter = 0;
 	instance_id = 0;
-	echo = false;
-	timer_echo = false;
 	p1_started = false;
-	total_time = 0;
 end
 
 function ResetSpawnConditions()
@@ -342,15 +443,13 @@ function ResetSpawnConditions()
 end
 
 function ControlPhaseTwo()
-	local expedition = eq.get_expedition()
+	local expedition = GetExpedition()
 
 	if (expedition.valid and expedition:HasLockout('Phase 2 Complete')) then
 		current_phase = "Phase3";
 		ControlPhaseThree();
 		-- send signal to flavor text NPC
 		eq.signal(223227,3); -- Emoter
-		-- add 1 hour and 15 minutes to the fail timer
-		UpdateFailTimer(75);
 	end
 end
 
@@ -361,7 +460,7 @@ end
 
 function ControlPhaseThree()
 	instance_id = eq.get_zone_instance_id();
-	local expedition = eq.get_expedition()
+	local expedition = GetExpedition()
 	if (current_phase == "Phase3") then
 		--spawn phase 3
 		locs = {[1] = {1250,1085,360}, [2] = {1250,1135,360} };	-- destination x,y,z locs only
@@ -485,19 +584,17 @@ function ControlPhaseThree()
 	elseif (current_phase == "Phase3.9") then
 		event_counter = event_counter + 1;
 		if (event_counter == 2) then
-			expedition:AddLockout('Phase 3 Complete', 475200);
+			expedition:AddLockout(PHASE3COMPLETE, 475200);
 			event_counter = 0;
-			if (expedition.valid and expedition:HasLockout('Phase 3 Complete') and not expedition:HasLockout('Phase 4 Complete')) then
+			ClearPhaseThreeState();
+			if (expedition.valid and expedition:HasLockout(PHASE3COMPLETE) and not expedition:HasLockout(PHASE4COMPLETE)) then
 				current_phase = "Phase4";
-				-- send signal to flavor text NPC
-				eq.signal(223227,4); -- Emoter
-				-- add 4 hours to the fail timer
-				-- UpdateFailTimer(240); -- Switching to adding time based on number of gods up to prevent dropping and re-joining to reset time to 240 min
-				-- spawn phase 4
+				eq.signal(223227, 4) -- Emoter
 				SpawnPhaseFour();
 			end
 		end
 	end
+	PersistPhaseThreeState()
 end
 
 function BossChange(mob_id,targetable_id,num)
@@ -514,26 +611,22 @@ function SetupPhaseFour()
 end
 
 function SpawnPhaseFour()
-	local expedition = eq.get_expedition()
+	local expedition = GetExpedition()
 
-	if (expedition.valid and not expedition:HasLockout('Terris-Thule')) then
-		eq.spawn2(223075,0,0,-310,307,365,190); -- Terris Thule
-		UpdateFailTimer(60); -- 1 Hour per God
+	if (expedition.valid and not expedition:HasLockout(TERRIS)) then
+		eq.spawn2(223075, 0, 0, -310, 307, 365, 190)
 	end
 
-	if (expedition.valid and not expedition:HasLockout('Saryrn')) then
-		eq.spawn2(223076,0,0,-320,-316,358,65); -- Saryrn
-		UpdateFailTimer(60); -- 1 Hour per God
+	if (expedition.valid and not expedition:HasLockout(SARYRN)) then
+		eq.spawn2(223076, 0, 0, -320, -316, 358, 65)
 	end
 
-	if (expedition.valid and not expedition:HasLockout('Tallon Zek')) then
-		eq.spawn2(223077,0,0,405,-84,358,384); -- Tallon Zek
-		UpdateFailTimer(60); -- 1 Hour per God
+	if (expedition.valid and not expedition:HasLockout(TALLONZEK)) then
+		eq.spawn2(223077, 0, 0, 405, -84, 358, 384)
 	end
 
-	if (expedition.valid and not expedition:HasLockout('Vallon Zek')) then
-		eq.spawn2(223078,0,0,405,75,358,384); -- Vallon Zek
-		UpdateFailTimer(60); -- 1 Hour per God
+	if (expedition.valid and not expedition:HasLockout(VALLONZEK)) then
+		eq.spawn2(223078, 0, 0, 405, 75, 358, 384)
 	end
 end
 
@@ -544,124 +637,44 @@ end
 
 function SpawnPhaseFive()
 	instance_id = eq.get_zone_instance_id();
-	local expedition = eq.get_expedition()
+	local expedition = GetExpedition()
 
-	if (expedition.valid and not expedition:HasLockout('Bertoxxulous') and not expedition:HasLockout('Bertoxxulous Trash')) then
-		eq.spawn2(223098,0,0,-299,-297,23.3,62); -- Fake Bertoxxulous
-		UpdateFailTimer(60); -- 1 Hour per God
-		eq.spawn_condition("potimeb",instance_id,14,1);	
-	elseif (expedition.valid and not expedition:HasLockout('Bertoxxulous') and expedition:HasLockout('Bertoxxulous Trash')) then
-		eq.spawn2(223142,0,0,-299,-297,23.3,62); -- Real Bertoxxulous
-		UpdateFailTimer(60); -- 1 Hour per God
+	if (expedition.valid and not expedition:HasLockout(BERTOXXULOUOS) and not expedition:HasLockout(BERTOXXULOUOSTRASH)) then
+		eq.spawn2(223098, 0, 0, -299, -297, 23.3, 62)
+		eq.spawn_condition("potimeb", instance_id, 14, 1)
+	elseif (expedition.valid and not expedition:HasLockout(BERTOXXULOUOS) and expedition:HasLockout(BERTOXXULOUOSTRASH)) then
+		eq.spawn2(223142, 0, 0, -299, -297, 23.3, 62)
 	end
-	
-	if (expedition.valid and not expedition:HasLockout('Cazic-Thule') and not expedition:HasLockout('Cazic-Thule Trash')) then
-		eq.spawn2(223165,0,0,-257,255,6,203); -- Fake Cazic
-		UpdateFailTimer(60); -- 1 Hour per God
-		eq.spawn_condition("potimeb",instance_id,12,1);	
-	elseif (expedition.valid and not expedition:HasLockout('Cazic-Thule') and expedition:HasLockout('Cazic-Thule Trash')) then
-		eq.spawn2(223166,0,0,-257,255,6,203); -- Real Cazic
-		UpdateFailTimer(60); -- 1 Hour per God
-	end
-	
-	if (expedition.valid and not expedition:HasLockout('Innoruuk') and not expedition:HasLockout('Innoruuk Trash')) then
-		eq.spawn2(223000,0,0,303.3,306,13.3,323); -- Fake Innoruuk
-		UpdateFailTimer(60); -- 1 Hour per God
-		eq.spawn_condition("potimeb",instance_id,11,1);	
-	elseif (expedition.valid and not expedition:HasLockout('Innoruuk') and expedition:HasLockout('Innoruuk Trash')) then
-		eq.spawn2(223167,0,0,303.3,306,13.3,323); -- Real Innoruuk
-		UpdateFailTimer(60); -- 1 Hour per God
-	end
-	
-	if (expedition.valid and not expedition:HasLockout('Rallos Zek') and not expedition:HasLockout('Rallos Zek Trash')) then
-		eq.spawn2(223001,0,0,264,-279,18.75,435); -- Fake Rallos
-		UpdateFailTimer(60); -- 1 Hour per God
-		eq.spawn_condition("potimeb",instance_id,13,1);	
-	elseif (expedition.valid and not expedition:HasLockout('Rallos Zek') and expedition:HasLockout('Rallos Zek Trash')) then
-		eq.spawn2(223168,0,0,264,-279,18.75,435); -- Real Rallos
-		UpdateFailTimer(60); -- 1 Hour per God
-	end
-end
 
-function UpdateFailTimer(minutes_to_add)
-	total_time = (total_time + minutes_to_add);	
-	eq.stop_timer("player_check");
-	eq.set_timer("player_check", 10 * 1000); -- 10 Sec Player Check
-	eq.GM_Message(MT.Lime,"fail_timer set to " .. (total_time) .. " minutes");	-- debug
-	eq.set_timer("event_hb",60 * 1000); -- 60 Sec Timer Check
+	if (expedition.valid and not expedition:HasLockout(CAZICTHULE) and not expedition:HasLockout(CAZICTHULETRASH)) then
+		eq.spawn2(223165, 0, 0, -257, 255, 6, 203)
+		eq.spawn_condition("potimeb", instance_id, 12, 1)
+	elseif (expedition.valid and not expedition:HasLockout(CAZICTHULE) and expedition:HasLockout(CAZICTHULETRASH)) then
+		eq.spawn2(223166, 0, 0, -257, 255, 6, 203)
+	end
+
+	if (expedition.valid and not expedition:HasLockout(INNORUUK) and not expedition:HasLockout(INNORUUKTRASH)) then
+		eq.spawn2(223000, 0, 0, 303.3, 306, 13.3, 323)
+		eq.spawn_condition("potimeb", instance_id, 11, 1)
+	elseif (expedition.valid and not expedition:HasLockout(INNORUUK) and expedition:HasLockout(INNORUUKTRASH)) then
+		eq.spawn2(223167, 0, 0, 303.3, 306, 13.3, 323)
+	end
+
+	if (expedition.valid and not expedition:HasLockout(RALLOSZEK) and not expedition:HasLockout(RALLOSZEKTRASH)) then
+		eq.spawn2(223001, 0, 0, 264, -279, 18.75, 435)
+		eq.spawn_condition("potimeb", instance_id, 13, 1)
+	elseif (expedition.valid and not expedition:HasLockout(RALLOSZEK) and expedition:HasLockout(RALLOSZEKTRASH)) then
+		eq.spawn2(223168, 0, 0, 264, -279, 18.75, 435)
+	end
 end
 
 function event_timer(e)
-	local expedition = eq.get_expedition()
-	if (e.timer == "event_hb") then
-		total_time = total_time - 1;
-		
-		--echo time
-		if timer_echo then
-			eq.GM_Message(MT.Yellow,string.format("Time Left: [%s mins]",total_time));
-		end
-		
-		--check failure timer
-		if total_time <= 0 then
-			EventFailed();
-			return;
-		end
-		
-		
-		--announce time remaining in hourly increments
-		if ((total_time ~= nil and total_time > 0 and total_time % 60 == 0)) then
-			local hours_left = "";
-			if (total_time / 60 == 8) then
-				hours_left = "eight hours";
-			elseif (total_time / 60 == 7) then
-				hours_left = "seven hours";
-			elseif (total_time / 60 == 6) then
-				hours_left = "six hours";
-			elseif (total_time / 60 == 5) then
-				hours_left = "five hours";
-			elseif (total_time / 60 == 4) then
-				hours_left = "four hours";
-			elseif (total_time / 60 == 3) then
-				hours_left = "three hours";
-			elseif (total_time / 60 == 2) then
-				hours_left = "two hours";
-			elseif (total_time / 60 == 1) then
-				hours_left = "one hour";
-			end
-			eq.zone_emote(MT.LightGray,string.format("In the distance, an hourglass appears, the grains of sand falling methodically into place.  As quickly as the image was formed, it dissipates.  You have %s left.",hours_left));
-		end
-
-		if total_time == 10 then
-			eq.zone_emote(MT.LightGray,"In the distance, an hourglass appears, the grains of sand falling methodically into place.  As quickly as the image was formed, it dissipates.  You have ten minutes left.");
-		end
-
-	elseif (e.timer == "player_check") then
-		local player_list = eq.get_entity_list():GetClientList();
-		local count = 0;
-		
-		if (eq.get_entity_list():IsMobSpawnedByNpcTypeID(223170) or eq.get_entity_list():IsMobSpawnedByNpcTypeID(223169) or eq.get_entity_list():IsMobSpawnedByNpcTypeID(223173) or eq.get_entity_list():IsMobSpawnedByNpcTypeID(223171) or eq.get_entity_list():IsMobSpawnedByNpcTypeID(223172) or eq.get_entity_list():IsMobSpawnedByNpcTypeID(223242)) then
-			player_limit = 54;
-		else
-			player_limit = 72;
-		end
-		
-		if(player_list ~= nil) then
-			for pc in player_list.entries do
-				if not pc:GetGM() then
-					count = count + 1;
-					if count > player_limit then 
-						pc:MovePC(219,-37,-110,13,0);	--boot to Time A
-					end
-				end
-			end
-		end
-		if echo then
-			eq.GM_Message(MT.Green,string.format("Current player count: [%s/%s]", tostring(count), tostring(player_limit)));
-		end
-	elseif (e.timer == "lockout") then	--handles instance where Quarm killed but Zeb/Druzzil Ro script not completed
+	local expedition = GetExpedition()
+	if (e.timer == "lockout") then	--handles instance where Quarm killed but Zeb/Druzzil Ro script not completed
 		eq.stop_timer(e.timer);
 		expedition:AddLockout('Phase 6 Complete', 475200);
 		SetZoneLockout();
+		ClearPersistedState();
 		-- port everyone in the zone back to PoTimeA
 		local client_list = eq.get_entity_list():GetClientList();
 		for c in client_list.entries do
@@ -686,37 +699,9 @@ function ControllerDepop()
 	eq.depop_zone(false);
 end
 
-function EventFailed()
-	local expedition = eq.get_expedition()
-	-- change the qglobal so zone status will not reset things if the zone reboots.
-	SetZoneLockout();
-	current_status = "Lockout";
-	eq.zone_emote(MT.LightGray,"An hourglass appears in the distance, the few remaining sands trickling down.  As the last grain falls, multicolored lights erupt from it, surrounding you in a brilliant flash.")
-
-	if expedition.valid and not expedition:HasLockout('Phase 1 Complete') then
-		eq.GM_Message(MT.Red,"Setting Failure Lockout for [3600] eq.seconds!");	--debug
-		expedition:AddReplayLockout(3600); -- 1 hour for Phase 1 Failure
-	elseif expedition.valid then
-		for id, v in pairs(expedition:GetLockouts()) do -- WORKS
-			if (id == 'Phase 1 Complete') then
-				eq.GM_Message(MT.Red,string.format("Setting Failure Lockout for [%i] eq.seconds!", v));	--debug
-				expedition:AddReplayLockout(v);
-			end
-		end
-	end
-
-	-- port everyone in the zone back to the PoTimeA 
-	local client_list = eq.get_entity_list():GetClientList();
-	for c in client_list.entries do
-		if ((c.valid) and (not c:GetGM())) then
-			c:MovePCInstance(219,0,-37,-110,9,0);
-		end
-	end
-	ResetSpawnConditions();
-	ControllerDepop();
-end
-
 function SetZoneLockout()
-	local expedition = eq.get_expedition()
-	expedition:AddReplayLockout(1800); -- 30 Min Replay Lockout
+	local expedition = GetExpedition()
+	if expedition.valid then
+		expedition:AddReplayLockout(1800) -- 30 Min Replay Lockout
+	end
 end

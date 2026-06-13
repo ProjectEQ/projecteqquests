@@ -13,7 +13,7 @@ function event_signal(e)
 	if (e.signal == 1) and (emote_phase == 0) then
 		-- beginning of phase 1
 		emote_phase = 1;
-		eq.zone_emote(MT.LightGray,"In the distance, an hourglass appears, the grains of sand falling methodically into place. As quickly as the image was formed, it dissipates. You have one hour left.");
+		eq.zone_emote(MT.LightGray,"In the distance, an hourglass appears, the grains of sand falling methodically into place. As quickly as the image was formed, it dissipates.");
 	else
 		-- After completing a phase
 		emote_phase = e.signal;
@@ -61,7 +61,7 @@ function PhaseEmotes()
 		ThreadManager:Wait(4);
 		eq.zone_emote(MT.LightGray,"With a sudden jolt the wall comes into crystal clear focus.");
 		ThreadManager:Wait(4);
-		eq.zone_emote(MT.LightGray,"As the path before you opens up in a swirl of mystical energy, the faded image of an hourglass appears. You have one additional hour.");
+		eq.zone_emote(MT.LightGray,"As the path before you opens up in a swirl of mystical energy, the faded image of an hourglass appears. The path forward opens.");
 		eq.stop_timer("emote_hb");
 		ThreadManager:Stop();
 	elseif (emote_phase == 3) then
@@ -90,7 +90,7 @@ function PhaseEmotes()
 		ThreadManager:Wait(4);
 		eq.zone_emote(MT.LightGray,"With a sudden jolt the wall comes into crystal clear focus.");
 		ThreadManager:Wait(4);
-		eq.zone_emote(MT.LightGray,"As the path before you opens up in a swirl of mystical energy, the faded image of an hourglass appears. You have an additional one hour and fifteen minutes.");
+		eq.zone_emote(MT.LightGray,"As the path before you opens up in a swirl of mystical energy, the faded image of an hourglass appears. The path forward opens.");
 		if port_raid then
 			raidMove(3);
 		end
@@ -108,7 +108,7 @@ function PhaseEmotes()
 		ThreadManager:Wait(4);
 		eq.zone_emote(MT.LightGray,"With a sudden jolt the wall comes into crystal clear focus.");
 		ThreadManager:Wait(4);
-		eq.zone_emote(MT.LightGray,"As the path before you opens up in a swirl of mystical energy, the faded image of an hourglass appears. You have four additional hours.");
+		eq.zone_emote(MT.LightGray,"As the path before you opens up in a swirl of mystical energy, the faded image of an hourglass appears. The path forward opens.");
 		if port_raid then
 			raidMove(4);
 		end
@@ -130,7 +130,7 @@ function PhaseEmotes()
 		ThreadManager:Wait(4);
 		eq.zone_emote(MT.LightGray,"With a sudden jolt the wall comes into crystal clear focus.");
 		ThreadManager:Wait(4);
-		eq.zone_emote(MT.LightGray,"As the path before you opens up in a swirl of mystical energy, the faded image of an hourglass appears. You have four additional hours.");
+		eq.zone_emote(MT.LightGray,"As the path before you opens up in a swirl of mystical energy, the faded image of an hourglass appears. The path forward opens.");
 		if port_raid then
 			raidMove(5);
 		end
@@ -151,7 +151,7 @@ function PhaseEmotes()
 		ThreadManager:Wait(4);
 		eq.zone_emote(MT.LightGray,"With a sudden jolt the wall comes into crystal clear focus.");
 		ThreadManager:Wait(4);
-		eq.zone_emote(MT.LightGray,"As the path before you opens up in a swirl of mystical energy, the faded image of an hourglass appears. You have two additional hours.");
+		eq.zone_emote(MT.LightGray,"As the path before you opens up in a swirl of mystical energy, the faded image of an hourglass appears. The path forward opens.");
 		if port_raid then
 			raidMove(6);
 		end

@@ -71,9 +71,14 @@ local phaselockouts = {
 
 
 function event_enter_zone(e)
-	if(instance_id ~= 0) then
-        e.self:Message(MT.Yellow,"You have entered an Instanced Version of the zone.");
-    end
+	if instance_id ~= 0 then
+		e.self:Message(MT.Yellow, "You have entered an Instanced Version of the zone.")
+	end
+
+	local expedition = eq.get_expedition()
+	if instance_id ~= 0 and (not expedition.valid) then
+		e.self:Message(MT.Red, "You are not in the Plane of Time expedition for this instance.")
+	end
 end
 
 function event_click_door(e)
@@ -199,8 +204,6 @@ function event_say(e)
 			e.self:Message(MT.Guild,string.format("- [%s] -",eq.say_link("tb_remlockout",false,"Remove Lockout by Phase (Submenu)")));
 			e.self:Message(MT.Guild,string.format("- [%s] -",eq.say_link("tb_moveraid",false,"Raid Port Options (Submenu)")));
 			e.self:Message(MT.Guild,string.format("- [%s] -",eq.say_link("tb_reset",false,"Repop Zone (Stay in Current Phase)")));
-			e.self:Message(MT.Guild,string.format("- [%s] -",eq.say_link("tb_debug",false,"Toggle Player Count Reports")));
-			e.self:Message(MT.Guild,string.format("- [%s] -",eq.say_link("tb_mins",false,"Toggle Event Timer Reports")));
 		elseif e.message:find("tb_pcontrols") then -- Select Current Phase (Full Reset of All Lockouts and Timers)
 			e.self:Message(MT.Cyan,"== {Phase Controls Menu}");
 			e.self:Message(MT.Cyan,"== {This option reset all timers and set the expedition lockouts to the specific phase}");
@@ -253,10 +256,6 @@ function event_say(e)
 		elseif e.message:find("tb_reset") then
 			ZoneReset(e);
 			e.self:Message(MT.Lime,"[Zone Repop Complete]");
-		elseif e.message:findi("tb_mins") then
-			eq.signal(223097,98);
-		elseif e.message:findi("tb_debug") then
-			eq.signal(223097,99);
 		elseif e.message:findi("tb_remlockout") then
 			e.self:Message(MT.Cyan,"== {Remove Lockouts by Phase Menu}");
 			e.self:Message(MT.Cyan,"== {Select Phase below to remove phase lockouts}");

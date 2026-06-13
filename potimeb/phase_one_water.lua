@@ -5,13 +5,6 @@
 local event_counter = 0;
 local event_mobs = {223092,223093,223104,223091,223100,223115};
 
---specify trial boundaries for player check routine
-local min_x = -75;
-local max_x = 90;
-local min_y = 805;
-local max_y = 920;
-local player_limit = 18;	
-
 function event_spawn(e)
 	-- create a proximity to set the spawn timer
 	event_counter = 0;
@@ -26,7 +19,6 @@ function event_enter(e)
 	-- wait 45 seconds before spawning the mobs.
 	eq.clear_proximity();
 	eq.set_timer("Phase1Water",45000);
-	eq.set_timer("player_count",5 * 1000);	--check to ensure only 18 players in trial area
 end
 
 function event_timer(e)
@@ -43,8 +35,6 @@ function event_timer(e)
 			eq.spawn2(223091,0,0,68,867,495,371);	--#Shadow_of_Anar (223091)
 		end
 		eq.stop_timer("Phase1Water");
-	elseif(e.timer == "player_count") then
-		CheckPlayerCount(e);
 	end
 end
 
@@ -66,17 +56,3 @@ function event_signal(e)
 	end
 end
 
-function CheckPlayerCount(e)
-	local player_list = eq.get_entity_list():GetClientList();
-	local count = 0;
-	if(player_list ~= nil) then
-		for pc in player_list.entries do
-			if pc:GetX() >= min_x and pc:GetX() <= max_x and pc:GetY() >= min_y and pc:GetY() <= max_y and not pc:GetGM() then
-				count = count + 1;
-				if count > player_limit then 
-					pc:MovePC(219,-37,-110,13,0);	--boot to Time A
-				end
-			end
-		end
-	end
-end

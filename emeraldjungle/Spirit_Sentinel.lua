@@ -39,18 +39,18 @@ function event_trade(e)
 	if(e.other:GetFaction(e.self) <= 3) then
 		if(item_lib.check_turn_in(e.trade, {item1 = 1668})) then --Part of Shaman Epic 1.0
 			e.self:Say("Ahh, you live, shaman! I am glad the beasts of this jungle haven't torn your body asunder. Tell me, do you still walk the path? Are you willing to [" .. eq.say_link("continue what i have started",false,"continue what you have started") .. "]?");
-			e.other:Faction(404,150);
+			e.other:Faction(404,100);
 		elseif(item_lib.check_turn_in(e.trade, {item1 = 1672})) then --Part of Shaman Epic 1.0
 			e.self:Emote("begins to weep softly as he sees the pelt, battered and bloody. After a few moments, he says, 'We can only hope his passing was quick and painless. The Dire was powerful and yet you overcame him. Always remember that when you became [" .. eq.say_link("Heyokah") .. "], it was the passing of a noble, yet misguided being that allowed you to do so. You should hold a special place in your heart for him and what he was in life. To help you remember him, we will fashion this pelt into a pair of boots and give them to you. With every step you take, you must think on the Dire, else his death be in vain forever.");
 			e.other:QuestReward(e.self,0,0,0,0,1678,50000);
-			e.other:Faction(404,50);
+			e.other:Faction(404,100);
 		elseif(item_lib.check_turn_in(e.trade, {item1 = 3599})) then --Part of Shaman Epic 1.0
 			e.self:Emote("Ahhh good, let us hope what you have found will point us in the right direction. Hmmm...this is interesting. It appears the disappearance of the first queen may have caused Rak'Ashiir's faith to decline. From there, the first King Rak laid down the groundwork for the city's eventual demise. We need to learn what happened to the queen. Perhaps bringing this knowledge to the King's now cursed form will lift the mantle. We've learned that the last lord of Torsis, Ghiosk, was a bit of a historian. Find him and see what you can learn about the queen. Take what you find to my brother here in the jungle beneath the murky waters of a pond.");
 			e.other:Faction(404,100);
 			e.other:QuestReward(e.self,0,0,0,0,0,75000);
 		elseif(item_lib.check_turn_in(e.trade, {item1 = 18456, item2 = 18457, item3 = 18458})) then	
 		    e.self:Say("Hmmm, it appears the queen's disappearance wasn't as random as we thought. It also looks as if this High Scale were having some sort of affair with Neh. We have little but speculation at this point, so making it known to Nak'Ashiir would do nothing. Perhaps finding the resting place of the High Scale will show us more of what really happened. We suspect the icon mentioned in this log could now be located in the city's old temple. Find the icon and bring it to Kirn, wherever he is. Tell us what you learn afterwards.");
-			e.other:Faction(404,250);
+			e.other:Faction(404,100);
 			e.other:QuestReward(e.self,0,0,0,0,0,1000);
 	    end
 	end

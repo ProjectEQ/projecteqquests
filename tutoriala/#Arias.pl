@@ -2,12 +2,12 @@ my $player = 0;
 
 sub EVENT_SAY {
   $player = $userid;
-  if (($text=~/hail/i) && !quest::istaskactive(505744)) {
+  if (($text=~/hail/i) && !quest::istaskactive(208)) {
     quest::say("Hello, friend. My name's Arias and it's lucky for you I'm good at binding wounds. You almost didn't make it. You can thank me later. For now, let's join forces and [escape] this dungeon.");
     $client->Popup2("Speaking with Arias", "<br>Arias responded to your hail in the <c \"#00A000\">Main Chat Window</c>.<br><br>Notice that the word [<c \"#00F0F0\">escape</c>] is highlighted blue and set apart in brackets. This indicates a key word or phrase that you can use to reply to Arias.<br><br>To respond, <c \"#00F0F0\">left click</c> on the word [<c \"#00F0F0\">escape</c>] in the <c \"#00A000\">Main Chat Window</c>.<br><br><c \"#F07F00\">Tell Arias 'I want to escape.' to continue.</c>", 6);
   }
-  if (($text=~/escape/i) && !quest::istaskactive(505744)) {
-    quest::taskselector(505744); #Jail Break!
+  if (($text=~/escape/i) && !quest::istaskactive(208)) {
+    quest::taskselector(208); #Jail Break!
     quest::say("Glad you're with me! I've picked the flimsy cell door lock with a chisel I stole from the mines. That's one obstacle out of the way. Here's what we have left to do...");
     $client->Popup2("Quests", "<br>You have been offered your first quest: Jail Break! The <c \"#00A000\">Task Window</c> displays a verbose list of all the steps associated with this quest.<br><br><c \"#F0F000\">Remember:</c><br>You can press <c \"#00F0F0\">[ALT + Q]</c> to open the <c \"#00A000\">Quest Journal Window</c> and examine your quests' details.<br><br><c \"#F07F00\">Press 'Accept' when you are ready to begin Arias's quest.</c>", 7);
   }

@@ -371,68 +371,12 @@ function OMM_Timer(e)
 end
 
 function OMM_Death(e)
-	eq.signal(317116 , 317109); -- NPC: zone_status
-	eq.zone_emote(MT.Yellow,"The walls of Anguish tremble, you can feel the world shaking your bones. For a brief moment you think you see a smile flash across Mata Muram's face, and as the last breath escapes his lungs you hear a faint voice, 'There are worlds other than these...");
-	eq.world_emote(MT.Yellow, "The world trembles around you. All of Discord seems to howl in pain, in the distance you hear dragorn shouting for their freedom from Mata Muram's terror.");
+    eq.signal(317116 , 317109); -- NPC: zone_status
+    eq.zone_emote(MT.Yellow,"The walls of Anguish tremble, you can feel the world shaking your bones. For a brief moment you think you see a smile flash across Mata Muram's face, and as the last breath escapes his lungs you hear a faint voice, 'There are worlds other than these...");
+    eq.world_emote(MT.Yellow, "The world trembles around you. All of Discord seems to howl in pain, in the distance you hear dragorn shouting for their freedom from Mata Muram's terror.");
 
-	eq.signal(317116,999999); -- NPC: zone_status
-
-	local target = e.other;
-
-	if e.other:IsPet() then		--Pet check routine
-		target = e.other:GetOwner();		--If pet is at top of hate list then target will change to owner
-	end
-
-	if eq.get_data("Omens_OMM_First") == "" then
-		eq.world_emote(MT.Magenta,"Congratulations to [".. eq.get_guild_name_by_id(eq.get_guild_id_by_char_id(target:CastToClient():CharacterID())) .."] for being the first guild to kill Overlord Mata Muram and completing the Omens of War Expansion.");
-		eq.set_data("Omens_OMM_First", "1");
-	else
-		e.self:DeathNotification(e);
-
-		local data_bucket = ("OOW_OMM_Kill_Timer");
-		local dz = target:CastToClient():GetExpedition();
-		local dz_time = eq.seconds("6h");
-		local remaining_time = 0;
-		local guild_id = eq.get_guild_id_by_char_id(target:CastToClient():CharacterID());
-		local record_kill_exists = false;
-		local record_kill = false;
-		local record_kill_guild_id = 0;
-		local record_kill_seconds = 9999999;
-
-		if dz.valid then
-			remaining_time = dz:GetSecondsRemaining();
-		end
-
-		local total_time_seconds = dz_time - remaining_time;
-
-		if eq.get_data(data_bucket) ~= "" then -- Kill Timer Recorded
-			local temp = eq.get_data(data_bucket);
-			s = eq.split(temp, ',');
-
-			record_kill_guild_id	= tonumber(s[1]); -- Current Fastest Guild ID
-			record_kill_seconds 	= tonumber(s[2]); -- Current Fastest Time
-
-			record_kill_exists = true;
-
-			if record_kill_seconds > total_time_seconds then -- This run was a record!
-				eq.set_data(data_bucket, guild_id..","..total_time_seconds);
-				record_kill = true;
-			end
-		else  -- No Kill Timer Recorded
-			eq.set_data(data_bucket, guild_id..","..total_time_seconds);
-		end
-		
-		eq.world_emote(MT.Magenta,"Congratulations to [".. eq.get_guild_name_by_id(guild_id) .."] for killing Overlord Mata Muram and saving all denizens of Kuua from the invaders from discord. Total Time from Zone Start: ".. eq.SecondsToClockHours(total_time_seconds));
-
-		if record_kill_exists then
-			eq.world_emote(MT.Lime, "Citadel of Anguish: Current Zone Speed Record: Guild = ".. eq.get_guild_name_by_id(record_kill_guild_id) .." -  Time To Complete = ".. eq.SecondsToClockHours(record_kill_seconds));
-		end
-
-		if record_kill then
-			eq.world_emote(MT.LightBlue, "This run was a new record! Congratulations!");
-		end
-	end
-	-- e.self:CameraEffect(1000,8, e.self, true);
+    eq.signal(317116,999999); -- NPC: zone_status
+    -- e.self:CameraEffect(1000,8, e.self, true);
 end
 
 function OMM_Signal(e)

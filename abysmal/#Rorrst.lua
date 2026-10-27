@@ -11,9 +11,7 @@ function event_say(e)
 end
 
 function event_trade(e)
-	local item_lib = require('items');
-	if item_lib.check_turn_in(e.trade, {gold = 25000}) then -- 25000 gold
+	if (eq.handin({gold = 25000})) then -- Cash: Gold x 25000
 		e.other:QuestReward(e.self,0,0,0,0,52181,1000); -- Impression of a Key
 	end
-	item_lib.return_items(e.self, e.other, e.trade);
 end

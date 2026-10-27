@@ -27,11 +27,11 @@ function event_trade(e)
 		e.other:QuestReward(e.self,0,0,0,0,10651,350000);
 	elseif(e.other:GetFaction(e.self) < 3 and item_lib.check_turn_in(e.trade, {item1 = 18456, item2 = 18457, item3 = 18458})) then --Part of Shaman Epic 1.0
 		e.self:Emote("Hmmm, it appears the queen's disappearance wasn't as random as we thought. It also looks as if this High Scale were having some sort of affair with Neh. We have little but speculation at this point, so making it known to Nak'Ashiir would do nothing. Perhaps finding the resting place of the High Scale will show us more of what really happened. We suspect the icon mentioned in this log could now be located in the city's old temple. Find the icon and bring it to Kirn, wherever he is. Tell us what you learn afterwards.");
-		e.other:Faction(404,50);
+		e.other:Faction(404,100);
 		e.other:QuestReward(e.self,0,0,0,0,0,100000);
 	elseif(e.other:GetFaction(e.self) < 3 and item_lib.check_turn_in(e.trade, {item1 = 18459})) then --Part of Shaman Epic 1.0
 		e.self:Emote("So, the truth is found! Nak mourned over the loss of his child instead of relishing the blessing of his god, Cazic-Thule. His wife and the High Scale then abandoned him in disgust, but even that was an aftereffect of what caused the king to turn his back on his faith. The child is the key! If we put the child to rest, Nak may repent of what he has done and the mantle may be lifted. The most difficult task is now at hand. Find the child, then take proof of her passing to Nak. I can feel the mantle's foundation crumbling! Now, go!");
-		e.other:Faction(404,50);
+		e.other:Faction(404,1000);
 		e.other:QuestReward(e.self,0,0,0,0,0,100000);
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
